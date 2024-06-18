@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 前端
-  text: Web of Knowledge
+  text: Web knowledge
   tagline: learning...
   image:
     src: /logo.ico
@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /web/css/css基础知识
+      link: /web/html/html基础知识
     - theme: alt
       text: View on GitHub
       link: https://github.com/vuejs/vitepress
