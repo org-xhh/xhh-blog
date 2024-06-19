@@ -1,7 +1,5 @@
 # git常用命令
 
-## git命令
-
 ### 克隆代码库
 git clone git@gitee.com:org-xhh/viteproject.git
 
@@ -51,7 +49,7 @@ git reset --soft HEAD^
 git config --global -l
 
 ---
-## 参考文档
+### 参考文档
 
 HBuilderX文档 - Git常用命令
 
