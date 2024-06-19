@@ -34,4 +34,4 @@ uglifyjs utils.js -c -m -o utils-uglify.js
 会提示输入用户名，密码，邮箱和邮箱一次性验证码
 
 ### 发布 npm publish
-https://www.npmjs.com/package/utils-xhh
+https://www.npmjs.com/settings/web-xhh/packages

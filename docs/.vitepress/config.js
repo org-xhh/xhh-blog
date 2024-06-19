@@ -22,8 +22,8 @@ export default {
         text: '前端三要素',
         items: [
           { text: "html", link: "/web/html/html基础知识" },
-          { text: "css", link: "/web/css/css基础知识" },
-          { text: "javascript", link: "/web/js/javascript基础知识" },
+          { text: "css", link: "/web/css/css单位和dpr" },
+          { text: "javascript", link: "/web/js/javascript循环方法" },
         ]
       },
       {
@@ -38,14 +38,15 @@ export default {
         ]
       },
       {
-        text: 'nodejs',
+        text: 'node和包管理器',
         items: [
-          { text: "nodejs文档", link: "/nodejs/nodejs文档" },
+          { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
           { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "项目统一node版本", link: "/nodejs/项目统一node版本" },
           { text: "npm配置命令", link: "/nodejs/npm配置命令" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
+          { text: "node模块化方案", link: "/nodejs/node模块化方案" },
         ]
       },
       {
@@ -68,14 +69,14 @@ export default {
       "/web/css/": {
         text: "css知识",
         items: [
-          { text: "css基础知识", link: "/web/css/css基础知识" },
+          { text: "css单位和dpr", link: "/web/css/css单位和dpr" },
           { text: "css中width的小九九", link: "/web/css/css中width的小九九" },
         ],
       },
       "/web/js/": {
         text: "javascript知识",
         items: [
-          { text: "javascript基础知识", link: "/web/js/javascript基础知识" },
+          { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
         ],
       },
       "/technology/vue/": {
@@ -116,13 +117,6 @@ export default {
           { text: "组件库", link: "/technology/component-library/组件库" },
         ],
       },
-      // "/nodejs/": {
-      //   text: "nodejs知识",
-      //   items: [
-      //     { text: "nodejs文档", link: "/nodejs/nodejs文档" },
-      //     { text: "node版本管理", link: "/nodejs/node版本管理" },
-      //   ],
-      // },
       "/tool/git/": {
         text: "git知识",
         items: [

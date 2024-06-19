@@ -1,0 +1,67 @@
+# 模块化方案
+
+## 1. CommonJS
+
+require() 导入、module.exports 导出
+
+项目默认是 CommonJS 规范，指定文件后缀为 .cjs后，此文件会遵守CommonJS 规范。
+
+## 2. ES Modules
+（也被称为ES6 Modules、ECMA Modules、ESM）
+
+import 导入、export 导出
+
+在Node.js中使用ESM，需要在package.json中设置"type": "module"，或者文件名后缀为.mjs。
+
+## 两种模块方案互相加载
+
+- CommonJS 加载  ESM
+```
+const tm = require( './index.mjs') // ❌ (node.js 22.0.0及以上才可以，实验性)
+const tm = await import( './index.mjs') // ✅
+```
+
+- ESM 加载 CommonJS
+```
+import { someCon } from'./index.cjs' // ❌ 只能整体加载
+import tm from'./index.cjs' // ✅  
+```
+<small>ESM模块会静态分析，而 CommonJS 模块的代码是无法进行静态分析的，所以只能整体加载。</small>
+
+## 同时支持两种模块方式
+
+咱们开发npm包时，可能需要同时适配 CommonJS 和 ES Modules：
+
+- 在package.json中使用 "main" 和 "module" 字段分别指定 CommonJS 和 ES Modules的入口文件
+```
+{
+    "main": "lib/index.js",
+    "module": "src/index.mjs"
+}
+```
+- package.json中设置 exports 字段
+```
+"exports"：{ 
+    "require": "./index.js"，
+    "import": "./esm/index.js"
+}
+```
+
+## 全局变量获取
+
+ESM环境中，传统的 CommonJS 全局变量 __dirname 和 __filename 不再直接可用。
+这是因为 ES Modules 采用不同的模块解析策略，更加符合 ECMAScript 标准。
+
+ESM 中获取__dirname、__filename：
+```
+import { fileURLToPath } from 'node:url'
+import { dirname } from 'node:path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(fileURLToPath(import.meta.url))
+```
+- import.meta： 当前模块信息的对象
+- fileURLToPath()：将 URL 字符串转换为对应的本地文件系统路径
+- dirname()：接受一个文件路径作为参数，返回该路径的目录部分
+
+
