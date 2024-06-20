@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /web/html/html基础知识
+      link: /web/html/dom
     - theme: alt
       text: View on GitHub
       link: https://github.com/vuejs/vitepress

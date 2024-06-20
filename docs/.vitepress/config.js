@@ -21,7 +21,7 @@ export default {
       {
         text: '前端三要素',
         items: [
-          { text: "html", link: "/web/html/html基础知识" },
+          { text: "html", link: "/web/html/dom" },
           { text: "css", link: "/web/css/css单位和dpr" },
           { text: "javascript", link: "/web/js/javascript循环方法" },
         ]
@@ -56,6 +56,7 @@ export default {
           { text: "SourceTree", link: "/tool/sourcetree/sourcetree" },
           { text: "Fiddler", link: "/tool/fiddler/fiddler使用" },
           { text: "whistle", link: "/tool/whistle/whistle使用" },
+          { text: "VSCode", link: "/tool/vscode/vscode插件" },
         ]
       },
     ],
@@ -63,7 +64,8 @@ export default {
       "/web/html/": {
         text: "html知识",
         items: [
-          { text: "html基础知识", link: "/web/html/html基础知识" }
+          { text: "DOM", link: "/web/html/dom" },
+          { text: "BOM", link: "/web/html/bom" }
         ],
       },
       "/web/css/": {
@@ -77,6 +79,9 @@ export default {
         text: "javascript知识",
         items: [
           { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
+          { text: "Web Workers", link: "/web/js/web-workers" },
+          { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
+          { text: "HTTP 缓存", link: "/web/js/http缓存"}
         ],
       },
       "/technology/vue/": {
@@ -143,7 +148,13 @@ export default {
         items: [
           { text: "whistle使用", link: "/tool/whistle/whistle使用" },
         ],
-      },  
+      }, 
+      "/tool/vscode/": {
+        text: "vscode相关",
+        items: [
+          { text: "vscode插件", link: "/tool/vscode/vscode插件" },
+        ],
+      }, 
     },
     docFooter: {
       prev: "上一页",
