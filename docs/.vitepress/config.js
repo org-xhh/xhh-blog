@@ -34,6 +34,7 @@ export default {
           { text: "uni-app", link: "/technology/uni-app/uni-app文档" },
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "React Native", link: "/technology/react-native/react-native文档" },
+          { text: "Nuxt", link: "/technology/nuxt/nuxt文档" },
           { text: "组件库", link: "/technology/component-library/组件库" }
         ]
       },
@@ -65,7 +66,8 @@ export default {
         text: "html知识",
         items: [
           { text: "DOM", link: "/web/html/dom" },
-          { text: "BOM", link: "/web/html/bom" }
+          { text: "BOM", link: "/web/html/bom" },
+          { text: "browser", link: "/web/html/browser" }
         ],
       },
       "/web/css/": {
@@ -81,13 +83,17 @@ export default {
           { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
           { text: "Web Workers", link: "/web/js/web-workers" },
           { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
-          { text: "HTTP 缓存", link: "/web/js/http缓存"}
+          { text: "HTTP 缓存", link: "/web/js/http缓存"},
+          { text: "前端埋点", link: "/web/js/前端埋点"}
         ],
       },
       "/technology/vue/": {
         text: "vue知识",
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
+          { text: "nginx", link: "/technology/vue/nginx" },
+          { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
+          { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"}
         ],
       },
       "/technology/packaging-tool/": {
@@ -114,6 +120,13 @@ export default {
         items: [
           { text: "React Native 文档", link: "/technology/react-native/react-native文档" },
           { text: "React Native 使用", link: "/technology/react-native/react-native使用" },
+        ],
+      },
+      "/technology/nuxt/": {
+        text: "nuxt知识",
+        items: [
+          { text: "Nuxt.js 文档", link: "/technology/nuxt/nuxt文档" },
+          { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
         ],
       },
       "/technology/component-library/": {
