@@ -22,14 +22,13 @@
 将版本号改为自己vscode的版本号，保存后，打开压缩文件，点击左上角“添加”，覆盖压缩文件里面的package.json，
 然后重新解压出来（Vue.volar-1.8.8.vsix）。
 
-<small>vscode的版本号在 帮助→发行说明（help -> Show Release Notes）可以查。</small>
+<small>vscode的版本号在 帮助→发行说明（help -> Show Release Notes）可以查看。</small>
 
-带着修改过后的 .vsix 操作以下步骤：
+插件 -> 更多 -> Install from VSIX:
 
 ![alt text](image-3.png)
 
-把修改过后的 .vsix 重新安装
 
 ![alt text](image-4.png)
 
-OK!
+插件就可以使用了。
