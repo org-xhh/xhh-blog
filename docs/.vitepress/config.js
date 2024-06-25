@@ -1,7 +1,7 @@
 export default {
   title: "园中桥", // 网站标题
   description: "记录我想记录的blog", // 网站描述
-  base: '/', //  部署时的路径 默认 /  可以使用二级地址 /blog/
+  base: '/xhh-blog/', //  部署时的路径 默认 /  可以使用二级地址 /blog/
   head: [
     [
       'link',
