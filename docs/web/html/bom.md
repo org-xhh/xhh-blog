@@ -124,33 +124,33 @@ that.mediaRecorder.onstop = function(e) {
 - 调用摄像头并实现拍照功能
 ```
 async function checkCamera() {
-  const mediaDevice = window.navigator.mediaDevices;
-  const devices = await mediaDevice.enumerateDevices();
+  const mediaDevice = window.navigator.mediaDevices
+  const devices = await mediaDevice.enumerateDevices()
   if (devices) {
     const stream = await mediaDevice.getUserMedia({
       audio: false,
       video: {
         width: 300,
         height: 300,
-        // facingMode: { exact: "environment" }, //强制后置摄像头
-        facingMode: "user", //前置摄像头
-      },
-    });
-    if (!videoEl.value) return;
+        // facingMode: { exact: "environment" }, // 强制后置摄像头
+        facingMode: "user" // 前置摄像头
+      }
+    })
+    if (!videoEl.value) return
 
-    videoEl.value.srcObject = stream;
-    videoEl.value.play();
+    videoEl.value.srcObject = stream
+    videoEl.value.play()
   }
 }
 function shoot() {
-  if (!videoEl.value || !wrapper.value) return;
-  const canvas = document.createElement("canvas");
-  canvas.width = videoEl.value.videoWidth;
-  canvas.height = videoEl.value.videoHeight;
-  //拿到 canvas 上下文对象
-  const ctx = canvas.getContext("2d");
-  ctx?.drawImage(videoEl.value, 0, 0, canvas.width, canvas.height);
-  wrapper.value.appendChild(canvas);
+  if (!videoEl.value || !wrapDom.value) return
+  const canvas = document.createElement("canvas")
+  canvas.width = videoEl.value.videoWidth
+  canvas.height = videoEl.value.videoHeight
+
+  const ctx = canvas.getContext("2d")
+  ctx?.drawImage(videoEl.value, 0, 0, canvas.width, canvas.height)
+  wrapDom.value.appendChild(canvas)
 }
 ```
 

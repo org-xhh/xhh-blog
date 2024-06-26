@@ -14,5 +14,5 @@ hero:
       link: /web/html/dom
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/org-xhh/xhh-blog
 ---

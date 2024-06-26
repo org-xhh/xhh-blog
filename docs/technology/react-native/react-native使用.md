@@ -4,11 +4,13 @@
 （目标平台 Windows Android）
 
 
-### 1. Node 的版本应大于等于 14
+### 1. Node 版本
+
+Node 版本 跟 React Native 版本有关
 
 - 在环境变量PATH上新增：D:\node\node-v14.15.0-win-x64;
 
-- 新增环境变量：NODE_SKIP_PLATFORM_CHECK：1
+- （Node版本低时）新增环境变量：NODE_SKIP_PLATFORM_CHECK：1
 
 ### 2. 下载jdk： https://www.oracle.com/java/technologies/downloads/#java11-windows
 

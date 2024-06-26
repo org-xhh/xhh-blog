@@ -64,31 +64,31 @@ import{_ as l,D as i,c as o,I as s,w as e,a3 as p,j as a,a as t,o as c}from"./ch
 <span class="line"><span>  console.log(&#39;recorder stopped&#39;)</span></span>
 <span class="line"><span>  that.mediaRecorder = &#39;&#39;</span></span>
 <span class="line"><span>}</span></span></code></pre></div><ul><li>调用摄像头并实现拍照功能</li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>async function checkCamera() {</span></span>
-<span class="line"><span>  const mediaDevice = window.navigator.mediaDevices;</span></span>
-<span class="line"><span>  const devices = await mediaDevice.enumerateDevices();</span></span>
+<span class="line"><span>  const mediaDevice = window.navigator.mediaDevices</span></span>
+<span class="line"><span>  const devices = await mediaDevice.enumerateDevices()</span></span>
 <span class="line"><span>  if (devices) {</span></span>
 <span class="line"><span>    const stream = await mediaDevice.getUserMedia({</span></span>
 <span class="line"><span>      audio: false,</span></span>
 <span class="line"><span>      video: {</span></span>
 <span class="line"><span>        width: 300,</span></span>
 <span class="line"><span>        height: 300,</span></span>
-<span class="line"><span>        // facingMode: { exact: &quot;environment&quot; }, //强制后置摄像头</span></span>
-<span class="line"><span>        facingMode: &quot;user&quot;, //前置摄像头</span></span>
-<span class="line"><span>      },</span></span>
-<span class="line"><span>    });</span></span>
-<span class="line"><span>    if (!videoEl.value) return;</span></span>
+<span class="line"><span>        // facingMode: { exact: &quot;environment&quot; }, // 强制后置摄像头</span></span>
+<span class="line"><span>        facingMode: &quot;user&quot; // 前置摄像头</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>    if (!videoEl.value) return</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    videoEl.value.srcObject = stream;</span></span>
-<span class="line"><span>    videoEl.value.play();</span></span>
+<span class="line"><span>    videoEl.value.srcObject = stream</span></span>
+<span class="line"><span>    videoEl.value.play()</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span>function shoot() {</span></span>
-<span class="line"><span>  if (!videoEl.value || !wrapper.value) return;</span></span>
-<span class="line"><span>  const canvas = document.createElement(&quot;canvas&quot;);</span></span>
-<span class="line"><span>  canvas.width = videoEl.value.videoWidth;</span></span>
-<span class="line"><span>  canvas.height = videoEl.value.videoHeight;</span></span>
-<span class="line"><span>  //拿到 canvas 上下文对象</span></span>
-<span class="line"><span>  const ctx = canvas.getContext(&quot;2d&quot;);</span></span>
-<span class="line"><span>  ctx?.drawImage(videoEl.value, 0, 0, canvas.width, canvas.height);</span></span>
-<span class="line"><span>  wrapper.value.appendChild(canvas);</span></span>
+<span class="line"><span>  if (!videoEl.value || !wrapDom.value) return</span></span>
+<span class="line"><span>  const canvas = document.createElement(&quot;canvas&quot;)</span></span>
+<span class="line"><span>  canvas.width = videoEl.value.videoWidth</span></span>
+<span class="line"><span>  canvas.height = videoEl.value.videoHeight</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  const ctx = canvas.getContext(&quot;2d&quot;)</span></span>
+<span class="line"><span>  ctx?.drawImage(videoEl.value, 0, 0, canvas.width, canvas.height)</span></span>
+<span class="line"><span>  wrapDom.value.appendChild(canvas)</span></span>
 <span class="line"><span>}</span></span></code></pre></div>`,6);function b(g,_,f,w,k,C){const n=i("font");return c(),o("div",null,[d,s(n,{color:"gray"},{default:e(()=>[h]),_:1}),m,s(n,{color:"gray"},{default:e(()=>[u]),_:1}),v])}const P=l(r,[["render",b]]);export{R as __pageData,P as default};
