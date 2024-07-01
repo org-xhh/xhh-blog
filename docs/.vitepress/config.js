@@ -7,7 +7,7 @@ export default {
       'link',
       {
         rel: 'icon',
-        href: '/logo.ico', // 图片放在public文件夹下
+        href: '//xhh-blog/logo.ico', // 图片放在public文件夹下
       },
     ],
   ],
@@ -75,6 +75,7 @@ export default {
         items: [
           { text: "css单位和dpr", link: "/web/css/css单位和dpr" },
           { text: "css中width的小九九", link: "/web/css/css中width的小九九" },
+          { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" }
         ],
       },
       "/web/js/": {
@@ -101,6 +102,7 @@ export default {
         items: [
           { text: "webpack", link: "/technology/packaging-tool/webpack" },
           { text: "Vite", link: "/technology/packaging-tool/vite" },
+          { text: "配置全局使用less变量", link: "/technology/packaging-tool/配置全局使用less变量" }
         ],
       },
       "/technology/uni-app/": {
@@ -113,6 +115,7 @@ export default {
         text: "微信小程序知识",
         items: [
           { text: "微信小程序开发使用", link: "/technology/miniprogram/微信小程序开发使用" },
+          { text: "动态主题设置", link: "/technology/miniprogram/动态主题设置" },
         ],
       },
       "/technology/react-native/": {
@@ -127,6 +130,7 @@ export default {
         items: [
           { text: "Nuxt.js 文档", link: "/technology/nuxt/nuxt文档" },
           { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
+          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" }
         ],
       },
       "/technology/component-library/": {
