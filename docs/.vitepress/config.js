@@ -7,7 +7,7 @@ export default {
       'link',
       {
         rel: 'icon',
-        href: '//xhh-blog/logo.ico', // 图片放在public文件夹下
+        href: '/xhh-blog/logo.ico', // 图片放在public文件夹下
       },
     ],
   ],
