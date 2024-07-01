@@ -1,6 +1,6 @@
 # 配置全局使用less变量
 
-## vite
+## Vite
 
 vite.config.js:
 ```
