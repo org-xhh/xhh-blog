@@ -1,6 +1,7 @@
 # 配置全局使用less变量
 
 ## Vite
+> Vite 和 webpack 不同，不需要 less-loader，只需要安装less
 
 vite.config.js:
 ```

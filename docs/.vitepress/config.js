@@ -23,7 +23,7 @@ export default {
         items: [
           { text: "html", link: "/web/html/dom" },
           { text: "css", link: "/web/css/css单位和dpr" },
-          { text: "javascript", link: "/web/js/javascript循环方法" },
+          { text: "javascript", link: "/web/js/caniuse" },
         ]
       },
       {
@@ -39,7 +39,7 @@ export default {
         ]
       },
       {
-        text: 'node和包管理器',
+        text: 'node与包',
         items: [
           { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
@@ -48,6 +48,7 @@ export default {
           { text: "npm配置命令", link: "/nodejs/npm配置命令" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "node模块化方案", link: "/nodejs/node模块化方案" },
+          { text: "Babel", link: "/nodejs/babel" },
         ]
       },
       {
@@ -75,12 +76,15 @@ export default {
         items: [
           { text: "css单位和dpr", link: "/web/css/css单位和dpr" },
           { text: "css中width的小九九", link: "/web/css/css中width的小九九" },
-          { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" }
+          { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" },
+          { text: "应用深浅主题", link: "/web/css/应用深浅主题" }
         ],
       },
       "/web/js/": {
         text: "javascript知识",
         items: [
+          { text: "Can I use", link: "/web/js/caniuse" },
+          { text: "Ecma国际", link: "/web/js/ecma" },
           { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
           { text: "Web Workers", link: "/web/js/web-workers" },
           { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
