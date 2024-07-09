@@ -136,7 +136,8 @@ module: {
           presets: ['@babel/preset-env'], // 只进行语法转换
           plugins: [
             [
-              // 将core-js交给transform-runtime处理 API，解决全局污染，避免重复定义
+              // 将core-js交给transform-runtime处理 API
+              // 解决多个地方使用相同代码导致打包重复的问题
               "@babel/plugin-transform-runtime"
               {
                 "corejs": 3 // 推荐版本， 注意要安装@babel/runtime-corejs3
