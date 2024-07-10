@@ -126,6 +126,28 @@ let obj = {
 Object.values(obj) // [123, 456]
 ```
 
+## Object.entries()
+遍历对象的键值对
+```
+let obj = {
+  value1: 123,
+  value2: 456
+};
+Object.entries(obj) 
+
+输出：
+[
+    [
+        "value1",
+        123
+    ],
+    [
+        "value2",
+        456
+    ]
+]
+```
+
 
 
 

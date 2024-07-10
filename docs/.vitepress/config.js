@@ -57,6 +57,7 @@ export default {
         items: [
           { text: "Git", link: "/tool/git/git常用命令" },
           { text: "Git客户端工具", link: "/tool/git-tools/gitextensions" },
+          { text: "SVN", link: "/tool/svn" },
           { text: "Fiddler", link: "/tool/fiddler/fiddler使用" },
           { text: "whistle", link: "/tool/whistle/whistle使用" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },

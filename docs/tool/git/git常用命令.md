@@ -1,4 +1,10 @@
-# git常用命令
+# Git 
+
+## git 简介
+
+分布式版本控制系统，每个开发者都可以在本地完整地复制整个代码仓库，独立进行开发和版本控制。
+
+## git常用命令
 
 ### 克隆代码库
 git clone git@gitee.com:org-xhh/viteproject.git
@@ -30,6 +36,7 @@ git checkout develop
 
 ### 合并xhh-code分支到develop
 git checkout develop
+
 git merge xhh-code
 
 

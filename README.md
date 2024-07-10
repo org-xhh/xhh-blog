@@ -8,11 +8,12 @@
 - [css](https://org-xhh.github.io/xhh-blog/web/css/css%E5%8D%95%E4%BD%8D%E5%92%8Cdpr.html)
 - [javascript](https://org-xhh.github.io/xhh-blog/web/js/javascript%E5%BE%AA%E7%8E%AF%E6%96%B9%E6%B3%95.html)
 
-### 技术框架
+### 技术框架相关
 
 - [Vue项目检测新版发布](https://org-xhh.github.io/xhh-blog/technology/vue/%E6%A3%80%E6%B5%8B%E6%96%B0%E7%89%88%E5%8F%91%E5%B8%83.html)
 - [配置全局使用less变量](https://org-xhh.github.io/xhh-blog/technology/packaging-tool/%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8less%E5%8F%98%E9%87%8F.html)
 - [微信小程序动态主题设置](https://org-xhh.github.io/xhh-blog/technology/miniprogram/%E5%8A%A8%E6%80%81%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html)
+- [Nuxt](https://org-xhh.github.io/xhh-blog/technology/nuxt/%E5%85%A8%E5%B1%80%E5%BC%95%E5%85%A5less%E5%8F%98%E9%87%8F.html)
 - ...
 
 ### node与包相关
