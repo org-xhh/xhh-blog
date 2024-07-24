@@ -54,7 +54,7 @@ px =（750/设备的逻辑像素）* rpx
 
 ## CSS 像素
 
-**CSS像素**可称为**逻辑像素**(logical pixel)，也可以称为**设备独立像素**cc(dip: device independent pixel)。
+**CSS像素**(css pixel)可称为**逻辑像素**(logical pixel)，也可以称为**设备独立像素**(dip: device independent pixel)。
 
 设备像素也叫物理像素，设备分辨率描述的就是这个显示器的宽和高分别是多少个设备像素。
 
@@ -115,4 +115,23 @@ window.devicePixelRatio
 img标签的srcset属性
 ```
 <img src="/assets/image/img.png" srcset="/assets/image/img@2x.png 2x, /assets/image/img@3x.png 3x" />
+```
+
+## 12px 以下的文字大小
+
+### 让 Chrome 支持小于 12px 的文字
+
+chrome://settings/fonts
+
+### zoom
+
+zoom: 0.5, 缩小到原来的一般，要考虑兼容性问题。
+
+### scale
+```
+.ele {
+ font-size: 12px;
+ display: inline-block;
+ -webkit-transform: scale(0.8);
+}
 ```

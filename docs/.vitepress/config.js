@@ -30,13 +30,12 @@ export default {
         text: '技术框架',
         items: [
           { text: "Vue", link: "/technology/vue/vue文档" },
-          { text: "打包工具", link: "/technology/packaging-tool/webpack" },
+          { text: "构建打包工具", link: "/technology/packaging-tool/webpack" },
           { text: "uni-app", link: "/technology/uni-app/uni-app文档" },
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
-          { text: "React", link: "/technology/react/react" },
-          { text: "React Native", link: "/technology/react-native/react-native文档" },
-          { text: "Nuxt", link: "/technology/nuxt/nuxt文档" },
-          { text: "组件库", link: "/technology/component-library/组件库" }
+          { text: "Nuxt", link: "/technology/nuxt/nuxt" },
+           // { text: "React", link: "/technology/react/react" },
+           { text: "React Native", link: "/technology/react-native/react-native文档" },
         ]
       },
       {
@@ -50,6 +49,8 @@ export default {
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "node模块化方案", link: "/nodejs/node模块化方案" },
           { text: "Babel", link: "/nodejs/babel" },
+          { text: "生成二维码", link: "nodejs/qrcode" },
+          { text: "组件库", link: "/nodejs/组件库" }
         ]
       },
       {
@@ -69,7 +70,8 @@ export default {
         text: "html知识",
         items: [
           { text: "DOM", link: "/web/html/dom" },
-          { text: "图片预加载和懒加载", link: "/web/html/图片预加载和懒加载" }
+          { text: "图片预加载和懒加载", link: "/web/html/图片预加载和懒加载" },
+          { text: "MutationObserver", link: "/web/html/mutationObserver" }
         ],
       },
       "/web/css/": {
@@ -79,6 +81,7 @@ export default {
           { text: "css中width的小九九", link: "/web/css/css中width的小九九" },
           { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" },
           { text: "应用深浅主题", link: "/web/css/应用深浅主题" },
+          { text: "水平垂直居中", link: "/web/css/水平垂直居中" },
           { text: "css样式集锦", link: "/web/css/css样式集锦" }
         ],
       },
@@ -92,20 +95,22 @@ export default {
           { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
           { text: "HTTP 缓存", link: "/web/js/http缓存"},
           { text: "前端埋点", link: "/web/js/前端埋点"},
-          { text: "JavaScript Browser 对象", link: "/web/js/browser" }
+          { text: "JavaScript Browser 对象", link: "/web/js/browser" },
+          { text: "网络请求", link: "/web/js/网络请求" }
         ],
       },
       "/technology/vue/": {
         text: "vue知识",
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
+          { text: "Vue CLI", link: "/technology/vue/vue-cli" },
           { text: "nginx", link: "/technology/vue/nginx" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
           { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"}
         ],
       },
       "/technology/packaging-tool/": {
-        text: "打包工具",
+        text: "构建打包工具",
         items: [
           { text: "webpack", link: "/technology/packaging-tool/webpack" },
           { text: "Vite", link: "/technology/packaging-tool/vite" },
@@ -126,25 +131,19 @@ export default {
           { text: "微信公众号", link: "/technology/miniprogram/微信公众号" },
         ],
       },
+      "/technology/nuxt/": {
+        text: "nuxt知识",
+        items: [
+          { text: "Nuxt.js", link: "/technology/nuxt/nuxt" },
+          { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
+          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" }
+        ],
+      },
       "/technology/react-native/": {
         text: "react-native知识",
         items: [
           { text: "React Native 文档", link: "/technology/react-native/react-native文档" },
           { text: "React Native 使用", link: "/technology/react-native/react-native使用" },
-        ],
-      },
-      "/technology/nuxt/": {
-        text: "nuxt知识",
-        items: [
-          { text: "Nuxt.js 文档", link: "/technology/nuxt/nuxt文档" },
-          { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
-          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" }
-        ],
-      },
-      "/technology/component-library/": {
-        text: "组件库",
-        items: [
-          { text: "组件库", link: "/technology/component-library/组件库" },
         ],
       },
       "/tool/git/": {

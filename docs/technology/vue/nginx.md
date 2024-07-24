@@ -43,4 +43,7 @@ location / {
 
 $uri/ 在这个例子中并没有多大用，是可以去掉的。
 
+总结：
+Vue是单页面应用（SPA），history路由模式下，我们只需要将任意页面都重定向到 index.html，把路由交由前端处理。
+
 [vue中history模式服务器配置示例](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
