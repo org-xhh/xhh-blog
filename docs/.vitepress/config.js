@@ -11,7 +11,7 @@ export default {
       },
     ],
   ],
-  lastUpdated: true, // 最后更新时间配置
+  // lastUpdated: true, // 最后更新时间配置
   themeConfig: {
     search: {
       provider: 'local'
@@ -103,10 +103,11 @@ export default {
         text: "vue知识",
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
-          { text: "Vue CLI", link: "/technology/vue/vue-cli" },
+          { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
           { text: "nginx", link: "/technology/vue/nginx" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
-          { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"}
+          { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"},
+          { text: "通信", link: "/technology/vue/通信"}
         ],
       },
       "/technology/packaging-tool/": {

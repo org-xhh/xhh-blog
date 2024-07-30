@@ -9,7 +9,8 @@ https://www.npmjs.cn/files/package.json/
 package.json 
 ```
 "engines": {
-   "node": "14.x || 16.x"
+   "node": "14.x || 16.x",
+   "npm": ">=6.14.18"
 }
 ```
 配置之后会发现，该字段只对 yarn 生效；

@@ -30,8 +30,30 @@ npm install uglify-js
 uglifyjs utils.js -c -m -o utils-uglify.js
 ```
 
-### 登录 npm login
+### 登录 <font color=red>npm login</font>
 会提示输入用户名，密码，邮箱和邮箱一次性验证码
 
-### 发布 npm publish
+### 发布 <font color=red>npm publish</font>
+
+### 如何发布作用域包?
+1.创建组织
+![alt text](image-10.png)
+
+2.为组织取一个作用域名
+![alt text](image-11.png)
+比如取名:  web-xhh
+
+3.创建代码与组织的联系
+
+npm init --scope=web-xhh
+
+备注：name必须取名在该作用域下 package name: (@web-xhh/...)
+
+4.发布
+```
+npm publish --access public
+```
+
+发布成功后就可以在该组织下看到已发布的Packages
+
 https://www.npmjs.com/settings/web-xhh/packages

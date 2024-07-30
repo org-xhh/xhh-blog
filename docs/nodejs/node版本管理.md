@@ -26,6 +26,10 @@ nvm：Node Version Manager，node的版本管理工具。在一台电脑上可�
 
 - **安装时不建议修改默认路径，避免后续过多的麻烦**
 
+    https://nvm.uihtm.com/
+    
+    ![alt text](image-9.png)
+
 - **nvm -v 检查是否安装成功**
 
 - **常用命令**

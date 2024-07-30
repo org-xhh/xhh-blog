@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t,a3 as a}from"./chunks/framework.C5U8cnJv.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/文档.md","filePath":"nodejs/文档.md"}'),s={name:"nodejs/文档.md"},n=a("",1),l=[n];function o(i,_,p,d,f,c){return t(),r("div",null,l)}const b=e(s,[["render",o]]);export{m as __pageData,b as default};
