@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m=JSON.parse('{"title":"前端水印","description":"","frontmatter":{},"headers":[],"relativePath":"web/js/前端水印.md","filePath":"web/js/前端水印.md"}'),e={name:"web/js/前端水印.md"},l=p("",7),t=[l];function i(c,o,r,d,u,v){return a(),n("div",null,t)}const f=s(e,[["render",i]]);export{m as __pageData,f as default};
