@@ -43,14 +43,16 @@ ssh-agent bash
 
 Windows:
 ```
-cat /Users/xhh/.ssh/id_rsa.pub
+cat /Users/xhh/.ssh
 ```
 Mac:
 ```
-cd ~/.ssh目录下
+cd ~/.ssh 
 ```
+.ssh 目录下
 
-复制生成好的SSH Key 添加到 GitLab 或者 GitHub 中settings的SSH Key中即可
+
+复制生成好的SSH Key(rsa文件，不带.pub)添加到 GitLab 或者 GitHub 中settings的SSH Key中即可
 
 
 
@@ -67,6 +69,11 @@ ssh -T git@github.com
 git config --global user.name "xhh"
 
 git config --global user.email "184243xxxx@qq.com"
+```
+
+本地仓库
+```
+git config --local 
 ```
 
 
@@ -138,6 +145,16 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
+
+---
+
+### 十一、windows更改git push时用到的用户信息
+
+控制面板 => 凭证管理器 => Windows 凭据
+
+![alt text](image.png)
+
+删除 git 相关信息，下次 git push 时就会重新提示输入用户名和密码
 
 ---
 

@@ -42,7 +42,7 @@ import{_ as t,D as i,c as o,I as n,w as p,a,j as s,a3 as l,o as c}from"./chunks/
 <span class="line"><span>            [</span></span>
 <span class="line"><span>              // 将core-js交给transform-runtime处理 API</span></span>
 <span class="line"><span>              // 解决多个地方使用相同代码导致打包重复的问题</span></span>
-<span class="line"><span>              &quot;@babel/plugin-transform-runtime&quot;</span></span>
+<span class="line"><span>              &quot;@babel/plugin-transform-runtime&quot;,</span></span>
 <span class="line"><span>              {</span></span>
 <span class="line"><span>                &quot;corejs&quot;: 3 // 推荐版本， 注意要安装@babel/runtime-corejs3</span></span>
 <span class="line"><span>              }</span></span>

@@ -31,7 +31,7 @@ export default {
         items: [
           { text: "Vue", link: "/technology/vue/vue文档" },
           { text: "构建打包工具", link: "/technology/packaging-tool/webpack" },
-          { text: "uni-app", link: "/technology/uni-app/uni-app文档" },
+          { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
            // { text: "React", link: "/technology/react/react" },
@@ -96,7 +96,8 @@ export default {
           { text: "HTTP 缓存", link: "/web/js/http缓存"},
           { text: "前端埋点", link: "/web/js/前端埋点"},
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
-          { text: "网络请求", link: "/web/js/网络请求" }
+          { text: "网络请求", link: "/web/js/网络请求" },
+          { text: "前端水印", link: "/web/js/前端水印" }
         ],
       },
       "/technology/vue/": {
@@ -114,6 +115,7 @@ export default {
         text: "构建打包工具",
         items: [
           { text: "webpack", link: "/technology/packaging-tool/webpack" },
+          { text: "webpack配置实例", link: "/technology/packaging-tool/webpack配置实例" },
           { text: "Vite", link: "/technology/packaging-tool/vite" },
           { text: "配置全局使用less变量", link: "/technology/packaging-tool/配置全局使用less变量" }
         ],
@@ -121,7 +123,7 @@ export default {
       "/technology/uni-app/": {
         text: "uni-app知识",
         items: [
-          { text: "uni-app文档", link: "/technology/uni-app/uni-app文档" },
+          { text: "uni-app", link: "/technology/uni-app/uni-app" },
         ],
       },
       "/technology/miniprogram/": {

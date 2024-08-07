@@ -1,6 +1,8 @@
 
 - [webpack](https://www.webpackjs.com/configuration/output/#outputclean)
 
+<!-- https://webpack.docschina.org/guides/code-splitting/ -->
+
 ### 构建方式
 
 Webpack 先打包再启动开发服务器。

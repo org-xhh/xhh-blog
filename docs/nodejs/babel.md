@@ -1,5 +1,9 @@
 # [Babel](https://babeljs.io/docs/babel-preset-env)
 
+<!-- https://babel.nodejs.cn/docs/babel-preset-env/#targets -->
+
+<!-- https://static.kancloud.cn/cyyspring/webpack/2670925 -->
+
 > 官网解释：Babel是一个工具链，主要用于将采用ECMAScript 2015+语法编写的代码转换为向后兼容的 JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
 
 <font color=#7A297B>编译ES6+最新语法，实现旧版本浏览器不支持的ES6+的API。</font>
@@ -138,7 +142,7 @@ module: {
             [
               // 将core-js交给transform-runtime处理 API
               // 解决多个地方使用相同代码导致打包重复的问题
-              "@babel/plugin-transform-runtime"
+              "@babel/plugin-transform-runtime",
               {
                 "corejs": 3 // 推荐版本， 注意要安装@babel/runtime-corejs3
               }
