@@ -91,4 +91,4 @@ import{_ as l,D as i,c as o,I as n,w as e,a3 as p,j as a,a as t,o as c}from"./ch
 <span class="line"><span>  const ctx = canvas.getContext(&quot;2d&quot;)</span></span>
 <span class="line"><span>  ctx?.drawImage(videoEl.value, 0, 0, canvas.width, canvas.height)</span></span>
 <span class="line"><span>  wrapDom.value.appendChild(canvas)</span></span>
-<span class="line"><span>}</span></span></code></pre></div><hr><h3 id="浏览器相关" tabindex="-1">浏览器相关 <a class="header-anchor" href="#浏览器相关" aria-label="Permalink to &quot;浏览器相关&quot;">​</a></h3><ul><li><a href="https://crxdl.com/" target="_blank" rel="noreferrer">下载Chrome扩展插件Crx离线安装包</a></li></ul>`,9);function b(g,_,w,f,k,C){const s=i("font");return c(),o("div",null,[d,n(s,{color:"gray"},{default:e(()=>[h]),_:1}),u,n(s,{color:"gray"},{default:e(()=>[v]),_:1}),m])}const P=l(r,[["render",b]]);export{R as __pageData,P as default};
+<span class="line"><span>}</span></span></code></pre></div>`,6);function b(g,_,w,f,k,C){const s=i("font");return c(),o("div",null,[d,n(s,{color:"gray"},{default:e(()=>[h]),_:1}),u,n(s,{color:"gray"},{default:e(()=>[v]),_:1}),m])}const P=l(r,[["render",b]]);export{R as __pageData,P as default};

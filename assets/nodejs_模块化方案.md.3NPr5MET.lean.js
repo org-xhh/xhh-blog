@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as e,a3 as n}from"./chunks/framework.C5U8cnJv.js";const _=JSON.parse('{"title":"模块化方案","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/模块化方案.md","filePath":"nodejs/模块化方案.md"}'),o={name:"nodejs/模块化方案.md"},t=n("",30),i=[t];function l(p,d,r,u,c,m){return e(),s("div",null,i)}const q=a(o,[["render",l]]);export{_ as __pageData,q as default};
