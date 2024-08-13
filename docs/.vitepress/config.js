@@ -45,12 +45,12 @@ export default {
           { text: "node版本管理", link: "/nodejs/node版本管理" },
           { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "项目统一node版本", link: "/nodejs/项目统一node版本" },
-          { text: "npm配置命令", link: "/nodejs/npm配置命令" },
+          { text: "npm配置镜像源", link: "/nodejs/npm配置镜像源" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
-          { text: "node模块化方案", link: "/nodejs/node模块化方案" },
+          { text: "模块化方案", link: "/nodejs/模块化方案" },
+          { text: "组件库", link: "/nodejs/组件库" },
           { text: "Babel", link: "/nodejs/babel" },
           { text: "生成二维码", link: "nodejs/qrcode" },
-          { text: "组件库", link: "/nodejs/组件库" }
         ]
       },
       {
@@ -62,6 +62,7 @@ export default {
           { text: "Fiddler", link: "/tool/fiddler/fiddler使用" },
           { text: "whistle", link: "/tool/whistle/whistle使用" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
+          { text: "Chrome", link: "/tool/chrome/chrome" }
         ]
       },
     ],
@@ -183,6 +184,13 @@ export default {
           { text: "vscode插件", link: "/tool/vscode/vscode插件" },
         ],
       }, 
+      "/tool/chrome/": {
+        text: "chrome相关",
+        items: [
+          { text: "chrome", link: "/tool/chrome/chrome" },
+          { text: "chrome调试技巧", link: "/tool/chrome/chrome调试技巧" }
+        ],
+      }
     },
     docFooter: {
       prev: "上一页",

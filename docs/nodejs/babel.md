@@ -4,9 +4,9 @@
 
 <!-- https://static.kancloud.cn/cyyspring/webpack/2670925 -->
 
-> 官网解释：Babel是一个工具链，主要用于将采用ECMAScript 2015+语法编写的代码转换为向后兼容的 JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中。
+> 官网解释：Babel 是一个工具链，主要用于将 ECMAScript 2015+ 代码转换为当前和旧版浏览器或环境中向后兼容的 JavaScript 版本。
 
-<font color=#7A297B>编译ES6+最新语法，实现旧版本浏览器不支持的ES6+的API。</font>
+<font color=#7A297B>功能：转换语法；目标环境中缺少的 Polyfill 功能（通过第三方 polyfill，例如 core-js）</font>
 
 ## @babel/core
 
@@ -46,7 +46,7 @@ presets: [
 ],
 ```
 
-#### 如何查看当前 @babel/preset-env 包含了哪些预设呢？
+#### 如何查看当前 @babel/preset-env 包含了哪些插件呢？
 
 <font color=#B21016>@babel/preset-env --> package.json --> dependencies 里面</font>
 

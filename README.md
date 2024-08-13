@@ -20,7 +20,7 @@
 
 - [发布npm包](https://org-xhh.github.io/xhh-blog/nodejs/%E5%8F%91%E5%B8%83npm%E5%8C%85.html)
 - [统一node版本](https://org-xhh.github.io/xhh-blog/nodejs/%E9%A1%B9%E7%9B%AE%E7%BB%9F%E4%B8%80node%E7%89%88%E6%9C%AC.html)
-- [node模块化方案](https://org-xhh.github.io/xhh-blog/nodejs/node%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88.html)
+- [模块化方案](https://org-xhh.github.io/xhh-blog/nodejs/%E6%A8%A1%E5%9D%97%E5%8C%96%E6%96%B9%E6%A1%88.html)
 - [Babel](https://org-xhh.github.io/xhh-blog/nodejs/babel.html)
 
 - ...

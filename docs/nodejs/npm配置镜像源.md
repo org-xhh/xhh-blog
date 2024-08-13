@@ -1,5 +1,5 @@
 
-# npm
+# npm配置镜像源
 
 ### 查看npm使用的镜像
 npm config get registry
@@ -31,9 +31,35 @@ npm install -g cnpm@7.1.1 --registry=https://registry.npmmirror.com
 采用cnpm 安装依赖会忽略 package-lock.json 
 
 
-### 清空缓存
-npm cache clean --force  
+### 临时修改镜像源而不改变全局配置
+
+npm install [package_name] --registry=https://registry.npm.taobao.org
+
+
+### 常用镜像源
+- 淘宝镜像源
+
+https://registry.npmmirror.com
+
+https://registry.npm.taobao.org
+
+- 腾讯云镜像源
+
+http://mirrors.cloud.tencent.com/npm/
+
+- 华为云镜像源
+
+https://mirrors.huaweicloud.com/repository/npm/
+
+- 官方默认全局镜像
+
+https://registry.npmjs.org
 
 
 ### nrm
 nrm 是一个 npm 源管理器，可以快速地在 npm 源间切换。
+
+
+### 清空缓存
+npm cache clean --force  
+
