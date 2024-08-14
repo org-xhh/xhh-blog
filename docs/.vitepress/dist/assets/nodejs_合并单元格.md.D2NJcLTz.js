@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/合并单元格.md","filePath":"nodejs/合并单元格.md"}'),e={name:"nodejs/合并单元格.md"},l=p(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>getTableSpanList(list = [], rowFlag) {</span></span>
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e="/xhh-blog/assets/image-12.DKAtzRYx.png",u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/合并单元格.md","filePath":"nodejs/合并单元格.md"}'),l={name:"nodejs/合并单元格.md"},t=p(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>getTableSpanList(list = [], rowFlag) {</span></span>
 <span class="line"><span>  for (let i = 0; i &lt; list.length; i++) {</span></span>
 <span class="line"><span>    let orderItem = list[i] || {}</span></span>
 <span class="line"><span>    let rowspan = 1</span></span>
@@ -20,7 +20,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g
 <span class="line"><span>&gt;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>objectSpanMethod({ row, column, rowIndex, columnIndex }) {</span></span>
-<span class="line"><span>  let columnMergeList = [0, 1, 10] // 复选框，图片，操作</span></span>
+<span class="line"><span>  let columnMergeList = [0, 1, 3]</span></span>
 <span class="line"><span>  if (columnMergeList.indexOf(columnIndex) !== -1) {</span></span>
 <span class="line"><span>    for (let i = 0; i &lt; this.tableSpanList.length; i++) {</span></span>
 <span class="line"><span>      let spanItemList = this.tableSpanList[i] || {}</span></span>
@@ -34,4 +34,4 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g
 <span class="line"><span>  } else {</span></span>
 <span class="line"><span>    return [1, 1]</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,2),t=[l];function i(c,o,r,d,m,_){return a(),n("div",null,t)}const u=s(e,[["render",i]]);export{g as __pageData,u as default};
+<span class="line"><span>}</span></span></code></pre></div><p><img src="`+e+'" alt="alt text"></p>',3),i=[t];function c(o,r,d,m,_,h){return a(),n("div",null,i)}const b=s(l,[["render",c]]);export{u as __pageData,b as default};

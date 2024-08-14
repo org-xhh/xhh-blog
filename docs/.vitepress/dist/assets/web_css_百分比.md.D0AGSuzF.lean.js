@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const b=JSON.parse('{"title":"css中的%","description":"","frontmatter":{},"headers":[],"relativePath":"web/css/百分比.md","filePath":"web/css/百分比.md"}'),p={name:"web/css/百分比.md"},i=e("",18),t=[i];function l(c,o,d,h,r,u){return n(),s("div",null,t)}const v=a(p,[["render",l]]);export{b as __pageData,v as default};

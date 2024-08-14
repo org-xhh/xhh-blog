@@ -33,7 +33,7 @@ for (let i = 0; i < 10; i++) {
 
 ## for...of
 
-用来遍历 数组、类数组对象、字符串、Map、Set 以及 Generator 对象，不能用于对象，迭代顺序是确定的；
+用来遍历 数组、类数组对象、字符串、Map、Set 以及 Generator 对象，不能用于对象(普通对象默认没有Iterator接口)，迭代顺序是确定的；
 
 可以与 break、continue 配合使用
 

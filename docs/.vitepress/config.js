@@ -48,6 +48,7 @@ export default {
           { text: "npm配置镜像源", link: "/nodejs/npm配置镜像源" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "模块化方案", link: "/nodejs/模块化方案" },
+          { text: "npm link", link: "/nodejs/npm link" },
           { text: "组件库", link: "/nodejs/组件库" },
           { text: "Babel", link: "/nodejs/babel" },
           { text: "生成二维码", link: "nodejs/qrcode" },
@@ -83,6 +84,7 @@ export default {
           { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" },
           { text: "应用深浅主题", link: "/web/css/应用深浅主题" },
           { text: "水平垂直居中", link: "/web/css/水平垂直居中" },
+          { text: "css中的%", link: "/web/css/百分比" },
           { text: "css样式集锦", link: "/web/css/css样式集锦" }
         ],
       },
