@@ -60,6 +60,3 @@ https://registry.npmjs.org
 nrm 是一个 npm 源管理器，可以快速地在 npm 源间切换。
 
 
-### 清空缓存
-npm cache clean --force  
-

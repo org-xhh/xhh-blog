@@ -125,7 +125,7 @@ chrome://settings/fonts
 
 ### zoom
 
-zoom: 0.5, 缩小到原来的一般，要考虑兼容性问题。
+zoom: 0.5, 缩小到原来的一半，要考虑兼容性问题。
 
 ### scale
 ```

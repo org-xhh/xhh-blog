@@ -43,6 +43,7 @@ export default {
         items: [
           { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
+          { text: "npm常用命令", link: "/nodejs/npm常用命令" },
           { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "项目统一node版本", link: "/nodejs/项目统一node版本" },
           { text: "npm配置镜像源", link: "/nodejs/npm配置镜像源" },
@@ -85,6 +86,7 @@ export default {
           { text: "应用深浅主题", link: "/web/css/应用深浅主题" },
           { text: "水平垂直居中", link: "/web/css/水平垂直居中" },
           { text: "css中的%", link: "/web/css/百分比" },
+          { text: "BFC", link: "/web/css/BFC" },
           { text: "css样式集锦", link: "/web/css/css样式集锦" }
         ],
       },
