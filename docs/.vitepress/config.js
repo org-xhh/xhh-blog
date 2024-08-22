@@ -64,7 +64,8 @@ export default {
           { text: "Fiddler", link: "/tool/fiddler/fiddler使用" },
           { text: "whistle", link: "/tool/whistle/whistle使用" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
-          { text: "Chrome", link: "/tool/chrome/chrome" }
+          { text: "Chrome", link: "/tool/chrome/chrome" },
+          // { text: "phpStudy", link: "/tool/phpStudy" }
         ]
       },
     ],
@@ -74,7 +75,8 @@ export default {
         items: [
           { text: "DOM", link: "/web/html/dom" },
           { text: "图片预加载和懒加载", link: "/web/html/图片预加载和懒加载" },
-          { text: "MutationObserver", link: "/web/html/mutationObserver" }
+          { text: "MutationObserver", link: "/web/html/mutationObserver" },
+          { text: "DOM对象宽高属性", link: "/web/html/DOM对象宽高属性" }
         ],
       },
       "/web/css/": {
@@ -98,6 +100,7 @@ export default {
           { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
           { text: "Web Workers", link: "/web/js/web-workers" },
           { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
+          { text: "event事件属性", link: "/web/js/event事件属性" },
           { text: "HTTP 缓存", link: "/web/js/http缓存"},
           { text: "前端埋点", link: "/web/js/前端埋点"},
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },

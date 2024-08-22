@@ -33,9 +33,42 @@ for (let i = 0; i < 10; i++) {
 
 ## for...of
 
-用来遍历 数组、类数组对象、字符串、Map、Set 以及 Generator 对象，不能用于对象(普通对象默认没有Iterator接口)，迭代顺序是确定的；
+用来遍历 **数组、类数组对象、字符串、Map、Set 以及 Generator 对象**，不能用于普通对象(普通对象默认没有Iterator接口)，迭代顺序是确定的；
 
-可以与 break、continue 配合使用
+可以与 break、continue 配合使用。
+
+部署了 Symbol.iterator 属性的数据结构，就具有 iterator 接口，可以用 for...of 循环遍历成员。
+
+```
+判断某个对象是否可迭代：
+const isIterable = obj => obj != null && typeof obj[Symbol.iterator] === 'function'
+```
+
+给普通对象部署遍历器生成方法：
+```
+let obj = {
+  a: 11,
+  b: 22,
+  c: 33,
+  [Symbol.iterator]: function () {
+    let index = 0
+    let keys = Object.keys(obj) // a b c
+    return {
+      next: () => {
+        if (index < keys.length) {
+          const key = keys[index++]
+          return {value: this[key], done: false}
+        } else {
+          return {value: undefined, done: true}
+        }   
+      }
+    }
+  }
+}
+for (value of obj) {
+  console.log(value) // 11 22 33
+}
+```
 
 ## while
 在条件为真时执行循环

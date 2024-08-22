@@ -63,8 +63,9 @@ yarn react-native run-android
 
 
 ### 7. adb
+在\sdk\platform-tools\adb.exe同级目录，打开cmd窗口：
 
-adb devices 
+命令：adb devices 
 连接好的设备列表
 
 
