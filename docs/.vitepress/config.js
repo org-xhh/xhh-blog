@@ -34,8 +34,8 @@ export default {
           { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
-           // { text: "React", link: "/technology/react/react" },
-           { text: "React Native", link: "/technology/react-native/react-native文档" },
+          { text: "React", link: "/technology/react/react" },
+          { text: "React Native", link: "/technology/react-native/react-native文档" },
         ]
       },
       {
@@ -50,8 +50,8 @@ export default {
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "模块化方案", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
-          { text: "组件库", link: "/nodejs/组件库" },
           { text: "Babel", link: "/nodejs/babel" },
+          { text: "组件库", link: "/nodejs/组件库" },
           { text: "生成二维码", link: "nodejs/qrcode" },
         ]
       },
@@ -65,6 +65,7 @@ export default {
           { text: "whistle", link: "/tool/whistle/whistle使用" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
           { text: "Chrome", link: "/tool/chrome/chrome" },
+          { text: "Postman", link: "/tool/postman" },
           // { text: "phpStudy", link: "/tool/phpStudy" }
         ]
       },
@@ -148,6 +149,13 @@ export default {
           { text: "Nuxt.js", link: "/technology/nuxt/nuxt" },
           { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
           { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" }
+        ],
+      },
+      "/technology/react/": {
+        text: "react",
+        items: [
+          { text: "React", link: "/technology/react/react" },
+          { text: "Create React App", link: "/technology/react/create-react-app" },
         ],
       },
       "/technology/react-native/": {

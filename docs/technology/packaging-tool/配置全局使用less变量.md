@@ -1,25 +1,30 @@
-# 配置全局使用less变量
+# 配置全局使用 less 变量
 
 ## Vite
-> Vite 和 webpack 不同，不需要 less-loader，只需要安装less
+
+> Vite 和 webpack 不同，不需要 less-loader，只需要安装 less
 
 vite.config.js:
+
 ```
 export default defineConfig(({ mode }) => ({
     ...
     css: {
-    preprocessorOptions: {
-      less: {
-        math: 'always', // 括号内使用数学计算
-        additionalData: `@import "@/assets/css/public.less";`
-      }
-    },
+      preprocessorOptions: {
+        less: {
+         math: 'always', // 括号内使用数学计算
+         additionalData: `@import "@/assets/css/public.less";`
+        }
+      },
+      ...
+    }
 }))
 ```
 
 ## webpack
 
 vue.config.js:
+
 ```
 module.exports = {
   css: {
