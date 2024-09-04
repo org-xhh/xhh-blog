@@ -14,7 +14,7 @@
 ## 新建项目
 
 ```
-npx creat-react-app react-project
+npx create-react-app react-project
 ```
 
 ## 配置路由
@@ -223,12 +223,39 @@ return <div style={divStyle}>content</div>
 create-react-app 内置了 scss 预处理器，只需要安装
 
 ```
+npm i sass -D
+```
+
+<!--
+```
 npm install node-sass@8 sass-loader --save-dev
 ```
 
 备注：node@18 对应 node-sass@8
 
-<font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font>
+<font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font> -->
+
+## CSS Modules
+
+create-react-app 内置了对 CSS Modules 的支持。
+
+‌1.更改文件名 ‌
+
+将 CSS 文件名从 styles.css 更改为 styles.module.css
+
+2.引入样式 ‌
+
+在组件文件中，使用 ES6 模块语法引入样式文件
+
+```
+import styles from './styles.module.css';
+```
+
+‌3.使用样式 ‌
+
+```
+<div className={styles.myClass}>
+```
 
 ## 状态管理 Redux
 
@@ -523,6 +550,174 @@ function Button(props) {
 
 export default Button;
 ```
+
+## React Hooks
+
+使函数组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。
+
+#### useState
+
+向组件添加状态变量
+
+```
+const [count, setCount] = useState(0);
+```
+
+#### useEffect
+
+用于执行副作用操作，比如数据获取、订阅或手动更改 DOM，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
+
+```
+useEffect(() => {
+  const connection = createConnection(serverUrl, roomId);
+  connection.connect();
+  return () => {
+    connection.disconnect();
+  };
+}, [serverUrl, roomId]);
+```
+
+#### useContext
+
+访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。
+
+#### useReducer
+
+```
+const [state, dispatch] = useReducer(reducer, initialArg, init?)
+```
+
+#### useMemo
+
+对计算结果进行记忆，避免在每次渲染时重复计算。
+
+#### useCallback
+
+在多次渲染中缓存函数
+
+## Tailwind CSS
+
+#### 安装
+
+```
+npm install tailwindcss postcss autoprefixer -D
+```
+
+#### npx tailwindcss init
+
+生成 tailwind.config.js 并编辑
+
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+#### 项目引入 tailwindcss
+
+tailwind.css：
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+#### 新增 postcss.config.js
+
+```
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+```
+
+#### 组件中使用
+
+```
+div className="flex">
+  <p>内容</p>
+  <p className="flex-1">显示</p>
+</div>
+```
+
+## Ant Design
+
+```
+npm install antd
+
+import { Button } from 'antd'
+
+<Button type="primary">Primary Button</Button>
+```
+
+## TypeScript
+
+安装：
+
+```
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+```
+
+tsconfig.json:
+
+```
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
+```
+
+声明文件 react-app-env.d.ts：
+
+```
+declare module '*.svg' {
+  import * as React from 'react';
+
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<
+    SVGSVGElement
+  > & { title?: string }>;
+
+  const src: string;
+  export default src;
+}
+
+declare module '*.module.scss' {
+  const classes: { readonly [key: string]: string };
+  export default classes;
+}
+```
+
+将文件重命名为 .tsx 或 .ts 文件
 
 ---
 

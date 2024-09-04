@@ -155,7 +155,7 @@ export default {
         text: "react",
         items: [
           { text: "React", link: "/technology/react/react" },
-          { text: "Create React App", link: "/technology/react/create-react-app" },
+          { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" },
         ],
       },
       "/technology/react-native/": {
