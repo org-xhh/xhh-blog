@@ -106,7 +106,8 @@ export default {
           { text: "前端埋点", link: "/web/js/前端埋点"},
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
-          { text: "前端水印", link: "/web/js/前端水印" }
+          { text: "前端水印", link: "/web/js/前端水印" },
+          { text: "项目开发经验汇总", link: "/web/js/项目开发经验汇总" }
         ],
       },
       "/technology/vue/": {
@@ -141,6 +142,7 @@ export default {
           { text: "微信小程序开发使用", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "动态主题设置", link: "/technology/miniprogram/动态主题设置" },
           { text: "微信公众号", link: "/technology/miniprogram/微信公众号" },
+          { text: "项目开发经验汇总", link: "/technology/miniprogram/项目开发经验汇总" }
         ],
       },
       "/technology/nuxt/": {

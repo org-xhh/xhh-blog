@@ -1,6 +1,7 @@
 # nginx
 
 <!-- https://nginx.org/en/download.html -->
+![alt text](image-1.png)
 
 ### 配置 demo
 
