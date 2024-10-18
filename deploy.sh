@@ -14,7 +14,7 @@ cd docs/.vitepress/dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'sh deploy.sh'
 
 # push 到 github 项目的 gh-pages 分支
 git push -f https://github.com/org-xhh/xhh-blog.git master:gh-pages

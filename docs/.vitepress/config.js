@@ -107,6 +107,7 @@ export default {
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
           { text: "前端水印", link: "/web/js/前端水印" },
+          { text: "typescript", link: "/web/js/typescript" },
           { text: "项目开发经验汇总", link: "/web/js/项目开发经验汇总" }
         ],
       },
