@@ -195,7 +195,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>export default Page2;</span></span></code></pre></div><h4 id="页面效果" tabindex="-1">页面效果 <a class="header-anchor" href="#页面效果" aria-label="Permalink to &quot;页面效果&quot;">​</a></h4><p><img src="`+e+`" alt="alt text"></p><h2 id="配置多环境" tabindex="-1">配置多环境 <a class="header-anchor" href="#配置多环境" aria-label="Permalink to &quot;配置多环境&quot;">​</a></h2><p>Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。</p><h4 id="第一种方式-使用-cross-env" tabindex="-1">第一种方式：使用 cross-env <a class="header-anchor" href="#第一种方式-使用-cross-env" aria-label="Permalink to &quot;第一种方式：使用 cross-env&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 安装 cross-env</span></span>
 <span class="line"><span>npm i cross-env -D</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// 配置不同环境命令</span></span>
+<span class="line"><span>// 配置不同环境命令，REACT_APP_开头</span></span>
 <span class="line"><span>&quot;build:release&quot;: &quot;cross-env REACT_APP_ENV=release react-scripts build&quot;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
