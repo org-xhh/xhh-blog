@@ -379,7 +379,7 @@ Create React App 搭建的项目，npm run start 指向 development，npm run bu
 // 安装 cross-env
 npm i cross-env -D
 
-// 配置不同环境命令
+// 配置不同环境命令，REACT_APP_开头
 "build:release": "cross-env REACT_APP_ENV=release react-scripts build"
 
 // 获取

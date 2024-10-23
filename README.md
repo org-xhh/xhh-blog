@@ -4,7 +4,7 @@
 
 ### 前端三要素
 
-- [html](https://org-xhh.github.io/xhh-blog/web/html/dom.html)
+- [html](https://org-xhh.github.io/xhh-blog/web/html/html.html)
 - [css](https://org-xhh.github.io/xhh-blog/web/css/css%E5%8D%95%E4%BD%8D%E5%92%8Cdpr.html)
 - [javascript](https://org-xhh.github.io/xhh-blog/web/js/javascript%E5%BE%AA%E7%8E%AF%E6%96%B9%E6%B3%95.html)
 

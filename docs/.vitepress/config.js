@@ -21,7 +21,7 @@ export default {
       {
         text: '前端三要素',
         items: [
-          { text: "html", link: "/web/html/dom" },
+          { text: "html", link: "/web/html/html" },
           { text: "css", link: "/web/css/css单位和dpr" },
           { text: "javascript", link: "/web/js/caniuse" },
         ]
@@ -74,7 +74,7 @@ export default {
       "/web/html/": {
         text: "html知识",
         items: [
-          { text: "DOM", link: "/web/html/dom" },
+          { text: "html", link: "/web/html/html" },
           { text: "图片预加载和懒加载", link: "/web/html/图片预加载和懒加载" },
           { text: "MutationObserver", link: "/web/html/mutationObserver" },
           { text: "DOM对象宽高属性", link: "/web/html/DOM对象宽高属性" }
@@ -90,6 +90,7 @@ export default {
           { text: "水平垂直居中", link: "/web/css/水平垂直居中" },
           { text: "css中的%", link: "/web/css/百分比" },
           { text: "BFC", link: "/web/css/BFC" },
+          { text: "css预处理器", link: "/web/css/css预处理器" },
           { text: "css样式集锦", link: "/web/css/css样式集锦" }
         ],
       },
@@ -107,7 +108,6 @@ export default {
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
           { text: "前端水印", link: "/web/js/前端水印" },
-          { text: "typescript", link: "/web/js/typescript" },
           { text: "项目开发经验汇总", link: "/web/js/项目开发经验汇总" }
         ],
       },
@@ -159,6 +159,7 @@ export default {
         items: [
           { text: "React", link: "/technology/react/react" },
           { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" },
+          { text: "typescript", link: "/technology/react/typescript" },
         ],
       },
       "/technology/react-native/": {

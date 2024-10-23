@@ -32,7 +32,7 @@ https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html#ios
 
 ### 运行到iOS真机
 
-- 1. 安装itunes
+- 1. 安装itunes连接真机
 
 - 2. 制作自定义基座
 

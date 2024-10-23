@@ -73,7 +73,7 @@ npm install --production 指令，只会安装dependencies 目录下的依赖�
 
 ## devDependencies
 
-开发时的依赖。里面的模块是开发时用的，发布时用不到它（开发依赖）
+开发时的依赖。里面的模块是开发时用的，生产环境(npm run build)不会被打入包内，比如webpack。
 
 ## peerDependencies
 
@@ -165,8 +165,12 @@ npm install express@4.17.1
 
 - --save:（-S）package.json的dependencies节点。
 - --save-dev:（-D）package.json的devDependencies节点。
-- --global: (-g) 全局安装模块，不会将模块依赖记录在 dependencies 或 devDependencies 中。
+- --save-optional：(-O) package.json的optionalDependencies节点。
+- --global: (-g) 全局安装，不会将模块依赖记录在 dependencies或devDependencies中。
 
+
+参考文档：
+https://docs.npmjs.com/cli/v10/commands/npm-install/
 
 
 ## 使用建议

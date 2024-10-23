@@ -3,6 +3,8 @@
 <!-- https://nginx.org/en/download.html -->
 ![alt text](image-1.png)
 
+在安装目录打开cmd，输入命令：nginx.exe，浏览器输入 localhost:80 地址即可打开 html/index.html 页面。
+
 ### 配置 demo
 
 try_files 按顺序检查文件是否存在，返回第一个找到的文件，至少需要两个参数，但最后一个是内部重定向，也就是和rewrite效果一致。

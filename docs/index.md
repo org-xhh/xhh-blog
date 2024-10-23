@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /web/html/dom
+      link: /web/html/html
     - theme: alt
       text: View on GitHub
       link: https://github.com/org-xhh/xhh-blog
