@@ -18,6 +18,11 @@ any
 let myFavoriteNumber: any = 'seven';
 myFavoriteNumber = 7;
 ```
+只知道一部分数据的类型时：
+```
+let list: any[] = [1, true, "free"];
+list[1] = 100;
+```
 
 ## 联合类型
 取值可以为多种类型中的一种
@@ -71,6 +76,17 @@ console.log(Days["Mon"] === 1); // true
 // 未手动赋值的枚举项会接着上一个枚举项递增
 console.log(Days["Tue"] === 2); // true
 console.log(Days["Sat"] === 6); // true
+```
+
+## 类型断言
+```
+const value:unknown = 'Hello World';
+const s1:string = value as string;
+
+const username = document.getElementById('username');
+if (username) {
+  (username as HTMLInputElement).value;
+}
 ```
 
 ## 函数

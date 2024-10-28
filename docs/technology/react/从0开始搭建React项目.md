@@ -553,7 +553,7 @@ export default Button;
 
 ## React Hooks
 
-使函数组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。
+使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。
 
 #### useState
 
@@ -572,28 +572,152 @@ useEffect(() => {
   const connection = createConnection(serverUrl, roomId);
   connection.connect();
   return () => {
+    // 清理操作
     connection.disconnect();
   };
 }, [serverUrl, roomId]);
 ```
 
+#### useRef
+
+引用一个不需要渲染的值。
+
+使用：使用 ref 引用一个值；通过 ref 操作 DOM。
+```
+const divRef = useRef(null);
+let count = useRef(0);
+useEffect(() => {
+  console.log('divRef.current: ', divRef.current)
+}, [])
+function clickFn() {
+  count.current = count.current + 1;
+  console.log('count:', count.current)
+}
+
+return <div ref={divRef} onClick={clickFn}
+    </div>
+```
+
+#### useImperativeHandle
+
+用于使用 ref 时暴露 DOM 元素的方法。
+```
+const compRef = useRef<HTMLInputElement>(null);
+function buttonClick() {
+  if (compRef.current !== null) {
+    compRef.current.focus();
+    // 下方代码不起作用，因为 DOM 节点(compRef.current)并未被暴露出来：
+    // compRef.current.style.opacity = 0.5;
+  }
+}
+<form style={{ marginTop: '50px' }}>
+  <MyInput placeholder='please input' ref={compRef} />
+  <button type="button" onClick={buttonClick}  style={{ border: '1px solid #888',marginLeft: '5px',padding: '2px 5px' }}>
+    Edit
+  </button>
+</form>
+```
+myInput.js
+```
+import { forwardRef, useRef, useImperativeHandle } from 'react';
+
+// 使用forwardRef：自定义组件才会暴露它们内部 DOM 节点的 ref。
+const MyInput = forwardRef((props:any, ref:any) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // 使用 ref 时暴露 DOM 元素的方法
+  useImperativeHandle(ref, () => {
+    return {
+      focus() {
+        inputRef.current?.focus();
+      }
+    };
+  }, []);
+
+  return (<input {...props} ref={inputRef} style={{ background: '#999', paddingLeft: '5px' }} />)
+});
+
+export default MyInput;
+```
+
+
 #### useContext
 
 访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。
+```
+const ThemeContext = createContext(null)
+<ThemeContext.Provider value={theme as any}>
+  <Button themeContext={ThemeContext} />
+</ThemeContext.Provider>
+
+// Button 组件接收数据
+const theme = useContext(props.themeContext);
+```
 
 #### useReducer
 
+useState 的替代方案，适用于管理复杂和大型的状态逻辑。
+
 ```
-const [state, dispatch] = useReducer(reducer, initialArg, init?)
+function Counter() {
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case 'increment':
+        return {count: state.count + 1}
+      case 'decrement':
+        return {count: state.count - 1}
+      default:
+        throw new Error()
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, {count: 0})
+
+  return (
+    <>
+      <p>您点击了 {state.count} 次</p>
+      <Button variant="outlined" onClick={() => dispatch({type: 'decrement'})}>递减</Button>
+      <Button variant="outlined" onClick={() => dispatch({type: 'increment'})} style={{marginLeft: 15}}>递增</Button>
+    </>
+  )}
 ```
 
 #### useMemo
 
-对计算结果进行记忆，避免在每次渲染时重复计算。
+用于缓存计算结果，避免在每次渲染时重复计算‌。（类似于Vue中的computed属性）
 
 #### useCallback
 
-在多次渲染中缓存函数
+用于记忆化回调函数，避免在每次渲染时重新创建函数‌。
+
+#### useTransition
+
+useTransition 是在不阻塞 UI 的情况下更新状态的 React Hook。
+```
+const [isPending, startTransition] = useTransition()
+
+// 紧急更新: 显示输入的内容
+setInputValue(input);
+
+startTransition(() => {
+  // 过渡更新: 展示结果（低优先级，防止页面卡顿的情况）
+  setResultList(input);
+});
+
+```
+
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+
+#### useDeferredValue
+
+延迟更新 UI 的某些部分。
+```
+const deferredValue = useDeferredValue(value)
+
+<SearchResults query={deferredValue} />
+```
 
 ## Tailwind CSS
 

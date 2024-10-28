@@ -6,8 +6,9 @@
 - [Create React App 中文网](https://cra.nodejs.cn/docs/documentation-intro)
 - [Next.js](https://nextjs.org/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs/installation)
-- [TypeScript](https://typescript.bootcss.com/basic-types.html)
 - [Ant Design](https://ant.design/docs/react/introduce-cn)
+- [TypeScript中文手册](https://typescript.bootcss.com/basic-types.html)
+- [TypeScript](https://www.tslang.cn/docs/handbook/basic-types.html)
 
 > React 是一个用于构建用户界面（UI）的 JavaScript 库
 
