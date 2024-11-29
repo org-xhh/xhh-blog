@@ -24,6 +24,7 @@ export default {
           { text: "html", link: "/web/html/html" },
           { text: "css", link: "/web/css/css单位和dpr" },
           { text: "javascript", link: "/web/js/caniuse" },
+          { text: "项目开发经验汇总", link: "/web/项目开发经验汇总" },
         ]
       },
       {
@@ -51,8 +52,7 @@ export default {
           { text: "模块化方案", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
           { text: "Babel", link: "/nodejs/babel" },
-          { text: "组件库", link: "/nodejs/组件库" },
-          { text: "生成二维码", link: "nodejs/qrcode" },
+          { text: "组件库", link: "/nodejs/组件库" }
         ]
       },
       {
@@ -107,8 +107,7 @@ export default {
           { text: "前端埋点", link: "/web/js/前端埋点"},
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
-          { text: "前端水印", link: "/web/js/前端水印" },
-          { text: "项目开发经验汇总", link: "/web/js/项目开发经验汇总" }
+          { text: "前端水印", link: "/web/js/前端水印" }
         ],
       },
       "/technology/vue/": {
@@ -142,8 +141,7 @@ export default {
         items: [
           { text: "微信小程序开发使用", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "动态主题设置", link: "/technology/miniprogram/动态主题设置" },
-          { text: "微信公众号", link: "/technology/miniprogram/微信公众号" },
-          { text: "项目开发经验汇总", link: "/technology/miniprogram/项目开发经验汇总" }
+          { text: "微信公众号", link: "/technology/miniprogram/微信公众号" }
         ],
       },
       "/technology/nuxt/": {
