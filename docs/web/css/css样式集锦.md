@@ -36,3 +36,18 @@ li {
   }
 }
 ```
+
+## 三角形
+```
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 15px;
+  border-style: solid;
+  border-top-color: red;
+  border-left-color: green;
+  border-right-color: yellow;
+  border-bottom-color: blue;
+}
+```
+![alt text](image-7.png)
