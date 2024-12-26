@@ -15,14 +15,70 @@ npm install cross-env --save-dev
 process.env.NODE_ENV
 ```
 
-### 服务器端渲染SSR部署
+### 打包部署方式
 ```
+"nuxt": "^2.15.8"
+
+npx create-nuxt-app demo-project 
+快速创建项目
+```
+
+![alt text](image-2.png)
+
+#### 1. Universal (SSR / SSG) 和 Server (Node.js hosting)
+
+即：
+```
+ssr: true         （默认）
+target: 'server'  （默认）
+```
+
+
+打包命令：
+```
+nuxt build
+```
+
 服务端启动项目：
+```
 pm2 start npm --name "你的项目名称" -- run start
-本地打包文件启动项目：
+```
+打包文件本地启动项目：
+```
 npm run start
 ```
 
 放在服务器端文件：
 
 ![alt text](image-1.png)
+
+#### 2. Universal (SSR / SSG) 和 Static (Static/Jamstack hosting)
+
+即：
+```
+ssr: true         （默认）
+target: 'static'  
+```
+
+打包命令:
+```
+nuxt generate
+```
+
+直接把dist目录放到服务器
+
+#### 3. Single Page App 和 Static (Static/Jamstack hosting)
+
+即：
+```
+ssr: false         
+target: 'static'  
+```
+
+#### 4. Single Page App 和 Server (Node.js hosting)
+
+即：
+```
+ssr: false         
+target: 'server'  （默认）
+```

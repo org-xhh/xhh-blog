@@ -79,4 +79,13 @@ package.json的scripts部分定义启动脚本后，使用此命令运行应用�
 清理npm缓存
 ```
 npm cache clean --force  
+
+npm cache verify
 ```
+
+
+### 获取 npm 的代理设置
+npm config get proxy
+
+### 获取 npm 的 https 代理设置
+npm config get https-proxy

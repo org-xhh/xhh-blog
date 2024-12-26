@@ -55,6 +55,23 @@ git reset --soft HEAD^
 ### 检查当前git 全局设置
 git config --global -l
 
+
+### 在master分支创建tag
+git tag v1.1.0
+
+git push origin v1.1.0
+
+### 查看所有 tag
+git tag
+
+### 切换到某个tag
+git checkout tags/v1.0.0
+
+或
+
+git checkout v1.0.0
+
+
 ---
 ### 参考文档
 

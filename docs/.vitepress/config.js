@@ -45,10 +45,11 @@ export default {
           { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
           { text: "npm常用命令", link: "/nodejs/npm常用命令" },
-          { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "项目统一node版本", link: "/nodejs/项目统一node版本" },
           { text: "npm配置镜像源", link: "/nodejs/npm配置镜像源" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
+          { text: "包管理工具", link: "/nodejs/包管理工具" },
+          { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "模块化方案", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
           { text: "Babel", link: "/nodejs/babel" },
@@ -149,7 +150,8 @@ export default {
         items: [
           { text: "Nuxt.js", link: "/technology/nuxt/nuxt" },
           { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
-          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" }
+          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" },
+          { text: "网站地图", link: "/technology/nuxt/网站地图" }
         ],
       },
       "/technology/react/": {
