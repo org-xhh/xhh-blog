@@ -28,8 +28,7 @@
 
 ### 前端工具
 
-- [git](https://org-xhh.github.io/xhh-blog/tool/git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html)
-- [Git客户端工具](https://org-xhh.github.io/xhh-blog/tool/git-tools/gitextensions.html)
-- [fiddler](https://org-xhh.github.io/xhh-blog/tool/fiddler/fiddler%E4%BD%BF%E7%94%A8.html)
-- [whistle](https://org-xhh.github.io/xhh-blog/tool/whistle/whistle%E4%BD%BF%E7%94%A8.html)
+- [Git](https://org-xhh.github.io/xhh-blog/tool/git/git常用命令.html)
+- [抓包工具](https://org-xhh.github.io/xhh-blog/tool/packet-capture/fiddler/fiddler.html)
+- [VSCode](https://org-xhh.github.io/xhh-blog/tool/vscode/vscode插件.html)
 - ...

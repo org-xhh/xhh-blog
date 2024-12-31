@@ -60,10 +60,8 @@ export default {
         text: '前端工具',
         items: [
           { text: "Git", link: "/tool/git/git常用命令" },
-          { text: "Git客户端工具", link: "/tool/git-tools/gitextensions" },
           { text: "SVN", link: "/tool/svn" },
-          { text: "Fiddler", link: "/tool/fiddler/fiddler使用" },
-          { text: "whistle", link: "/tool/whistle/whistle使用" },
+          { text: "抓包工具", link: "/tool/packet-capture/fiddler/fiddler" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
           { text: "Chrome", link: "/tool/chrome/chrome" },
           { text: "Postman", link: "/tool/postman" },
@@ -174,27 +172,17 @@ export default {
         items: [
           { text: "git常用命令", link: "/tool/git/git常用命令" },
           { text: "precommit设置", link: "/tool/git/precommit设置" },
-          { text: "git配置", link: "/tool/git/git配置" }
+          { text: "git配置", link: "/tool/git/git配置" },
+          { text: "git客户端工具", link: "/tool/git/git客户端工具" }
         ],
       },
-      "/tool/git-tools/": {
-        text: "Git客户端工具",
+      "/tool/packet-capture/": {
+        text: "抓包工具",
         items: [
-          { text: "Git Extensions", link: "/tool/git-tools/gitextensions"},
-          { text: "SourceTree", link: "/tool/git-tools/sourcetree" },
-          { text: "TortoiseGit", link: "/tool/git-tools/tortoisegit" }
-        ],
-      },
-      "/tool/fiddler/": {
-        text: "Fiddler知识",
-        items: [
-          { text: "Fiddler使用", link: "/tool/fiddler/fiddler使用" },
-        ],
-      },
-      "/tool/whistle/": {
-        text: "whistle知识",
-        items: [
-          { text: "whistle使用", link: "/tool/whistle/whistle使用" },
+          { text: "Fiddler", link: "/tool/packet-capture/fiddler/fiddler" },
+          { text: "Whistle", link: "/tool/packet-capture/whistle/whistle" },
+          { text: "Charles", link: "/tool/packet-capture/charles/charles" },
+          { text: "Stream", link: "/tool/packet-capture/stream/stream" },
         ],
       }, 
       "/tool/vscode/": {
