@@ -154,6 +154,19 @@ handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不
 // index.ts(7,47): error TS2345: Argument of type '"dblclick"' is not assignable to parameter of type 'EventNames'.
 ```
 
+## 命名空间
+使用namespace关键字来定义一个命名空间
+```
+namespace MyNamespace {
+  export const name: string = "TypeScript";
+  export function sayHello(): void {
+    console.log(`Hello, ${name}!`);
+  }
+}
+
+MyNamespace.sayHello(); // Hello, TypeScript!
+```
+
 ## 泛型
 泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示。
 

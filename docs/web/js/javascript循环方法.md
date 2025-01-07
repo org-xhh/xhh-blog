@@ -7,6 +7,8 @@
 
 - 不能使用break，continue，循环中途是无法停止的，总是会将所有成员遍历完
 
+- return 返回参数
+
 ## map()
 - 返回一个新数组(return)，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
 
@@ -22,6 +24,9 @@ for (let i = 0; i < 10; i++) {
     console.log(i);
 }
 ```
+return 是终止循环；
+
+可以使用 break 和 continue 终止循环。
 
 ## for...in
 

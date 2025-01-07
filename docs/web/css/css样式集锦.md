@@ -51,3 +51,10 @@ li {
 }
 ```
 ![alt text](image-7.png)
+
+补充：使用svg绘制三角形
+```
+<svg width="100" height="100">
+  <polygon points="100,100 100,0 0,100" fill="darkolivegreen" />
+</svg>
+```

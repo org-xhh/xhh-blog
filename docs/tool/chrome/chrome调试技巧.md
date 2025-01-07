@@ -62,3 +62,6 @@ Mac：Command + Shift + P
 ### Lighthouse
 
 ![alt text](image-4.png)
+
+### Performance
+点击左上角的灰色圆点，变成红色就可以开始记录了，这时可以模仿用户使用网站，使用完毕后点击 stop，然后就能看到网站运行期间的性能报告。如果有红色的块，代表有掉帧的情况；如果是绿色，则代表 FPS 很好。

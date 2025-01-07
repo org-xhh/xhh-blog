@@ -20,9 +20,58 @@ vue-cli-service build --mode release
 
 代码中访问：
 ```
-console.log(process.env.VUE_APP_BASE_API)
+process.env.NODE_ENV
+
+process.env.BASE_URL
+
+process.env.VUE_APP_BASE_API
 ```
 
-### 热更新 
+### 热更新
 
 Webpack 的热更新通常需要借助 webpack-dev-server 等插件，在一些情况下配置起来比较复杂。
+
+### 打包配置
+
+```
+output: {
+  filename: `[name]` + '-' + Timestamp + '-[hash]' + '.js', // 入口文件
+ // chunkFilename: `[name].[hash].js`
+},
+```
+
+路由懒加载设置 webpackChunkName，chunkFilename 就会变成对应的值，否则默认是 chunk.[hash]
+
+```
+{
+  path: '/login',
+  name: 'login',
+  component: () => import(/* webpackChunkName: "login" */ '@/views/login/index')
+}
+```
+
+![alt text](image-3.png)
+
+### 拆包
+
+```
+optimization: {
+  splitChunks: {
+    chunks: 'all',
+    name: 'vendors',
+    minSize: 10000, // 设置拆分的最小文件大小
+    maxSize: 0, // 不限制最大文件大小，让webpack自动决定
+    minChunks: 1, // 每个模块至少被多少个chunk引用才会被拆分
+    cacheGroups: {
+      vendors: {
+        test: /[\\/]node_modules[\\/]/,
+        priority: -10, // 设置较低的优先级，保证核心代码先加载
+        enforce: true, // 强制执行拆分
+        reuseExistingChunk: true // 重用已存在的chunk
+      }
+    }
+  }
+}
+```
+
+这样体积较大的 vendors 文件就被拆分为几个小的 vendors 文件。

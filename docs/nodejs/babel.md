@@ -107,7 +107,7 @@ module.exports = {
 }
 ```
 
-template 模板中支持
+template 模板中支持。
 
 **vue.config.js**: 
 ```
@@ -125,7 +125,13 @@ chainWebpack: (config) => {
 
 ## polyfill
 
-ES6+ API 的方法与实现的集合叫做 polyfill，也就是经常说的"垫片"
+ES6+ API 的方法与实现的集合叫做 polyfill，也就是经常说的"垫片"。
+
+Babel 默认只转换新的JavaScript 语法，而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）。
+
+这些在使用时需要用polyfill的方式来提供旧环境的兼容性。
+
+在Babel 7.4.0以上版本，提供了一个新的插件，叫@babel/plugin-transform-runtime，它可以帮助我们按需引入polyfill。
 
 ## webpack中使用babel
 ```
@@ -154,6 +160,8 @@ module: {
   ]
 }
 ```
+‌@babel/plugin-transform-runtime和@babel/runtime通常是一起使用的‌。@babel/plugin-transform-runtime插件的主要作用是将Babel转换后的代码中的辅助函数集中放在一个单独的运行时库（如@babel/runtime）中。
+
 因为我们用了 exclude: /node_modules/，可能会造成某个第三方依赖出现兼容性问题，解决办法就是在
 vue.config.js 设置：
 ```

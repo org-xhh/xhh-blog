@@ -32,8 +32,8 @@ export default {
         items: [
           { text: "Vue", link: "/technology/vue/vue文档" },
           { text: "构建打包工具", link: "/technology/packaging-tool/webpack" },
-          { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
+          { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react" },
           { text: "React Native", link: "/technology/react-native/react-native文档" },
@@ -50,7 +50,7 @@ export default {
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "包管理工具", link: "/nodejs/包管理工具" },
           { text: "发布npm包", link: "/nodejs/发布npm包" },
-          { text: "模块化方案", link: "/nodejs/模块化方案" },
+          { text: "ESM和CJS", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
           { text: "Babel", link: "/nodejs/babel" },
           { text: "组件库", link: "/nodejs/组件库" }
@@ -106,7 +106,8 @@ export default {
           { text: "前端埋点", link: "/web/js/前端埋点"},
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
-          { text: "前端水印", link: "/web/js/前端水印" }
+          { text: "前端水印", link: "/web/js/前端水印" },
+          { text: 'JavaScript设计模式', link: "/web/js/javaScript设计模式" }
         ],
       },
       "/technology/vue/": {
