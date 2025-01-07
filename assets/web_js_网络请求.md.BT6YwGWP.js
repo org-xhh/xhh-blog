@@ -11,9 +11,9 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g
 <span class="line"><span>const CancelToken = axios.CancelToken</span></span>
 <span class="line"><span>let cancel</span></span>
 <span class="line"><span>axios.get(&#39;xxxx&#39;, {</span></span>
-<span class="line"><span>   cancelToken: new CancelToken(function executor(c) {</span></span>
-<span class="line"><span>   cancel = c</span></span>
-<span class="line"><span> })</span></span>
+<span class="line"><span>  cancelToken: new CancelToken(function executor(c) {</span></span>
+<span class="line"><span>    cancel = c</span></span>
+<span class="line"><span>  })</span></span>
 <span class="line"><span>})</span></span>
 <span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>fetch(&#39;https://www.test.com/&#39;, {</span></span>
 <span class="line"><span>  method: &#39;GET&#39;,</span></span>
