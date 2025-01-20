@@ -4,4 +4,9 @@
 - [Vuex](https://v3.vuex.vuejs.org/zh/)
 - [Vue Router](https://router.vuejs.org/zh/introduction.html)
 - [Vue 3](https://cn.vuejs.org/guide/introduction.html)
+  <font size=2>
+
+    [我的电商项目](https://org-xhh.github.io/xhh-mall-project/)
+
+  </font>
 - [Pinia](https://pinia.vuejs.org/zh/introduction.html)

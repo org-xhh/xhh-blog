@@ -52,7 +52,7 @@ cd ~/.ssh
 .ssh 目录下
 
 
-复制生成好的SSH Key(rsa文件，不带.pub)添加到 GitLab 或者 GitHub 中settings的SSH Key中即可
+复制生成好的SSH Key, 即 rsa 私钥文件里的内容（带.pub的是公钥）添加到 GitLab 或者 GitHub 中settings的SSH Key中即可
 
 
 
