@@ -565,7 +565,7 @@ const [count, setCount] = useState(0);
 
 #### useEffect
 
-用于执行副作用操作，比如数据获取、订阅或手动更改 DOM，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
+在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
 
 ```
 useEffect(() => {
@@ -577,6 +577,15 @@ useEffect(() => {
   };
 }, [serverUrl, roomId]);
 ```
+
+- ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数。
+- ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。
+- ‌第二个参数为具体依赖项数组‌：只有数组中的依赖项发生变化时，副作用函数才会重新执行。
+
+#### useLayoutEffect‌
+
+同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。
+
 
 #### useRef
 

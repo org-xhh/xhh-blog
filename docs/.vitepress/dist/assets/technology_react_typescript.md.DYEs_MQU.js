@@ -5,7 +5,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span>let text: undefined = undefined; // undefined</span></span>
 <span class="line"><span>function getName(name: string): void { // 空值</span></span>
 <span class="line"><span>  console.log(&#39;My name is &#39; + name);</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="任意值" tabindex="-1">任意值 <a class="header-anchor" href="#任意值" aria-label="Permalink to &quot;任意值&quot;">​</a></h2><p>any</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let myFavoriteNumber: any = &#39;seven&#39;;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="任意值" tabindex="-1">任意值 <a class="header-anchor" href="#任意值" aria-label="Permalink to &quot;任意值&quot;">​</a></h2><p>任意值any 处理不确定的数据结构，禁用类型检查，可能导致错误难以捕获，不建议使用。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let myFavoriteNumber: any = &#39;seven&#39;;</span></span>
 <span class="line"><span>myFavoriteNumber = 7;</span></span></code></pre></div><p>只知道一部分数据的类型时：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let list: any[] = [1, true, &quot;free&quot;];</span></span>
 <span class="line"><span>list[1] = 100;</span></span></code></pre></div><h2 id="联合类型" tabindex="-1">联合类型 <a class="header-anchor" href="#联合类型" aria-label="Permalink to &quot;联合类型&quot;">​</a></h2><p>取值可以为多种类型中的一种</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let result: number | string;</span></span>
 <span class="line"><span></span></span>
@@ -24,7 +24,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span>console.log(Days[&quot;Mon&quot;] === 1); // true</span></span>
 <span class="line"><span>// 未手动赋值的枚举项会接着上一个枚举项递增</span></span>
 <span class="line"><span>console.log(Days[&quot;Tue&quot;] === 2); // true</span></span>
-<span class="line"><span>console.log(Days[&quot;Sat&quot;] === 6); // true</span></span></code></pre></div><h2 id="类型断言" tabindex="-1">类型断言 <a class="header-anchor" href="#类型断言" aria-label="Permalink to &quot;类型断言&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const value:unknown = &#39;Hello World&#39;;</span></span>
+<span class="line"><span>console.log(Days[&quot;Sat&quot;] === 6); // true</span></span></code></pre></div><h2 id="类型断言" tabindex="-1">类型断言 <a class="header-anchor" href="#类型断言" aria-label="Permalink to &quot;类型断言&quot;">​</a></h2><p>as 强制编译器推断类型</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const value:unknown = &#39;Hello World&#39;;</span></span>
 <span class="line"><span>const s1:string = value as string;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const username = document.getElementById(&#39;username&#39;);</span></span>
@@ -72,7 +72,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span></span></span>
 <span class="line"><span>MyNamespace.sayHello(); // Hello, TypeScript!</span></span></code></pre></div><h2 id="泛型" tabindex="-1">泛型 <a class="header-anchor" href="#泛型" aria-label="Permalink to &quot;泛型&quot;">​</a></h2><p>泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示。</p><p>举例：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function identity&lt;T&gt;(value: T): T {</span></span>
 <span class="line"><span>  return value;</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,48),d=t("br",null,null,-1),h=t("br",null,null,-1),g=e(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>identity&lt;number&gt;(10);</span></span>
+<span class="line"><span>}</span></span></code></pre></div>`,49),d=t("br",null,null,-1),h=t("br",null,null,-1),g=e(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>identity&lt;number&gt;(10);</span></span>
 <span class="line"><span>identity&lt;string&gt;(&quot;Hi&quot;);</span></span></code></pre></div><p>传参 number 类型，返回值的类型也是 number。传参 string 类型，返回值的类型也是 string。</p><h4 id="泛型类" tabindex="-1">泛型类 <a class="header-anchor" href="#泛型类" aria-label="Permalink to &quot;泛型类&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Goods&lt;T&gt; {</span></span>
 <span class="line"><span>  private value: T;</span></span>
 <span class="line"><span></span></span>
@@ -152,7 +152,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span>Animal.say(); // say Hi</span></span>
 <span class="line"><span>Animal.run(); // is running</span></span></code></pre></div><h2 id="tsconfig-json" tabindex="-1">tsconfig.json <a class="header-anchor" href="#tsconfig-json" aria-label="Permalink to &quot;tsconfig.json&quot;">​</a></h2><p>tsconfig.json是TypeScript项目的配置文件，用于指定编译器的行为和项目的编译选项。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
 <span class="line"><span>  &quot;compilerOptions&quot;: {</span></span>
-<span class="line"><span>    &quot;target&quot;: &quot;es5&quot;, // 目标语言的版本</span></span>
+<span class="line"><span>    &quot;target&quot;: &quot;es5&quot;, // 目标语言的版本 ES2015</span></span>
 <span class="line"><span>    &quot;lib&quot;: [ //  编译时引入的 ES 功能库，包括：es5 、es6、es7、dom 等</span></span>
 <span class="line"><span>      &quot;dom&quot;,</span></span>
 <span class="line"><span>      &quot;dom.iterable&quot;,</span></span>
@@ -166,7 +166,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span>    &quot;strict&quot;: true, // 开启所有严格的类型检查</span></span>
 <span class="line"><span>    &quot;forceConsistentCasingInFileNames&quot;: true, // 是否强制代码中使用的模块文件名必须和文件系统中的文件名保持大小写一致</span></span>
 <span class="line"><span>    &quot;noFallthroughCasesInSwitch&quot;: true, // 是否检查switch语句中的case是否都有break语句或return语句</span></span>
-<span class="line"><span>    &quot;module&quot;: &quot;esnext&quot;, // 指定编译后代码使用的模块系统</span></span>
+<span class="line"><span>    &quot;module&quot;: &quot;esnext&quot;, // 指定编译后代码使用的模块系统，还可选 commonjs</span></span>
 <span class="line"><span>    &quot;moduleResolution&quot;: &quot;node&quot;, // 模块解析策略</span></span>
 <span class="line"><span>    &quot;resolveJsonModule&quot;: true, // 是否解析JSON模块</span></span>
 <span class="line"><span>    &quot;isolatedModules&quot;: true, // 将每个文件作为单独的模块来编译</span></span>

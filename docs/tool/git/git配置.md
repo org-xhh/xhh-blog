@@ -129,14 +129,27 @@ IdentityFile ~/.ssh/gitee_id-rsa
 
 
 
-### 九、sourcetree使用https方式拉取代码时，一直提示密码输入解决办法
+### 九、Mac sourcetree使用https方式拉取代码时，一直提示密码输入解决办法
 进入项目目录：
 ```
 git config --global credential.helper osxkeychain
 ```
 
+### 十、https方式拉取代码存储账号密码
+全局设置：
+```
+git config --global credential.helper store
+or
+git config --global credential.helper manager
+```
+进入项目目录设置：
+```
+git config --global --unset credential.helper store
+git config --global credential.helper store
+```
 
-### 十、gitee公开仓库clone出现 fatal: unable to access 的错误
+
+### 十一、gitee公开仓库clone出现 fatal: unable to access 的错误
 这个错误不是因为没有权限，而是因为本地的git可能使用了代理，操作步骤如下：
 
 取消代理
@@ -145,10 +158,7 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-
----
-
-### 十一、windows更改git push时用到的用户信息
+### 十二、windows更改git push时用到的用户信息
 
 控制面板 => 凭证管理器 => Windows 凭据
 

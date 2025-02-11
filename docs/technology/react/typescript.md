@@ -13,7 +13,8 @@ function getName(name: string): void { // 空值
 ```
 
 ## 任意值
-any
+任意值any 处理不确定的数据结构，禁用类型检查，可能导致错误难以捕获，不建议使用。
+
 ```
 let myFavoriteNumber: any = 'seven';
 myFavoriteNumber = 7;
@@ -79,6 +80,8 @@ console.log(Days["Sat"] === 6); // true
 ```
 
 ## 类型断言
+
+as 强制编译器推断类型
 ```
 const value:unknown = 'Hello World';
 const s1:string = value as string;
@@ -375,7 +378,7 @@ tsconfig.json是TypeScript项目的配置文件，用于指定编译器的行为
 ```
 {
   "compilerOptions": {
-    "target": "es5", // 目标语言的版本
+    "target": "es5", // 目标语言的版本 ES2015
     "lib": [ //  编译时引入的 ES 功能库，包括：es5 、es6、es7、dom 等
       "dom",
       "dom.iterable",
@@ -389,7 +392,7 @@ tsconfig.json是TypeScript项目的配置文件，用于指定编译器的行为
     "strict": true, // 开启所有严格的类型检查
     "forceConsistentCasingInFileNames": true, // 是否强制代码中使用的模块文件名必须和文件系统中的文件名保持大小写一致
     "noFallthroughCasesInSwitch": true, // 是否检查switch语句中的case是否都有break语句或return语句
-    "module": "esnext", // 指定编译后代码使用的模块系统
+    "module": "esnext", // 指定编译后代码使用的模块系统，还可选 commonjs
     "moduleResolution": "node", // 模块解析策略
     "resolveJsonModule": true, // 是否解析JSON模块
     "isolatedModules": true, // 将每个文件作为单独的模块来编译
