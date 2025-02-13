@@ -107,6 +107,7 @@ export default {
           { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
           { text: "前端水印", link: "/web/js/前端水印" },
+          { text: "大屏实现方案", link: "/web/js/大屏实现方案" },
           { text: 'JavaScript设计模式', link: "/web/js/javaScript设计模式" }
         ],
       },
@@ -118,6 +119,7 @@ export default {
           { text: "nginx", link: "/technology/vue/nginx" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
           { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"},
+          { text: "i18n", link: "/technology/vue/i18n" },
           { text: "通信", link: "/technology/vue/通信"}
         ],
       },
@@ -150,6 +152,7 @@ export default {
           { text: "Nuxt.js", link: "/technology/nuxt/nuxt" },
           { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
           { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" },
+          { text: "i18n", link: "/technology/nuxt/i18n" },
           { text: "网站地图", link: "/technology/nuxt/网站地图" }
         ],
       },
