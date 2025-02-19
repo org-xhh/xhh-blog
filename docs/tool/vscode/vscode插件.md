@@ -32,3 +32,7 @@
 ![alt text](image-4.png)
 
 插件就可以使用了。
+
+## 已安装插件
+![alt text](image-6.png)
+![alt text](image-7.png)

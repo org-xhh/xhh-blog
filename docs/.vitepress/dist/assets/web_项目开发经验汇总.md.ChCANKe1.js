@@ -91,7 +91,7 @@ import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const p
 <span class="line"><span>location.href = &#39;https://www.baidu.com&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>next() </span></span>
+<span class="line"><span>next() // 放行，会向历史堆栈中添加一个新的记录</span></span>
 <span class="line"><span>// android 只展示 /home 页面，页面底部&lt; 返回直接closeWindow</span></span>
 <span class="line"><span>// 在这里_blank ios没反应，还在初始页面无法打开/home</span></span>
 <span class="line"><span>window.open(&#39;/home&#39;, &#39;_blank&#39;) </span></span>
