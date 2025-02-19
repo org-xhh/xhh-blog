@@ -88,7 +88,7 @@ import{_ as t,D as i,c,I as p,w as e,j as n,a,a3 as l,o}from"./chunks/framework.
 <span class="line"><span>function locales(lang) {</span></span>
 <span class="line"><span>  let language = lang || navigator.language</span></span>
 <span class="line"><span>  if (language === &#39;zh&#39; || language === &#39;zh-CN&#39;) {</span></span>
-<span class="line"><span>    Locale.use(&#39;cn&#39;, zhCN)</span></span>
+<span class="line"><span>    Locale.use(&#39;zh&#39;, zhCN)</span></span>
 <span class="line"><span>  } else if (language === &#39;ur&#39;) {</span></span>
 <span class="line"><span>    Locale.use(&#39;ur&#39;, Ur)</span></span>
 <span class="line"><span>  } else {</span></span>
