@@ -29,6 +29,8 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>      return</span></span>
 <span class="line"><span>    }</span></span>
 <span class="line"><span>  }</span></span>
+<span class="line"><span>}).catch((error) =&gt; {</span></span>
+<span class="line"><span>  console.log(error)</span></span>
 <span class="line"><span>})</span></span></code></pre></div><h2 id="vue3-vite-检测新包" tabindex="-1">vue3+vite 检测新包 <a class="header-anchor" href="#vue3-vite-检测新包" aria-label="Permalink to &quot;vue3+vite 检测新包&quot;">​</a></h2><p>vite.config.js:</p><p><img src="`+e+`" alt="alt text"></p><p>src/plugins/refreshVersion.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import path from &#39;path&#39;</span></span>
 <span class="line"><span>import fs from &#39;fs&#39;</span></span>
 <span class="line"><span></span></span>

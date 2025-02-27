@@ -51,7 +51,9 @@ import{_ as t,D as i,c,I as p,w as e,j as n,a,a3 as l,o}from"./chunks/framework.
 <span class="line"><span></span></span>
 <span class="line"><span>translateLang(lang) {</span></span>
 <span class="line"><span>  this.$i18n.setLocale(lang)</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="_7-使用" tabindex="-1">7. 使用 <a class="header-anchor" href="#_7-使用" aria-label="Permalink to &quot;7. 使用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;span&gt;{{ $t(&#39;common.lang&#39;) }}&lt;/span&gt;</span></span></code></pre></div><p>在 js 中使用</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>window.$nuxt.$t(&#39;common.lang&#39;)</span></span></code></pre></div><hr>`,18),v=l('<h3 id="_1-npm-i-nuxtjs-i18n-7-save-1" tabindex="-1">1. npm i @nuxtjs/i18n@7 --save <a class="header-anchor" href="#_1-npm-i-nuxtjs-i18n-7-save-1" aria-label="Permalink to &quot;1. npm i @nuxtjs/i18n@7 --save&quot;">​</a></h3><p>nuxt2 对应 @nuxtjs/i18n@7</p><h3 id="_2-配置多语言-1" tabindex="-1">2. 配置多语言 <a class="header-anchor" href="#_2-配置多语言-1" aria-label="Permalink to &quot;2. 配置多语言&quot;">​</a></h3><p><img src="'+u+`" alt="alt text"></p><h3 id="_3-创建-i18n-实例-1" tabindex="-1">3. 创建 i18n 实例 <a class="header-anchor" href="#_3-创建-i18n-实例-1" aria-label="Permalink to &quot;3. 创建 i18n 实例&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import zh from &#39;./zh&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_7-使用" tabindex="-1">7. 使用 <a class="header-anchor" href="#_7-使用" aria-label="Permalink to &quot;7. 使用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;span&gt;{{ $t(&#39;common.lang&#39;) }}&lt;/span&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\${this.$t(&#39;common.orderPrice&#39;)}</span></span></code></pre></div><p>在 js文件中 中使用</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>window.$nuxt.$t(&#39;common.lang&#39;)</span></span></code></pre></div><hr>`,18),v=l('<h3 id="_1-npm-i-nuxtjs-i18n-7-save-1" tabindex="-1">1. npm i @nuxtjs/i18n@7 --save <a class="header-anchor" href="#_1-npm-i-nuxtjs-i18n-7-save-1" aria-label="Permalink to &quot;1. npm i @nuxtjs/i18n@7 --save&quot;">​</a></h3><p>nuxt2 对应 @nuxtjs/i18n@7</p><h3 id="_2-配置多语言-1" tabindex="-1">2. 配置多语言 <a class="header-anchor" href="#_2-配置多语言-1" aria-label="Permalink to &quot;2. 配置多语言&quot;">​</a></h3><p><img src="'+u+`" alt="alt text"></p><h3 id="_3-创建-i18n-实例-1" tabindex="-1">3. 创建 i18n 实例 <a class="header-anchor" href="#_3-创建-i18n-实例-1" aria-label="Permalink to &quot;3. 创建 i18n 实例&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import zh from &#39;./zh&#39;</span></span>
 <span class="line"><span>import en from &#39;./en&#39;</span></span>
 <span class="line"><span>import ur from &#39;./ur&#39;</span></span>
 <span class="line"><span></span></span>
@@ -65,6 +67,9 @@ import{_ as t,D as i,c,I as p,w as e,j as n,a,a3 as l,o}from"./chunks/framework.
 <span class="line"><span>      en,</span></span>
 <span class="line"><span>      ur</span></span>
 <span class="line"><span>    }</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  detectBrowserLanguage: {</span></span>
+<span class="line"><span>    cookieKey: &#39;test-h5-i18n&#39;</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
@@ -95,7 +100,15 @@ import{_ as t,D as i,c,I as p,w as e,j as n,a,a3 as l,o}from"./chunks/framework.
 <span class="line"><span>    Locale.use(&#39;en&#39;, enUS)</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span>locales() // 初始化</span></span>
+<span class="line"><span>// 保证业务和组件库默认语言统一</span></span>
+<span class="line"><span>locales(getCookie(&#39;test-h5-i18n&#39;) || navigator.language) // 初始化</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function getCookie(name) {</span></span>
+<span class="line"><span>  let matches = document.cookie.match(new RegExp(</span></span>
+<span class="line"><span>    &#39;(?:^|; )&#39; + name.replace(/([\\.$?*|{}\\(\\)\\[\\]\\\\\\/\\+^])/g, &#39;\\\\$1&#39;) + &#39;=([^;]*)&#39;</span></span>
+<span class="line"><span>  ))</span></span>
+<span class="line"><span>  return matches ? decodeURIComponent(matches[1]) : undefined</span></span>
+<span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>Vue.use(Vant)</span></span>
 <span class="line"><span>Vue.prototype.$Locale = locales</span></span></code></pre></div><h3 id="_6-切换语言-1" tabindex="-1">6. 切换语言 <a class="header-anchor" href="#_6-切换语言-1" aria-label="Permalink to &quot;6. 切换语言&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>button @click=&quot;translateLang(&#39;zh&#39;)&quot;&gt;切换为中文&lt;/button&gt;</span></span>
@@ -105,7 +118,7 @@ import{_ as t,D as i,c,I as p,w as e,j as n,a,a3 as l,o}from"./chunks/framework.
 <span class="line"><span>translateLang(lang) {</span></span>
 <span class="line"><span>  this.$i18n.setLocale(lang) // 业务</span></span>
 <span class="line"><span>  this.$Locale(lang) // vant组件库</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="_7-使用-1" tabindex="-1">7. 使用 <a class="header-anchor" href="#_7-使用-1" aria-label="Permalink to &quot;7. 使用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;span&gt;{{ $t(&#39;common.lang&#39;) }}&lt;/span&gt;</span></span></code></pre></div><p>在 js 中使用</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>export function testUtil() {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="_7-使用-1" tabindex="-1">7. 使用 <a class="header-anchor" href="#_7-使用-1" aria-label="Permalink to &quot;7. 使用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;span&gt;{{ $t(&#39;common.lang&#39;) }}&lt;/span&gt;</span></span></code></pre></div><p>在 js文件中 中使用</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>export function testUtil() {</span></span>
 <span class="line"><span>  return window.$nuxt.$t(&#39;common.lang&#39;)</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
