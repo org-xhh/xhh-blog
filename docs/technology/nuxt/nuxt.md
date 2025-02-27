@@ -2,6 +2,17 @@
 - [Nuxt.js](https://www.nuxtjs.cn/guide)
 
 ### 环境变量
+
+- 默认环境变量（项目脚手架里定义的，依赖 dotenv）：
+```
+"scripts": {
+    "dev": "nuxt", // development
+    "build": "nuxt build", // production
+    "start": "nuxt start"
+}
+```
+
+- 修改环境变量：
 ```
 npm install cross-env --save-dev
 ```

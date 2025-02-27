@@ -115,6 +115,7 @@ export default {
         text: "vue知识",
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
+          { text: "环境变量", link: "/technology/vue/环境变量" },
           { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
           { text: "nginx", link: "/technology/vue/nginx" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
