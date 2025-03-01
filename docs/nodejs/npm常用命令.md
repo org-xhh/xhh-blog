@@ -89,3 +89,8 @@ npm config get proxy
 
 ### 获取 npm 的 https 代理设置
 npm config get https-proxy
+
+### 查看 模块 需要的 Node.js 版本
+npm view @nodelib/fs.walk@2.0.0 engines
+
+![alt text](image-13.png)

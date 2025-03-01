@@ -45,7 +45,7 @@ export default {
           { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
           { text: "npm常用命令", link: "/nodejs/npm常用命令" },
-          { text: "项目统一node版本", link: "/nodejs/项目统一node版本" },
+          { text: "项目统一版本", link: "/nodejs/项目统一版本" },
           { text: "npm配置镜像源", link: "/nodejs/npm配置镜像源" },
           { text: "npm模块安装机制", link: "/nodejs/npm模块安装机制" },
           { text: "包管理工具", link: "/nodejs/包管理工具" },
