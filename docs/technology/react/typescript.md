@@ -26,7 +26,7 @@ list[1] = 100;
 ```
 
 ## 联合类型
-取值可以为多种类型中的一种
+union 联合 取值可以为多种类型中的一种
 ```
 let result: number | string;
 
@@ -56,6 +56,17 @@ let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 ```
 let tom: [string, number, boolean] = ['Tom', 25, true];
 let isTrue: boolean = tom[2]; 
+
+tom[0] = 1 // 报错，Type 'number' is not assignable to type 'string'
+```
+可选元素：
+```
+let optionalTuple: [string, number?] = ['Tom']
+optionalTuple = ['Bob', 30]
+```
+元组可以使用剩余元素（rest elements）来表示可变长度的部分：
+```
+let restTuple: [string, ...number[]] = ['Tom', 1, 2, 3]
 ```
 
 ## 枚举
@@ -77,6 +88,18 @@ console.log(Days["Mon"] === 1); // true
 // 未手动赋值的枚举项会接着上一个枚举项递增
 console.log(Days["Tue"] === 2); // true
 console.log(Days["Sat"] === 6); // true
+```
+使用场景：
+```
+enum Direction {
+  Up: 1,
+  Top: 2,
+  Left: 3,
+  Right: 4
+}
+function handleDirectionFn(direction: Direction) {
+  if (direction === Direction.Up) { /* ... */ }
+}
 ```
 
 ## 类型断言
@@ -122,6 +145,24 @@ interface Person {
 }
 ```
 
+```
+interface Address {
+  city: string;
+  zipCode: string;
+}
+
+interface User {
+  id: number;
+  name: string;
+  address: Address; // 数组可以存放自定义类型
+}
+
+let users: User[] = [
+  { id: 1, name: 'Xhh', address: { city: 'XuZhou', zipCode: '10005' } },
+  { id: 2, name: 'Lb', address: { city: 'PeiXian', zipCode: '10006' } }
+]
+```
+
 ## 类
 ```
 class Animal {
@@ -142,9 +183,25 @@ console.log(a.sayHi());
 类型别名用来给一个类型起个新名字
 ```
 type Name = string;
+let name: Name = 'Tom'
 ```
 
-## 字符串字面量类型
+```
+type Person = {
+  name: string;
+  age: number;
+  sayHi: () => void;
+}
+let person: Person = {
+  name: 'Tom',
+  age: 25,
+  sayHi: () => console.log('Hi')
+}
+```
+
+## 字面量
+
+Literal 字面量 类型允许将变量的值限制为特定的字面量值（如具体的字符串、数字或布尔值）。
 ```
 type EventNames = 'click' | 'scroll' | 'mousemove';
 function handleEvent(ele: Element, event: EventNames) {
