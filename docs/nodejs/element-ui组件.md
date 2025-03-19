@@ -55,3 +55,6 @@ handleTypeChange(data) {
     }
 }
 ```
+
+### el-date-picker 在页面全屏情况下，点击无效果，无法弹出选择时间弹框
+解决方式：给该组件添加 :append-to-body="false"

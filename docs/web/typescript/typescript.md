@@ -1,5 +1,7 @@
 # typescript学习
 
+TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。
+
 ## 基本类型
 ```
 let bool: boolean = false // 布尔值

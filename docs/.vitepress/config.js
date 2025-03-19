@@ -24,6 +24,7 @@ export default {
           { text: "html", link: "/web/html/html" },
           { text: "css", link: "/web/css/css单位和dpr" },
           { text: "javascript", link: "/web/js/caniuse" },
+          { text: "typescript", link: "/web/typescript/typescript" },
           { text: "项目开发经验汇总", link: "/web/项目开发经验汇总" },
         ]
       },
@@ -161,8 +162,7 @@ export default {
         text: "react",
         items: [
           { text: "React", link: "/technology/react/react" },
-          { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" },
-          { text: "typescript", link: "/technology/react/typescript" },
+          { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" }
         ],
       },
       "/technology/react-native/": {
@@ -194,6 +194,7 @@ export default {
         text: "vscode相关",
         items: [
           { text: "vscode插件", link: "/tool/vscode/vscode插件" },
+          { text: "vscode使用", link: "/tool/vscode/vscode使用" },
           // { text: "导出搜索内容", link: "/tool/vscode/导出搜索内容" },
         ],
       }, 

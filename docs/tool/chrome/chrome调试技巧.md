@@ -51,6 +51,10 @@ Mac：Command + Shift + P
 
     选中Dom右击-发生中断的条件
 
+- $n
+
+![alt text](image-5.png)
+
 ### 控制台 Console 面板 
 
     console函数(console.time()、console.timeEnd()等)
@@ -58,6 +62,10 @@ Mac：Command + Shift + P
 ### 源代码 Sources 面板
 
 ![alt text](image-3.png)
+
+### Application
+
+![alt text](image-6.png)
 
 ### Lighthouse
 
