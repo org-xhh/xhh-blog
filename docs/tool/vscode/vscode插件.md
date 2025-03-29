@@ -1,8 +1,29 @@
-# VSCode 插件
 
-## VSCode 插件安装
+# VSCode 插件安装
 
 ![alt text](image.png)
+
+## i18n Ally 使用
+
+1. 安装插件 i18n Ally
+
+2. 项目 .vscode/settings.json 配置：
+```
+{
+    "i18n-ally.localesPaths": [
+        "src/language"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.enabledParsers": ["json", "js"],
+    "i18n-ally.displayLanguage": "zh" // 展示语言
+}
+
+```
+
+![alt text](image-10.png)
+![alt text](image-11.png)
+
+中文会悬浮在源码变量上面，鼠标点上去会恢复成源码。
 
 ## 插件安装失败解决方案
 
