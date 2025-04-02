@@ -242,6 +242,11 @@ create-react-app 内置了对 CSS Modules 的支持。
 ‌1.更改文件名 ‌
 
 将 CSS 文件名从 styles.css 更改为 styles.module.css
+```
+.coloryellow {
+  color: #FFF766;
+}
+```
 
 2.引入样式 ‌
 
@@ -254,7 +259,7 @@ import styles from './styles.module.css';
 ‌3.使用样式 ‌
 
 ```
-<div className={styles.myClass}>
+<div className={styles.coloryellow}>
 ```
 
 ## 状态管理 Redux
@@ -589,9 +594,7 @@ useEffect(() => {
 
 #### useRef
 
-引用一个不需要渲染的值。
-
-使用：使用 ref 引用一个值；通过 ref 操作 DOM。
+访问 DOM 元素或保存不触发渲染的变量
 ```
 const divRef = useRef(null);
 let count = useRef(0);
@@ -606,49 +609,6 @@ function clickFn() {
 return <div ref={divRef} onClick={clickFn}
     </div>
 ```
-
-#### useImperativeHandle
-
-用于使用 ref 时暴露 DOM 元素的方法。
-```
-const compRef = useRef<HTMLInputElement>(null);
-function buttonClick() {
-  if (compRef.current !== null) {
-    compRef.current.focus();
-    // 下方代码不起作用，因为 DOM 节点(compRef.current)并未被暴露出来：
-    // compRef.current.style.opacity = 0.5;
-  }
-}
-<form style={{ marginTop: '50px' }}>
-  <MyInput placeholder='please input' ref={compRef} />
-  <button type="button" onClick={buttonClick}  style={{ border: '1px solid #888',marginLeft: '5px',padding: '2px 5px' }}>
-    Edit
-  </button>
-</form>
-```
-myInput.js
-```
-import { forwardRef, useRef, useImperativeHandle } from 'react';
-
-// 使用forwardRef：自定义组件才会暴露它们内部 DOM 节点的 ref。
-const MyInput = forwardRef((props:any, ref:any) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  // 使用 ref 时暴露 DOM 元素的方法
-  useImperativeHandle(ref, () => {
-    return {
-      focus() {
-        inputRef.current?.focus();
-      }
-    };
-  }, []);
-
-  return (<input {...props} ref={inputRef} style={{ background: '#999', paddingLeft: '5px' }} />)
-});
-
-export default MyInput;
-```
-
 
 #### useContext
 
@@ -694,10 +654,59 @@ function Counter() {
 #### useMemo
 
 用于缓存计算结果，避免在每次渲染时重复计算‌。（类似于Vue中的computed属性）
+```
+const filteredItems = useMemo(() => {
+  return items.filter(item => item.includes(value))
+}, [items, value]); // 依赖变化时重新计算
+```
 
 #### useCallback
 
 用于记忆化回调函数，避免在每次渲染时重新创建函数‌。
+```
+const handleClick = useCallback(() => {
+  ...
+}, []) // 依赖数组为空表示函数不变化
+```
+
+#### useImperativeHandle
+
+用于暴露子组件的属性和方法，实现父组件对子组件的控制
+
+myInput.js
+```
+import { forwardRef, useRef, useImperativeHandle } from 'react';
+
+// 需要结合 forwardRef 使用
+const MyInput = forwardRef((props:any, ref:any) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    focus: ()=> {
+      inputRef.current?.focus();
+    },
+    testValue: 123
+  }));
+
+  return (<input {...props} ref={inputRef} />)
+});
+
+export default MyInput;
+```
+父组件：
+```
+const compRef = useRef<any>(null);
+function buttonClick() {
+  if (compRef.current !== null) {
+    compRef.current.focus();
+    console.log(compRef.current.testValue)
+  }
+}
+<form>
+  <MyInput placeholder='please input' ref={compRef} />
+  <button type="button" onClick={buttonClick}> Edit </button>
+</form>
+```
 
 #### useTransition
 

@@ -44,7 +44,12 @@ npm publish --tag 命令为发布的包指定一个标签，例如latest或next
 
 ### npm unpublish
 
-从npm仓库中删除一个包
+从npm仓库中删除一个包（72小时内有效）
+
+### npm deprecate 
+废弃某个版本
+
+npm deprecate <包名>@<版本号> "说明文字"
 
 ### npm logout
 
@@ -100,3 +105,6 @@ npm config get https-proxy
 npm view @nodelib/fs.walk@2.0.0 engines
 
 ![alt text](image-13.png)
+
+### npm config get prefix
+查看 npm 默认的安装位置
