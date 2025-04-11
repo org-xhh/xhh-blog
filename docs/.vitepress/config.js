@@ -37,7 +37,7 @@ export default {
           { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react" },
-          { text: "React Native", link: "/technology/react-native/react-native文档" },
+          { text: "React Native", link: "/technology/react-native/react-native使用" },
         ]
       },
       {
@@ -60,8 +60,7 @@ export default {
       {
         text: '前端工具',
         items: [
-          { text: "Git", link: "/tool/git/git常用命令" },
-          { text: "SVN", link: "/tool/svn" },
+          { text: "版本控制工具(git)", link: "/tool/gitsvn/git常用命令" },
           { text: "抓包工具", link: "/tool/packet-capture/fiddler/fiddler" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
           { text: "Chrome", link: "/tool/chrome/chrome" },
@@ -166,20 +165,14 @@ export default {
           { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" }
         ],
       },
-      "/technology/react-native/": {
-        text: "react-native知识",
-        items: [
-          { text: "React Native 文档", link: "/technology/react-native/react-native文档" },
-          { text: "React Native 使用", link: "/technology/react-native/react-native使用" },
-        ],
-      },
-      "/tool/git/": {
+      "/tool/gitsvn/": {
         text: "git知识",
         items: [
-          { text: "git常用命令", link: "/tool/git/git常用命令" },
-          { text: "precommit设置", link: "/tool/git/precommit设置" },
-          { text: "git配置", link: "/tool/git/git配置" },
-          { text: "git客户端工具", link: "/tool/git/git客户端工具" }
+          { text: "git常用命令", link: "/tool/gitsvn/git常用命令" },
+          { text: "precommit设置", link: "/tool/gitsvn/precommit设置" },
+          { text: "git配置", link: "/tool/gitsvn/git配置" },
+          { text: "git客户端工具", link: "/tool/gitsvn/git客户端工具" },
+          { text: "svn", link: "/tool/gitsvn/svn" }
         ],
       },
       "/tool/packet-capture/": {
