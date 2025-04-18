@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const f=JSON.parse('{"title":"爬虫","description":"","frontmatter":{},"headers":[],"relativePath":"tool/爬虫.md","filePath":"tool/爬虫.md"}'),e={name:"tool/爬虫.md"},l=p("",3),t=[l];function i(c,o,r,h,d,_){return a(),n("div",null,t)}const m=s(e,[["render",i]]);export{f as __pageData,m as default};

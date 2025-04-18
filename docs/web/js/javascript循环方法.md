@@ -1,32 +1,36 @@
 # javascript循环方法
 
 ## forEach()
-- 通常用于数组的迭代
 
 - 处理引用类型的数组，forEach会改变原数组
 
-- 不能使用break，continue，循环中途是无法停止的，总是会将所有成员遍历完
+- 不能使用break，continue
 
-- return 返回参数
+- throw new Error('跳出 forEach 循环')
+
+- return 语句会终止本次迭代，但循环会继续执行
 
 ## map()
-- 返回一个新数组(return)，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
 
 - 支持链式调用
 
 - 处理引用类型的数组，map会改变原数组
 
-- 不能使用break，continue，循环中途是无法停止的，总是会将所有成员遍历完
+- 不能使用break，continue
+
+- return 返回值
 
 ## for
 ```
 for (let i = 0; i < 10; i++) {
-    console.log(i);
+  console.log(i);
 }
 ```
-return 是终止循环；
+break：退出整个循环；
 
-可以使用 break 和 continue 终止循环。
+return：在函数中使用，退出函数并终止循环；
+
+continue：跳过当前循环，继续下一次循环
 
 ## for...in
 

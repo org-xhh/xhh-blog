@@ -30,7 +30,7 @@
 
 ### 前端工具
 
-- [Git](https://org-xhh.github.io/xhh-blog/tool/git/git常用命令.html)
+- [Git](https://org-xhh.github.io/xhh-blog/tool/gitsvn/git常用命令.html)
 - [抓包工具](https://org-xhh.github.io/xhh-blog/tool/packet-capture/fiddler/fiddler.html)
 - [VSCode](https://org-xhh.github.io/xhh-blog/tool/vscode/vscode插件.html)
 - ...

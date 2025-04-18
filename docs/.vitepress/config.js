@@ -65,6 +65,7 @@ export default {
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
           { text: "Chrome", link: "/tool/chrome/chrome" },
           { text: "Postman", link: "/tool/postman" },
+          { text: "爬虫", link: "/tool/爬虫"}
           // { text: "phpStudy", link: "/tool/phpStudy" }
         ]
       },
@@ -87,8 +88,8 @@ export default {
           { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" },
           { text: "应用深浅主题", link: "/web/css/应用深浅主题" },
           { text: "水平垂直居中", link: "/web/css/水平垂直居中" },
-          { text: "css中的%", link: "/web/css/百分比" },
           { text: "BFC", link: "/web/css/BFC" },
+          { text: "css中的%", link: "/web/css/百分比" },
           { text: "css预处理器", link: "/web/css/css预处理器" },
           { text: "css样式集锦", link: "/web/css/css样式集锦" }
         ],
@@ -98,17 +99,17 @@ export default {
         items: [
           { text: "Can I use", link: "/web/js/caniuse" },
           { text: "Ecma国际", link: "/web/js/ecma" },
-          { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
-          { text: "Web Workers", link: "/web/js/web-workers" },
-          { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
-          { text: "event事件属性", link: "/web/js/event事件属性" },
-          { text: "HTTP 缓存", link: "/web/js/http缓存"},
+          { text: "HTTP缓存", link: "/web/js/http缓存"},
           { text: "前端埋点", link: "/web/js/前端埋点"},
-          { text: 'cookie', link: "/web/js/cookie" },
           // { text: "JavaScript Browser 对象", link: "/web/js/browser" },
           { text: "网络请求", link: "/web/js/网络请求" },
           { text: "前端水印", link: "/web/js/前端水印" },
+          { text: "Web Workers", link: "/web/js/web-workers" },
+          { text: "0.1+0.2 !==0.3 ?", link: "/web/js/number-precision"},
+          { text: "event事件属性", link: "/web/js/event事件属性" },
           { text: "大屏实现方案", link: "/web/js/大屏实现方案" },
+          { text: '浏览器存储方式', link: "/web/js/浏览器存储方式" },
+          { text: "javascript循环方法", link: "/web/js/javascript循环方法" },
           { text: 'JavaScript设计模式', link: "/web/js/javaScript设计模式" }
         ],
       },
@@ -117,11 +118,11 @@ export default {
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
           { text: "环境变量", link: "/technology/vue/环境变量" },
-          { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
-          { text: "nginx", link: "/technology/vue/nginx" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
+          { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
           { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"},
           { text: "i18n", link: "/technology/vue/i18n" },
+          { text: "nginx", link: "/technology/vue/nginx" },
           { text: "通信", link: "/technology/vue/通信"}
         ],
       },
