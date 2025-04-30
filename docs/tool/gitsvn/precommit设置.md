@@ -33,21 +33,18 @@
 
 
 
-### vue3项目上述方法未生效，解决方案：
-1.package.json
+### 如果上述方法未生效，解决方案如下：
+[husky](https://typicode.github.io/husky/)
 
-scripts添加命令：
+以v8为例：
 ```
-"prepare": "husky install" 
+npm pkg set scripts.prepare="husky install"
+npm run prepare
+npx husky add .husky/pre-commit "npm run format"
+npx husky add .husky/pre-commit "npm run lintfix"
 ```
-(npm install 之后自动执行)
+![alt text](image-5.png)
 
-2.在.husky文件夹下新增pre-commit文件，内容：
-```
-. "$(dirname -- "$0")/_/husky.sh"
+git commit 时，husky 会自动执行 .husky/pre-commit 文件中的脚本，如果脚本执行失败（比如 eslint 检查不通过），提交会被中断。
 
-npm run lint
-npm run format
-```
-
-提交代码时，husky 会自动执行 .husky/pre-commit 文件中的脚本，如果脚本执行失败（比如 eslint 检查不通过），提交会被中断。
+如果想要越过检查，可以添加 --no-verify。

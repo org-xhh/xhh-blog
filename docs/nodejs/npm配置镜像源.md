@@ -9,7 +9,7 @@ npm config get registry
 npm config set registry https://registry.npmjs.org
 
 
-### 执行npm淘宝镜像
+### 执行[npm淘宝镜像](https://npmmirror.com/)
 配置镜像站
 
 npm config set registry=https://registry.npmmirror.com

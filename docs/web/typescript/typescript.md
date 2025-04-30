@@ -246,8 +246,10 @@ function identity<T>(value: T): T {
 函数参数是<font color=red>T</font>，返回值的类型也是<font color=red>T</font>。
 
 ```
-identity<number>(10);
-identity<string>("Hi");
+// 调用函数
+identity<number>(10)
+或
+identity(10)
 ```
 
 传参 number 类型，返回值的类型也是 number。传参 string 类型，返回值的类型也是 string。
@@ -468,3 +470,4 @@ tsconfig.json是TypeScript项目的配置文件，用于指定编译器的行为
 }
 ```
 
+http://tslang.cn/play/index.html

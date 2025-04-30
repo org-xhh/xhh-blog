@@ -13,61 +13,54 @@ git clone git@gitee.com:org-xhh/viteproject.git
 git init
 
 ### 关联新的远程仓库
-git remote add [远程仓库名] [仓库地址]
+git remote add origin [仓库地址]
 
-### 取回远程仓库的变化，并与本地分支合并
-git pull [remote] [branch]
+### 查看当前配置的远程仓库
+git remote -v
 
+### 拉取远程master分支代码并合并到本地分支
+git pull origin master
+
+### 拉取代码
+git pull
+
+### 推送代码
+git push
 
 ### 基于当前分支新建分支并切换至该分支
 git checkout -b xhh-code
 
-
 ### 添加当前目录的所有文件到暂存区
 git add .
-
 
 ### 提交暂存区到仓库区
 git commit -m [message]
 
-
-### 上传本地指定分支到远程仓库
-git push [remote] [branch]
-
-
 ### 切换到指定分支，并更新工作区
 git checkout develop
-
 
 ### 合并xhh-code分支到develop
 git checkout develop
 
 git merge xhh-code
 
-
 ### 暂存当前的修改
 git stash
-
 
 ### 恢复最近一次暂存的修改，并从暂存列表中删除
 git stash pop
 
-
 ### 忽略文件大小写
 git config core.ignorecase true(false)
-
 
 ### 删除文件
 git rm -r --cached [file]
 
-
 ### commit之后撤销
 git reset --soft HEAD^
 
-
 ### 检查当前 git 全局设置
 git config --global -l
-
 
 ### 在master分支创建tag
 git tag v1.1.0

@@ -15,12 +15,11 @@
 > 创建应用
 
 ```
-npx create-react-app my-app
+npx create-react-app my-app --template typescript
 ```
 or
 ```
-npm create vite
-选择 React 模板
+npm create vite -- --template react-ts
 ```
 
 > Next.js 是一个流行的、基于 React 构建的轻量级框架，用于构建静态和服务器端渲染的应用程序。

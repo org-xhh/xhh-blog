@@ -202,6 +202,7 @@ import './App.css';
 ```
 
 #### inline 样式
+style 是对象形式,其中的key是驼峰式
 
 ```
 const divStyle = {
@@ -566,11 +567,32 @@ export default Button;
 
 ```
 const [count, setCount] = useState(0);
+
+// setCount(count + 1) // 这种写法多次执行count只累加一次（合并更新）
+// 或
+setCount((count) => count + 1) // 如果页面中 count 是 6
+console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值
+// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef
+
+// state 是不可变数据
+// 对象-传入新值
+setUserInfo({
+  ...userInfo,
+  age: 21
+})
+// 数组-传入新值
+setList(list.concat('z')) // concat 能返回新数组
+// 或
+setList([...list, 'z'])
+
 ```
+> 可以使用 **immer** 修改 state 不可变数据
 
 #### useEffect
 
 在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
+
+<font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
 
 ```
 useEffect(() => {
@@ -585,7 +607,7 @@ useEffect(() => {
 
 - ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数。
 - ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。
-- ‌第二个参数为具体依赖项数组‌：只有数组中的依赖项发生变化时，副作用函数才会重新执行。
+- ‌第二个参数为具体依赖项数组‌：只有数组中的依赖项（任意一个）发生变化时，副作用函数才会重新执行。
 
 #### useLayoutEffect‌
 

@@ -190,6 +190,7 @@ export default {
         items: [
           { text: "vscode插件", link: "/tool/vscode/vscode插件" },
           { text: "vscode使用", link: "/tool/vscode/vscode使用" },
+          { text: "代码格式化", link: "/tool/vscode/代码格式化" }
           // { text: "导出搜索内容", link: "/tool/vscode/导出搜索内容" },
         ],
       }, 
