@@ -18,10 +18,11 @@ npx create-react-app react-project
 ```
 
 ## 配置路由
-
 ```
 npm i react-router-dom
 ```
+
+### 方式1
 
 index.js:
 
@@ -84,11 +85,77 @@ let routes = [
 export default routes
 ```
 
+### 方式2
+
+App.tsx:
+```
+import { RouterProvider } from 'react-router-dom'
+import routerConfig from './router'
+
+return (
+    <RouterProvider router={routerConfig}>
+      <div className="App"></div>
+    </RouterProvider>
+  )
+```
+
+router/index.tsx:
+```
+import React from 'react'
+import { createBrowserRouter } from 'react-router-dom'
+
+import ManageLayout from '../layouts/ManageLayout'
+import Home from '../pages/Home'
+import Demo from '../pages/Demo'
+import NotFound from '../pages/NotFound'
+import ManageList from '../pages/manage/List'
+import ManageEdit from '../pages/manage/Edit'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <ManageLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: 'demo',
+        element: <Demo />
+      }
+    ]
+  },
+  {
+    path: 'manage',
+    children: [
+      {
+        path: 'list',
+        element: <ManageList />
+      },
+      {
+        path: 'edit/:id',
+        element: <ManageEdit />
+      }
+    ]
+  },
+  {
+    path: '*', // 以上路由都没有命中，写在最后
+    element: <NotFound />
+  }
+])
+
+export default router
+```
+
 ## 路由鉴权
 
 router/index.js:
 
 ```
+const routes = [
+  ...
+]
 import Auth from './authRouter.js'
 
 const authRoutes = (routes) => {
@@ -146,52 +213,112 @@ export default Auth
 #### useSearchParams
 
 ```
-// 携带参数
-navigate('/page3?origin=home')
+import { useNavigate } from 'react-router-dom'
+const navigate = useNavigate()
+// 跳转页面
+function jumpPage() {
+  // navigate('/demo?a=20')
+  // 或
+  navigate({
+    pathname: '/demo',
+    search: 'a=20'
+  })
+  // navigate(-1) // 返回上一页
+}
 
 // 获取
 import { useSearchParams } from "react-router-dom"
-function Page3() {
+function Demo() {
     let [searchParams] = useSearchParams();
-    console.log(searchParams.get('origin'))
+    console.log(searchParams.get('a'))
     ...
 }
 ```
 
 #### useParams
 
+获取动态参数
+
 ```
-// 配置路由
-{
-  path: '/Page1/:id',
-  element: <Page1 />
+<Link to="/manage/edit/666">跳转到ManageEdit</Link>
+
+
+import React, { FC } from 'react'
+import { useParams } from 'react-router-dom'
+
+const ManageEdit: FC = () => {
+  const { id } = useParams()
+  return (
+    <div>
+      <h1>ManageEdit - {id}</h1>
+    </div>
+  )
 }
 
-// 携带参数
-<Link to="/page1/111">go Page1</Link>
-
-// 获取
-import { useParams } from 'react-router-dom';
-function Page1() {
-  const params = useParams();
-  console.log('id:', params.id)
-  ...
-}
+export default ManageEdit
 ```
 
 #### useLocation
 
 ```
 // 携带参数
-<Link to="/page1/111" state={{name:666}}>go Page1</Link>
+<Link to="/page1/111" state={{txt:777}}>go Page1</Link>
 
 // 获取
 import { useLocation } from "react-router-dom";
 function Page1() {
-  console.log('data:', useLocation().state)
+  console.log('data:', useLocation().state.txt) // 777
   ...
 }
 ```
+
+## Layout
+
+src/layouts/ManageLayout.tsx:
+```
+import React, { FC } from 'react'
+import { Outlet } from 'react-router-dom'
+
+const ManageLayout: FC = () => {
+  return (
+    <div>
+      <h1>---ManageLayout header---</h1>
+      <div>
+        {/* 类似 vue 的 slot */}
+        <Outlet />
+      </div>
+      <h1>---ManageLayout footer---</h1>
+    </div>
+  )
+}
+
+export default ManageLayout
+```
+
+router/index.tsx:
+```
+import ManageLayout from '../layouts/ManageLayout'
+import Home from '../pages/Home'
+import Demo from '../pages/Demo'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <ManageLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: 'demo',
+        element: <Demo />
+      }
+    ]
+  }
+])
+```
+![alt text](image-4.png)
 
 ## 样式使用
 
@@ -221,30 +348,24 @@ return <div style={divStyle}>content</div>
 
 ## 使用 scss
 
-create-react-app 内置了 scss 预处理器，只需要安装
+create-react-app 原生支持 sass module，只需要安装
 
 ```
 npm i sass -D
 ```
 
-<!--
-```
-npm install node-sass@8 sass-loader --save-dev
-```
+<!-- <font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font> -->
 
-备注：node@18 对应 node-sass@8
+## CSS Module
 
-<font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font> -->
-
-## CSS Modules
-
-create-react-app 内置了对 CSS Modules 的支持。
+解决className可能重复的问题；
+create-react-app 内置了对 CSS Module 的支持。
 
 ‌1.更改文件名 ‌
 
 将 CSS 文件名从 styles.css 更改为 styles.module.css
 ```
-.coloryellow {
+.color-yellow {
   color: #FFF766;
 }
 ```
@@ -260,7 +381,7 @@ import styles from './styles.module.css';
 ‌3.使用样式 ‌
 
 ```
-<div className={styles.coloryellow}>
+<div className={styles['color-yellow']}>
 ```
 
 ## 状态管理 Redux
@@ -505,6 +626,23 @@ export function setInitData(data) {
 }
 ```
 
+## 受控组件
+受控组件：值同步到 state，使用 value 属性
+```
+const [text, setText] = useState('hello')
+function changeText(e: ChangeEvent<HTMLInputElement>) {
+  setText(e.target.value)
+}
+
+<input type="text" onChange={changeText} value={text} />
+<button onClick={() => console.log(text)}>打印input值</button>
+```
+非受控组件：值不同步 state，使用 defaultValue 属性
+```
+<input type="text" defaultValue="hello world" />
+```
+defaultValue 显示在页面中，但无法获取到
+
 ## 父子组件交互
 
 父组件：
@@ -560,6 +698,11 @@ export default Button;
 ## React Hooks
 
 使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。
+
+  hooks 使用规则：
+1. 必须使用 useXXX 格式命名
+2. 只能在 函数式组件内或其他hook 内调用
+3. 每次的调用顺序一致（不能放在for、if 内）
 
 #### useState
 
@@ -758,6 +901,71 @@ const deferredValue = useDeferredValue(value)
 
 <SearchResults query={deferredValue} />
 ```
+
+### 自定义 hooks
+```
+import { useState, useEffect, useCallback } from 'react'
+
+// 获取鼠标位置
+export function useMouse() {
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+
+  const updateMouse = useCallback((e: MouseEvent) => {
+    setX(e.clientX)
+    setY(e.clientY)
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('mousemove', updateMouse)
+    return () => {
+      window.removeEventListener('mousemove', updateMouse)
+    }
+  }, [])
+
+  return { x, y }
+}
+
+// 模拟异步数据
+function getInfo(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(Date.now().toString())
+    }, 1500)
+  })
+}
+export function useGetInfo() {
+  const [loading, setLoading] = useState(true)
+  const [info, setInfo] = useState('')
+
+  useEffect(() => {
+    getInfo().then((res) => {
+      setLoading(false)
+      setInfo(res)
+    })
+  }, [])
+
+  return {
+    loading,
+    info
+  }
+}
+
+// 引用
+import { useMouse, useGetInfo } from './hook'
+const { x, y } = useMouse()
+const { loading, info } = useGetInfo()
+
+<div>
+  <div>鼠标位置：{x},{y}</div>
+  <div>{loading ? '加载中' : info}</div>
+</div>
+```
+
+### 第三方 hooks
+https://ahooks.js.org/zh-CN
+
+https://github.com/streamich/react-use
 
 ## Tailwind CSS
 
