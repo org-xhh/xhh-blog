@@ -1,4 +1,4 @@
-import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/framework.C5U8cnJv.js";const o="data:image/png;base64,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",r="/xhh-blog/assets/image-1.OTJ3BYfO.png",d="/xhh-blog/assets/image-2.CFFrttEG.png",u="/xhh-blog/assets/image-3.vJHmhZI9.png",A=JSON.parse('{"title":"create-react-app","description":"","frontmatter":{},"headers":[],"relativePath":"technology/react/从0开始搭建React项目.md","filePath":"technology/react/从0开始搭建React项目.md"}'),h={name:"technology/react/从0开始搭建React项目.md"},g=s(`<h1 id="create-react-app" tabindex="-1">create-react-app <a class="header-anchor" href="#create-react-app" aria-label="Permalink to &quot;create-react-app&quot;">​</a></h1><h2 id="项目环境" tabindex="-1">项目环境 <a class="header-anchor" href="#项目环境" aria-label="Permalink to &quot;项目环境&quot;">​</a></h2><table tabindex="0"><thead><tr><th>模块</th><th>版本</th></tr></thead><tbody><tr><td>node</td><td>18+</td></tr><tr><td>react</td><td>18+</td></tr><tr><td>react-dom</td><td>18+</td></tr><tr><td>react-router-dom</td><td>6+</td></tr><tr><td>react-redux</td><td>9+</td></tr><tr><td>@reduxjs/toolkit</td><td>2+</td></tr></tbody></table><h2 id="新建项目" tabindex="-1">新建项目 <a class="header-anchor" href="#新建项目" aria-label="Permalink to &quot;新建项目&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npx create-react-app react-project</span></span></code></pre></div><h2 id="配置路由" tabindex="-1">配置路由 <a class="header-anchor" href="#配置路由" aria-label="Permalink to &quot;配置路由&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i react-router-dom</span></span></code></pre></div><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { BrowserRouter } from &#39;react-router-dom&#39;;</span></span>
+import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/framework.C5U8cnJv.js";const o="/xhh-blog/assets/image-4.DV_ce5A2.png",r="data:image/png;base64,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",d="/xhh-blog/assets/image-1.OTJ3BYfO.png",u="/xhh-blog/assets/image-2.CFFrttEG.png",h="/xhh-blog/assets/image-3.vJHmhZI9.png",P=JSON.parse('{"title":"create-react-app","description":"","frontmatter":{},"headers":[],"relativePath":"technology/react/从0开始搭建React项目.md","filePath":"technology/react/从0开始搭建React项目.md"}'),g={name:"technology/react/从0开始搭建React项目.md"},m=s(`<h1 id="create-react-app" tabindex="-1">create-react-app <a class="header-anchor" href="#create-react-app" aria-label="Permalink to &quot;create-react-app&quot;">​</a></h1><h2 id="项目环境" tabindex="-1">项目环境 <a class="header-anchor" href="#项目环境" aria-label="Permalink to &quot;项目环境&quot;">​</a></h2><table tabindex="0"><thead><tr><th>模块</th><th>版本</th></tr></thead><tbody><tr><td>node</td><td>18+</td></tr><tr><td>react</td><td>18+</td></tr><tr><td>react-dom</td><td>18+</td></tr><tr><td>react-router-dom</td><td>6+</td></tr><tr><td>react-redux</td><td>9+</td></tr><tr><td>@reduxjs/toolkit</td><td>2+</td></tr></tbody></table><h2 id="新建项目" tabindex="-1">新建项目 <a class="header-anchor" href="#新建项目" aria-label="Permalink to &quot;新建项目&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npx create-react-app react-project</span></span></code></pre></div><h2 id="配置路由" tabindex="-1">配置路由 <a class="header-anchor" href="#配置路由" aria-label="Permalink to &quot;配置路由&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i react-router-dom</span></span></code></pre></div><h3 id="方式1" tabindex="-1">方式1 <a class="header-anchor" href="#方式1" aria-label="Permalink to &quot;方式1&quot;">​</a></h3><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { BrowserRouter } from &#39;react-router-dom&#39;;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));</span></span>
 <span class="line"><span>root.render(</span></span>
@@ -41,7 +41,61 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>        element: &lt;NotFound /&gt;</span></span>
 <span class="line"><span>    }</span></span>
 <span class="line"><span>]</span></span>
-<span class="line"><span>export default routes</span></span></code></pre></div><h2 id="路由鉴权" tabindex="-1">路由鉴权 <a class="header-anchor" href="#路由鉴权" aria-label="Permalink to &quot;路由鉴权&quot;">​</a></h2><p>router/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Auth from &#39;./authRouter.js&#39;</span></span>
+<span class="line"><span>export default routes</span></span></code></pre></div><h3 id="方式2" tabindex="-1">方式2 <a class="header-anchor" href="#方式2" aria-label="Permalink to &quot;方式2&quot;">​</a></h3><p>App.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { RouterProvider } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span>import routerConfig from &#39;./router&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>    &lt;RouterProvider router={routerConfig}&gt;</span></span>
+<span class="line"><span>      &lt;div className=&quot;App&quot;&gt;&lt;/div&gt;</span></span>
+<span class="line"><span>    &lt;/RouterProvider&gt;</span></span>
+<span class="line"><span>  )</span></span></code></pre></div><p>router/index.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import React from &#39;react&#39;</span></span>
+<span class="line"><span>import { createBrowserRouter } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import ManageLayout from &#39;../layouts/ManageLayout&#39;</span></span>
+<span class="line"><span>import Home from &#39;../pages/Home&#39;</span></span>
+<span class="line"><span>import Demo from &#39;../pages/Demo&#39;</span></span>
+<span class="line"><span>import NotFound from &#39;../pages/NotFound&#39;</span></span>
+<span class="line"><span>import ManageList from &#39;../pages/manage/List&#39;</span></span>
+<span class="line"><span>import ManageEdit from &#39;../pages/manage/Edit&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const router = createBrowserRouter([</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    path: &#39;/&#39;,</span></span>
+<span class="line"><span>    element: &lt;ManageLayout /&gt;,</span></span>
+<span class="line"><span>    children: [</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;/&#39;,</span></span>
+<span class="line"><span>        element: &lt;Home /&gt;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;demo&#39;,</span></span>
+<span class="line"><span>        element: &lt;Demo /&gt;</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>    ]</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    path: &#39;manage&#39;,</span></span>
+<span class="line"><span>    children: [</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;list&#39;,</span></span>
+<span class="line"><span>        element: &lt;ManageList /&gt;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;edit/:id&#39;,</span></span>
+<span class="line"><span>        element: &lt;ManageEdit /&gt;</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>    ]</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    path: &#39;*&#39;, // 以上路由都没有命中，写在最后</span></span>
+<span class="line"><span>    element: &lt;NotFound /&gt;</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default router</span></span></code></pre></div><h2 id="路由鉴权" tabindex="-1">路由鉴权 <a class="header-anchor" href="#路由鉴权" aria-label="Permalink to &quot;路由鉴权&quot;">​</a></h2><p>router/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const routes = [</span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span>]</span></span>
+<span class="line"><span>import Auth from &#39;./authRouter.js&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const authRoutes = (routes) =&gt; {</span></span>
 <span class="line"><span>    return routes.map((item) =&gt; {</span></span>
@@ -84,48 +138,93 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    }</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default Auth</span></span></code></pre></div><h2 id="路由传参" tabindex="-1">路由传参 <a class="header-anchor" href="#路由传参" aria-label="Permalink to &quot;路由传参&quot;">​</a></h2><h4 id="usesearchparams" tabindex="-1">useSearchParams <a class="header-anchor" href="#usesearchparams" aria-label="Permalink to &quot;useSearchParams&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 携带参数</span></span>
-<span class="line"><span>navigate(&#39;/page3?origin=home&#39;)</span></span>
+<span class="line"><span>export default Auth</span></span></code></pre></div><h2 id="路由传参" tabindex="-1">路由传参 <a class="header-anchor" href="#路由传参" aria-label="Permalink to &quot;路由传参&quot;">​</a></h2><h4 id="usesearchparams" tabindex="-1">useSearchParams <a class="header-anchor" href="#usesearchparams" aria-label="Permalink to &quot;useSearchParams&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useNavigate } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span>const navigate = useNavigate()</span></span>
+<span class="line"><span>// 跳转页面</span></span>
+<span class="line"><span>function jumpPage() {</span></span>
+<span class="line"><span>  // navigate(&#39;/demo?a=20&#39;)</span></span>
+<span class="line"><span>  // 或</span></span>
+<span class="line"><span>  navigate({</span></span>
+<span class="line"><span>    pathname: &#39;/demo&#39;,</span></span>
+<span class="line"><span>    search: &#39;a=20&#39;</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>  // navigate(-1) // 返回上一页</span></span>
+<span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
 <span class="line"><span>import { useSearchParams } from &quot;react-router-dom&quot;</span></span>
-<span class="line"><span>function Page3() {</span></span>
+<span class="line"><span>function Demo() {</span></span>
 <span class="line"><span>    let [searchParams] = useSearchParams();</span></span>
-<span class="line"><span>    console.log(searchParams.get(&#39;origin&#39;))</span></span>
+<span class="line"><span>    console.log(searchParams.get(&#39;a&#39;))</span></span>
 <span class="line"><span>    ...</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h4 id="useparams" tabindex="-1">useParams <a class="header-anchor" href="#useparams" aria-label="Permalink to &quot;useParams&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 配置路由</span></span>
-<span class="line"><span>{</span></span>
-<span class="line"><span>  path: &#39;/Page1/:id&#39;,</span></span>
-<span class="line"><span>  element: &lt;Page1 /&gt;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="useparams" tabindex="-1">useParams <a class="header-anchor" href="#useparams" aria-label="Permalink to &quot;useParams&quot;">​</a></h4><p>获取动态参数</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;Link to=&quot;/manage/edit/666&quot;&gt;跳转到ManageEdit&lt;/Link&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import React, { FC } from &#39;react&#39;</span></span>
+<span class="line"><span>import { useParams } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const ManageEdit: FC = () =&gt; {</span></span>
+<span class="line"><span>  const { id } = useParams()</span></span>
+<span class="line"><span>  return (</span></span>
+<span class="line"><span>    &lt;div&gt;</span></span>
+<span class="line"><span>      &lt;h1&gt;ManageEdit - {id}&lt;/h1&gt;</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  )</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// 携带参数</span></span>
-<span class="line"><span>&lt;Link to=&quot;/page1/111&quot;&gt;go Page1&lt;/Link&gt;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// 获取</span></span>
-<span class="line"><span>import { useParams } from &#39;react-router-dom&#39;;</span></span>
-<span class="line"><span>function Page1() {</span></span>
-<span class="line"><span>  const params = useParams();</span></span>
-<span class="line"><span>  console.log(&#39;id:&#39;, params.id)</span></span>
-<span class="line"><span>  ...</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h4 id="uselocation" tabindex="-1">useLocation <a class="header-anchor" href="#uselocation" aria-label="Permalink to &quot;useLocation&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 携带参数</span></span>
-<span class="line"><span>&lt;Link to=&quot;/page1/111&quot; state={{name:666}}&gt;go Page1&lt;/Link&gt;</span></span>
+<span class="line"><span>export default ManageEdit</span></span></code></pre></div><h4 id="uselocation" tabindex="-1">useLocation <a class="header-anchor" href="#uselocation" aria-label="Permalink to &quot;useLocation&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 携带参数</span></span>
+<span class="line"><span>&lt;Link to=&quot;/page1/111&quot; state={{txt:777}}&gt;go Page1&lt;/Link&gt;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
 <span class="line"><span>import { useLocation } from &quot;react-router-dom&quot;;</span></span>
 <span class="line"><span>function Page1() {</span></span>
-<span class="line"><span>  console.log(&#39;data:&#39;, useLocation().state)</span></span>
+<span class="line"><span>  console.log(&#39;data:&#39;, useLocation().state.txt) // 777</span></span>
 <span class="line"><span>  ...</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="样式使用" tabindex="-1">样式使用 <a class="header-anchor" href="#样式使用" aria-label="Permalink to &quot;样式使用&quot;">​</a></h2><h4 id="直接在-js-文件中引入样式文件" tabindex="-1">直接在 JS 文件中引入样式文件 <a class="header-anchor" href="#直接在-js-文件中引入样式文件" aria-label="Permalink to &quot;直接在 JS 文件中引入样式文件&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import &#39;./App.css&#39;;</span></span></code></pre></div><h4 id="inline-样式" tabindex="-1">inline 样式 <a class="header-anchor" href="#inline-样式" aria-label="Permalink to &quot;inline 样式&quot;">​</a></h4><p>style 是对象形式,其中的key是驼峰式</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divStyle = {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="layout" tabindex="-1">Layout <a class="header-anchor" href="#layout" aria-label="Permalink to &quot;Layout&quot;">​</a></h2><p>src/layouts/ManageLayout.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import React, { FC } from &#39;react&#39;</span></span>
+<span class="line"><span>import { Outlet } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const ManageLayout: FC = () =&gt; {</span></span>
+<span class="line"><span>  return (</span></span>
+<span class="line"><span>    &lt;div&gt;</span></span>
+<span class="line"><span>      &lt;h1&gt;---ManageLayout header---&lt;/h1&gt;</span></span>
+<span class="line"><span>      &lt;div&gt;</span></span>
+<span class="line"><span>        {/* 类似 vue 的 slot */}</span></span>
+<span class="line"><span>        &lt;Outlet /&gt;</span></span>
+<span class="line"><span>      &lt;/div&gt;</span></span>
+<span class="line"><span>      &lt;h1&gt;---ManageLayout footer---&lt;/h1&gt;</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  )</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default ManageLayout</span></span></code></pre></div><p>router/index.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import ManageLayout from &#39;../layouts/ManageLayout&#39;</span></span>
+<span class="line"><span>import Home from &#39;../pages/Home&#39;</span></span>
+<span class="line"><span>import Demo from &#39;../pages/Demo&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const router = createBrowserRouter([</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    path: &#39;/&#39;,</span></span>
+<span class="line"><span>    element: &lt;ManageLayout /&gt;,</span></span>
+<span class="line"><span>    children: [</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;/&#39;,</span></span>
+<span class="line"><span>        element: &lt;Home /&gt;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;demo&#39;,</span></span>
+<span class="line"><span>        element: &lt;Demo /&gt;</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>    ]</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>])</span></span></code></pre></div><p><img src="`+o+`" alt="alt text"></p><h2 id="样式使用" tabindex="-1">样式使用 <a class="header-anchor" href="#样式使用" aria-label="Permalink to &quot;样式使用&quot;">​</a></h2><h4 id="直接在-js-文件中引入样式文件" tabindex="-1">直接在 JS 文件中引入样式文件 <a class="header-anchor" href="#直接在-js-文件中引入样式文件" aria-label="Permalink to &quot;直接在 JS 文件中引入样式文件&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import &#39;./App.css&#39;;</span></span></code></pre></div><h4 id="inline-样式" tabindex="-1">inline 样式 <a class="header-anchor" href="#inline-样式" aria-label="Permalink to &quot;inline 样式&quot;">​</a></h4><p>style 是对象形式,其中的key是驼峰式</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divStyle = {</span></span>
 <span class="line"><span>  color: &#39;red&#39;,</span></span>
 <span class="line"><span>  marginBottom: &#39;10px&#39;</span></span>
 <span class="line"><span>};</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>return &lt;div style={divStyle}&gt;content&lt;/div&gt;</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div style={{ cursor: &#39;pointer&#39;,marginTop: &#39;50px&#39; }}&gt;</span></span>
 <span class="line"><span>  内容</span></span>
-<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h2 id="使用-scss" tabindex="-1">使用 scss <a class="header-anchor" href="#使用-scss" aria-label="Permalink to &quot;使用 scss&quot;">​</a></h2><p>create-react-app 内置了 scss 预处理器，只需要安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i sass -D</span></span></code></pre></div><h2 id="css-modules" tabindex="-1">CSS Modules <a class="header-anchor" href="#css-modules" aria-label="Permalink to &quot;CSS Modules&quot;">​</a></h2><p>create-react-app 内置了对 CSS Modules 的支持。</p><p>‌1.更改文件名 ‌</p><p>将 CSS 文件名从 styles.css 更改为 styles.module.css</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.coloryellow {</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h2 id="使用-scss" tabindex="-1">使用 scss <a class="header-anchor" href="#使用-scss" aria-label="Permalink to &quot;使用 scss&quot;">​</a></h2><p>create-react-app 原生支持 sass module，只需要安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i sass -D</span></span></code></pre></div><h2 id="css-module" tabindex="-1">CSS Module <a class="header-anchor" href="#css-module" aria-label="Permalink to &quot;CSS Module&quot;">​</a></h2><p>解决className可能重复的问题； create-react-app 内置了对 CSS Module 的支持。</p><p>‌1.更改文件名 ‌</p><p>将 CSS 文件名从 styles.css 更改为 styles.module.css</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.color-yellow {</span></span>
 <span class="line"><span>  color: #FFF766;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>2.引入样式 ‌</p><p>在组件文件中，使用 ES6 模块语法引入样式文件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import styles from &#39;./styles.module.css&#39;;</span></span></code></pre></div><p>‌3.使用样式 ‌</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div className={styles.coloryellow}&gt;</span></span></code></pre></div><h2 id="状态管理-redux" tabindex="-1">状态管理 Redux <a class="header-anchor" href="#状态管理-redux" aria-label="Permalink to &quot;状态管理 Redux&quot;">​</a></h2><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install @reduxjs/toolkit react-redux -S</span></span></code></pre></div><h4 id="为-react-提供-redux-store" tabindex="-1">为 React 提供 Redux Store <a class="header-anchor" href="#为-react-提供-redux-store" aria-label="Permalink to &quot;为 React 提供 Redux Store&quot;">​</a></h4><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import store from &#39;./store/index.js&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>2.引入样式 ‌</p><p>在组件文件中，使用 ES6 模块语法引入样式文件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import styles from &#39;./styles.module.css&#39;;</span></span></code></pre></div><p>‌3.使用样式 ‌</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div className={styles[&#39;color-yellow&#39;]}&gt;</span></span></code></pre></div><h2 id="状态管理-redux" tabindex="-1">状态管理 Redux <a class="header-anchor" href="#状态管理-redux" aria-label="Permalink to &quot;状态管理 Redux&quot;">​</a></h2><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install @reduxjs/toolkit react-redux -S</span></span></code></pre></div><h4 id="为-react-提供-redux-store" tabindex="-1">为 React 提供 Redux Store <a class="header-anchor" href="#为-react-提供-redux-store" aria-label="Permalink to &quot;为 React 提供 Redux Store&quot;">​</a></h4><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import store from &#39;./store/index.js&#39;</span></span>
 <span class="line"><span>import { Provider } from &#39;react-redux&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));</span></span>
@@ -194,14 +293,14 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    &lt;/div&gt;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default Page2;</span></span></code></pre></div><h4 id="页面效果" tabindex="-1">页面效果 <a class="header-anchor" href="#页面效果" aria-label="Permalink to &quot;页面效果&quot;">​</a></h4><p><img src="`+o+`" alt="alt text"></p><h2 id="配置多环境" tabindex="-1">配置多环境 <a class="header-anchor" href="#配置多环境" aria-label="Permalink to &quot;配置多环境&quot;">​</a></h2><p>Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。</p><h4 id="第一种方式-使用-cross-env" tabindex="-1">第一种方式：使用 cross-env <a class="header-anchor" href="#第一种方式-使用-cross-env" aria-label="Permalink to &quot;第一种方式：使用 cross-env&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 安装 cross-env</span></span>
+<span class="line"><span>export default Page2;</span></span></code></pre></div><h4 id="页面效果" tabindex="-1">页面效果 <a class="header-anchor" href="#页面效果" aria-label="Permalink to &quot;页面效果&quot;">​</a></h4><p><img src="`+r+`" alt="alt text"></p><h2 id="配置多环境" tabindex="-1">配置多环境 <a class="header-anchor" href="#配置多环境" aria-label="Permalink to &quot;配置多环境&quot;">​</a></h2><p>Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。</p><h4 id="第一种方式-使用-cross-env" tabindex="-1">第一种方式：使用 cross-env <a class="header-anchor" href="#第一种方式-使用-cross-env" aria-label="Permalink to &quot;第一种方式：使用 cross-env&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 安装 cross-env</span></span>
 <span class="line"><span>npm i cross-env -D</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 配置不同环境命令，REACT_APP_开头</span></span>
 <span class="line"><span>&quot;build:release&quot;: &quot;cross-env REACT_APP_ENV=release react-scripts build&quot;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
-<span class="line"><span>process.env.REACT_APP_ENV // release</span></span></code></pre></div><h4 id="第二种方式-使用-dotenv" tabindex="-1">第二种方式：使用 dotenv <a class="header-anchor" href="#第二种方式-使用-dotenv" aria-label="Permalink to &quot;第二种方式：使用 dotenv&quot;">​</a></h4><p>安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install dotenv-cli -D</span></span></code></pre></div><p>自定义环境变量名</p><p><img src="`+r+`" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 配置</span></span>
+<span class="line"><span>process.env.REACT_APP_ENV // release</span></span></code></pre></div><h4 id="第二种方式-使用-dotenv" tabindex="-1">第二种方式：使用 dotenv <a class="header-anchor" href="#第二种方式-使用-dotenv" aria-label="Permalink to &quot;第二种方式：使用 dotenv&quot;">​</a></h4><p>安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install dotenv-cli -D</span></span></code></pre></div><p>自定义环境变量名</p><p><img src="`+d+`" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 配置</span></span>
 <span class="line"><span>&quot;start&quot;: &quot;dotenv -e .env.release react-scripts start&quot;,</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
@@ -271,7 +370,13 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    method: &#39;post&#39;,</span></span>
 <span class="line"><span>    data</span></span>
 <span class="line"><span>  })</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="父子组件交互" tabindex="-1">父子组件交互 <a class="header-anchor" href="#父子组件交互" aria-label="Permalink to &quot;父子组件交互&quot;">​</a></h2><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Button from &#39;../components/button&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="受控组件" tabindex="-1">受控组件 <a class="header-anchor" href="#受控组件" aria-label="Permalink to &quot;受控组件&quot;">​</a></h2><p>受控组件：值同步到 state，使用 value 属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const [text, setText] = useState(&#39;hello&#39;)</span></span>
+<span class="line"><span>function changeText(e: ChangeEvent&lt;HTMLInputElement&gt;) {</span></span>
+<span class="line"><span>  setText(e.target.value)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;input type=&quot;text&quot; onChange={changeText} value={text} /&gt;</span></span>
+<span class="line"><span>&lt;button onClick={() =&gt; console.log(text)}&gt;打印input值&lt;/button&gt;</span></span></code></pre></div><p>非受控组件：值不同步 state，使用 defaultValue 属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;input type=&quot;text&quot; defaultValue=&quot;hello world&quot; /&gt;</span></span></code></pre></div><p>defaultValue 显示在页面中，但无法获取到</p><h2 id="父子组件交互" tabindex="-1">父子组件交互 <a class="header-anchor" href="#父子组件交互" aria-label="Permalink to &quot;父子组件交互&quot;">​</a></h2><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Button from &#39;../components/button&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>function Page1() {</span></span>
 <span class="line"><span>  const buttonObj = {</span></span>
@@ -309,7 +414,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>  &lt;/div&gt;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default Button;</span></span></code></pre></div><h2 id="react-hooks" tabindex="-1">React Hooks <a class="header-anchor" href="#react-hooks" aria-label="Permalink to &quot;React Hooks&quot;">​</a></h2><p>使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。</p><h4 id="usestate" tabindex="-1">useState <a class="header-anchor" href="#usestate" aria-label="Permalink to &quot;useState&quot;">​</a></h4><p>向组件添加状态变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const [count, setCount] = useState(0);</span></span>
+<span class="line"><span>export default Button;</span></span></code></pre></div><h2 id="react-hooks" tabindex="-1">React Hooks <a class="header-anchor" href="#react-hooks" aria-label="Permalink to &quot;React Hooks&quot;">​</a></h2><p>使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。</p><p>hooks 使用规则：</p><ol><li>必须使用 useXXX 格式命名</li><li>只能在 函数式组件内或其他hook 内调用</li><li>每次的调用顺序一致（不能放在for、if 内）</li></ol><h4 id="usestate" tabindex="-1">useState <a class="header-anchor" href="#usestate" aria-label="Permalink to &quot;useState&quot;">​</a></h4><p>向组件添加状态变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const [count, setCount] = useState(0);</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// setCount(count + 1) // 这种写法多次执行count只累加一次（合并更新）</span></span>
 <span class="line"><span>// 或</span></span>
@@ -326,7 +431,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>// 数组-传入新值</span></span>
 <span class="line"><span>setList(list.concat(&#39;z&#39;)) // concat 能返回新数组</span></span>
 <span class="line"><span>// 或</span></span>
-<span class="line"><span>setList([...list, &#39;z&#39;])</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h4 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h4><p>在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。</p>`,93),m=s(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>setList([...list, &#39;z&#39;])</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h4 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h4><p>在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。</p>`,114),b=s(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  const connection = createConnection(serverUrl, roomId);</span></span>
 <span class="line"><span>  connection.connect();</span></span>
 <span class="line"><span>  return () =&gt; {</span></span>
@@ -408,9 +513,64 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>startTransition(() =&gt; {</span></span>
 <span class="line"><span>  // 过渡更新: 展示结果（低优先级，防止页面卡顿的情况）</span></span>
 <span class="line"><span>  setResultList(input);</span></span>
-<span class="line"><span>});</span></span></code></pre></div><p><img src="`+d+'" alt="alt text"><img src="'+u+`" alt="alt text"></p><h4 id="usedeferredvalue" tabindex="-1">useDeferredValue <a class="header-anchor" href="#usedeferredvalue" aria-label="Permalink to &quot;useDeferredValue&quot;">​</a></h4><p>延迟更新 UI 的某些部分。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const deferredValue = useDeferredValue(value)</span></span>
+<span class="line"><span>});</span></span></code></pre></div><p><img src="`+u+'" alt="alt text"><img src="'+h+`" alt="alt text"></p><h4 id="usedeferredvalue" tabindex="-1">useDeferredValue <a class="header-anchor" href="#usedeferredvalue" aria-label="Permalink to &quot;useDeferredValue&quot;">​</a></h4><p>延迟更新 UI 的某些部分。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const deferredValue = useDeferredValue(value)</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>&lt;SearchResults query={deferredValue} /&gt;</span></span></code></pre></div><h2 id="tailwind-css" tabindex="-1">Tailwind CSS <a class="header-anchor" href="#tailwind-css" aria-label="Permalink to &quot;Tailwind CSS&quot;">​</a></h2><h4 id="安装-1" tabindex="-1">安装 <a class="header-anchor" href="#安装-1" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install tailwindcss postcss autoprefixer -D</span></span></code></pre></div><h4 id="npx-tailwindcss-init" tabindex="-1">npx tailwindcss init <a class="header-anchor" href="#npx-tailwindcss-init" aria-label="Permalink to &quot;npx tailwindcss init&quot;">​</a></h4><p>生成 tailwind.config.js 并编辑</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/** @type {import(&#39;tailwindcss&#39;).Config} */</span></span>
+<span class="line"><span>&lt;SearchResults query={deferredValue} /&gt;</span></span></code></pre></div><h3 id="自定义-hooks" tabindex="-1">自定义 hooks <a class="header-anchor" href="#自定义-hooks" aria-label="Permalink to &quot;自定义 hooks&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useState, useEffect, useCallback } from &#39;react&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 获取鼠标位置</span></span>
+<span class="line"><span>export function useMouse() {</span></span>
+<span class="line"><span>  const [x, setX] = useState(0)</span></span>
+<span class="line"><span>  const [y, setY] = useState(0)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  const updateMouse = useCallback((e: MouseEvent) =&gt; {</span></span>
+<span class="line"><span>    setX(e.clientX)</span></span>
+<span class="line"><span>    setY(e.clientY)</span></span>
+<span class="line"><span>  }, [])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  useEffect(() =&gt; {</span></span>
+<span class="line"><span>    window.addEventListener(&#39;mousemove&#39;, updateMouse)</span></span>
+<span class="line"><span>    return () =&gt; {</span></span>
+<span class="line"><span>      window.removeEventListener(&#39;mousemove&#39;, updateMouse)</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }, [])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return { x, y }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 模拟异步数据</span></span>
+<span class="line"><span>function getInfo(): Promise&lt;string&gt; {</span></span>
+<span class="line"><span>  return new Promise((resolve) =&gt; {</span></span>
+<span class="line"><span>    setTimeout(() =&gt; {</span></span>
+<span class="line"><span>      resolve(Date.now().toString())</span></span>
+<span class="line"><span>    }, 1500)</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>export function useGetInfo() {</span></span>
+<span class="line"><span>  const [loading, setLoading] = useState(true)</span></span>
+<span class="line"><span>  const [info, setInfo] = useState(&#39;&#39;)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  useEffect(() =&gt; {</span></span>
+<span class="line"><span>    getInfo().then((res) =&gt; {</span></span>
+<span class="line"><span>      setLoading(false)</span></span>
+<span class="line"><span>      setInfo(res)</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>  }, [])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return {</span></span>
+<span class="line"><span>    loading,</span></span>
+<span class="line"><span>    info</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 引用</span></span>
+<span class="line"><span>import { useMouse, useGetInfo } from &#39;./hook&#39;</span></span>
+<span class="line"><span>const { x, y } = useMouse()</span></span>
+<span class="line"><span>const { loading, info } = useGetInfo()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;鼠标位置：{x},{y}&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;{loading ? &#39;加载中&#39; : info}&lt;/div&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="第三方-hooks" tabindex="-1">第三方 hooks <a class="header-anchor" href="#第三方-hooks" aria-label="Permalink to &quot;第三方 hooks&quot;">​</a></h3><p><a href="https://ahooks.js.org/zh-CN" target="_blank" rel="noreferrer">https://ahooks.js.org/zh-CN</a></p><p><a href="https://github.com/streamich/react-use" target="_blank" rel="noreferrer">https://github.com/streamich/react-use</a></p><h2 id="tailwind-css" tabindex="-1">Tailwind CSS <a class="header-anchor" href="#tailwind-css" aria-label="Permalink to &quot;Tailwind CSS&quot;">​</a></h2><h4 id="安装-1" tabindex="-1">安装 <a class="header-anchor" href="#安装-1" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install tailwindcss postcss autoprefixer -D</span></span></code></pre></div><h4 id="npx-tailwindcss-init" tabindex="-1">npx tailwindcss init <a class="header-anchor" href="#npx-tailwindcss-init" aria-label="Permalink to &quot;npx tailwindcss init&quot;">​</a></h4><p>生成 tailwind.config.js 并编辑</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/** @type {import(&#39;tailwindcss&#39;).Config} */</span></span>
 <span class="line"><span>module.exports = {</span></span>
 <span class="line"><span>  content: [&quot;./src/**/*.{js,jsx,ts,tsx}&quot;],</span></span>
 <span class="line"><span>  theme: {</span></span>
@@ -470,4 +630,4 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>declare module &#39;*.module.scss&#39; {</span></span>
 <span class="line"><span>  const classes: { readonly [key: string]: string };</span></span>
 <span class="line"><span>  export default classes;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p><hr><p>gitee 源码：</p><p><a href="https://gitee.com/org-xhh/react-project" target="_blank" rel="noreferrer">https://gitee.com/org-xhh/react-project</a></p>`,58);function b(v,k,x,f,q,C){const a=p("font");return i(),e("div",null,[g,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),m])}const P=n(h,[["render",b]]);export{A as __pageData,P as default};
+<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p><hr><p>gitee 源码：</p><p><a href="https://gitee.com/org-xhh/react-project" target="_blank" rel="noreferrer">https://gitee.com/org-xhh/react-project</a></p>`,63);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};
