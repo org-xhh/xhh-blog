@@ -630,4 +630,4 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>declare module &#39;*.module.scss&#39; {</span></span>
 <span class="line"><span>  const classes: { readonly [key: string]: string };</span></span>
 <span class="line"><span>  export default classes;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p><hr><p>gitee 源码：</p><p><a href="https://gitee.com/org-xhh/react-project" target="_blank" rel="noreferrer">https://gitee.com/org-xhh/react-project</a></p>`,63);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};
+<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p>`,60);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};
