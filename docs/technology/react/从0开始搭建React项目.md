@@ -1090,9 +1090,3 @@ declare module '*.module.scss' {
 ```
 
 将文件重命名为 .tsx 或 .ts 文件
-
----
-
-gitee 源码：
-
-https://gitee.com/org-xhh/react-project
