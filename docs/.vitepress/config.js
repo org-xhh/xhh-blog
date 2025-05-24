@@ -163,7 +163,8 @@ export default {
         text: "react",
         items: [
           { text: "React", link: "/technology/react/react" },
-          { text: "从0开始搭建React项目", link: "/technology/react/从0开始搭建React项目" }
+          { text: "create-react-app", link: "/technology/react/create-react-app" },
+          { text: "dva", link: "/technology/react/dva" }
         ],
       },
       "/tool/gitsvn/": {
