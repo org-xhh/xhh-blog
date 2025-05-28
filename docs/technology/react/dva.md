@@ -746,12 +746,13 @@ export default {
           type: 'increment', 
           payload
         })
+        return '返回值haha'
       },
       // 第二项指定监听器的类型
       // {type: 'throttle', ms: 500}
-      { type: 'takeLatest' } // 多次点击只有最有一次生效
+      { type: 'takeLatest' } // 多次点击只有最有一次生效（防抖）
     ],
-    // *incrementAsync({payload}, {call, put, select}) {
+    // *incrementAsync({payload}, {call, put, select}) { // 没有防抖
     //   // let state = yield select() // 获取所有 model 状态
     //   let state = yield select(state => state.count) // 只获取 count 状态
     //   yield call(delay, 2000)
@@ -773,10 +774,13 @@ function Count({num, dispatch}) {
             <div>
                 <span>{num}</span>
                 <button onClick={() => {
-                    dispatch({type: 'count/increment', payload: 1});
+                    console.log(dispatch({type: 'count/increment', payload: 1})) // 返回值是 action
                 }}>同步 add num</button>
                 <button onClick={() => {
-                    dispatch({type: 'count/incrementAsync', payload: 5});
+                    // 异步派发 返回值是 Promise
+                    console.log(dispatch({type: 'count/incrementAsync', payload: 5}).then((value) => {
+                        console.log('value', value) // 返回值haha
+                    }))
                 }}>异步 add num</button>
             </div>
         </div>
@@ -894,3 +898,50 @@ function Vote({supNum, oppNum, dispatch}) {
 export default connect(state => state.vote)(Vote)
 ```
 ![alt text](image-12.png)
+
+## dva-loading 插件
+src/index.js:
+```
+import createLoading from 'dva-loading'
+
+app.use(createLoading()); // 全局state中就有 loading 状态了
+```
+src/routes/Count.jsx:
+```
+import { connect } from "dva";
+import { Button } from 'antd'
+function Count({num, loading, dispatch}) {
+    // 和异步操作关联
+    loading = loading.effects['count/incrementAsync']
+    return (
+        <div>
+            <div>
+                <Button type="primary" loading={loading} onClick={() => {
+                    console.log(dispatch({type: 'count/incrementAsync', payload: 5}).then((value) => {
+                        console.log('value', value) // 返回值haha
+                    }))
+                }}>异步 add num</Button>
+            </div>
+        </div>
+    );
+}
+export default connect(state => {
+    return {
+        ...state.count,
+        loading: state.loading
+    }
+})(Count)
+```
+点击“异步 add num”按钮，按钮上会出现loading，异步操作(2s)后，loading消失，同时打印value。
+
+## redux-logger 中间件
+src/index.js:
+```
+import createLogger from 'redux-logger'
+
+const app = dva({
+    onAction: createLogger() // 调试 redux
+});
+```
+派发时打印的日志：
+![alt text](image-13.png)
