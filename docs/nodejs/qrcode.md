@@ -35,6 +35,7 @@ createQrcode(url, w = 80, h = 80) {
     let qrImg = this.qrcode._el.getElementsByTagName('img')[0]
     let canvas = this.qrcode._el.getElementsByTagName('canvas')[0]
     canvas.style.display = 'inline-block'
+    // canvas.style.display = 'none' // 这个隐藏，显示图片浏览器可识别保存
     let ctx = canvas.getContext('2d')
 
     // logo白色背景
@@ -55,6 +56,7 @@ createQrcode(url, w = 80, h = 80) {
     ctx.drawImage(logo, logoPosition, logoPosition, logoWidth, logoHeight)
     qrImg.src = canvas.toDataURL()
     qrImg.style.display = 'none'
+    // qrImg.style.display = 'block' // 显示图片浏览器可识别保存
   }
 }
 ```

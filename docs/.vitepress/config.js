@@ -164,7 +164,8 @@ export default {
         items: [
           { text: "React", link: "/technology/react/react" },
           { text: "create-react-app", link: "/technology/react/create-react-app" },
-          { text: "dva", link: "/technology/react/dva" }
+          { text: "dva", link: "/technology/react/dva" },
+          { text: "umi", link: "/technology/react/umi" }
         ],
       },
       "/tool/gitsvn/": {

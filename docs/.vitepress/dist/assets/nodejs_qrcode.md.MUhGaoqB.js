@@ -24,6 +24,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const u
 <span class="line"><span>    let qrImg = this.qrcode._el.getElementsByTagName(&#39;img&#39;)[0]</span></span>
 <span class="line"><span>    let canvas = this.qrcode._el.getElementsByTagName(&#39;canvas&#39;)[0]</span></span>
 <span class="line"><span>    canvas.style.display = &#39;inline-block&#39;</span></span>
+<span class="line"><span>    // canvas.style.display = &#39;none&#39; // 这个隐藏，显示图片浏览器可识别保存</span></span>
 <span class="line"><span>    let ctx = canvas.getContext(&#39;2d&#39;)</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // logo白色背景</span></span>
@@ -44,5 +45,6 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const u
 <span class="line"><span>    ctx.drawImage(logo, logoPosition, logoPosition, logoWidth, logoHeight)</span></span>
 <span class="line"><span>    qrImg.src = canvas.toDataURL()</span></span>
 <span class="line"><span>    qrImg.style.display = &#39;none&#39;</span></span>
+<span class="line"><span>    // qrImg.style.display = &#39;block&#39; // 显示图片浏览器可识别保存</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,4),t=[l];function o(i,c,r,d,g,h){return a(),n("div",null,t)}const _=s(e,[["render",o]]);export{u as __pageData,_ as default};
+<span class="line"><span>}</span></span></code></pre></div>`,4),t=[l];function i(o,c,r,d,g,h){return a(),n("div",null,t)}const _=s(e,[["render",i]]);export{u as __pageData,_ as default};

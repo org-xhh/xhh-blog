@@ -3,8 +3,6 @@
 - [React 中文网](https://react.nodejs.cn/learn) -->
 - [React Router](https://reactrouter.com/en/main/start/overview)
 - [Redux](https://www.reduxjs.cn/)
-- [dva](https://dvajs.com/guide)
-- [umi](https://umijs.org/)
 - [Create React App](https://create-react-app.bootcss.com/)
 <!-- - [Create React App 中文网](https://cra.nodejs.cn/docs/documentation-intro) -->
 - [Next.js](https://nextjs.org/docs)
@@ -13,6 +11,9 @@
 <!-- - [TypeScript中文手册](https://typescript.bootcss.com/basic-types.html) -->
 - [TypeScript](https://www.tslang.cn/docs/handbook/basic-types.html)
 - [antd-pro](https://pro.ant.design/docs/getting-started)
+- [dva](https://dvajs.com/guide)
+- [Umi](https://umijs.org/)
+- [Umi Max](https://umijs.org/docs/max/introduce)
 
 > React 是一个用于构建用户界面（UI）的 JavaScript 库
 
