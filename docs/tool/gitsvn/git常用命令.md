@@ -50,6 +50,24 @@ git stash
 ### 恢复最近一次暂存的修改，并从暂存列表中删除
 git stash pop
 
+### 撤销某个更改
+git revert [commit-hash]
+
+git push
+
+![alt text](image-7.png)
+
+### 回到之前的某个版本
+不保留工作区的修改:
+git reset --hard [commit-hash]
+
+保留工作区的修改:
+git reset --soft [commit-hash]
+
+git push origin <分支名> --force
+
+![alt text](image-6.png)
+
 ### 忽略文件大小写
 git config core.ignorecase true(false)
 
