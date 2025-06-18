@@ -117,10 +117,11 @@ export default {
         text: "vue知识",
         items: [
           { text: "vue文档", link: "/technology/vue/vue文档" },
+          { text: "vue3知识点", link: "/technology/vue/vue3知识点" },
           { text: "环境变量", link: "/technology/vue/环境变量" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
           { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
-          { text: "vue指令 输入中文问题", link: "/technology/vue/vue指令输入中文问题"},
+          { text: "vue指令", link: "/technology/vue/vue指令"},
           { text: "i18n", link: "/technology/vue/i18n" },
           { text: "nginx", link: "/technology/vue/nginx" },
           { text: "通信", link: "/technology/vue/通信"}
