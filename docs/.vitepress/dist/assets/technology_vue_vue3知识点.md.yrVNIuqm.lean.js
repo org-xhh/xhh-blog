@@ -1,0 +1,598 @@
+import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/framework.C5U8cnJv.js";const r="/xhh-blog/assets/image-3.C7Iq01n0.png",u="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAAATCAYAAABr0k0GAAAEzklEQVR4Ae2YUW7dOgxE+9ldZC/vJ8vLFgpkoXlggRNMp5RMuVbi3PACBsnhcChRtlL0x1v/egI9gZ5AT+DhJvDj4XbUG+oJ9AR6Aj2Bt77c+yXoCfQEegIPOIFvdbk/PT3d9gh3rG2H5m0H2AvrCZyYQHwjj/qdfJvLvXKAlYOu6Jx4x36XXKmtWi8vL2/x3PF3t7VV3oHVOaKpZ7Kq8Zn8ozO667tVnVnlXCqcSr+rdCq9PuRyjw3pU1nYlZxsoKzH+2Rc5+yKr+ztWnf+AK9eG2eLrZ6XzoxatVWdEU/1R5y74lef0Z32WTmXCqeyp6t0Kr2WL/fX19eK7h8c3ZD6f5A2BVk/xUb+puVMZXUtU+JB0nXu/GHuWJvuX/3Z2Ea8ET7TynJX6WTau7EdZ7R7zVX9yrkERx/VBs8wzxFjtWaHv3y5Pz8/v61e8LEZfuqD7bTebxZ7bse6Zj1muZW1uM6dP87q2nxPs3koV/1qjfKq9VqT+VfpZNq7seoZVdaxOoef//2qyJ7mVNeT8RQb+b4w5Xnu6vjU5b56wceGeGID+G7ZnOKOaf3Ij3p+6sMn53HWFw45r63i8NSqFn0cW41D3398nGHxg0OcYZ5XLj59iNHRWH3n08NxdMBX7WjGGa4YvvYLjB95MGzkNae41uJ/hGXu0Uv9WW94Pn9i8qpJDl04WPBVG5d69QltuO5rnP2h4NyO1jc6U+o9D+66zvP8lfHpy716wY82U9m81uJjGYLG6kd+JVau+lkf11Z++MTYkQa46ym+6ntPPj4sehof+eTdhhZY5mtupS/cM5b9Y9HQWP3Ie5zVKC/4PBnX9TymZqfV2as/6jnigGO1/gjL8lp/5GeXsV7iWq/cih+1K+eScTNM15T1qNS4xtn4Uy/3bNG6efWzQSnmXM3Rxzkaj/xZbdTwjHjgYbWH4kc5585i7xEfWPaRgWPRhIsNHN+5mpv5aB9xMn2trfjsH0tNxPqAh3UuOceJ3boG+ZEO+E6rZ1btk80/w9CjB3FYxdRXTtXXS5qaDIuc4u5HzINOWD8nzbkfXB7NgamWYorTk7zq7PBPX+7V/3f3zbGJI1zzOgzFq1oZz3WIsdRgHfc44zmHGJvVgJ21rs0HhkXXY/CwWS6wEZ7VZFzljfSUE/7qT/c/8l1TeZpznNht1GQYWuSIP8LO5nvUX88OH6u1MyzLaW3F55LGRo36qgEeFn/Gj9xnnIuuebd/6nKvXOwxOB7dBBhWc+E7rrH6Whd49nOc+gzPeqPpfOV6btaDHLroaPwvvq8lPjA+Miz65ByPfIaNcHQy3UwHPhZdYq/xPdHHLbNVvvtwqCXGznA4bqMmMCy+xtT8JgmfeIf1Oc566Oy1DjxqM1zzynE8cjqX2VrIcUlzUWsMBjfsKK+48lfXo7VfxV++3CsX+0du/uiQjvKVtV6hkfW5Wjf0/lVTP+JszY39PYGVma9w/+50b+SrvDuPfAb6hixf7lr8WX4cDs+uNaD/HV4E/qX1VT7OXWd+Rpf35EztUY2eS8Uf6Y1qR/wzOD3O1HbNngl8yct9zyhatSfQE+gJPM4E+nJ/nLPsnfQEegI9gfcJ9OX+Pop2egI9gZ7A40ygL/fHOcveSU+gJ9ATeJ/A/+0ugd9yrwqtAAAAAElFTkSuQmCC",d="/xhh-blog/assets/image-5.B_o9TzKY.png",g="/xhh-blog/assets/image-6.zorG9-3K.png",h="/xhh-blog/assets/image-7.B3CFRtc6.png",m="/xhh-blog/assets/image-14.CkUg3BDl.png",v="/xhh-blog/assets/image-15.C8aOIHUB.png",b="data:image/png;base64,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",A="data:image/png;base64,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",f="data:image/png;base64,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",k="data:image/png;base64,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",q="/xhh-blog/assets/image-13.khYH32a0.png",I=JSON.parse('{"title":"vue3 部分知识点","description":"","frontmatter":{},"headers":[],"relativePath":"technology/vue/vue3知识点.md","filePath":"technology/vue/vue3知识点.md"}'),y={name:"technology/vue/vue3知识点.md"},C=a(`<h1 id="vue3-部分知识点" tabindex="-1">vue3 部分知识点 <a class="header-anchor" href="#vue3-部分知识点" aria-label="Permalink to &quot;vue3 部分知识点&quot;">​</a></h1><h2 id="torefs-toref" tabindex="-1">toRefs, toRef <a class="header-anchor" href="#torefs-toref" aria-label="Permalink to &quot;toRefs, toRef&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let person = reactive({</span></span>
+<span class="line"><span>  name: &#39;张三&#39;,</span></span>
+<span class="line"><span>  age: 19</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>// 解构出来的name不是响应式的，修改name不会触发person.name改变</span></span>
+<span class="line"><span>let { name, age } = person</span></span>
+<span class="line"><span>function changeName() {</span></span>
+<span class="line"><span>  name += &#39;~&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let { name } = toRefs(person)</span></span>
+<span class="line"><span>console.log(&#39;name---&#39;, name) // ObjectRefImpl</span></span>
+<span class="line"><span>function changeName() {</span></span>
+<span class="line"><span>  name.value += &#39;~&#39; // person.name 会改变</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>// or</span></span>
+<span class="line"><span>let name = toRef(person, &#39;name&#39;)</span></span>
+<span class="line"><span>console.log(&#39;name---&#39;, name) // ObjectRefImpl</span></span>
+<span class="line"><span>function changeName() {</span></span>
+<span class="line"><span>  name.value += &#39;~&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="computed" tabindex="-1">computed <a class="header-anchor" href="#computed" aria-label="Permalink to &quot;computed&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let num1 = ref(0)</span></span>
+<span class="line"><span>let num2 = ref(0)</span></span>
+<span class="line"><span>// let sum = computed(() =&gt; {</span></span>
+<span class="line"><span>//   return (parseFloat(num1.value) || 0) + (parseFloat(num2.value) || 0)</span></span>
+<span class="line"><span>// })</span></span>
+<span class="line"><span>// // computed 计算有缓存，只读</span></span>
+<span class="line"><span>// function changeComputedValue() {</span></span>
+<span class="line"><span>//   sum.value = 222 // computed value is readonly</span></span>
+<span class="line"><span>// }</span></span>
+<span class="line"><span>let sum = computed({</span></span>
+<span class="line"><span>  get() {</span></span>
+<span class="line"><span>    return (parseFloat(num1.value) || 0) + (parseFloat(num2.value) || 0)</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  set(val) {</span></span>
+<span class="line"><span>    // console.log(&#39;value&#39;, val)</span></span>
+<span class="line"><span>    const [n1, n2] = val.split(&#39;-&#39;)</span></span>
+<span class="line"><span>    num1.value = n1</span></span>
+<span class="line"><span>    num2.value = n2</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeComputedValue() {</span></span>
+<span class="line"><span>  sum.value = &#39;8-9&#39; // 触发 set 方法, num1,num2和sum都改变</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p><img src="`+r+`" alt="alt text"></p><h2 id="watch" tabindex="-1">watch <a class="header-anchor" href="#watch" aria-label="Permalink to &quot;watch&quot;">​</a></h2><p>watch 可以监听：</p><ol><li>ref 定义的数据</li><li>reactive 定义的数据</li><li>函数返回一个值(getter 函数)</li><li>一个包含上述内容的数组</li></ol><h3 id="ref-定义的基本类型" tabindex="-1">ref 定义的基本类型 <a class="header-anchor" href="#ref-定义的基本类型" aria-label="Permalink to &quot;ref 定义的基本类型&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val1 = ref(0)</span></span>
+<span class="line"><span>const stopWatch = watch(val1, (newValue, oldValue) =&gt; {</span></span>
+<span class="line"><span>  console.log(newValue, oldValue)</span></span>
+<span class="line"><span>  if (newValue &gt;= 10) {</span></span>
+<span class="line"><span>    stopWatch() // 移除监听</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeSum() {</span></span>
+<span class="line"><span>  val1.value += 1</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="ref-定义的对象类型" tabindex="-1">ref 定义的对象类型 <a class="header-anchor" href="#ref-定义的对象类型" aria-label="Permalink to &quot;ref 定义的对象类型&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val2 = ref({</span></span>
+<span class="line"><span>  name: 0</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>// val2对象的地址值变化才能监听到；只改name监听不到</span></span>
+<span class="line"><span>watch(val2, (newValue) =&gt; {</span></span>
+<span class="line"><span>  console.log(&#39;监听val2变化&#39;, newValue)</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeVal2Name() {</span></span>
+<span class="line"><span>  // val2.value.name += &#39;~&#39; // 监听不到</span></span>
+<span class="line"><span>  val2.value = { name: 1 }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>优化：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val2 = ref({</span></span>
+<span class="line"><span>  name: 0</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>watch(</span></span>
+<span class="line"><span>  val2,</span></span>
+<span class="line"><span>  (newValue, oldValue) =&gt; {</span></span>
+<span class="line"><span>    // val2.value.name += &#39;~&#39; =&gt; newValue, oldValue 都是新值，因为它们是同一个对象 (true)</span></span>
+<span class="line"><span>    console.log(&#39;监听val2变化&#39;, newValue, oldValue, newValue === oldValue)</span></span>
+<span class="line"><span>    // val2.value = { name: 1 } =&gt; newValue是新值，oldValue是旧值，不是一个对象了 (false)</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  { deep: true } // 需要开启deep才能监听到ref定义的对象属性变化</span></span>
+<span class="line"><span>  // immediate: true</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>function changeVal2Name() {</span></span>
+<span class="line"><span>  val2.value.name += &#39;~&#39;</span></span>
+<span class="line"><span>  // val2.value = { name: 1 }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="reactive-定义的对象类型" tabindex="-1">reactive 定义的对象类型 <a class="header-anchor" href="#reactive-定义的对象类型" aria-label="Permalink to &quot;reactive 定义的对象类型&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
+<span class="line"><span>  name: 0</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>// reactive定义的对象类型监听时默认开启了深度监听deep，且无法关闭</span></span>
+<span class="line"><span>watch(val3, (newValue) =&gt; {</span></span>
+<span class="line"><span>  console.log(&#39;监听val3变化&#39;, newValue)</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeVal3Name() { // reactive定义的数据不能直接修改，可以通过Object.assign()方法修改</span></span>
+<span class="line"><span>  // val3.name = 888</span></span>
+<span class="line"><span>  Object.assign(val3, { name: 999 })</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="一个函数返回一个值-getter-函数" tabindex="-1">一个函数返回一个值(getter 函数) <a class="header-anchor" href="#一个函数返回一个值-getter-函数" aria-label="Permalink to &quot;一个函数返回一个值(getter 函数)&quot;">​</a></h3><h4 id="监听响应式对象某个属性-且该属性是基本类型" tabindex="-1">监听响应式对象某个属性，且该属性是基本类型： <a class="header-anchor" href="#监听响应式对象某个属性-且该属性是基本类型" aria-label="Permalink to &quot;监听响应式对象某个属性，且该属性是基本类型：&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
+<span class="line"><span>  name: 0,</span></span>
+<span class="line"><span>  age: 18</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>watch(</span></span>
+<span class="line"><span>  () =&gt; val3.name,</span></span>
+<span class="line"><span>  (newValue) =&gt; {</span></span>
+<span class="line"><span>    console.log(&#39;监听val3.name变化&#39;, newValue)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>function changeVal3Name() {</span></span>
+<span class="line"><span>  val3.name = 888</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="监听响应式对象某个属性-且该属性是对象类型" tabindex="-1">监听响应式对象某个属性，且该属性是对象类型： <a class="header-anchor" href="#监听响应式对象某个属性-且该属性是对象类型" aria-label="Permalink to &quot;监听响应式对象某个属性，且该属性是对象类型：&quot;">​</a></h4><p>这种写法兼听不到对象整体改变：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
+<span class="line"><span>  name: 0,</span></span>
+<span class="line"><span>  age: 18,</span></span>
+<span class="line"><span>  obj: {</span></span>
+<span class="line"><span>    count: 1</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>watch(val3.obj, (newValue) =&gt; {</span></span>
+<span class="line"><span>  console.log(&#39;监听val3.obj变化&#39;, newValue)</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeVal3Name() {</span></span>
+<span class="line"><span>  val3.obj.count = 2</span></span>
+<span class="line"><span>  // val3.obj = { count: 3 } // 整体改变，这个监听obj监听不到</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>这种写法监听不到属性改变：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
+<span class="line"><span>  name: 0,</span></span>
+<span class="line"><span>  age: 18,</span></span>
+<span class="line"><span>  obj: {</span></span>
+<span class="line"><span>    count: 1</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>watch(</span></span>
+<span class="line"><span>  () =&gt; val3.obj,</span></span>
+<span class="line"><span>  (newValue) =&gt; {</span></span>
+<span class="line"><span>    console.log(&#39;监听val3.obj变化&#39;, newValue)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>function changeVal3Name() {</span></span>
+<span class="line"><span>  // val3.obj.count = 2 // 这个写法属性改变监听不到</span></span>
+<span class="line"><span>  val3.obj = { count: 3 }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>优化：</p>`,27),x=a(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
+<span class="line"><span>  name: 0,</span></span>
+<span class="line"><span>  age: 18,</span></span>
+<span class="line"><span>  obj: {</span></span>
+<span class="line"><span>    count: 1</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>watch(</span></span>
+<span class="line"><span>  () =&gt; val3.obj,</span></span>
+<span class="line"><span>  (newValue) =&gt; {</span></span>
+<span class="line"><span>    console.log(&#39;监听val3.obj变化&#39;, newValue)</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    deep: true</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span>function changeVal3Name() {</span></span>
+<span class="line"><span>  // val3.obj.count = 2 // 2种写法都能监听到</span></span>
+<span class="line"><span>  val3.obj = { count: 3 }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="监听一个包含上述内容的数组" tabindex="-1">监听一个包含上述内容的数组 <a class="header-anchor" href="#监听一个包含上述内容的数组" aria-label="Permalink to &quot;监听一个包含上述内容的数组&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>watch(</span></span>
+<span class="line"><span>  [val2, () =&gt; val3.obj],</span></span>
+<span class="line"><span>  (newValue, oldValue) =&gt; {</span></span>
+<span class="line"><span>    console.log(&#39;监听&#39;, newValue, oldValue)</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    deep: true</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>)</span></span></code></pre></div><h2 id="watcheffect" tabindex="-1">watchEffect <a class="header-anchor" href="#watcheffect" aria-label="Permalink to &quot;watchEffect&quot;">​</a></h2><p>watchEffect 响应式地追踪其依赖，并在依赖更改时重新执行该函数</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>watchEffect(() =&gt; {</span></span>
+<span class="line"><span>  console.log(&#39;一上来就执行一次watchEffect&#39;)</span></span>
+<span class="line"><span>  // num1、num2 任何一个发生变化都会执行</span></span>
+<span class="line"><span>  if (num1.value &gt;= 10 || num2.value &gt;= 10) {</span></span>
+<span class="line"><span>    console.log(&#39;超过10&#39;)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h2 id="标签-ref-属性" tabindex="-1">标签 ref 属性 <a class="header-anchor" href="#标签-ref-属性" aria-label="Permalink to &quot;标签 ref 属性&quot;">​</a></h2><p>用在 html 标签上：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;</span></span>
+<span class="line"><span>    &lt;div ref=&quot;refEle&quot;&gt;dom&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;/div&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script setup&gt;</span></span>
+<span class="line"><span>import { ref, onMounted } from &#39;vue&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const refEle = ref(null)</span></span>
+<span class="line"><span>onMounted(() =&gt; {</span></span>
+<span class="line"><span>  console.log(refEle.value)</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>用在子组件上：</p><p>如果不用 defineExpose 暴露出去，父组件无法访问子组件内容</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 父组件</span></span>
+<span class="line"><span>&lt;CommonHeader ref=&quot;compRef&quot; /&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>let compRef = ref()</span></span>
+<span class="line"><span>onMounted(() =&gt; {</span></span>
+<span class="line"><span>  console.log(compRef.value, compRef.value.keywords)</span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 子组件</span></span>
+<span class="line"><span>import { ref, defineExpose } from &#39;vue&#39;</span></span>
+<span class="line"><span>let keywords = ref(&#39;test&#39;)</span></span>
+<span class="line"><span>defineExpose({ keywords })</span></span></code></pre></div><p><img src="`+u+`" alt="alt text"></p><h2 id="组件-props" tabindex="-1">组件 props <a class="header-anchor" href="#组件-props" aria-label="Permalink to &quot;组件 props&quot;">​</a></h2><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;Person a=&quot;哈哈&quot; :list=&quot;personList&quot; /&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script setup lang=&quot;ts&quot;&gt;</span></span>
+<span class="line"><span>import Person from &#39;./components/Person.vue&#39;</span></span>
+<span class="line"><span>import { reactive } from &#39;vue&#39;</span></span>
+<span class="line"><span>import { type Persons } from &#39;./types&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// const personList: Persons = reactive([</span></span>
+<span class="line"><span>//   {</span></span>
+<span class="line"><span>//     id: &#39;1&#39;,</span></span>
+<span class="line"><span>//     name: &#39;xhh&#39;,</span></span>
+<span class="line"><span>//     age: 19,</span></span>
+<span class="line"><span>//   },</span></span>
+<span class="line"><span>//   {</span></span>
+<span class="line"><span>//     id: &#39;2&#39;,</span></span>
+<span class="line"><span>//     name: &#39;lb&#39;,</span></span>
+<span class="line"><span>//     age: 20,</span></span>
+<span class="line"><span>//   },</span></span>
+<span class="line"><span>// ])</span></span>
+<span class="line"><span>// or 泛型</span></span>
+<span class="line"><span>const personList = reactive&lt;Persons&gt;([</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    id: &#39;1&#39;,</span></span>
+<span class="line"><span>    name: &#39;xhh&#39;,</span></span>
+<span class="line"><span>    age: 19,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    id: &#39;2&#39;,</span></span>
+<span class="line"><span>    name: &#39;lb&#39;,</span></span>
+<span class="line"><span>    age: 20,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>])</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>src/types/index.ts:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 接口</span></span>
+<span class="line"><span>export interface PersonInter {</span></span>
+<span class="line"><span>  id: string</span></span>
+<span class="line"><span>  name: string</span></span>
+<span class="line"><span>  age: number</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 自定义类型</span></span>
+<span class="line"><span>// export type Persons = Array&lt;PersonInter&gt;</span></span>
+<span class="line"><span>// or</span></span>
+<span class="line"><span>export type Persons = PersonInter[]</span></span></code></pre></div><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const x = defineProps([&#39;a&#39;, &#39;list&#39;])</span></span>
+<span class="line"><span>console.log(x, x.a, x.list)</span></span></code></pre></div><p><img src="`+d+`" alt="alt text"></p><p>加上类型校验：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { type Persons } from &#39;@/types&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>defineProps&lt;{ list: Persons }&gt;()</span></span></code></pre></div><p>类型校验+可选传参：</p><p>父组件不传 list 也可以</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { type Persons } from &#39;@/types&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>defineProps&lt;{ list?: Persons }&gt;()</span></span></code></pre></div><p>类型校验+可选传参+默认值：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// [@vue/compiler-sfc] \`withDefaults\` is a compiler macro and no longer needs to be imported.</span></span>
+<span class="line"><span>// import { withDefaults } from &#39;vue&#39;</span></span>
+<span class="line"><span>import { type Persons } from &#39;@/types&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>withDefaults(defineProps&lt;{ list?: Persons }&gt;(), {</span></span>
+<span class="line"><span>  list: () =&gt; [</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      id: &#39;2-2&#39;,</span></span>
+<span class="line"><span>      name: &#39;haha&#39;,</span></span>
+<span class="line"><span>      age: 24,</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>  ],</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h2 id="router" tabindex="-1">Router <a class="header-anchor" href="#router" aria-label="Permalink to &quot;Router&quot;">​</a></h2><p>创建路由：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createRouter, createWebHistory } from &#39;vue-router&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const router = createRouter({</span></span>
+<span class="line"><span>  history: createWebHistory(import.meta.env.BASE_URL),</span></span>
+<span class="line"><span>  routes: [</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      path: &#39;/login&#39;,</span></span>
+<span class="line"><span>      name: &#39;login&#39;,</span></span>
+<span class="line"><span>      meta: {</span></span>
+<span class="line"><span>        title: &#39;登录&#39;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      component: () =&gt; import(&#39;../views/login&#39;)</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    ...</span></span>
+<span class="line"><span>  ],</span></span>
+<span class="line"><span>  scrollBehavior: () =&gt; {</span></span>
+<span class="line"><span>    // 新开页面滚动条回到顶部</span></span>
+<span class="line"><span>    return { top: 0 }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default router</span></span></code></pre></div><p>挂载路由：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createApp } from &#39;vue&#39;</span></span>
+<span class="line"><span>import router from &#39;./router&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const app = createApp(App)</span></span>
+<span class="line"><span>app.use(router)</span></span></code></pre></div><p>渲染出匹配到的路由：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;RouterView :key=&quot;$route.fullPath&quot; /&gt;</span></span></code></pre></div><h3 id="接收参数" tabindex="-1">接收参数 <a class="header-anchor" href="#接收参数" aria-label="Permalink to &quot;接收参数&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useRouter, useRoute } from &#39;vue-router&#39;</span></span>
+<span class="line"><span>const router = useRouter()</span></span>
+<span class="line"><span>const route = useRoute()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>console.log(&#39;route:&#39;, route)</span></span></code></pre></div><p><img src="`+g+'" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>console.log(&#39;router.currentRoute.value:&#39;, router.currentRoute.value)</span></span></code></pre></div><p><img src="'+h+`" alt="alt text"></p><h3 id="路由规则的-props-配置" tabindex="-1">路由规则的 props 配置 <a class="header-anchor" href="#路由规则的-props-配置" aria-label="Permalink to &quot;路由规则的 props 配置&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  path: &#39;/waterfallPage&#39;,</span></span>
+<span class="line"><span>  name: &#39;waterfallPage&#39;,</span></span>
+<span class="line"><span>  meta: {</span></span>
+<span class="line"><span>    title: &#39;瀑布流&#39;</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  component: () =&gt; import(&#39;../views/waterfallPage&#39;),</span></span>
+<span class="line"><span>  children: [</span></span>
+<span class="line"><span>    // 嵌套路由 /waterfallPage/waterfall</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      path: &#39;waterfall/:a?/:b?&#39;,</span></span>
+<span class="line"><span>      name: &#39;waterfall&#39;,</span></span>
+<span class="line"><span>      meta: {</span></span>
+<span class="line"><span>        title: &#39;瀑布流子页面&#39;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      component: () =&gt; import(&#39;../views/waterfall&#39;),</span></span>
+<span class="line"><span>      // &lt;waterfall a=&quot;&quot; b=&quot;&quot; /&gt;</span></span>
+<span class="line"><span>      // props: true // 写法一、将路由收到的所有params参数作为props传递给路由组件</span></span>
+<span class="line"><span>      props(route) {</span></span>
+<span class="line"><span>        // 写法二、自己决定将什么作为props传递给路由组件</span></span>
+<span class="line"><span>        // return route.query</span></span>
+<span class="line"><span>        return route.params</span></span>
+<span class="line"><span>      }</span></span>
+<span class="line"><span>      // props: {</span></span>
+<span class="line"><span>      //   // 写法三</span></span>
+<span class="line"><span>      //   a: 100</span></span>
+<span class="line"><span>      // }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  ]</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>页面接收：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>defineProps([&#39;a&#39;, &#39;b&#39;])</span></span></code></pre></div><h3 id="replace" tabindex="-1">replace <a class="header-anchor" href="#replace" aria-label="Permalink to &quot;replace&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;RouterLink replace to=&quot;/goodsDetail?id=2&quot;&gt;goodsDetail&lt;/RouterLink&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>router.replace({</span></span>
+<span class="line"><span>  name: &#39;confirmOrder&#39;</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h3 id="重定向" tabindex="-1">重定向 <a class="header-anchor" href="#重定向" aria-label="Permalink to &quot;重定向&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  path: &#39;/&#39;,</span></span>
+<span class="line"><span>  redirect: &#39;/home&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="pinia" tabindex="-1">pinia <a class="header-anchor" href="#pinia" aria-label="Permalink to &quot;pinia&quot;">​</a></h2><p>引入 pinia</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createPinia } from &#39;pinia&#39;</span></span>
+<span class="line"><span>const pinia = createPinia()</span></span>
+<span class="line"><span>app.use(pinia)</span></span></code></pre></div><p>创建 store（目录 src/store）:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { defineStore } from &#39;pinia&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 官方推荐命名格式</span></span>
+<span class="line"><span>export const useCounterStore = defineStore(&#39;counter&#39;, {</span></span>
+<span class="line"><span>  state() {</span></span>
+<span class="line"><span>    // 存储数据</span></span>
+<span class="line"><span>    return {</span></span>
+<span class="line"><span>      count: 0</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  getters: {</span></span>
+<span class="line"><span>    double: (state) =&gt; state.count * 2</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  actions: {</span></span>
+<span class="line"><span>    increment(value) {</span></span>
+<span class="line"><span>      this.count += value</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span></code></pre></div><p>使用 store:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useCounterStore } from &#39;@/store/counter&#39;</span></span>
+<span class="line"><span>const counter = useCounterStore()</span></span>
+<span class="line"><span>console.log(&#39;获取 store count:&#39;, counter.count, counter.$state.count)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function addShopCart() {</span></span>
+<span class="line"><span>  // pinia</span></span>
+<span class="line"><span>  // counter.count += 1</span></span>
+<span class="line"><span>  // or</span></span>
+<span class="line"><span>  counter.$patch({</span></span>
+<span class="line"><span>    count: counter.count + 1</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>  // or</span></span>
+<span class="line"><span>  // counter.$patch((state) =&gt; {</span></span>
+<span class="line"><span>  //   state.count = counter.count + 1</span></span>
+<span class="line"><span>  // })</span></span>
+<span class="line"><span>  // or</span></span>
+<span class="line"><span>  // counter.increment(1)</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="storetorefs" tabindex="-1">storeToRefs <a class="header-anchor" href="#storetorefs" aria-label="Permalink to &quot;storeToRefs&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 这种写法不是响应式数据，修改了count页面上的countValue不更新</span></span>
+<span class="line"><span>let countValue = counter.count</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>console.log(&#39;--toRefs(counter)--&#39;, toRefs(counter)) // 不建议这么写</span></span></code></pre></div><p><img src="`+m+`" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// storeToRefs 获取响应式数据，只会关注store中的数组，不会对方法进行ref包裹</span></span>
+<span class="line"><span>let countValue = storeToRefs(counter).count</span></span></code></pre></div><p><img src="`+v+`" alt="alt text"></p><h3 id="subscribe" tabindex="-1">$subscribe <a class="header-anchor" href="#subscribe" aria-label="Permalink to &quot;$subscribe&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>counter.$subscribe((mutate, state) =&gt; {</span></span>
+<span class="line"><span>  // store中的数据发生了变化</span></span>
+<span class="line"><span>  console.log(&#39;$subscribe:&#39;, mutate, state.count)</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h3 id="组合式写法" tabindex="-1">组合式写法 <a class="header-anchor" href="#组合式写法" aria-label="Permalink to &quot;组合式写法&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// store 组合式写法</span></span>
+<span class="line"><span>import { ref, computed } from &#39;vue&#39;</span></span>
+<span class="line"><span>export const useCounterStore = defineStore(&#39;counter&#39;, () =&gt; {</span></span>
+<span class="line"><span>  const count = ref(localStorage.getItem(&#39;storeCount&#39;) || 0)</span></span>
+<span class="line"><span>  const double = computed(() =&gt; count.value * 2)</span></span>
+<span class="line"><span>  function increment(value) {</span></span>
+<span class="line"><span>    count.value += value</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  return { count, double, increment }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>counter.$subscribe((mutate, state) =&gt; {</span></span>
+<span class="line"><span>  // store中的数据发生了变化</span></span>
+<span class="line"><span>  localStorage.setItem(&#39;storeCount&#39;, state.count)</span></span>
+<span class="line"><span>  console.log(&#39;$subscribe:&#39;, mutate, state.count)</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h2 id="v-model" tabindex="-1">v-model <a class="header-anchor" href="#v-model" aria-label="Permalink to &quot;v-model&quot;">​</a></h2><h3 id="用在-input-等标签上" tabindex="-1">用在 input 等标签上 <a class="header-anchor" href="#用在-input-等标签上" aria-label="Permalink to &quot;用在 input 等标签上&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;input v-model=&quot;keyword&quot; /&gt;</span></span>
+<span class="line"><span>// or</span></span>
+<span class="line"><span>&lt;input</span></span>
+<span class="line"><span>  :value=&quot;keyword&quot;</span></span>
+<span class="line"><span>  @input=&quot;keyword = (&lt;HTMLInputElement&gt;$event.target).value&quot;</span></span>
+<span class="line"><span>  placeholder=&quot;请输入&quot;</span></span>
+<span class="line"><span>/&gt;</span></span></code></pre></div><h3 id="用在自定义组件上" tabindex="-1">用在自定义组件上 <a class="header-anchor" href="#用在自定义组件上" aria-label="Permalink to &quot;用在自定义组件上&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 父组件</span></span>
+<span class="line"><span>&lt;XhhInput v-model=&quot;keyword&quot; /&gt;</span></span>
+<span class="line"><span>// 等同于</span></span>
+<span class="line"><span>&lt;XhhInput :modelValue=&quot;keyword&quot; @update:modelValue=&quot;keyword = $event&quot; /&gt;</span></span>
+<span class="line"><span>&lt;!-- 对于自定义事件，$event就是触发事件时所传递的数据，不能 .target --&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 子组件</span></span>
+<span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  {{ modelValue }}</span></span>
+<span class="line"><span>  &lt;input</span></span>
+<span class="line"><span>    :value=&quot;modelValue&quot;</span></span>
+<span class="line"><span>    @input=&quot;emit(&#39;update:modelValue&#39;, (&lt;HTMLInputElement&gt;$event.target).value)&quot;</span></span>
+<span class="line"><span>    placeholder=&quot;请输入&quot;</span></span>
+<span class="line"><span>  /&gt;</span></span>
+<span class="line"><span>  &lt;!-- 原生事件，$event就是事件对象，$event.target就是input元素 --&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script lang=&quot;ts&quot; setup&gt;</span></span>
+<span class="line"><span>defineProps([&#39;modelValue&#39;])</span></span>
+<span class="line"><span>const emit = defineEmits([&#39;update:modelValue&#39;])</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>v-model 修改绑定的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;XhhInput v-model:modelValueOther=&quot;keyword&quot; /&gt;</span></span>
+<span class="line"><span>&lt;XhhInput v-model:modelValueOther=&quot;keyword&quot; v-model:xyz=&quot;abc&quot; /&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;input</span></span>
+<span class="line"><span>    :value=&quot;modelValueOther&quot;</span></span>
+<span class="line"><span>    @input=&quot;emit(&#39;update:modelValueOther&#39;, (&lt;HTMLInputElement&gt;$event.target).value)&quot;</span></span>
+<span class="line"><span>    placeholder=&quot;请输入&quot;</span></span>
+<span class="line"><span>  /&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script lang=&quot;ts&quot; setup&gt;</span></span>
+<span class="line"><span>defineProps([&#39;modelValueOther&#39;])</span></span>
+<span class="line"><span>const emit = defineEmits([&#39;update:modelValueOther&#39;])</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><h2 id="插槽" tabindex="-1">插槽 <a class="header-anchor" href="#插槽" aria-label="Permalink to &quot;插槽&quot;">​</a></h2><h3 id="默认插槽" tabindex="-1">默认插槽 <a class="header-anchor" href="#默认插槽" aria-label="Permalink to &quot;默认插槽&quot;">​</a></h3><p>在子组件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;slot&gt;&lt;/slot&gt;</span></span>
+<span class="line"><span>// 等同于</span></span>
+<span class="line"><span>&lt;slot name=&quot;default&quot;&gt;&lt;/slot&gt;</span></span></code></pre></div><h3 id="具名插槽" tabindex="-1">具名插槽 <a class="header-anchor" href="#具名插槽" aria-label="Permalink to &quot;具名插槽&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;Person&gt;</span></span>
+<span class="line"><span>  &lt;template v-slot:title&gt;</span></span>
+<span class="line"><span>    &lt;div&gt;this is title&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>  &lt;template #header&gt;</span></span>
+<span class="line"><span>    &lt;div&gt;this is header&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>&lt;/Person&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;Person组件：&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span></span>
+<span class="line"><span>  &lt;slot name=&quot;title&quot;&gt;&lt;/slot&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><p><img src="`+b+`" alt="alt text"></p><h3 id="作用域插槽" tabindex="-1">作用域插槽 <a class="header-anchor" href="#作用域插槽" aria-label="Permalink to &quot;作用域插槽&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;Person&gt;</span></span>
+<span class="line"><span>  &lt;template v-slot=&quot;params&quot;&gt;</span></span>
+<span class="line"><span>    &lt;ul&gt;</span></span>
+<span class="line"><span>      &lt;li v-for=&quot;(item, index) in params.listP&quot; :key=&quot;index&quot;&gt;</span></span>
+<span class="line"><span>        {{ item.title }}</span></span>
+<span class="line"><span>      &lt;/li&gt;</span></span>
+<span class="line"><span>    &lt;/ul&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>&lt;/Person&gt;</span></span>
+<span class="line"><span>&lt;Person&gt;</span></span>
+<span class="line"><span>  &lt;template v-slot=&quot;{ listP }&quot;&gt;</span></span>
+<span class="line"><span>    &lt;ol&gt;</span></span>
+<span class="line"><span>      &lt;li v-for=&quot;(item, index) in listP&quot; :key=&quot;index&quot;&gt;</span></span>
+<span class="line"><span>        {{ item.title }}</span></span>
+<span class="line"><span>      &lt;/li&gt;</span></span>
+<span class="line"><span>    &lt;/ol&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>&lt;/Person&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Person.vue</span></span>
+<span class="line"><span>&lt;slot :listP=&quot;list&quot;&gt;&lt;/slot&gt;</span></span>
+<span class="line"><span>import { reactive } from &#39;vue&#39;</span></span>
+<span class="line"><span>const list = reactive([</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    title: &#39;标题1&#39;,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    title: &#39;标题2&#39;,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    title: &#39;标题3&#39;,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    title: &#39;标题4&#39;,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>])</span></span></code></pre></div><p><img src="`+A+`" alt="alt text"></p><p>和具名插槽结合在一起</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template v-slot:listcon=&quot;{ listP }&quot;&gt;</span></span>
+<span class="line"><span>// or</span></span>
+<span class="line"><span>&lt;template #listcon=&quot;{ listP }&quot;&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// Person.vue</span></span>
+<span class="line"><span>&lt;slot name=&quot;listcon&quot; :listP=&quot;list&quot;&gt;&lt;/slot&gt;</span></span></code></pre></div><h2 id="shallowref-shallowreactive" tabindex="-1">shallowRef, shallowReactive <a class="header-anchor" href="#shallowref-shallowreactive" aria-label="Permalink to &quot;shallowRef, shallowReactive&quot;">​</a></h2><p>浅代理，只代理对象属性，不代理对象属性的属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { shallowRef } from &#39;vue&#39;</span></span>
+<span class="line"><span>const sum = shallowRef(0)</span></span>
+<span class="line"><span>const person = shallowRef({</span></span>
+<span class="line"><span>  // 只能处理第一层的响应式</span></span>
+<span class="line"><span>  name: &#39;zs&#39;,</span></span>
+<span class="line"><span>  age: 29,</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changeSum() {</span></span>
+<span class="line"><span>  sum.value += 1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>function changePersonName() { // ref定义的生效，shallowRef定义的修改不生效</span></span>
+<span class="line"><span>  person.value.name = &#39;ls&#39;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>function changePersonAge() { // ref定义的生效，shallowRef定义的修改不生效</span></span>
+<span class="line"><span>  person.value.age += 1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>function changePerson() {</span></span>
+<span class="line"><span>  person.value = {</span></span>
+<span class="line"><span>    name: &#39;new name&#39;,</span></span>
+<span class="line"><span>    age: 99,</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { shallowReactive } from &#39;vue&#39;</span></span>
+<span class="line"><span>const person = shallowReactive({</span></span>
+<span class="line"><span>  // 只能处理第一层的响应式</span></span>
+<span class="line"><span>  name: &#39;zs&#39;,</span></span>
+<span class="line"><span>  inner: {</span></span>
+<span class="line"><span>    age: 18,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function changePersonName() {</span></span>
+<span class="line"><span>  person.name = &#39;ls&#39;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>function changePersonAge() { // 不生效</span></span>
+<span class="line"><span>  person.inner.age += 1</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="readonly-shallowreadonly" tabindex="-1">readonly, shallowReadonly <a class="header-anchor" href="#readonly-shallowreadonly" aria-label="Permalink to &quot;readonly, shallowReadonly&quot;">​</a></h2><p>readonly 只读，不可修改</p><p>sum 可以改，改了 sum2 也跟着变； 但是 sum2 无法修改，数据保护</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const sum = ref(0)</span></span>
+<span class="line"><span>const sum2 = readonly(sum)</span></span></code></pre></div><p>shallowReadonly: 只作用于对象的顶层属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const person = reactive({</span></span>
+<span class="line"><span>  name: &#39;zs&#39;,</span></span>
+<span class="line"><span>  inner: {</span></span>
+<span class="line"><span>    age: 18,</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>// person2的name不能改，person2.inner.age可以改</span></span>
+<span class="line"><span>const person2 = shallowReadonly(person)</span></span></code></pre></div><h2 id="toraw-markraw" tabindex="-1">toRaw, markRaw <a class="header-anchor" href="#toraw-markraw" aria-label="Permalink to &quot;toRaw, markRaw&quot;">​</a></h2><p>toRaw: 获取响应式对象的原始对象，返回的对象不再响应式</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let newPerson = toRaw(person)</span></span></code></pre></div><p><img src="`+f+`" alt="alt text"></p><p>markRaw: 标记对象，使其永远不会成为响应式对象</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { reactive, markRaw } from &#39;vue&#39;</span></span>
+<span class="line"><span>const person = markRaw({ // 不是响应式</span></span>
+<span class="line"><span>  name: &#39;zs&#39;,</span></span>
+<span class="line"><span>  age: 18,</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>const person2 = reactive(person) // 不会成为响应式</span></span></code></pre></div><p><img src="`+k+`" alt="alt text"></p><p>使用场景: 为了防止误把第三方库变为响应式对象</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import mockjs from &#39;mockjs&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>let mockJs = markRaw(mockjs)</span></span></code></pre></div><h2 id="customref" tabindex="-1">customRef <a class="header-anchor" href="#customref" aria-label="Permalink to &quot;customRef&quot;">​</a></h2><p>作用：创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行逻辑控制。</p><p>使用 Vue 提供的 ref 定义的响应式数据，数据一变，页面立即更新。如果想过几秒再更新页面，ref 就做不到了。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;</span></span>
+<span class="line"><span>    &lt;div&gt;{{ msg }}&lt;/div&gt;</span></span>
+<span class="line"><span>    &lt;input type=&quot;text&quot; v-model=&quot;msg&quot; placeholder=&quot;请输入&quot; /&gt;</span></span>
+<span class="line"><span>  &lt;/div&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script setup lang=&quot;ts&quot;&gt;</span></span>
+<span class="line"><span>import { customRef } from &#39;vue&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>let initialValue = &#39;&#39;</span></span>
+<span class="line"><span>let timer: number</span></span>
+<span class="line"><span>const msg = customRef((track, trigger) =&gt; {</span></span>
+<span class="line"><span>  return {</span></span>
+<span class="line"><span>    get() {</span></span>
+<span class="line"><span>      track() // 告诉Vue追踪这个值，一旦msg变化就更新页面</span></span>
+<span class="line"><span>      return initialValue</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    set(newValue) {</span></span>
+<span class="line"><span>      clearTimeout(timer)</span></span>
+<span class="line"><span>      timer = setTimeout(() =&gt; {</span></span>
+<span class="line"><span>        initialValue = newValue</span></span>
+<span class="line"><span>        trigger() // 通知vue数据msg变化了</span></span>
+<span class="line"><span>      }, 1000)</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>封装优化：</p><p>useMsgRef.ts:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { customRef } from &#39;vue&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default function (initialValue: string, delay: number) {</span></span>
+<span class="line"><span>  let timer: number</span></span>
+<span class="line"><span>  const msg = customRef((track, trigger) =&gt; {</span></span>
+<span class="line"><span>    return {</span></span>
+<span class="line"><span>      get() {</span></span>
+<span class="line"><span>        track() // 告诉Vue追踪这个值，一旦msg变化就更新页面</span></span>
+<span class="line"><span>        return initialValue</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      set(newValue) {</span></span>
+<span class="line"><span>        clearTimeout(timer)</span></span>
+<span class="line"><span>        timer = setTimeout(() =&gt; {</span></span>
+<span class="line"><span>          initialValue = newValue</span></span>
+<span class="line"><span>          trigger() // 通知vue数据msg变化了</span></span>
+<span class="line"><span>        }, delay)</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return {</span></span>
+<span class="line"><span>    msg,</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import useMsgRef from &#39;./useMsgRef&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const { msg } = useMsgRef(&#39;Hello&#39;, 1000)</span></span></code></pre></div><h2 id="teleport" tabindex="-1">Teleport <a class="header-anchor" href="#teleport" aria-label="Permalink to &quot;Teleport&quot;">​</a></h2><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div class=&quot;outer&quot;&gt;</span></span>
+<span class="line"><span>    &lt;img src=&quot;https://test/1.jpg&quot; /&gt;</span></span>
+<span class="line"><span>    &lt;Modal /&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.outer {</span></span>
+<span class="line"><span>  background-color: #ddd;</span></span>
+<span class="line"><span>  width: 400px;</span></span>
+<span class="line"><span>  height: 400px;</span></span>
+<span class="line"><span>  filter: saturate(200%);</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>当父元素（如 body 或 div）开启 filter 效果时，CSS 会为该元素创建一个新的包含块。此时，使用 position: fixed 样式的元素的定位基准会从浏览器视窗（viewport）切换到该父元素，即子组件 fixed 会相对于父元素进行定位。</p><p>子组件 Modal：</p><p>为了使该组件还是相对于浏览器定位，需要使用 teleport 组件。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;button @click=&quot;isShow = true&quot;&gt;展示弹框&lt;/button&gt;</span></span>
+<span class="line"><span>  &lt;teleport to=&quot;body&quot;&gt;</span></span>
+<span class="line"><span>    &lt;div v-if=&quot;isShow&quot; class=&quot;modal&quot;&gt;</span></span>
+<span class="line"><span>      &lt;div&gt;modal&lt;/div&gt;</span></span>
+<span class="line"><span>      &lt;button @click=&quot;isShow = false&quot;&gt;关闭弹框&lt;/button&gt;</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;/teleport&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span></code></pre></div><p><img src="`+q+`" alt="alt text"></p><h2 id="suspense" tabindex="-1">Suspense <a class="header-anchor" href="#suspense" aria-label="Permalink to &quot;Suspense&quot;">​</a></h2><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;script setup&gt;</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>import axios from &#39;axios&#39;</span></span>
+<span class="line"><span>let data = await axios.get(&#39;https://www.test.shop/home&#39;)</span></span>
+<span class="line"><span>console.log(&#39;data--&#39;, data.data.title)</span></span></code></pre></div><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!-- &lt;CommonHeader ref=&quot;compRef&quot; /&gt; --&gt;</span></span>
+<span class="line"><span>&lt;Suspense&gt;</span></span>
+<span class="line"><span>  &lt;template #default&gt;</span></span>
+<span class="line"><span>    &lt;CommonHeader ref=&quot;compRef&quot; /&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>  &lt;template v-slot:fallback&gt;</span></span>
+<span class="line"><span>    &lt;h3&gt;加载中...&lt;/h3&gt;</span></span>
+<span class="line"><span>  &lt;/template&gt;</span></span>
+<span class="line"><span>&lt;/Suspense&gt;</span></span></code></pre></div><h2 id="全局-api-转移到应用对象" tabindex="-1">全局 API 转移到应用对象 <a class="header-anchor" href="#全局-api-转移到应用对象" aria-label="Permalink to &quot;全局 API 转移到应用对象&quot;">​</a></h2><ul><li>app.component</li><li>app.config</li><li>app.directive</li><li>app.mount</li><li>app.unmount</li><li>app.use</li></ul><h2 id="非兼容性改变" tabindex="-1">非兼容性改变 <a class="header-anchor" href="#非兼容性改变" aria-label="Permalink to &quot;非兼容性改变&quot;">​</a></h2><p><a href="https://v3-migration.vuejs.org/zh/breaking-changes/" target="_blank" rel="noreferrer">https://v3-migration.vuejs.org/zh/breaking-changes/</a></p>`,127);function w(P,V,R,B,E,j){const n=e("font");return o(),l("div",null,[C,t("p",null,[s("就采用这种写法："),i(n,{color:"red"},{default:c(()=>[s("getter 函数并且加上 deep")]),_:1})]),x])}const M=p(y,[["render",w]]);export{I as __pageData,M as default};
