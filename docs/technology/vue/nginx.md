@@ -45,7 +45,7 @@ location / {
 
 假设网站地址是 https://net.test，直接访问的话，浏览器会去寻找 https://net.test 所在服务器的根目录下面的 index.html。
 
-而当我们访问 https://net.test/home 时，首先查找有无 home 文件，如果没有，再去查找有无 home 目录，如果也没有最终就会定位到第三个参数从而返回 index.html，按照这个规则，所有路由里的 url 路径最后都会定位到 index.html。
+而当我们访问 https://net.test/home 时，首先查找有无 home 文件，如果没有，再去查找有无 home 目录，如果也没有最终就会定位到第三个参数从而返回 index.html，按照这个规则，所有路由里的 url 路径最后都会定位到 index.html, 由 vue router 接管进行导航。
 
 $uri/ 在这个例子中并没有多大用，是可以去掉的。
 
@@ -53,3 +53,71 @@ $uri/ 在这个例子中并没有多大用，是可以去掉的。
 Vue 是单页面应用（SPA），history 路由模式下，我们只需要将任意页面都重定向到 index.html，把路由交由前端处理。
 
 [vue 中 history 模式服务器配置示例](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
+
+
+### 静态资源缓存策略
+
+```
+server {
+    # HTML 文件不缓存
+    location~* \.html$ {
+        expires -1;
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+    }
+
+    # 图片文件缓存 1 个月
+    location~* \.(jpg|jpeg|png|gif|ico|svg)$ {
+        expires1M;
+        add_header Cache-Control "public";
+    }
+}
+```
+
+### API 代理配置，解决跨域
+```
+server {
+    location /api/ {
+        add_header Access-Control-Allow-Origin *;
+        add_header Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS";
+        add_header Access-Control-Allow-Headers "Content-Type, Authorization";
+    
+        if ($request_method = 'OPTIONS') {
+                return 204;
+        }
+
+        proxy_pass http://backend-server/;
+    }
+}
+```
+
+### Gzip 压缩
+```
+http {
+    gzipon;
+    gzip_varyon;
+    gzip_min_length1024;
+    gzip_proxied any;
+    gzip_comp_level6;
+    gzip_types
+        text/plain
+        text/css
+        text/xml
+        text/javascript
+        application/json
+        application/javascript
+        application/xml+rss
+        application/atom+xml
+        image/svg+xml;
+}
+```
+
+### HTTP/2 支持
+```
+server {
+    listen 443 ssl http2;
+    server_name your-domain.com;
+    
+    ssl_certificate /path/to/cert.pem;
+    ssl_certificate_key /path/to/key.pem;
+}
+```

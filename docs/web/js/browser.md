@@ -53,29 +53,45 @@ MediaRecorder 是 MediaStream Recording API 提供的用来进行媒体轻松录
 const button = document.getElementById('btn')
 button.addEventListener('click', async () => {
     const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true
+        video: true, // 必选，捕获视频
+        audio: true // 可选，捕获该屏幕播放的音频
     })
 
     const mime = MediaRecorder.isTypeSupported('video/webm;codecs=h264')
-        ? 'video/webm;codecs=h264'
+        ? 'video/webm;codecs=h264' // video/webm; codecs=vp9
         : 'video/webm'
 
     const mediaRecorder = new MediaRecorder(stream, { mimeType: mime })
 
-    const chunks = []
+    let chunks = []
     mediaRecorder.addEventListener('dataavailable', function(e) {
+      if (e.data.size > 0) {
         chunks.push(e.data)
+      }
     })
 
     mediaRecorder.addEventListener('stop', () => {
-        const blob = new Blob(chunks, { type: chunks[0].type })
+        const blob = new Blob(chunks, { type: chunks[0].type }) // { type: 'video/webm' }
         const url = URL.createObjectURL(blob)
         const a = document.createElement('a')
         a.href = url
         a.download = 'video.webm'
-        a.click()
+        // a.click()
+        a.textContent = '下载录屏'
+        document.body.appendChild(a)
+
+        URL.revokeObjectURL(url) // 避免内存泄漏
+        chunks = [] // 清空数据
+        stream.getTracks().forEach(track => track.stop()) // 确保停止媒体流，关闭摄像头或屏幕共享的指示灯。
     })
     mediaRecorder.start()
+
+    // 当用户手动停止屏幕共享时
+    stream.getVideoTracks()[0].onended = () => {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+    }
 })
 ```
 - 录制音频并上传，实现广播功能

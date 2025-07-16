@@ -95,6 +95,20 @@ git checkout tags/v1.0.0
 
 git checkout v1.0.0
 
+### 启用 Git 长路径支持
+
+文件层级深：Filename too long fatal: Unable to process path vendor/a/b/c...，拉取及提交代码均有报错。
+
+全局生效
+```
+git config --system core.longpaths true
+```
+
+仅配置当前仓库
+```
+git config core.longpaths true 
+```
+
 
 ---
 ### 参考文档

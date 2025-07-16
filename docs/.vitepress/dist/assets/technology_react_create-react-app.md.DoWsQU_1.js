@@ -449,13 +449,36 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>return &lt;div ref={divRef} onClick={clickFn}</span></span>
-<span class="line"><span>    &lt;/div&gt;</span></span></code></pre></div><h4 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h4><p>访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const ThemeContext = createContext(null)</span></span>
-<span class="line"><span>&lt;ThemeContext.Provider value={theme as any}&gt;</span></span>
-<span class="line"><span>  &lt;Button themeContext={ThemeContext} /&gt;</span></span>
-<span class="line"><span>&lt;/ThemeContext.Provider&gt;</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span></code></pre></div><h4 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h4><p>访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。</p><p>ThemeContext.js</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createContext } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// Button 组件接收数据</span></span>
-<span class="line"><span>const theme = useContext(props.themeContext);</span></span></code></pre></div><h4 id="usereducer" tabindex="-1">useReducer <a class="header-anchor" href="#usereducer" aria-label="Permalink to &quot;useReducer&quot;">​</a></h4><p>useState 的替代方案，适用于管理复杂和大型的状态逻辑。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function Counter() {</span></span>
+<span class="line"><span>// 默认值 &#39;light&#39;</span></span>
+<span class="line"><span>export const ThemeContext = createContext(&#39;light&#39;)</span></span></code></pre></div><p>在顶层用 Provider 提供状态:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useState } from &#39;react&#39;</span></span>
+<span class="line"><span>import { ThemeContext } from &#39;./ThemeContext&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function App() {</span></span>
+<span class="line"><span>const [theme, setTheme] = useState(&#39;light&#39;)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>    &lt;ThemeContext.Provider value={theme}&gt;</span></span>
+<span class="line"><span>      ...</span></span>
+<span class="line"><span>      &lt;button onClick={() =&gt; setTheme(theme === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;)}&gt;</span></span>
+<span class="line"><span>        切换主题</span></span>
+<span class="line"><span>      &lt;/button&gt;</span></span>
+<span class="line"><span>    &lt;/ThemeContext.Provider&gt;</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default App</span></span></code></pre></div><p>在子组件中使用 useContext 获取状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useContext } from &#39;react&#39;</span></span>
+<span class="line"><span>import { ThemeContext } from &#39;../ThemeContext&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const Child = () =&gt; {</span></span>
+<span class="line"><span>  const theme = useContext(ThemeContext)</span></span>
+<span class="line"><span>  return (</span></span>
+<span class="line"><span>    &lt;div&gt;</span></span>
+<span class="line"><span>      当前主题: {theme}</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span>};</span></span></code></pre></div><h4 id="usereducer" tabindex="-1">useReducer <a class="header-anchor" href="#usereducer" aria-label="Permalink to &quot;useReducer&quot;">​</a></h4><p>useState 的替代方案，适用于管理复杂和大型的状态逻辑。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function Counter() {</span></span>
 <span class="line"><span>  const reducer = (state, action) =&gt; {</span></span>
 <span class="line"><span>    switch (action.type) {</span></span>
 <span class="line"><span>      case &#39;increment&#39;:</span></span>
@@ -630,4 +653,4 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>declare module &#39;*.module.scss&#39; {</span></span>
 <span class="line"><span>  const classes: { readonly [key: string]: string };</span></span>
 <span class="line"><span>  export default classes;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p>`,60);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};
+<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p>`,65);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};

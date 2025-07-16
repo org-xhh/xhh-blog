@@ -1,5 +1,5 @@
 
-# VSCode 插件安装
+# VSCode 插件
 
 ![alt text](image.png)
 
@@ -53,6 +53,49 @@
 ![alt text](image-4.png)
 
 插件就可以使用了。
+
+## EditorConfig for VS Code
+安装插件，新建 .editorconfig 的配置文件，为不同的编辑器定义代码样式规则。
+```
+# http://editorconfig.org
+
+# 表示是最顶层的配置文件，发现值为true时，才会停止查找.editorconfig文件
+root = true
+
+[*] # 表示所有文件适用
+charset = utf-8 # 设置文件字符集为 utf-8
+indent_style = tab # 缩进风格（tab | space）
+indent_size = 2 # 缩进大小
+end_of_line = lf # 控制换行类型(lf | cr | crlf)
+trim_trailing_whitespace = true # 去除行首的任意空白字符
+insert_final_newline = false # 始终在文件末尾插入一个新行
+
+[*.md] # 表示仅 md 文件适用以下规则
+max_line_length = off
+trim_trailing_whitespace = false
+```
+
+## Prettier - Code formatter
+- 安装 VSCode 插件
+- 安装 prettier
+```
+npm install prettier -D
+```
+- 新建 .prettierrc 
+```
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 120,
+  "semi": false, // 末尾加分号
+  "singleQuote": true, // 是否单引号
+  "trailingComma": "none" //最后一个元素后添加尾随逗号
+}
+```
+- package.json 配置格式化代码
+```
+"format": "prettier --write ."
+```
 
 ## 已安装插件
 ![alt text](image-6.png)

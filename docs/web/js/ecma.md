@@ -28,7 +28,6 @@ Ecma 国际的标准，ECMA-262 就是 ECMA 262 号标准，具体就是指 ECMA
 
 ---
 
-https://github.com/tc39
-
+https://ecma-international.org/publications-and-standards/standards/ecma-262/
 
 https://tc39.es/ecma262/

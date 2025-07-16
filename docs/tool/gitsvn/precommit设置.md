@@ -36,7 +36,16 @@
 ### 如果上述方法未生效，解决方案如下：
 [husky](https://typicode.github.io/husky/)
 
-以v8为例：
+安装 husky
+```
+npm install -D husky
+```
+初始化 husky 生成 .husky文件
+```
+npx husky install
+```
+
+或者通过命令行设置（以v8为例）：
 ```
 npm pkg set scripts.prepare="husky install"
 npm run prepare

@@ -778,14 +778,47 @@ return <div ref={divRef} onClick={clickFn}
 #### useContext
 
 访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。
-```
-const ThemeContext = createContext(null)
-<ThemeContext.Provider value={theme as any}>
-  <Button themeContext={ThemeContext} />
-</ThemeContext.Provider>
 
-// Button 组件接收数据
-const theme = useContext(props.themeContext);
+ThemeContext.js
+```
+import { createContext } from 'react'
+
+// 默认值 'light'
+export const ThemeContext = createContext('light')
+```
+在顶层用 Provider 提供状态:
+```
+import { useState } from 'react'
+import { ThemeContext } from './ThemeContext'
+
+function App() {
+const [theme, setTheme] = useState('light')
+
+return (
+    <ThemeContext.Provider value={theme}>
+      ...
+      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        切换主题
+      </button>
+    </ThemeContext.Provider>
+  );
+}
+
+export default App
+```
+在子组件中使用 useContext 获取状态：
+```
+import { useContext } from 'react'
+import { ThemeContext } from '../ThemeContext'
+
+const Child = () => {
+  const theme = useContext(ThemeContext)
+  return (
+    <div>
+      当前主题: {theme}
+    </div>
+  );
+};
 ```
 
 #### useReducer
