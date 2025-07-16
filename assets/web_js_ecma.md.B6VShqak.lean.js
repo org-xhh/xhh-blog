@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as t,a3 as r}from"./chunks/framework.C5U8cnJv.js";const E=JSON.parse('{"title":"Ecma 国际","description":"","frontmatter":{},"headers":[],"relativePath":"web/js/ecma.md","filePath":"web/js/ecma.md"}'),c={name:"web/js/ecma.md"},i=r("",12),s=[i];function n(o,p,l,d,h,m){return t(),e("div",null,s)}const C=a(c,[["render",n]]);export{E as __pageData,C as default};

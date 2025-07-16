@@ -68,11 +68,15 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g
 <span class="line"><span>  fail: function(status) { </span></span>
 <span class="line"><span>    console.log(status)</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h2 id="promise" tabindex="-1">promise <a class="header-anchor" href="#promise" aria-label="Permalink to &quot;promise&quot;">​</a></h2><p>Promise就是为了解决回调地狱而产生的，将回调函数的嵌套，改成链式调用。</p><ul><li><p>状态</p><p>pending 进行中</p><p>fulfilled 已完成</p><p>rejected 已失败</p></li><li><p>实例方法</p><p>then()</p><p>catch()</p><p>finally()</p></li><li><p>构造函数方法 Promise.all</p></li><li><p>构造函数方法 Promise.race</p></li></ul><h2 id="async-await" tabindex="-1">async/await <a class="header-anchor" href="#async-await" aria-label="Permalink to &quot;async/await&quot;">​</a></h2><p>async 使用上更为简洁，将异步代码以同步的形式进行编写，是处理异步编程的最终方案。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const asyncReadFile = async function () {</span></span>
-<span class="line"><span> const f1 = await readFile(&#39;/etc/file1&#39;);</span></span>
-<span class="line"><span> const f2 = await readFile(&#39;/etc/file2&#39;);</span></span>
-<span class="line"><span> console.log(f1.toString());</span></span>
-<span class="line"><span> console.log(f2.toString());</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h2 id="promise" tabindex="-1">promise <a class="header-anchor" href="#promise" aria-label="Permalink to &quot;promise&quot;">​</a></h2><p>Promise就是为了解决回调地狱而产生的，将回调函数的嵌套，改成链式调用。</p><ul><li><p>状态</p><p>pending 进行中</p><p>fulfilled 已完成</p><p>rejected 已失败</p></li><li><p>实例方法</p><p>then()</p><p>catch(): 处理错误</p><p>finally()</p></li><li><p>构造函数方法 Promise.all</p></li><li><p>构造函数方法 Promise.race</p></li></ul><h2 id="async-await" tabindex="-1">async/await <a class="header-anchor" href="#async-await" aria-label="Permalink to &quot;async/await&quot;">​</a></h2><p>async 使用上更为简洁，将异步代码以同步的形式进行编写，是处理异步编程的最终方案。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const asyncReadFile = async function () {</span></span>
+<span class="line"><span>  try {</span></span>
+<span class="line"><span>    const f1 = await readFile(&#39;/etc/file1&#39;);</span></span>
+<span class="line"><span>    const f2 = await readFile(&#39;/etc/file2&#39;);</span></span>
+<span class="line"><span>    console.log(f1.toString());</span></span>
+<span class="line"><span>    console.log(f2.toString());</span></span>
+<span class="line"><span>  } catch(error) {</span></span>
+<span class="line"><span>    console.log(&#39;try catch 是同步执行的，这里可以捕捉到错误&#39;, error)</span></span>
+<span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h2 id="generator" tabindex="-1">Generator <a class="header-anchor" href="#generator" aria-label="Permalink to &quot;Generator&quot;">​</a></h2><p>yield 表达式可以暂停函数执行，next方法用于恢复函数执行，这使得 Generator 函数非常适合将异步任务同步化。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function* helloWorldGenerator() {</span></span>
 <span class="line"><span> yield &#39;hello&#39;;</span></span>
 <span class="line"><span> yield &#39;world&#39;;</span></span>
@@ -87,4 +91,4 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g
 <span class="line"><span>hw.next()</span></span>
 <span class="line"><span>// { value: &#39;ending&#39;, done: true }</span></span>
 <span class="line"><span>hw.next()</span></span>
-<span class="line"><span>// { value: undefined, done: true</span></span></code></pre></div>`,19),i=[l];function t(c,o,r,d,h,u){return a(),n("div",null,i)}const b=s(e,[["render",t]]);export{g as __pageData,b as default};
+<span class="line"><span>// { value: undefined, done: true</span></span></code></pre></div>`,19),i=[l];function t(c,o,r,h,d,u){return a(),n("div",null,i)}const b=s(e,[["render",t]]);export{g as __pageData,b as default};
