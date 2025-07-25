@@ -338,6 +338,33 @@ let transformer = new typeTransformer()
 console.log(transformer.transform("1.12")) // 输出：1.12
 ```
 
+## is
+is 关键字一般用于函数返回值类型中，判断参数是否属于某一类型，并根据结果返回对应的布尔类型。
+语法：prop is type
+```
+function isString(s: unknown): boolean {
+  return typeof s === 'string'
+}
+function toUpperCase(x: unknown) {
+  if(isString(x)) {
+    x.toUpperCase() // Error, x is of type 'unknown'
+  }
+}
+```
+改造后：
+```
+function isString(s: unknown): s is string {
+  return typeof s === 'string'
+}
+```
+
+## 内置的工具类型
+比如 Capitalize &lt;T&gt; 将字符串类型 T 的首字母转换为大写。
+```
+type T = 'hi'
+type Result = Capitalize<T> // 'Hi'
+```
+
 ## 声明文件
 
 声明文件必需以 .d.ts 为后缀。

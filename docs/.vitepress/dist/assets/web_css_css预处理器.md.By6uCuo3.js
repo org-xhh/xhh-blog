@@ -11,7 +11,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const S
 <span class="line"><span></span></span>
 <span class="line"><span>.button {</span></span>
 <span class="line"><span>  @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="scss" tabindex="-1">SCSS <a class="header-anchor" href="#scss" aria-label="Permalink to &quot;SCSS&quot;">​</a></h2><p>SCSS 是 SASS 语法的一种扩展，继承了SASS的所有高级特性。</p><h2 id="less" tabindex="-1">LESS <a class="header-anchor" href="#less" aria-label="Permalink to &quot;LESS&quot;">​</a></h2><ol><li>变量</li></ol><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>@primary-color: #0055fe;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="scss" tabindex="-1">SCSS <a class="header-anchor" href="#scss" aria-label="Permalink to &quot;SCSS&quot;">​</a></h2><p>SCSS 是 SASS 语法的一种扩展，继承了SASS的所有高级特性。</p><p>后缀名为 .scss, 支持一些原生CSS不支持的高级语法，比如变量使用，嵌套语法等。</p><h2 id="less" tabindex="-1">LESS <a class="header-anchor" href="#less" aria-label="Permalink to &quot;LESS&quot;">​</a></h2><ol><li>变量</li></ol><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>@primary-color: #0055fe;</span></span>
 <span class="line"><span>@base-font-size: 16px;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>body {</span></span>
@@ -51,4 +51,4 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const S
 <span class="line"><span>  .content</span></span>
 <span class="line"><span>    padding 10px</span></span>
 <span class="line"><span>    &amp;:hover</span></span>
-<span class="line"><span>      backgroundColor darken(primaryColor, 10%)</span></span></code></pre></div>`,18),i=[l];function t(c,o,r,d,h,u){return n(),a("div",null,i)}const g=s(e,[["render",t]]);export{S as __pageData,g as default};
+<span class="line"><span>      backgroundColor darken(primaryColor, 10%)</span></span></code></pre></div>`,19),i=[l];function t(c,o,r,d,h,u){return n(),a("div",null,i)}const g=s(e,[["render",t]]);export{S as __pageData,g as default};

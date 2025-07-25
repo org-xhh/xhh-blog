@@ -32,3 +32,71 @@ npm create vite -- --template react-ts
 ```
 npx create-next-app@latest
 ```
+
+### JSX
+JSX是Javascript和XML(HTML)的缩写，表示在JS代码中编写HTML模板结构。
+是JS的语法扩展，浏览器本身不能识别，需要通过解析工具解析之后才能在浏览器中运行。
+
+通过大括号{}识别JavaScript中的表达式。
+
+注意：if语句，switch语句，变量声明属于语句，不是表达式，不能出现在{}中。
+
+```
+// 组件（函数）首字母必须大写
+function App() {
+  let list = [
+    {
+      id:1,
+      title: '标题一'
+    },
+    {
+      id: 2,
+      title: '标题二'
+    }
+  ]
+
+  return (
+    <div className="App">
+      <ul>
+        {
+          list.map((item) => {
+            return <li key={item.id}>{item.title}</li>
+          })
+        }
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 动态类名
+```
+<div className={`nav ${isActive && 'active'}`}>
+```
+或使用 classnames 库
+```
+<div className={classnames('nav', {active: isActive})}>
+```
+
+### 事件绑定
+```
+function App() {
+  function handleClick(e) {
+    console.log(e.target.innerHTML)
+  }
+  const handleClickButton = (params1, e)=> {
+    console.log('click button：', params1, e)
+  }
+
+  return (
+    <div className="App">
+      <button onClick={handleClick}>button</button>
+      <button onClick={(e)=>handleClickButton('Hi', e)}>button</button>
+    </div>
+  );
+}
+
+export default App;
+```

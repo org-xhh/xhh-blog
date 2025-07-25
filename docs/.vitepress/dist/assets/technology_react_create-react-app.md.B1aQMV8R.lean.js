@@ -1,54 +1,4 @@
-import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/framework.C5U8cnJv.js";const o="/xhh-blog/assets/image-4.DV_ce5A2.png",r="data:image/png;base64,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",d="/xhh-blog/assets/image-1.OTJ3BYfO.png",u="/xhh-blog/assets/image-2.CFFrttEG.png",h="/xhh-blog/assets/image-3.vJHmhZI9.png",P=JSON.parse('{"title":"create-react-app","description":"","frontmatter":{},"headers":[],"relativePath":"technology/react/create-react-app.md","filePath":"technology/react/create-react-app.md"}'),g={name:"technology/react/create-react-app.md"},m=s(`<h1 id="create-react-app" tabindex="-1">create-react-app <a class="header-anchor" href="#create-react-app" aria-label="Permalink to &quot;create-react-app&quot;">​</a></h1><h2 id="项目环境" tabindex="-1">项目环境 <a class="header-anchor" href="#项目环境" aria-label="Permalink to &quot;项目环境&quot;">​</a></h2><table tabindex="0"><thead><tr><th>模块</th><th>版本</th></tr></thead><tbody><tr><td>node</td><td>18+</td></tr><tr><td>react</td><td>18+</td></tr><tr><td>react-dom</td><td>18+</td></tr><tr><td>react-router-dom</td><td>6+</td></tr><tr><td>react-redux</td><td>9+</td></tr><tr><td>@reduxjs/toolkit</td><td>2+</td></tr></tbody></table><h2 id="新建项目" tabindex="-1">新建项目 <a class="header-anchor" href="#新建项目" aria-label="Permalink to &quot;新建项目&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npx create-react-app react-project</span></span></code></pre></div><h2 id="配置路由" tabindex="-1">配置路由 <a class="header-anchor" href="#配置路由" aria-label="Permalink to &quot;配置路由&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i react-router-dom</span></span></code></pre></div><h3 id="方式1" tabindex="-1">方式1 <a class="header-anchor" href="#方式1" aria-label="Permalink to &quot;方式1&quot;">​</a></h3><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { BrowserRouter } from &#39;react-router-dom&#39;;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));</span></span>
-<span class="line"><span>root.render(</span></span>
-<span class="line"><span>  &lt;React.StrictMode&gt;</span></span>
-<span class="line"><span>      &lt;BrowserRouter&gt;</span></span>
-<span class="line"><span>        &lt;App /&gt;</span></span>
-<span class="line"><span>      &lt;/BrowserRouter&gt;</span></span>
-<span class="line"><span>  &lt;/React.StrictMode&gt;</span></span>
-<span class="line"><span>);</span></span></code></pre></div><p>App.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useRoutes } from &quot;react-router-dom&quot;</span></span>
-<span class="line"><span>import routes from &#39;./router/index.js&#39;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>function App() {</span></span>
-<span class="line"><span>  const element = useRoutes(routes)</span></span>
-<span class="line"><span>  return (</span></span>
-<span class="line"><span>    &lt;div className=&quot;App&quot;&gt;</span></span>
-<span class="line"><span>      &lt;header className=&quot;App-header&quot;&gt;</span></span>
-<span class="line"><span>        {/* &lt;Routes&gt;</span></span>
-<span class="line"><span>          &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;}&gt;&lt;/Route&gt;</span></span>
-<span class="line"><span>          &lt;Route path=&quot;/login&quot; element={&lt;Login /&gt;}&gt;&lt;/Route&gt;</span></span>
-<span class="line"><span>        &lt;/Routes&gt; */}</span></span>
-<span class="line"><span>        {element}</span></span>
-<span class="line"><span>      &lt;/header&gt;</span></span>
-<span class="line"><span>    &lt;/div&gt;</span></span>
-<span class="line"><span>  );</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>router/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Home from &#39;../pages/home.js&#39;</span></span>
-<span class="line"><span>import Login from &#39;../pages/login.js&#39;</span></span>
-<span class="line"><span>import NotFound from &#39;../pages/notFound.js&#39;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>let routes = [</span></span>
-<span class="line"><span>    {</span></span>
-<span class="line"><span>        path: &#39;/&#39;,</span></span>
-<span class="line"><span>        element: &lt;Home /&gt;</span></span>
-<span class="line"><span>    },</span></span>
-<span class="line"><span>    {</span></span>
-<span class="line"><span>        path: &#39;/login&#39;,</span></span>
-<span class="line"><span>        element: &lt;Login /&gt;</span></span>
-<span class="line"><span>    },</span></span>
-<span class="line"><span>    {</span></span>
-<span class="line"><span>        path: &#39;*&#39;,</span></span>
-<span class="line"><span>        element: &lt;NotFound /&gt;</span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span>]</span></span>
-<span class="line"><span>export default routes</span></span></code></pre></div><h3 id="方式2" tabindex="-1">方式2 <a class="header-anchor" href="#方式2" aria-label="Permalink to &quot;方式2&quot;">​</a></h3><p>App.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { RouterProvider } from &#39;react-router-dom&#39;</span></span>
-<span class="line"><span>import routerConfig from &#39;./router&#39;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>return (</span></span>
-<span class="line"><span>    &lt;RouterProvider router={routerConfig}&gt;</span></span>
-<span class="line"><span>      &lt;div className=&quot;App&quot;&gt;&lt;/div&gt;</span></span>
-<span class="line"><span>    &lt;/RouterProvider&gt;</span></span>
-<span class="line"><span>  )</span></span></code></pre></div><p>router/index.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import React from &#39;react&#39;</span></span>
+import{_ as l,D as i,c,j as n,a as s,I as p,w as e,a3 as t,o}from"./chunks/framework.C5U8cnJv.js";const r="/xhh-blog/assets/image-4.eXpBAonZ.png",d="data:image/png;base64,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",u="/xhh-blog/assets/image-1.OTJ3BYfO.png",h="/xhh-blog/assets/image-19.IKC96q5c.png",g="/xhh-blog/assets/image-2.CFFrttEG.png",m="/xhh-blog/assets/image-3.vJHmhZI9.png",B=JSON.parse('{"title":"create-react-app","description":"","frontmatter":{},"headers":[],"relativePath":"technology/react/create-react-app.md","filePath":"technology/react/create-react-app.md"}'),b={name:"technology/react/create-react-app.md"},v=t(`<h1 id="create-react-app" tabindex="-1">create-react-app <a class="header-anchor" href="#create-react-app" aria-label="Permalink to &quot;create-react-app&quot;">​</a></h1><h2 id="项目环境" tabindex="-1">项目环境 <a class="header-anchor" href="#项目环境" aria-label="Permalink to &quot;项目环境&quot;">​</a></h2><table tabindex="0"><thead><tr><th>模块</th><th>版本</th></tr></thead><tbody><tr><td>node</td><td>18+</td></tr><tr><td>react</td><td>18+</td></tr><tr><td>react-dom</td><td>18+</td></tr><tr><td>react-router-dom</td><td>6+</td></tr><tr><td>react-redux</td><td>9+</td></tr><tr><td>@reduxjs/toolkit</td><td>2+</td></tr></tbody></table><h2 id="新建项目" tabindex="-1">新建项目 <a class="header-anchor" href="#新建项目" aria-label="Permalink to &quot;新建项目&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npx create-react-app react-project</span></span></code></pre></div><h2 id="配置路由" tabindex="-1">配置路由 <a class="header-anchor" href="#配置路由" aria-label="Permalink to &quot;配置路由&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i react-router-dom@6</span></span></code></pre></div><h4 id="新建路由" tabindex="-1">新建路由 <a class="header-anchor" href="#新建路由" aria-label="Permalink to &quot;新建路由&quot;">​</a></h4><p>router/index.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import React from &#39;react&#39;</span></span>
 <span class="line"><span>import { createBrowserRouter } from &#39;react-router-dom&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>import ManageLayout from &#39;../layouts/ManageLayout&#39;</span></span>
@@ -92,53 +42,12 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>  }</span></span>
 <span class="line"><span>])</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default router</span></span></code></pre></div><h2 id="路由鉴权" tabindex="-1">路由鉴权 <a class="header-anchor" href="#路由鉴权" aria-label="Permalink to &quot;路由鉴权&quot;">​</a></h2><p>router/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const routes = [</span></span>
-<span class="line"><span>  ...</span></span>
-<span class="line"><span>]</span></span>
-<span class="line"><span>import Auth from &#39;./authRouter.js&#39;</span></span>
+<span class="line"><span>export default router</span></span></code></pre></div><h4 id="注册路由" tabindex="-1">注册路由 <a class="header-anchor" href="#注册路由" aria-label="Permalink to &quot;注册路由&quot;">​</a></h4><p>App.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { RouterProvider } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span>import routerConfig from &#39;./router&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>const authRoutes = (routes) =&gt; {</span></span>
-<span class="line"><span>    return routes.map((item) =&gt; {</span></span>
-<span class="line"><span>        if (item.needAuth) {</span></span>
-<span class="line"><span>            return {</span></span>
-<span class="line"><span>                path: item.path,</span></span>
-<span class="line"><span>                element: (</span></span>
-<span class="line"><span>                    &lt;Auth&gt;</span></span>
-<span class="line"><span>                        {item.element}</span></span>
-<span class="line"><span>                    &lt;/Auth&gt;</span></span>
-<span class="line"><span>                )</span></span>
-<span class="line"><span>            }</span></span>
-<span class="line"><span>        } else {</span></span>
-<span class="line"><span>            delete item.needAuth</span></span>
-<span class="line"><span>            return item</span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span>    })</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export default authRoutes(routes)</span></span></code></pre></div><p>authRouter.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span></span></span>
-<span class="line"><span>import { getToken } from &quot;../utils/storage&quot;;</span></span>
-<span class="line"><span>import { Navigate, useLocation } from &quot;react-router-dom&quot;;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>const Auth = ({ children }) =&gt; {</span></span>
-<span class="line"><span>    const hasToken = getToken()</span></span>
-<span class="line"><span>    const location = useLocation()</span></span>
-<span class="line"><span>    if (hasToken) {</span></span>
-<span class="line"><span>        if (location.pathname === &#39;/login&#39;) {</span></span>
-<span class="line"><span>            return &lt;Navigate to=&quot;/&quot; replace /&gt;</span></span>
-<span class="line"><span>        } else {</span></span>
-<span class="line"><span>            return &lt;&gt;{children}&lt;/&gt;</span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span>    } else {</span></span>
-<span class="line"><span>        // 未登录</span></span>
-<span class="line"><span>        if (location.pathname === &#39;/login&#39;) {</span></span>
-<span class="line"><span>            return &lt;&gt;{children}&lt;/&gt;</span></span>
-<span class="line"><span>        } else {</span></span>
-<span class="line"><span>            return &lt;Navigate to=&quot;/login&quot; replace /&gt;</span></span>
-<span class="line"><span>        }</span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export default Auth</span></span></code></pre></div><h2 id="路由传参" tabindex="-1">路由传参 <a class="header-anchor" href="#路由传参" aria-label="Permalink to &quot;路由传参&quot;">​</a></h2><h4 id="usesearchparams" tabindex="-1">useSearchParams <a class="header-anchor" href="#usesearchparams" aria-label="Permalink to &quot;useSearchParams&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useNavigate } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span>return (</span></span>
+<span class="line"><span>  &lt;RouterProvider router={routerConfig}&gt;&lt;/RouterProvider&gt;</span></span>
+<span class="line"><span>)</span></span></code></pre></div><h2 id="路由传参" tabindex="-1">路由传参 <a class="header-anchor" href="#路由传参" aria-label="Permalink to &quot;路由传参&quot;">​</a></h2><h4 id="usesearchparams" tabindex="-1">useSearchParams <a class="header-anchor" href="#usesearchparams" aria-label="Permalink to &quot;useSearchParams&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useNavigate } from &#39;react-router-dom&#39;</span></span>
 <span class="line"><span>const navigate = useNavigate()</span></span>
 <span class="line"><span>// 跳转页面</span></span>
 <span class="line"><span>function jumpPage() {</span></span>
@@ -157,7 +66,22 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    let [searchParams] = useSearchParams();</span></span>
 <span class="line"><span>    console.log(searchParams.get(&#39;a&#39;))</span></span>
 <span class="line"><span>    ...</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h4 id="useparams" tabindex="-1">useParams <a class="header-anchor" href="#useparams" aria-label="Permalink to &quot;useParams&quot;">​</a></h4><p>获取动态参数</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;Link to=&quot;/manage/edit/666&quot;&gt;跳转到ManageEdit&lt;/Link&gt;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="useparams" tabindex="-1">useParams <a class="header-anchor" href="#useparams" aria-label="Permalink to &quot;useParams&quot;">​</a></h4><p>获取动态参数</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  path: &#39;manage&#39;,</span></span>
+<span class="line"><span>  children: [</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      path: &#39;list&#39;,</span></span>
+<span class="line"><span>      element: &lt;ManageList /&gt;</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    {</span></span>
+<span class="line"><span>      path: &#39;edit/:id&#39;,</span></span>
+<span class="line"><span>      element: &lt;ManageEdit /&gt;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  ]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;!-- 声明式导航 --&gt;</span></span>
+<span class="line"><span>&lt;Link to=&quot;/manage/edit/666&quot;&gt;跳转到ManageEdit&lt;/Link&gt;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>import React, { FC } from &#39;react&#39;</span></span>
@@ -181,14 +105,16 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>  console.log(&#39;data:&#39;, useLocation().state.txt) // 777</span></span>
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h2 id="layout" tabindex="-1">Layout <a class="header-anchor" href="#layout" aria-label="Permalink to &quot;Layout&quot;">​</a></h2><p>src/layouts/ManageLayout.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import React, { FC } from &#39;react&#39;</span></span>
-<span class="line"><span>import { Outlet } from &#39;react-router-dom&#39;</span></span>
+<span class="line"><span>import { Outlet, Link } from &#39;react-router-dom&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const ManageLayout: FC = () =&gt; {</span></span>
 <span class="line"><span>  return (</span></span>
 <span class="line"><span>    &lt;div&gt;</span></span>
 <span class="line"><span>      &lt;h1&gt;---ManageLayout header---&lt;/h1&gt;</span></span>
+<span class="line"><span>      &lt;Link to=&quot;/&quot;&gt;home&lt;/Link&gt;</span></span>
+<span class="line"><span>      &lt;Link to=&quot;/demo&quot;&gt;demo&lt;/Link&gt;</span></span>
 <span class="line"><span>      &lt;div&gt;</span></span>
-<span class="line"><span>        {/* 类似 vue 的 slot */}</span></span>
+<span class="line"><span>        {/* 配置二级路由渲染位置, 类似 vue 的 slot  */}</span></span>
 <span class="line"><span>        &lt;Outlet /&gt;</span></span>
 <span class="line"><span>      &lt;/div&gt;</span></span>
 <span class="line"><span>      &lt;h1&gt;---ManageLayout footer---&lt;/h1&gt;</span></span>
@@ -206,7 +132,13 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    element: &lt;ManageLayout /&gt;,</span></span>
 <span class="line"><span>    children: [</span></span>
 <span class="line"><span>      {</span></span>
+<span class="line"><span>        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)</span></span>
+<span class="line"><span>        // path: &#39;home&#39;,</span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>        path: &#39;/&#39;,</span></span>
+<span class="line"><span>        // or</span></span>
+<span class="line"><span>        index: true, // 默认二级路由页面,打开/ 渲染出home</span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>        element: &lt;Home /&gt;</span></span>
 <span class="line"><span>      },</span></span>
 <span class="line"><span>      {</span></span>
@@ -215,7 +147,29 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>      }</span></span>
 <span class="line"><span>    ]</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>])</span></span></code></pre></div><p><img src="`+o+`" alt="alt text"></p><h2 id="样式使用" tabindex="-1">样式使用 <a class="header-anchor" href="#样式使用" aria-label="Permalink to &quot;样式使用&quot;">​</a></h2><h4 id="直接在-js-文件中引入样式文件" tabindex="-1">直接在 JS 文件中引入样式文件 <a class="header-anchor" href="#直接在-js-文件中引入样式文件" aria-label="Permalink to &quot;直接在 JS 文件中引入样式文件&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import &#39;./App.css&#39;;</span></span></code></pre></div><h4 id="inline-样式" tabindex="-1">inline 样式 <a class="header-anchor" href="#inline-样式" aria-label="Permalink to &quot;inline 样式&quot;">​</a></h4><p>style 是对象形式,其中的key是驼峰式</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divStyle = {</span></span>
+<span class="line"><span>])</span></span></code></pre></div><p><img src="`+r+`" alt="alt text"></p><h2 id="别名路径配置" tabindex="-1">别名路径配置 <a class="header-anchor" href="#别名路径配置" aria-label="Permalink to &quot;别名路径配置&quot;">​</a></h2><p>CRA本身把webpack配置包装到了黑盒里无法直接修改，需要借助一个插件：craco</p><ul><li>安装 craco</li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i @craco/craco -D</span></span></code></pre></div><ul><li><p>项目根目录创建配置文件 craco.config.js</p></li><li><p>配置文件中添加路径解析配置</p></li><li><p>包文件中配置启动和打包命令</p></li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;scripts&quot;: {</span></span>
+<span class="line"><span>  &quot;start&quot;: &quot;craco start&quot;,</span></span>
+<span class="line"><span>  &quot;build&quot;: &quot;craco build&quot;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="路径解析配置-webpack" tabindex="-1">路径解析配置(webpack) <a class="header-anchor" href="#路径解析配置-webpack" aria-label="Permalink to &quot;路径解析配置(webpack)&quot;">​</a></h4><p>craco.config.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const path  = require(&#39;path&#39;);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>module.exports = {</span></span>
+<span class="line"><span>  webpack: {</span></span>
+<span class="line"><span>    alias: {</span></span>
+<span class="line"><span>      &#39;@&#39;: path.resolve(__dirname, &#39;src&#39;),</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>}</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import sum from &#39;@/test&#39;</span></span></code></pre></div><h4 id="路径联想配置-vscode" tabindex="-1">路径联想配置(vscode) <a class="header-anchor" href="#路径联想配置-vscode" aria-label="Permalink to &quot;路径联想配置(vscode)&quot;">​</a></h4><p>jsconfig.json:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>    &quot;compilerOptions&quot;: {</span></span>
+<span class="line"><span>        &quot;baseUrl&quot;: &quot;./&quot;,</span></span>
+<span class="line"><span>        &quot;paths&quot;: {</span></span>
+<span class="line"><span>            &quot;@/*&quot;: [</span></span>
+<span class="line"><span>                &quot;src/*&quot;</span></span>
+<span class="line"><span>            ]</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>输入 &quot;@/&quot; vscode会给后面的路径提示</p><h2 id="样式使用" tabindex="-1">样式使用 <a class="header-anchor" href="#样式使用" aria-label="Permalink to &quot;样式使用&quot;">​</a></h2><h4 id="引入样式文件-使用类" tabindex="-1">引入样式文件，使用类 <a class="header-anchor" href="#引入样式文件-使用类" aria-label="Permalink to &quot;引入样式文件，使用类&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import &#39;./App.css&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;div className=&quot;foo&quot;&gt;test&lt;/div&gt;</span></span></code></pre></div><h4 id="inline-样式" tabindex="-1">inline 样式 <a class="header-anchor" href="#inline-样式" aria-label="Permalink to &quot;inline 样式&quot;">​</a></h4><p>style 是对象形式,其中的key是驼峰式</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divStyle = {</span></span>
 <span class="line"><span>  color: &#39;red&#39;,</span></span>
 <span class="line"><span>  marginBottom: &#39;10px&#39;</span></span>
 <span class="line"><span>};</span></span>
@@ -224,7 +178,72 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>  内容</span></span>
 <span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h2 id="使用-scss" tabindex="-1">使用 scss <a class="header-anchor" href="#使用-scss" aria-label="Permalink to &quot;使用 scss&quot;">​</a></h2><p>create-react-app 原生支持 sass module，只需要安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i sass -D</span></span></code></pre></div><h2 id="css-module" tabindex="-1">CSS Module <a class="header-anchor" href="#css-module" aria-label="Permalink to &quot;CSS Module&quot;">​</a></h2><p>解决className可能重复的问题； create-react-app 内置了对 CSS Module 的支持。</p><p>‌1.更改文件名 ‌</p><p>将 CSS 文件名从 styles.css 更改为 styles.module.css</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.color-yellow {</span></span>
 <span class="line"><span>  color: #FFF766;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>2.引入样式 ‌</p><p>在组件文件中，使用 ES6 模块语法引入样式文件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import styles from &#39;./styles.module.css&#39;;</span></span></code></pre></div><p>‌3.使用样式 ‌</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div className={styles[&#39;color-yellow&#39;]}&gt;</span></span></code></pre></div><h2 id="状态管理-redux" tabindex="-1">状态管理 Redux <a class="header-anchor" href="#状态管理-redux" aria-label="Permalink to &quot;状态管理 Redux&quot;">​</a></h2><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install @reduxjs/toolkit react-redux -S</span></span></code></pre></div><h4 id="为-react-提供-redux-store" tabindex="-1">为 React 提供 Redux Store <a class="header-anchor" href="#为-react-提供-redux-store" aria-label="Permalink to &quot;为 React 提供 Redux Store&quot;">​</a></h4><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import store from &#39;./store/index.js&#39;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>2.引入样式 ‌</p><p>在组件文件中，使用 ES6 模块语法引入样式文件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import styles from &#39;./styles.module.css&#39;;</span></span></code></pre></div><p>‌3.使用样式 ‌</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div className={styles[&#39;color-yellow&#39;]}&gt;</span></span></code></pre></div><h2 id="状态管理-redux" tabindex="-1">状态管理 Redux <a class="header-anchor" href="#状态管理-redux" aria-label="Permalink to &quot;状态管理 Redux&quot;">​</a></h2><h3 id="独立使用的redux" tabindex="-1">独立使用的Redux <a class="header-anchor" href="#独立使用的redux" aria-label="Permalink to &quot;独立使用的Redux&quot;">​</a></h3>`,63),k=t(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// cdn 引入 redux 库</span></span>
+<span class="line"><span>function reducer(state = {count: 0}, action) {</span></span>
+<span class="line"><span>  // 数据不可变：基于原始状态生成一个新状态</span></span>
+<span class="line"><span>  if (action.type === &#39;INCREMENT&#39;) {</span></span>
+<span class="line"><span>    return {count: state.count + action.payload}</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  if (action.type === &#39;DECREMENT&#39;) {</span></span>
+<span class="line"><span>    return {count: state.count - 1}</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  return state</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const store = Redux.createStore(reducer)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>store.subscribe(() =&gt; { </span></span>
+<span class="line"><span>  console.log(&#39;state change&#39;)</span></span>
+<span class="line"><span>  document.getElementById(&#39;count&#39;).innerHTML = store.getState().count</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function clickIncrement() {</span></span>
+<span class="line"><span>  store.dispatch({</span></span>
+<span class="line"><span>    type: &#39;INCREMENT&#39;,</span></span>
+<span class="line"><span>    payload: 5</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>function clickDecrement() {</span></span>
+<span class="line"><span>  store.dispatch({</span></span>
+<span class="line"><span>    type: &#39;DECREMENT&#39;</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;div&gt;</span></span>
+<span class="line"><span>  &lt;button onClick={clickDecrement}&gt;-&lt;/button&gt;</span></span>
+<span class="line"><span>  &lt;span id=&quot;count&quot;&gt;&lt;/span&gt;</span></span>
+<span class="line"><span>  &lt;button onClick={clickIncrement}&gt;+&lt;/button&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="react-中的-redux" tabindex="-1">React 中的 Redux <a class="header-anchor" href="#react-中的-redux" aria-label="Permalink to &quot;React 中的 Redux&quot;">​</a></h3><p>Redux 是 React 最常用的集中状态管理工具，可以独立于框架运行。</p><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install @reduxjs/toolkit react-redux -S</span></span></code></pre></div><h4 id="_1-创建-redux-state-slice" tabindex="-1">1. 创建 Redux State Slice <a class="header-anchor" href="#_1-创建-redux-state-slice" aria-label="Permalink to &quot;1. 创建 Redux State Slice&quot;">​</a></h4><p>store/modules/counterStore.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createSlice } from &#39;@reduxjs/toolkit&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export const counterSlice = createSlice({</span></span>
+<span class="line"><span>  name: &#39;counter&#39;,</span></span>
+<span class="line"><span>  initialState: {</span></span>
+<span class="line"><span>    count: 0</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  reducers: {</span></span>
+<span class="line"><span>    // 同步方法，支持直接修改</span></span>
+<span class="line"><span>    increment: state =&gt; {</span></span>
+<span class="line"><span>      state.count += 1</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    decrement: state =&gt; {</span></span>
+<span class="line"><span>      state.count -= 1</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    incrementByAmount: (state, action) =&gt; {</span></span>
+<span class="line"><span>      state.count += action.payload</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export const { increment, decrement, incrementByAmount } = counterSlice.actions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default counterSlice.reducer</span></span></code></pre></div><h4 id="_2-将-slice-reducers-组合到-redux-store-中" tabindex="-1">2. 将 Slice Reducers 组合到 Redux Store 中 <a class="header-anchor" href="#_2-将-slice-reducers-组合到-redux-store-中" aria-label="Permalink to &quot;2. 将 Slice Reducers 组合到 Redux Store 中&quot;">​</a></h4><p>store/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { configureStore } from &#39;@reduxjs/toolkit&#39;</span></span>
+<span class="line"><span>import counterReducer from &#39;./modules/counterStore&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default configureStore({</span></span>
+<span class="line"><span>  reducer: {</span></span>
+<span class="line"><span>    counter: counterReducer</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h4 id="_3-将-store-实例注入到应用中" tabindex="-1">3. 将 store 实例注入到应用中 <a class="header-anchor" href="#_3-将-store-实例注入到应用中" aria-label="Permalink to &quot;3. 将 store 实例注入到应用中&quot;">​</a></h4><p>index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import store from &#39;./store/index.js&#39;</span></span>
 <span class="line"><span>import { Provider } from &#39;react-redux&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));</span></span>
@@ -234,40 +253,11 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>        &lt;App /&gt;</span></span>
 <span class="line"><span>    &lt;/Provider&gt;</span></span>
 <span class="line"><span>  &lt;/React.StrictMode&gt;</span></span>
-<span class="line"><span>);</span></span></code></pre></div><h4 id="创建-redux-state-slice" tabindex="-1">创建 Redux State Slice <a class="header-anchor" href="#创建-redux-state-slice" aria-label="Permalink to &quot;创建 Redux State Slice&quot;">​</a></h4><p>store/counterSlice.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createSlice } from &#39;@reduxjs/toolkit&#39;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export const counterSlice = createSlice({</span></span>
-<span class="line"><span>  name: &#39;counter&#39;,</span></span>
-<span class="line"><span>  initialState: {</span></span>
-<span class="line"><span>    value: 0</span></span>
-<span class="line"><span>  },</span></span>
-<span class="line"><span>  reducers: {</span></span>
-<span class="line"><span>    increment: state =&gt; {</span></span>
-<span class="line"><span>      state.value += 1</span></span>
-<span class="line"><span>    },</span></span>
-<span class="line"><span>    decrement: state =&gt; {</span></span>
-<span class="line"><span>      state.value -= 1</span></span>
-<span class="line"><span>    },</span></span>
-<span class="line"><span>    incrementByAmount: (state, action) =&gt; {</span></span>
-<span class="line"><span>      state.value += action.payload</span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span>  }</span></span>
-<span class="line"><span>})</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export const { increment, decrement, incrementByAmount } = counterSlice.actions</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export default counterSlice.reducer</span></span></code></pre></div><h4 id="将-slice-reducers-添加到-redux-store-中" tabindex="-1">将 Slice Reducers 添加到 Redux Store 中 <a class="header-anchor" href="#将-slice-reducers-添加到-redux-store-中" aria-label="Permalink to &quot;将 Slice Reducers 添加到 Redux Store 中&quot;">​</a></h4><p>store/index.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { configureStore } from &#39;@reduxjs/toolkit&#39;</span></span>
-<span class="line"><span>import counterReducer from &#39;./counterSlice&#39;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>export default configureStore({</span></span>
-<span class="line"><span>  reducer: {</span></span>
-<span class="line"><span>    counter: counterReducer</span></span>
-<span class="line"><span>  }</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h4 id="在-react-组件中使用-redux-状态和操作" tabindex="-1">在 React 组件中使用 Redux 状态和操作 <a class="header-anchor" href="#在-react-组件中使用-redux-状态和操作" aria-label="Permalink to &quot;在 React 组件中使用 Redux 状态和操作&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useSelector, useDispatch } from &#39;react-redux&#39;</span></span>
-<span class="line"><span>import { decrement, increment, incrementByAmount } from &#39;../store/counterSlice&#39;</span></span>
+<span class="line"><span>);</span></span></code></pre></div><h4 id="_4-在-react-组件中使用" tabindex="-1">4. 在 React 组件中使用 <a class="header-anchor" href="#_4-在-react-组件中使用" aria-label="Permalink to &quot;4. 在 React 组件中使用&quot;">​</a></h4><ul><li>useSelector 把 store 中的数据映射到组件中</li><li>useDispatch 生成提交 action 对象的 dispatch 函数</li></ul><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useSelector, useDispatch } from &#39;react-redux&#39;</span></span>
+<span class="line"><span>import { decrement, increment, incrementByAmount } from &#39;../store/modules/counterStore&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>function Page2() {</span></span>
-<span class="line"><span>  const count = useSelector(state =&gt; state.counter.value)</span></span>
+<span class="line"><span>  const { count } = useSelector(state =&gt; state.counter)</span></span>
 <span class="line"><span>  const dispatch = useDispatch()</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    return &lt;div&gt;</span></span>
@@ -293,14 +283,34 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    &lt;/div&gt;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default Page2;</span></span></code></pre></div><h4 id="页面效果" tabindex="-1">页面效果 <a class="header-anchor" href="#页面效果" aria-label="Permalink to &quot;页面效果&quot;">​</a></h4><p><img src="`+r+`" alt="alt text"></p><h2 id="配置多环境" tabindex="-1">配置多环境 <a class="header-anchor" href="#配置多环境" aria-label="Permalink to &quot;配置多环境&quot;">​</a></h2><p>Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。</p><h4 id="第一种方式-使用-cross-env" tabindex="-1">第一种方式：使用 cross-env <a class="header-anchor" href="#第一种方式-使用-cross-env" aria-label="Permalink to &quot;第一种方式：使用 cross-env&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 安装 cross-env</span></span>
+<span class="line"><span>export default Page2;</span></span></code></pre></div><h4 id="页面效果" tabindex="-1">页面效果 <a class="header-anchor" href="#页面效果" aria-label="Permalink to &quot;页面效果&quot;">​</a></h4><p><img src="`+d+`" alt="alt text"></p><p>备注：chrome 插件 - Redux DevTools</p><h4 id="在-store-中使用异步操作" tabindex="-1">在 store 中使用异步操作： <a class="header-anchor" href="#在-store-中使用异步操作" aria-label="Permalink to &quot;在 store 中使用异步操作：&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>export const counterSlice = createSlice({</span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span>  reducers: {</span></span>
+<span class="line"><span>    ...</span></span>
+<span class="line"><span>    setCount(state, action) {</span></span>
+<span class="line"><span>      state.count = action.payload</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export const { ..., setCount } = counterSlice.actions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export const fetchTestData = () =&gt; {</span></span>
+<span class="line"><span>  return async (dispatch) =&gt; {</span></span>
+<span class="line"><span>    const res = await axios(&#39;https://dev.test.shop/data&#39;)</span></span>
+<span class="line"><span>    dispatch(setCount(res.data.num))</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>  dispatch(fetchTestData())</span></span>
+<span class="line"><span>}, [dispatch])</span></span></code></pre></div><h2 id="配置多环境" tabindex="-1">配置多环境 <a class="header-anchor" href="#配置多环境" aria-label="Permalink to &quot;配置多环境&quot;">​</a></h2><p>Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。</p><h4 id="第一种方式-使用-cross-env" tabindex="-1">第一种方式：使用 cross-env <a class="header-anchor" href="#第一种方式-使用-cross-env" aria-label="Permalink to &quot;第一种方式：使用 cross-env&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 安装 cross-env</span></span>
 <span class="line"><span>npm i cross-env -D</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 配置不同环境命令，REACT_APP_开头</span></span>
 <span class="line"><span>&quot;build:release&quot;: &quot;cross-env REACT_APP_ENV=release react-scripts build&quot;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
-<span class="line"><span>process.env.REACT_APP_ENV // release</span></span></code></pre></div><h4 id="第二种方式-使用-dotenv" tabindex="-1">第二种方式：使用 dotenv <a class="header-anchor" href="#第二种方式-使用-dotenv" aria-label="Permalink to &quot;第二种方式：使用 dotenv&quot;">​</a></h4><p>安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install dotenv-cli -D</span></span></code></pre></div><p>自定义环境变量名</p><p><img src="`+d+`" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 配置</span></span>
+<span class="line"><span>process.env.REACT_APP_ENV // release</span></span></code></pre></div><h4 id="第二种方式-使用-dotenv" tabindex="-1">第二种方式：使用 dotenv <a class="header-anchor" href="#第二种方式-使用-dotenv" aria-label="Permalink to &quot;第二种方式：使用 dotenv&quot;">​</a></h4><p>安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install dotenv-cli -D</span></span></code></pre></div><p>自定义环境变量名</p><p><img src="`+u+`" alt="alt text"></p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 配置</span></span>
 <span class="line"><span>&quot;start&quot;: &quot;dotenv -e .env.release react-scripts start&quot;,</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取</span></span>
@@ -376,7 +386,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;input type=&quot;text&quot; onChange={changeText} value={text} /&gt;</span></span>
-<span class="line"><span>&lt;button onClick={() =&gt; console.log(text)}&gt;打印input值&lt;/button&gt;</span></span></code></pre></div><p>非受控组件：值不同步 state，使用 defaultValue 属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;input type=&quot;text&quot; defaultValue=&quot;hello world&quot; /&gt;</span></span></code></pre></div><p>defaultValue 显示在页面中，但无法获取到</p><h2 id="父子组件交互" tabindex="-1">父子组件交互 <a class="header-anchor" href="#父子组件交互" aria-label="Permalink to &quot;父子组件交互&quot;">​</a></h2><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Button from &#39;../components/button&#39;</span></span>
+<span class="line"><span>&lt;button onClick={() =&gt; console.log(text)}&gt;打印input值&lt;/button&gt;</span></span></code></pre></div><p>非受控组件：值不同步 state，使用 defaultValue 属性</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;input type=&quot;text&quot; defaultValue=&quot;hello world&quot; /&gt;</span></span></code></pre></div><p>defaultValue 显示在页面中，但无法获取到</p><h2 id="父子组件交互" tabindex="-1">父子组件交互 <a class="header-anchor" href="#父子组件交互" aria-label="Permalink to &quot;父子组件交互&quot;">​</a></h2><p>子组件只能读取 props 中的数据，不能直接修改，父组件的数据只能由父组件修改。</p><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Button from &#39;../components/button&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>function Page1() {</span></span>
 <span class="line"><span>  const buttonObj = {</span></span>
@@ -406,6 +416,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>    backgroundColor: props.bgColor</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>  function clickFn() {</span></span>
+<span class="line"><span>    // 子传父</span></span>
 <span class="line"><span>    props.onMessageChange(&#39;来自子组件&#39;)</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span></span></span>
@@ -414,31 +425,41 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>  &lt;/div&gt;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default Button;</span></span></code></pre></div><h2 id="react-hooks" tabindex="-1">React Hooks <a class="header-anchor" href="#react-hooks" aria-label="Permalink to &quot;React Hooks&quot;">​</a></h2><p>使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。</p><p>hooks 使用规则：</p><ol><li>必须使用 useXXX 格式命名</li><li>只能在 函数式组件内或其他hook 内调用</li><li>每次的调用顺序一致（不能放在for、if 内）</li></ol><h4 id="usestate" tabindex="-1">useState <a class="header-anchor" href="#usestate" aria-label="Permalink to &quot;useState&quot;">​</a></h4><p>向组件添加状态变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const [count, setCount] = useState(0);</span></span>
+<span class="line"><span>export default Button;</span></span></code></pre></div><h4 id="特殊的-prop-children" tabindex="-1">特殊的 prop children <a class="header-anchor" href="#特殊的-prop-children" aria-label="Permalink to &quot;特殊的 prop children&quot;">​</a></h4><p>把内容嵌套在子组件标签中，父组件会自动把名为 children 的 prop 传递给子组件。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;Child&gt;</span></span>
+<span class="line"><span>  &lt;span&gt;父&lt;/span&gt;</span></span>
+<span class="line"><span>&lt;/Child&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function Child(props) {</span></span>
+<span class="line"><span>  return (</span></span>
+<span class="line"><span>    &lt;div&gt;</span></span>
+<span class="line"><span>      child - {props.children}</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  );</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p><img src="`+h+`" alt="alt text"></p><h2 id="react-hooks" tabindex="-1">React Hooks <a class="header-anchor" href="#react-hooks" aria-label="Permalink to &quot;React Hooks&quot;">​</a></h2><p>使函数式组件能够拥有类组件的一些特性，例如状态管理和生命周期方法的使用。</p><p>hooks 使用规则：</p><ol><li>必须使用 useXXX 格式命名</li><li>只能在 函数式组件内或其他hook 内调用</li><li>每次的调用顺序一致（不能放在for、if 内）</li></ol><h4 id="usestate" tabindex="-1">useState <a class="header-anchor" href="#usestate" aria-label="Permalink to &quot;useState&quot;">​</a></h4><p>向组件添加状态变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const [count, setCount] = useState(0);</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// setCount(count + 1) // 这种写法多次执行count只累加一次（合并更新）</span></span>
 <span class="line"><span>// 或</span></span>
 <span class="line"><span>setCount((count) =&gt; count + 1) // 如果页面中 count 是 6</span></span>
 <span class="line"><span>console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值</span></span>
-<span class="line"><span>// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// state 是不可变数据</span></span>
-<span class="line"><span>// 对象-传入新值</span></span>
+<span class="line"><span>// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef</span></span></code></pre></div><p>state 是不可变数据 (不能 count++，视图不更新)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 修改对象</span></span>
 <span class="line"><span>setUserInfo({</span></span>
 <span class="line"><span>  ...userInfo,</span></span>
 <span class="line"><span>  age: 21</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>// 数组-传入新值</span></span>
-<span class="line"><span>setList(list.concat(&#39;z&#39;)) // concat 能返回新数组</span></span>
-<span class="line"><span>// 或</span></span>
-<span class="line"><span>setList([...list, &#39;z&#39;])</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h4 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h4><p>在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。</p>`,114),b=s(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>setUserInfo({</span></span>
+<span class="line"><span>  x: 100</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>// 修改数组</span></span>
+<span class="line"><span>setList(list.concat(&#39;z&#39;))</span></span>
+<span class="line"><span>setList([...list, &#39;z&#39;]) </span></span>
+<span class="line"><span>// filter</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h4 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h4><p>在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。</p>`,70),f=t(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  const connection = createConnection(serverUrl, roomId);</span></span>
 <span class="line"><span>  connection.connect();</span></span>
 <span class="line"><span>  return () =&gt; {</span></span>
-<span class="line"><span>    // 清理操作</span></span>
+<span class="line"><span>    // 清除副作用（组件销毁时自动执行）</span></span>
 <span class="line"><span>    connection.disconnect();</span></span>
 <span class="line"><span>  };</span></span>
-<span class="line"><span>}, [serverUrl, roomId]);</span></span></code></pre></div><ul><li>‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数。</li><li>‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。</li><li>‌第二个参数为具体依赖项数组‌：只有数组中的依赖项（任意一个）发生变化时，副作用函数才会重新执行。</li></ul><h4 id="uselayouteffect‌" tabindex="-1">useLayoutEffect‌ <a class="header-anchor" href="#uselayouteffect‌" aria-label="Permalink to &quot;useLayoutEffect‌&quot;">​</a></h4><p>同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。</p><h4 id="useref" tabindex="-1">useRef <a class="header-anchor" href="#useref" aria-label="Permalink to &quot;useRef&quot;">​</a></h4><p>访问 DOM 元素或保存不触发渲染的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divRef = useRef(null);</span></span>
+<span class="line"><span>}, [serverUrl, roomId]);</span></span></code></pre></div><ul><li>‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行</li><li>‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。</li><li>‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行。</li></ul><h4 id="uselayouteffect‌" tabindex="-1">useLayoutEffect‌ <a class="header-anchor" href="#uselayouteffect‌" aria-label="Permalink to &quot;useLayoutEffect‌&quot;">​</a></h4><p>同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。</p><h4 id="useref" tabindex="-1">useRef <a class="header-anchor" href="#useref" aria-label="Permalink to &quot;useRef&quot;">​</a></h4><p>访问 DOM 元素或保存不触发渲染的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divRef = useRef(null);</span></span>
 <span class="line"><span>let count = useRef(0);</span></span>
 <span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;divRef.current: &#39;, divRef.current)</span></span>
@@ -449,7 +470,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>return &lt;div ref={divRef} onClick={clickFn}</span></span>
-<span class="line"><span>    &lt;/div&gt;</span></span></code></pre></div><h4 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h4><p>访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。</p><p>ThemeContext.js</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createContext } from &#39;react&#39;</span></span>
+<span class="line"><span>    &lt;/div&gt;</span></span></code></pre></div><h4 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h4><p>跨层级组件通信。</p><p>ThemeContext.js</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createContext } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 默认值 &#39;light&#39;</span></span>
 <span class="line"><span>export const ThemeContext = createContext(&#39;light&#39;)</span></span></code></pre></div><p>在顶层用 Provider 提供状态:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useState } from &#39;react&#39;</span></span>
@@ -536,7 +557,7 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>startTransition(() =&gt; {</span></span>
 <span class="line"><span>  // 过渡更新: 展示结果（低优先级，防止页面卡顿的情况）</span></span>
 <span class="line"><span>  setResultList(input);</span></span>
-<span class="line"><span>});</span></span></code></pre></div><p><img src="`+u+'" alt="alt text"><img src="'+h+`" alt="alt text"></p><h4 id="usedeferredvalue" tabindex="-1">useDeferredValue <a class="header-anchor" href="#usedeferredvalue" aria-label="Permalink to &quot;useDeferredValue&quot;">​</a></h4><p>延迟更新 UI 的某些部分。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const deferredValue = useDeferredValue(value)</span></span>
+<span class="line"><span>});</span></span></code></pre></div><p><img src="`+g+'" alt="alt text"><img src="'+m+`" alt="alt text"></p><h4 id="usedeferredvalue" tabindex="-1">useDeferredValue <a class="header-anchor" href="#usedeferredvalue" aria-label="Permalink to &quot;useDeferredValue&quot;">​</a></h4><p>延迟更新 UI 的某些部分。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const deferredValue = useDeferredValue(value)</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;SearchResults query={deferredValue} /&gt;</span></span></code></pre></div><h3 id="自定义-hooks" tabindex="-1">自定义 hooks <a class="header-anchor" href="#自定义-hooks" aria-label="Permalink to &quot;自定义 hooks&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useState, useEffect, useCallback } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
@@ -614,7 +635,15 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span></span></span>
 <span class="line"><span>import { Button } from &#39;antd&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>&lt;Button type=&quot;primary&quot;&gt;Primary Button&lt;/Button&gt;</span></span></code></pre></div><h2 id="typescript" tabindex="-1">TypeScript <a class="header-anchor" href="#typescript" aria-label="Permalink to &quot;TypeScript&quot;">​</a></h2><p>安装：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install --save typescript @types/node @types/react @types/react-dom @types/jest</span></span></code></pre></div><p>tsconfig.json:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>&lt;Button type=&quot;primary&quot;&gt;Primary Button&lt;/Button&gt;</span></span></code></pre></div><h3 id="antd-mobile-主题定制" tabindex="-1">antd-mobile 主题定制 <a class="header-anchor" href="#antd-mobile-主题定制" aria-label="Permalink to &quot;antd-mobile 主题定制&quot;">​</a></h3><p><a href="https://mobile.ant.design/zh/guide/theming" target="_blank" rel="noreferrer">https://mobile.ant.design/zh/guide/theming</a></p><h4 id="全局定制" tabindex="-1">全局定制 <a class="header-anchor" href="#全局定制" aria-label="Permalink to &quot;全局定制&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>:root:root {</span></span>
+<span class="line"><span>  --adm-color-primary: red;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h4 id="局部定制" tabindex="-1">局部定制 <a class="header-anchor" href="#局部定制" aria-label="Permalink to &quot;局部定制&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.puple {</span></span>
+<span class="line"><span>  --adm-color-primary: red;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;div className=&quot;puple&quot;&gt;</span></span>
+<span class="line"><span>  &lt;Button color=&quot;primary&quot;&gt;btn&lt;/Button&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h2 id="typescript" tabindex="-1">TypeScript <a class="header-anchor" href="#typescript" aria-label="Permalink to &quot;TypeScript&quot;">​</a></h2><p>安装：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install --save typescript @types/node @types/react @types/react-dom @types/jest</span></span></code></pre></div><p>tsconfig.json:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
 <span class="line"><span>  &quot;compilerOptions&quot;: {</span></span>
 <span class="line"><span>    &quot;target&quot;: &quot;es5&quot;,</span></span>
 <span class="line"><span>    &quot;lib&quot;: [</span></span>
@@ -653,4 +682,4 @@ import{_ as n,D as p,c as e,I as t,w as l,a3 as s,o as i,a as c}from"./chunks/fr
 <span class="line"><span>declare module &#39;*.module.scss&#39; {</span></span>
 <span class="line"><span>  const classes: { readonly [key: string]: string };</span></span>
 <span class="line"><span>  export default classes;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p>`,65);function v(f,k,x,q,y,C){const a=p("font");return i(),e("div",null,[m,t(a,{size:"2.5"},{default:l(()=>[c("注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),b])}const R=n(g,[["render",v]]);export{P as __pageData,R as default};
+<span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件</p>`,71);function x(q,C,y,P,A,R){const a=i("font");return o(),c("div",null,[v,n("ul",null,[n("li",null,[s("定义一个 "),p(a,{color:"red"},{default:e(()=>[s("reducer 函数")]),_:1})]),n("li",null,[s("使用 "),p(a,{color:"red"},{default:e(()=>[s("createStore")]),_:1}),s(" 方法传入 reducer 函数 生成一个 store 实例对象")]),n("li",null,[s("使用 store 实例的 "),p(a,{color:"red"},{default:e(()=>[s("subscribe 方法")]),_:1}),s(" 订阅数据的变化")]),n("li",null,[s("使用 store 实例的 "),p(a,{color:"red"},{default:e(()=>[s("dispatch方法提交action对象")]),_:1}),s(" 触发数据变化")]),n("li",null,[s("使用 store 实例的 "),p(a,{color:"red"},{default:e(()=>[s("getState方法")]),_:1}),s(" 获取最新的状态数据更新到视图中")])]),k,p(a,{size:"2.5"},{default:e(()=>[s("注：react18 开始，useEffect 在开发环境下会执行两次(<React.StrictMode>)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),f])}const S=l(b,[["render",x]]);export{B as __pageData,S as default};

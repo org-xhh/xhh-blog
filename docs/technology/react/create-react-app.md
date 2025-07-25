@@ -11,6 +11,7 @@
 | react-redux      | 9+   |
 | @reduxjs/toolkit | 2+   |
 
+
 ## 新建项目
 
 ```
@@ -19,9 +20,10 @@ npx create-react-app react-project
 
 ## 配置路由
 ```
-npm i react-router-dom
+npm i react-router-dom@6
 ```
 
+<!-- 
 ### 方式1
 
 index.js:
@@ -83,22 +85,13 @@ let routes = [
     }
 ]
 export default routes
-```
+``` 
+-->
 
-### 方式2
+<!-- ### 方式2 -->
 
-App.tsx:
-```
-import { RouterProvider } from 'react-router-dom'
-import routerConfig from './router'
 
-return (
-    <RouterProvider router={routerConfig}>
-      <div className="App"></div>
-    </RouterProvider>
-  )
-```
-
+#### 新建路由
 router/index.tsx:
 ```
 import React from 'react'
@@ -147,7 +140,18 @@ const router = createBrowserRouter([
 
 export default router
 ```
+#### 注册路由
+App.tsx:
+```
+import { RouterProvider } from 'react-router-dom'
+import routerConfig from './router'
 
+return (
+  <RouterProvider router={routerConfig}></RouterProvider>
+)
+```
+
+<!-- 
 ## 路由鉴权
 
 router/index.js:
@@ -206,7 +210,8 @@ const Auth = ({ children }) => {
 }
 
 export default Auth
-```
+``` 
+-->
 
 ## 路由传参
 
@@ -240,6 +245,21 @@ function Demo() {
 获取动态参数
 
 ```
+{
+  path: 'manage',
+  children: [
+    {
+      path: 'list',
+      element: <ManageList />
+    },
+    {
+      path: 'edit/:id',
+      element: <ManageEdit />
+    }
+  ]
+}
+
+<!-- 声明式导航 -->
 <Link to="/manage/edit/666">跳转到ManageEdit</Link>
 
 
@@ -277,14 +297,16 @@ function Page1() {
 src/layouts/ManageLayout.tsx:
 ```
 import React, { FC } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
 const ManageLayout: FC = () => {
   return (
     <div>
       <h1>---ManageLayout header---</h1>
+      <Link to="/">home</Link>
+      <Link to="/demo">demo</Link>
       <div>
-        {/* 类似 vue 的 slot */}
+        {/* 配置二级路由渲染位置, 类似 vue 的 slot  */}
         <Outlet />
       </div>
       <h1>---ManageLayout footer---</h1>
@@ -307,7 +329,13 @@ const router = createBrowserRouter([
     element: <ManageLayout />,
     children: [
       {
+        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)
+        // path: 'home',
+
         path: '/',
+        // or
+        index: true, // 默认二级路由页面,打开/ 渲染出home
+
         element: <Home />
       },
       {
@@ -320,12 +348,69 @@ const router = createBrowserRouter([
 ```
 ![alt text](image-4.png)
 
+
+## 别名路径配置
+CRA本身把webpack配置包装到了黑盒里无法直接修改，需要借助一个插件：craco
+
+- 安装 craco
+```
+npm i @craco/craco -D
+```
+- 项目根目录创建配置文件
+craco.config.js
+
+- 配置文件中添加路径解析配置
+
+- 包文件中配置启动和打包命令
+
+```
+"scripts": {
+  "start": "craco start",
+  "build": "craco build"
+}
+```
+
+#### 路径解析配置(webpack)
+craco.config.js:
+```
+const path  = require('path');
+
+module.exports = {
+  webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+}
+```
+```
+import sum from '@/test'
+```
+
+#### 路径联想配置(vscode)
+jsconfig.json:
+```
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
+    }
+}
+```
+输入 "@/" vscode会给后面的路径提示 
+
 ## 样式使用
 
-#### 直接在 JS 文件中引入样式文件
+#### 引入样式文件，使用类
 
 ```
 import './App.css';
+
+<div className="foo">test</div>
 ```
 
 #### inline 样式
@@ -386,13 +471,110 @@ import styles from './styles.module.css';
 
 ## 状态管理 Redux
 
+### 独立使用的Redux
+- 定义一个 <font color=red>reducer 函数</font>
+- 使用 <font color=red>createStore</font> 方法传入 reducer 函数 生成一个 store 实例对象
+- 使用 store 实例的 <font color=red>subscribe 方法</font> 订阅数据的变化
+- 使用 store 实例的 <font color=red>dispatch方法提交action对象</font> 触发数据变化
+- 使用 store 实例的 <font color=red>getState方法</font> 获取最新的状态数据更新到视图中
+
+```
+// cdn 引入 redux 库
+function reducer(state = {count: 0}, action) {
+  // 数据不可变：基于原始状态生成一个新状态
+  if (action.type === 'INCREMENT') {
+    return {count: state.count + action.payload}
+  }
+  if (action.type === 'DECREMENT') {
+    return {count: state.count - 1}
+  }
+  return state
+}
+
+const store = Redux.createStore(reducer)
+
+store.subscribe(() => { 
+  console.log('state change')
+  document.getElementById('count').innerHTML = store.getState().count
+})
+
+function clickIncrement() {
+  store.dispatch({
+    type: 'INCREMENT',
+    payload: 5
+  })
+}
+function clickDecrement() {
+  store.dispatch({
+    type: 'DECREMENT'
+  })
+}
+
+<div>
+  <button onClick={clickDecrement}>-</button>
+  <span id="count"></span>
+  <button onClick={clickIncrement}>+</button>
+</div>
+
+```
+
+### React 中的 Redux
+
+Redux 是 React 最常用的集中状态管理工具，可以独立于框架运行。
+
 #### 安装
 
 ```
 npm install @reduxjs/toolkit react-redux -S
 ```
 
-#### 为 React 提供 Redux Store
+#### 1. 创建 Redux State Slice
+
+store/modules/counterStore.js:
+
+```
+import { createSlice } from '@reduxjs/toolkit'
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    count: 0
+  },
+  reducers: {
+    // 同步方法，支持直接修改
+    increment: state => {
+      state.count += 1
+    },
+    decrement: state => {
+      state.count -= 1
+    },
+    incrementByAmount: (state, action) => {
+      state.count += action.payload
+    }
+  }
+})
+
+export const { increment, decrement, incrementByAmount } = counterSlice.actions
+
+export default counterSlice.reducer
+```
+
+#### 2. 将 Slice Reducers 组合到 Redux Store 中
+
+store/index.js:
+
+```
+import { configureStore } from '@reduxjs/toolkit'
+import counterReducer from './modules/counterStore'
+
+export default configureStore({
+  reducer: {
+    counter: counterReducer
+  }
+})
+```
+
+#### 3. 将 store 实例注入到应用中
 
 index.js:
 
@@ -411,59 +593,17 @@ root.render(
 
 ```
 
-#### 创建 Redux State Slice
+#### 4. 在 React 组件中使用
 
-store/counterSlice.js:
-
-```
-import { createSlice } from '@reduxjs/toolkit'
-
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: 0
-  },
-  reducers: {
-    increment: state => {
-      state.value += 1
-    },
-    decrement: state => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    }
-  }
-})
-
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-
-export default counterSlice.reducer
-```
-
-#### 将 Slice Reducers 添加到 Redux Store 中
-
-store/index.js:
-
-```
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './counterSlice'
-
-export default configureStore({
-  reducer: {
-    counter: counterReducer
-  }
-})
-```
-
-#### 在 React 组件中使用 Redux 状态和操作
+- useSelector 把 store 中的数据映射到组件中
+- useDispatch 生成提交 action 对象的 dispatch 函数
 
 ```
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment, incrementByAmount } from '../store/counterSlice'
+import { decrement, increment, incrementByAmount } from '../store/modules/counterStore'
 
 function Page2() {
-  const count = useSelector(state => state.counter.value)
+  const { count } = useSelector(state => state.counter)
   const dispatch = useDispatch()
 
     return <div>
@@ -495,6 +635,36 @@ export default Page2;
 #### 页面效果
 
 ![alt text](image.png)
+
+备注：chrome 插件 - Redux DevTools
+
+#### 在 store 中使用异步操作：
+```
+export const counterSlice = createSlice({
+  ...
+  reducers: {
+    ...
+    setCount(state, action) {
+      state.count = action.payload
+    },
+  }
+})
+
+
+export const { ..., setCount } = counterSlice.actions
+
+export const fetchTestData = () => {
+  return async (dispatch) => {
+    const res = await axios('https://dev.test.shop/data')
+    dispatch(setCount(res.data.num))
+  }
+}
+```
+```
+useEffect(() => {
+  dispatch(fetchTestData())
+}, [dispatch])
+```
 
 ## 配置多环境
 
@@ -644,6 +814,7 @@ function changeText(e: ChangeEvent<HTMLInputElement>) {
 defaultValue 显示在页面中，但无法获取到
 
 ## 父子组件交互
+子组件只能读取 props 中的数据，不能直接修改，父组件的数据只能由父组件修改。
 
 父组件：
 
@@ -684,6 +855,7 @@ function Button(props) {
     backgroundColor: props.bgColor
   }
   function clickFn() {
+    // 子传父
     props.onMessageChange('来自子组件')
   }
 
@@ -694,6 +866,23 @@ function Button(props) {
 
 export default Button;
 ```
+
+#### 特殊的 prop children
+把内容嵌套在子组件标签中，父组件会自动把名为 children 的 prop 传递给子组件。
+```
+<Child>
+  <span>父</span>
+</Child>
+
+function Child(props) {
+  return (
+    <div>
+      child - {props.children}
+    </div>
+  );
+}
+```
+![alt text](image-19.png)
 
 ## React Hooks
 
@@ -716,18 +905,21 @@ const [count, setCount] = useState(0);
 setCount((count) => count + 1) // 如果页面中 count 是 6
 console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值
 // 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef
-
-// state 是不可变数据
-// 对象-传入新值
+```
+state 是不可变数据 (不能 count++，视图不更新)
+```
+// 修改对象
 setUserInfo({
   ...userInfo,
   age: 21
 })
-// 数组-传入新值
-setList(list.concat('z')) // concat 能返回新数组
-// 或
-setList([...list, 'z'])
-
+setUserInfo({
+  x: 100
+})
+// 修改数组
+setList(list.concat('z'))
+setList([...list, 'z']) 
+// filter
 ```
 > 可以使用 **immer** 修改 state 不可变数据
 
@@ -735,22 +927,22 @@ setList([...list, 'z'])
 
 在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
 
-<font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
+<font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次(&lt;React.StrictMode&gt;)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
 
 ```
 useEffect(() => {
   const connection = createConnection(serverUrl, roomId);
   connection.connect();
   return () => {
-    // 清理操作
+    // 清除副作用（组件销毁时自动执行）
     connection.disconnect();
   };
 }, [serverUrl, roomId]);
 ```
 
-- ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数。
+- ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行
 - ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。
-- ‌第二个参数为具体依赖项数组‌：只有数组中的依赖项（任意一个）发生变化时，副作用函数才会重新执行。
+- ‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行。
 
 #### useLayoutEffect‌
 
@@ -777,7 +969,7 @@ return <div ref={divRef} onClick={clickFn}
 
 #### useContext
 
-访问 React context 在组件树中传递的数据，而不必通过每个组件传递 props。
+跨层级组件通信。
 
 ThemeContext.js
 ```
@@ -1061,6 +1253,27 @@ npm install antd
 import { Button } from 'antd'
 
 <Button type="primary">Primary Button</Button>
+```
+
+### antd-mobile 主题定制
+https://mobile.ant.design/zh/guide/theming
+
+#### 全局定制
+```
+:root:root {
+  --adm-color-primary: red;
+}
+```
+
+#### 局部定制
+```
+.puple {
+  --adm-color-primary: red;
+}
+
+<div className="puple">
+  <Button color="primary">btn</Button>
+</div>
 ```
 
 ## TypeScript
