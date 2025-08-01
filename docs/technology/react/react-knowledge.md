@@ -369,27 +369,20 @@ function Page1() {
 
 
 ## 别名路径配置
-CRA本身把webpack配置包装到了黑盒里无法直接修改，需要借助一个插件：craco
+### create-react-app 
+
+CRA 本身把webpack配置包装到了黑盒里无法直接修改，需要借助一个插件：craco
 
 - 安装 craco
 ```
 npm i @craco/craco -D
 ```
 - 项目根目录创建配置文件
+
 craco.config.js
 
-- 配置文件中添加路径解析配置
+- 配置文件中添加路径解析配置(webpack)
 
-- 包文件中配置启动和打包命令
-
-```
-"scripts": {
-  "start": "craco start",
-  "build": "craco build"
-}
-```
-
-#### 路径解析配置(webpack)
 craco.config.js:
 ```
 const path  = require('path');
@@ -405,8 +398,16 @@ module.exports = {
 ```
 import sum from '@/test'
 ```
+- 包文件中配置启动和打包命令
 
-#### 路径联想配置(vscode)
+```
+"scripts": {
+  "start": "craco start",
+  "build": "craco build"
+}
+```
+- 路径联想配置(vscode)
+
 jsconfig.json:
 ```
 {
@@ -421,6 +422,42 @@ jsconfig.json:
 }
 ```
 输入 "@/" vscode会给后面的路径提示 
+
+### vite 
+#### 路径解析
+```
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+})
+```
+path模块 和 __dirname 标红，缺少类型声明，解决办法：
+```
+npm i @types/node -D
+```
+#### vscode路径提示
+tsconfig.json添加配置：
+```
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  ...
+}
+```
+
 
 ## 样式使用
 
@@ -814,32 +851,16 @@ useEffect(() => {
 安装
 
 ```
-npm i axios
+npm i axios -S
 ```
 
-config.js:
-
-```
-// 不同环境接口地址
-const apiList = {
-    development: "https://www.dev.com/",
-    production: "https://www.prod.com/",
-    release: "https://www.release.com/"
-}
-const env = process.env.REACT_APP_ENV
-export const baseUrl = apiList[env]
-```
-
-axios.js:
-
+封装 utils/http.ts:
 ```
 import axios from 'axios'
 
-import { baseUrl } from './config'
-
 // 创建axios实例
 const service = axios.create({
-  baseURL: baseUrl,
+  baseURL: '',
   timeout: 30000 // 请求超时时间
 })
 
@@ -852,7 +873,7 @@ service.interceptors.request.use(
   },
   error => {
     // 请求失败
-    return error
+   return Promise.reject(error)
   }
 )
 
@@ -877,29 +898,48 @@ service.interceptors.response.use(
 )
 
 export default service
-
 ```
 
-api.js:
-
+api/home.ts:
 ```
-import request from '../axios/index'
+import request from '../utils/http.ts'
 
-export function getInitData(data) {
-  return request({
-    url: '/data',
-    method: 'get',
-    params: data
-  })
+// {
+//   data: {
+//     channels: []
+//   },
+//   message: ''
+// }
+
+// 1. 定义泛型
+type ResType<T> = {
+  message: string,
+  data: T
 }
 
-export function setInitData(data) {
-  return request({
-    url: '/setdata',
-    method: 'post',
-    data
+// 2. 定义具体的接口类型
+type ChannelItem = {
+  id: number,
+  name: string
+}
+type ChannelRes = {
+  channels: ChannelItem[]
+}
+export function fetchChannelAPI() {
+  return request<ResType<ChannelRes>>({
+    url: '/home-data'
   })
 }
+```
+优化，把公共 ResType 抽离出来
+```
+export type ResType<T> = {
+  message: string,
+  data: T
+}
+
+// 导入
+import type { ResType } from './common.ts'
 ```
 
 <!-- 
