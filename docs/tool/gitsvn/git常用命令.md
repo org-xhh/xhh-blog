@@ -12,7 +12,7 @@ git clone git@gitee.com:org-xhh/viteproject.git
 ### 创建.git文件夹，存储仓库相关信息
 git init
 
-### 关联新的远程仓库
+### 本地项目关联远程仓库
 git remote add origin [仓库地址]
 
 ### 查看当前配置的远程仓库

@@ -582,6 +582,9 @@ function addShopCart() {
 }
 ```
 
+### 持久化存储
+localStorage 或 pinia-plugin-persistedstate 插件
+
 ### storeToRefs
 
 ```

@@ -36,7 +36,7 @@ export default {
           { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
           { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
-          { text: "React", link: "/technology/react/react" },
+          { text: "React", link: "/technology/react/react-document" },
           { text: "React Native", link: "/technology/react-native/react-native使用" },
         ]
       },
@@ -163,10 +163,10 @@ export default {
       "/technology/react/": {
         text: "react",
         items: [
-          { text: "React", link: "/technology/react/react" },
-          { text: "create-react-app", link: "/technology/react/create-react-app" },
-          { text: "dva", link: "/technology/react/dva" },
-          { text: "umi", link: "/technology/react/umi" },
+          { text: "React Document", link: "/technology/react/react-document" },
+          { text: "React Knowledge", link: "/technology/react/react-knowledge" },
+          { text: "Dva", link: "/technology/react/dva" },
+          { text: "Umi", link: "/technology/react/umi" },
           { text: "Umi Max", link: "/technology/react/umimax" }
         ],
       },

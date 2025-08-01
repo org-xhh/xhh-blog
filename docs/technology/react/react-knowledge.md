@@ -1,5 +1,3 @@
-# create-react-app
-
 ## 项目环境
 
 | 模块             | 版本 |
@@ -10,13 +8,6 @@
 | react-router-dom | 6+   |
 | react-redux      | 9+   |
 | @reduxjs/toolkit | 2+   |
-
-
-## 新建项目
-
-```
-npx create-react-app react-project
-```
 
 ## 配置路由
 ```
@@ -151,11 +142,45 @@ return (
 )
 ```
 
-<!-- 
 ## 路由鉴权
+authRouter.js:
+
+```
+import { getToken } from "../utils/storage";
+import { Navigate, useLocation } from "react-router-dom";
+
+const Auth = ({ children }) => {
+    const hasToken = getToken()
+    const location = useLocation() // 获取url信息
+    if (hasToken) {
+        if (location.pathname === '/login') {
+            return <Navigate to="/" replace />
+        } else {
+            return <>{children}</>
+        }
+    } else {
+        // 未登录
+        if (location.pathname === '/login') {
+            return <>{children}</>
+        } else {
+            return <Navigate to="/login" replace />
+        }
+    }
+}
+
+export default Auth
+``` 
 
 router/index.js:
+```
+import { Auth } from './authRoute'
 
+{
+  path: '/article',
+  element: <Auth><Article /></Auth>
+}
+```
+优化，兼容不需要授权的路由：
 ```
 const routes = [
   ...
@@ -183,35 +208,85 @@ const authRoutes = (routes) => {
 export default authRoutes(routes)
 ```
 
-authRouter.js:
 
+## 路由 Layout
+
+src/layouts/ManageLayout.tsx:
 ```
+import React, { FC } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
-import { getToken } from "../utils/storage";
-import { Navigate, useLocation } from "react-router-dom";
-
-const Auth = ({ children }) => {
-    const hasToken = getToken()
-    const location = useLocation()
-    if (hasToken) {
-        if (location.pathname === '/login') {
-            return <Navigate to="/" replace />
-        } else {
-            return <>{children}</>
-        }
-    } else {
-        // 未登录
-        if (location.pathname === '/login') {
-            return <>{children}</>
-        } else {
-            return <Navigate to="/login" replace />
-        }
-    }
+const ManageLayout: FC = () => {
+  return (
+    <div>
+      <h1>---ManageLayout header---</h1>
+      <Link to="/">home</Link>
+      <Link to="/demo">demo</Link>
+      <div>
+        {/* 配置二级路由渲染位置 */}
+        <Outlet />
+      </div>
+      <h1>---ManageLayout footer---</h1>
+    </div>
+  )
 }
 
-export default Auth
-``` 
--->
+export default ManageLayout
+```
+
+router/index.tsx:
+```
+import ManageLayout from '../layouts/ManageLayout'
+import Home from '../pages/Home'
+import Demo from '../pages/Demo'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <ManageLayout />,
+    children: [
+      {
+        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)
+        // path: 'home',
+
+        path: '/',
+        // or
+        index: true, // 默认二级路由页面,打开/ 渲染出home
+
+        element: <Home />
+      },
+      {
+        path: 'demo',
+        element: <Demo />
+      }
+    ]
+  }
+])
+```
+![alt text](image-4.png)
+
+
+## 路由懒加载
+路由的JS资源只有在被访问时才会动态获取，目的是为了优化项目首屏时间。
+- React 提供的 lazy 函数进行动态导入
+- Suspense 组件包裹element路由
+
+之前：
+```
+import Login from '../pages/Login/login'
+import Article from '../pages/Article/article'
+```
+之后：
+```
+import { Suspense, lazy } from 'react'
+const Login = lazy(() => import('../pages/Login/login'))
+const Article = lazy(() => import('../pages/Article/article'))
+
+{
+  path: '/login',
+  element: <Suspense fallback={'加载中...'}><Login /></Suspense>
+}
+```
 
 ## 路由传参
 
@@ -292,62 +367,6 @@ function Page1() {
 }
 ```
 
-## Layout
-
-src/layouts/ManageLayout.tsx:
-```
-import React, { FC } from 'react'
-import { Outlet, Link } from 'react-router-dom'
-
-const ManageLayout: FC = () => {
-  return (
-    <div>
-      <h1>---ManageLayout header---</h1>
-      <Link to="/">home</Link>
-      <Link to="/demo">demo</Link>
-      <div>
-        {/* 配置二级路由渲染位置, 类似 vue 的 slot  */}
-        <Outlet />
-      </div>
-      <h1>---ManageLayout footer---</h1>
-    </div>
-  )
-}
-
-export default ManageLayout
-```
-
-router/index.tsx:
-```
-import ManageLayout from '../layouts/ManageLayout'
-import Home from '../pages/Home'
-import Demo from '../pages/Demo'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <ManageLayout />,
-    children: [
-      {
-        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)
-        // path: 'home',
-
-        path: '/',
-        // or
-        index: true, // 默认二级路由页面,打开/ 渲染出home
-
-        element: <Home />
-      },
-      {
-        path: 'demo',
-        element: <Demo />
-      }
-    ]
-  }
-])
-```
-![alt text](image-4.png)
-
 
 ## 别名路径配置
 CRA本身把webpack配置包装到了黑盒里无法直接修改，需要借助一个插件：craco
@@ -405,7 +424,7 @@ jsconfig.json:
 
 ## 样式使用
 
-#### 引入样式文件，使用类
+### 引入样式文件，使用类
 
 ```
 import './App.css';
@@ -413,7 +432,7 @@ import './App.css';
 <div className="foo">test</div>
 ```
 
-#### inline 样式
+### inline 样式
 style 是对象形式,其中的key是驼峰式
 
 ```
@@ -431,7 +450,7 @@ return <div style={divStyle}>content</div>
 </div>
 ```
 
-## 使用 scss
+### 使用 scss
 
 create-react-app 原生支持 sass module，只需要安装
 
@@ -441,7 +460,7 @@ npm i sass -D
 
 <!-- <font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font> -->
 
-## CSS Module
+### CSS Module
 
 解决className可能重复的问题；
 create-react-app 内置了对 CSS Module 的支持。
@@ -468,6 +487,130 @@ import styles from './styles.module.css';
 ```
 <div className={styles['color-yellow']}>
 ```
+
+### Tailwind CSS
+
+#### 安装
+
+```
+npm install tailwindcss postcss autoprefixer -D
+```
+
+#### npx tailwindcss init
+
+生成 tailwind.config.js 并编辑
+
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+#### 项目引入 tailwindcss
+
+tailwind.css：
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+#### 新增 postcss.config.js
+
+```
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+```
+
+#### 组件中使用
+
+```
+div className="flex">
+  <p>内容</p>
+  <p className="flex-1">显示</p>
+</div>
+```
+
+## JSX
+JSX是Javascript和XML(HTML)的缩写，表示在JS代码中编写HTML模板结构。
+是JS的语法扩展，浏览器本身不能识别，需要通过解析工具解析之后才能在浏览器中运行。
+
+通过大括号{}识别JavaScript中的表达式。
+
+注意：if语句，switch语句，变量声明属于语句，不是表达式，不能出现在{}中。
+
+```
+// 组件（函数）首字母必须大写
+function App() {
+  let list = [
+    {
+      id:1,
+      title: '标题一'
+    },
+    {
+      id: 2,
+      title: '标题二'
+    }
+  ]
+  let [isTure, setIsTure] = useState(true)
+
+  return (
+    <div className="App">
+      <ul>
+        {
+          list.map((item) => {
+            return <li key={item.id}>{item.title}</li>
+          })
+        }
+      </ul>
+      { isTure && <div>ok</div> }
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 动态类名
+```
+<div className={`nav ${isActive && 'active'}`}>
+```
+或使用 classnames 库
+```
+<div className={classnames('nav', {active: isActive})}>
+```
+
+### 事件绑定
+```
+function App() {
+  function handleClick(e) {
+    console.log(e.target.innerHTML)
+  }
+  const handleClickButton = (params1, e)=> {
+    console.log('click button：', params1, e)
+  }
+
+  return (
+    <div className="App">
+      <button onClick={handleClick}>button</button>
+      <button onClick={(e)=>handleClickButton('Hi', e)}>button</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
 
 ## 状态管理 Redux
 
@@ -666,43 +809,6 @@ useEffect(() => {
 }, [dispatch])
 ```
 
-## 配置多环境
-
-Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。
-
-#### 第一种方式：使用 cross-env
-
-```
-// 安装 cross-env
-npm i cross-env -D
-
-// 配置不同环境命令，REACT_APP_开头
-"build:release": "cross-env REACT_APP_ENV=release react-scripts build"
-
-// 获取
-process.env.REACT_APP_ENV // release
-```
-
-#### 第二种方式：使用 dotenv
-
-安装
-
-```
-npm install dotenv-cli -D
-```
-
-自定义环境变量名
-
-![alt text](image-1.png)
-
-```
-// 配置
-"start": "dotenv -e .env.release react-scripts start",
-
-// 获取
-process.env.REACT_APP_ENV // release
-```
-
 ## 异步请求 axios
 
 安装
@@ -796,6 +902,7 @@ export function setInitData(data) {
 }
 ```
 
+<!-- 
 ## 受控组件
 受控组件：值同步到 state，使用 value 属性
 ```
@@ -811,7 +918,8 @@ function changeText(e: ChangeEvent<HTMLInputElement>) {
 ```
 <input type="text" defaultValue="hello world" />
 ```
-defaultValue 显示在页面中，但无法获取到
+defaultValue 显示在页面中，但无法获取到 
+-->
 
 ## 父子组件交互
 子组件只能读取 props 中的数据，不能直接修改，父组件的数据只能由父组件修改。
@@ -893,7 +1001,7 @@ function Child(props) {
 2. 只能在 函数式组件内或其他hook 内调用
 3. 每次的调用顺序一致（不能放在for、if 内）
 
-#### useState
+### useState
 
 向组件添加状态变量
 
@@ -923,9 +1031,9 @@ setList([...list, 'z'])
 ```
 > 可以使用 **immer** 修改 state 不可变数据
 
-#### useEffect
+### useEffect
 
-在组件渲染到屏幕之后异步执行。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
+在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
 
 <font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次(&lt;React.StrictMode&gt;)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
 
@@ -944,12 +1052,12 @@ useEffect(() => {
 - ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。
 - ‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行。
 
-#### useLayoutEffect‌
+### useLayoutEffect‌
 
 同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。
 
 
-#### useRef
+### useRef
 
 访问 DOM 元素或保存不触发渲染的变量
 ```
@@ -963,11 +1071,10 @@ function clickFn() {
   console.log('count:', count.current)
 }
 
-return <div ref={divRef} onClick={clickFn}
-    </div>
+return <div ref={divRef} onClick={clickFn}</div>
 ```
 
-#### useContext
+### useContext
 
 跨层级组件通信。
 
@@ -1013,20 +1120,29 @@ const Child = () => {
 };
 ```
 
-#### useReducer
+### useReducer
 
 useState 的替代方案，适用于管理复杂和大型的状态逻辑。
 
+- 定义 Reducer 函数（根据不同action返回不同的新状态）
+- 在组件中调用 useReducer，传入 reducer 函数和初始状态值
+- dispatch 分派一个 action 对象
+
 ```
+import { useReducer } from "react"
+
 function Counter() {
-  const reducer = (state, action) => {
+
+  function reducer(state, action) {
     switch (action.type) {
       case 'increment':
         return {count: state.count + 1}
       case 'decrement':
         return {count: state.count - 1}
+      case 'set':
+        return {count: action.payload}
       default:
-        throw new Error()
+        return {count: state.count}
     }
   }
 
@@ -1037,33 +1153,140 @@ function Counter() {
       <p>您点击了 {state.count} 次</p>
       <Button variant="outlined" onClick={() => dispatch({type: 'decrement'})}>递减</Button>
       <Button variant="outlined" onClick={() => dispatch({type: 'increment'})} style={{marginLeft: 15}}>递增</Button>
+      <Button variant="outlined" onClick={() => dispatch({type: 'set', payload: 100})} style={{marginLeft: 15}}>设为100</Button>
     </>
   )}
 ```
 
-#### useMemo
-
-用于缓存计算结果，避免在每次渲染时重复计算‌。（类似于Vue中的computed属性）
+### useMemo
+在组件每次重新渲染的时候缓存计算的结果。
 ```
-const filteredItems = useMemo(() => {
-  return items.filter(item => item.includes(value))
-}, [items, value]); // 依赖变化时重新计算
+  function fib(n) {
+    console.log('执行')
+    if (n < 3) {
+      return 1
+    }
+    return fib(n - 1) + fib(n - 2)
+  }
+  let [count1, setCount1] = useState(0)
+  let [count2, setCount2] = useState(0)
+
+  // 这种写法，count1、count2 改变时，组件重新渲染，fib执行
+  // const result = fib(count1)
+
+  const result = useMemo(() => {
+    // 监听count1改变时才会执行 fib
+    return fib(count1)
+  }, [count1])
+  return (
+    <div>
+        <div>{result}</div>
+        <button onClick={() => setCount1(count1+1)}>{count1}</button>
+        <button onClick={() => setCount2(count2+1)}>{count2}</button>
+    </div>
+  )
 ```
 
-#### useCallback
+### React.memo
+React组件默认的渲染机制：只要父组件重新渲染子组件就会重新渲染。
 
-用于记忆化回调函数，避免在每次渲染时重新创建函数‌。
+memo 作用：允许组件在props没有改变的情况下跳过渲染。
 ```
-const handleClick = useCallback(() => {
+import { memo } from "react"
+
+function Child(props) {
   ...
-}, []) // 依赖数组为空表示函数不变化
+}
+export default memo(Child)
+```
+父组件
+1. 基本类型：count改变，子组件就重新渲染:
+```
+<Child count={count}/>
+```
+2. 引用类型：list定义在父组件内，父组件状态更新list会被重新定义，子组件就会重新渲染。
+```
+function Parent() {
+  ...
+
+  const list = [1,2,3]
+
+  <Child list={list}/>
+}
+```
+3. 使用useMemo缓存，即使父组件状态更新，子组件也不会重新渲染。
+```
+function Parent() {
+  ...
+
+  const list = useMemo(() => {
+    return [1,2,3]
+  }, [])
+  // or
+  const [list] = useState([1, 2, 3, 4, 5])
+
+  <Child list={list}/>
+}
 ```
 
-#### useImperativeHandle
+### useCallback
+作用：在组件多次重新渲染的时候缓存函数。
 
-用于暴露子组件的属性和方法，实现父组件对子组件的控制
+之前：
 
-myInput.js
+父组件状态更新，onChange属性值handleChange会重新创建，导致子组件重新渲染。
+```
+import { useCallback } from "react"
+
+const handleChange = (value) => {
+  console.log('value--', value)
+}
+
+<Child onChange={handleChange} />
+```
+之后：
+```
+import { useCallback } from "react"
+
+const handleChange = useCallback((value) => {
+  console.log('value--', value)
+}, [])
+
+<Child onChange={handleChange} />
+```
+
+### forwardRef
+父组件通过ref属性获取子组件实例，并调用子组件实例的方法。
+
+子组件：
+```
+import { forwardRef } from 'react'
+
+const Input = forwardRef((props, ref) => {
+  return <input type="text" ref={ref} />
+})
+```
+父组件：
+```
+function App() {
+  const inputRef = useRef(null)
+  function showRef() {
+    inputRef.current && inputRef.current.focus() // 子组件聚焦
+  }
+  return (
+    <>
+      <Input ref={inputRef} />
+      <button onClick={showRef}>click</button>
+    </>
+  )
+}
+```
+
+### useImperativeHandle
+
+用于暴露子组件的属性和方法，实现父组件对子组件的控制。
+
+子组件：
 ```
 import { forwardRef, useRef, useImperativeHandle } from 'react';
 
@@ -1098,7 +1321,7 @@ function buttonClick() {
 </form>
 ```
 
-#### useTransition
+### useTransition
 
 useTransition 是在不阻塞 UI 的情况下更新状态的 React Hook。
 ```
@@ -1118,7 +1341,7 @@ startTransition(() => {
 ![alt text](image-3.png)
 
 
-#### useDeferredValue
+### useDeferredValue
 
 延迟更新 UI 的某些部分。
 ```
@@ -1192,58 +1415,7 @@ https://ahooks.js.org/zh-CN
 
 https://github.com/streamich/react-use
 
-## Tailwind CSS
 
-#### 安装
-
-```
-npm install tailwindcss postcss autoprefixer -D
-```
-
-#### npx tailwindcss init
-
-生成 tailwind.config.js 并编辑
-
-```
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-#### 项目引入 tailwindcss
-
-tailwind.css：
-
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-#### 新增 postcss.config.js
-
-```
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  }
-}
-```
-
-#### 组件中使用
-
-```
-div className="flex">
-  <p>内容</p>
-  <p className="flex-1">显示</p>
-</div>
-```
 
 ## Ant Design
 
@@ -1276,13 +1448,129 @@ https://mobile.ant.design/zh/guide/theming
 </div>
 ```
 
-## TypeScript
+<!-- 
+## 富文本编辑器
+react-quill 
+-->
 
+## 配置多环境
+
+Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。
+
+#### 第一种方式：使用 cross-env
+
+```
+// 安装 cross-env
+npm i cross-env -D
+
+// 配置不同环境命令，REACT_APP_开头
+"build:release": "cross-env REACT_APP_ENV=release react-scripts build"
+
+// 获取
+process.env.REACT_APP_ENV // release
+```
+
+#### 第二种方式：使用 dotenv
+
+安装
+
+```
+npm install dotenv-cli -D
+```
+
+自定义环境变量名
+
+![alt text](image-1.png)
+
+```
+// 配置
+"start": "dotenv -e .env.release react-scripts start",
+
+// 获取
+process.env.REACT_APP_ENV // release
+```
+
+## 项目打包和本地预览
+先打包:
+```
+npm run build
+```
+安装 serve:
+```
+npm i serve -g
+```
+启动本地服务：
+```
+serve -s build
+```
+
+#### 包体积可视化分析
+```
+npm i source-map-explorer
+
+"scripts": {
+    ...
+    "analyze": "source-map-explorer build/**/*.{js,css}"
+},
+
+npm run analyze
+```
+
+#### CDN
+craco.config.js:
+```
+const { whenProd, pluginByName, getPlugin } = require('@craco/craco');
+const path = require('path');
+
+module.exports = {
+  webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+    configure: (webpackConfig, { env, paths }) => {
+      let cdn;
+      whenProd(() => {
+        // key: npm 安装的包； value: CDN里的全局变量
+        // 打包时排除 react 和 react-dom
+        webpackConfig.externals = {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        }
+        cdn = {
+          js: [
+            'https://cdnjs.cloudflare.com/ajax/libs/react/18.1.0/umd/react.production.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.1.0/umd/react-dom.production.min.js'
+          ]
+        }
+      })
+      
+      // 通过 HtmlWebpackPlugin 在public/index.html注入cdn
+      const { isFound, match } = getPlugin(webpackConfig, pluginByName('HtmlWebpackPlugin'));
+
+      // 找到了HtmlWebpackPlugin插件
+      if (isFound) {
+        match.options.cdn = cdn;
+      }
+      return webpackConfig;
+    },
+  },
+};
+```
+配置引入CDN地址，public/index.html:
+```
+<div id="root"></div>
+<% htmlWebpackPlugin.options.cdn.js.forEach(cdnURL => { %>
+  <script src="<%= cdnURL %>"></script>
+<% }) %>
+```
+
+## TypeScript
+<!-- 
 安装：
 
 ```
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-```
+``` -->
 
 tsconfig.json:
 
@@ -1335,4 +1623,60 @@ declare module '*.module.scss' {
 }
 ```
 
-将文件重命名为 .tsx 或 .ts 文件
+将文件重命名为 .tsx 或 .ts 文件。
+
+### Props与TS
+子组件：
+```
+type Props = {
+  className: string,
+  title?: string,
+  children?: React.ReactNode,
+  onGetMsg?: (msg: string) => void
+}
+function Button(props: Props) {
+  const {className, children, onGetMsg} = props
+  function clickHandler() {
+    onGetMsg?.('this is msg from son button')
+  }
+  return (
+    <button className={className} onClick={clickHandler}>
+      { children}
+    </button>
+  )
+}
+```
+父组件：
+```
+function receiveMsg(msg: string) {
+  console.log('msg--', msg)
+}
+<Button className='btn' onGetMsg={receiveMsg}>
+  click me!
+</Button>
+<Button className='btn' onGetMsg={(msg) => console.log(msg)}>
+  内联方法msg自动推断类型
+</Button>
+```
+
+### useRef与TS
+```
+const inputRef = useRef<HTMLInputElement>(null)
+useEffect(() => {
+  inputRef.current?.focus()
+}, [])
+
+<input ref={inputRef} />
+```
+联合类型：
+```
+const timerRef = useRef<number | undefined>(undefined)
+useEffect(() => {
+  timerRef.current = setInterval(() => {
+    console.log('tick')
+  }, 1000)
+  return () => {
+    clearInterval(timerRef.current)
+  }
+}, [])
+```
