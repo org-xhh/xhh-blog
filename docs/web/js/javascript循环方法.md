@@ -112,8 +112,8 @@ console.log(evenNumbers); // [2, 4]
 ## reduce()
 对数组中的所有元素调用callback函数，并将它们累加成一个值（从左到右）
 ```
-const sum = [1, 2, 3, 4, 5].reduce((total, num) => total + num, 0);
-console.log(sum); // 15
+const numbers = [1, 2, 3, 4, 5]
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 ```
 
 ## reduceRight()

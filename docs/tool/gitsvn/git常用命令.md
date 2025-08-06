@@ -13,6 +13,8 @@ git clone git@gitee.com:org-xhh/viteproject.git
 git init
 
 ### 本地项目关联远程仓库
+git init
+
 git remote add origin [仓库地址]
 
 ### 查看当前配置的远程仓库

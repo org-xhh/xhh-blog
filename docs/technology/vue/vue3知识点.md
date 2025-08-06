@@ -649,6 +649,7 @@ counter.$subscribe((mutate, state) => {
 
 ```
 // 父组件
+keyword: {{ keyword }}
 <XhhInput v-model="keyword" />
 // 等同于
 <XhhInput :modelValue="keyword" @update:modelValue="keyword = $event" />
@@ -656,7 +657,6 @@ counter.$subscribe((mutate, state) => {
 
 // 子组件
 <template>
-  {{ modelValue }}
   <input
     :value="modelValue"
     @input="emit('update:modelValue', (<HTMLInputElement>$event.target).value)"
@@ -668,6 +668,37 @@ counter.$subscribe((mutate, state) => {
 <script lang="ts" setup>
 defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
+</script>
+```
+或 子组件使用 v-model 绑定传来的变量：
+```
+<template>
+  <input v-model="newValue" placeholder="请输入" />
+</template>
+
+<script lang="ts" setup>
+import { computed } from 'vue'
+const props = defineProps(['modelValue'])
+const emit = defineEmits(['update:modelValue'])
+
+const newValue = computed({
+  get() {
+    return props.modelValue
+  },
+  set(val) {
+    emit('update:modelValue', val)
+  },
+})
+</script>
+```
+或 Vue3.4+ defineModel:
+```
+<template>
+  <input v-model="model" />
+</template>
+
+<script lang="ts" setup>
+const model = defineModel()
 </script>
 ```
 

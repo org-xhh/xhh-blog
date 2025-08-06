@@ -375,6 +375,7 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  @input=&quot;keyword = (&lt;HTMLInputElement&gt;$event.target).value&quot;</span></span>
 <span class="line"><span>  placeholder=&quot;请输入&quot;</span></span>
 <span class="line"><span>/&gt;</span></span></code></pre></div><h3 id="用在自定义组件上" tabindex="-1">用在自定义组件上 <a class="header-anchor" href="#用在自定义组件上" aria-label="Permalink to &quot;用在自定义组件上&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 父组件</span></span>
+<span class="line"><span>keyword: {{ keyword }}</span></span>
 <span class="line"><span>&lt;XhhInput v-model=&quot;keyword&quot; /&gt;</span></span>
 <span class="line"><span>// 等同于</span></span>
 <span class="line"><span>&lt;XhhInput :modelValue=&quot;keyword&quot; @update:modelValue=&quot;keyword = $event&quot; /&gt;</span></span>
@@ -382,7 +383,6 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span></span></span>
 <span class="line"><span>// 子组件</span></span>
 <span class="line"><span>&lt;template&gt;</span></span>
-<span class="line"><span>  {{ modelValue }}</span></span>
 <span class="line"><span>  &lt;input</span></span>
 <span class="line"><span>    :value=&quot;modelValue&quot;</span></span>
 <span class="line"><span>    @input=&quot;emit(&#39;update:modelValue&#39;, (&lt;HTMLInputElement&gt;$event.target).value)&quot;</span></span>
@@ -394,6 +394,29 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>&lt;script lang=&quot;ts&quot; setup&gt;</span></span>
 <span class="line"><span>defineProps([&#39;modelValue&#39;])</span></span>
 <span class="line"><span>const emit = defineEmits([&#39;update:modelValue&#39;])</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>或 子组件使用 v-model 绑定传来的变量：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;input v-model=&quot;newValue&quot; placeholder=&quot;请输入&quot; /&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script lang=&quot;ts&quot; setup&gt;</span></span>
+<span class="line"><span>import { computed } from &#39;vue&#39;</span></span>
+<span class="line"><span>const props = defineProps([&#39;modelValue&#39;])</span></span>
+<span class="line"><span>const emit = defineEmits([&#39;update:modelValue&#39;])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const newValue = computed({</span></span>
+<span class="line"><span>  get() {</span></span>
+<span class="line"><span>    return props.modelValue</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  set(val) {</span></span>
+<span class="line"><span>    emit(&#39;update:modelValue&#39;, val)</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>或 Vue3.4+ defineModel:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>  &lt;input v-model=&quot;model&quot; /&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;script lang=&quot;ts&quot; setup&gt;</span></span>
+<span class="line"><span>const model = defineModel()</span></span>
 <span class="line"><span>&lt;/script&gt;</span></span></code></pre></div><p>v-model 修改绑定的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;XhhInput v-model:modelValueOther=&quot;keyword&quot; /&gt;</span></span>
 <span class="line"><span>&lt;XhhInput v-model:modelValueOther=&quot;keyword&quot; v-model:xyz=&quot;abc&quot; /&gt;</span></span>
 <span class="line"><span></span></span>
@@ -595,4 +618,4 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  &lt;template v-slot:fallback&gt;</span></span>
 <span class="line"><span>    &lt;h3&gt;加载中...&lt;/h3&gt;</span></span>
 <span class="line"><span>  &lt;/template&gt;</span></span>
-<span class="line"><span>&lt;/Suspense&gt;</span></span></code></pre></div><h2 id="全局-api-转移到应用对象" tabindex="-1">全局 API 转移到应用对象 <a class="header-anchor" href="#全局-api-转移到应用对象" aria-label="Permalink to &quot;全局 API 转移到应用对象&quot;">​</a></h2><ul><li>app.component</li><li>app.config</li><li>app.directive</li><li>app.mount</li><li>app.unmount</li><li>app.use</li></ul><h2 id="非兼容性改变" tabindex="-1">非兼容性改变 <a class="header-anchor" href="#非兼容性改变" aria-label="Permalink to &quot;非兼容性改变&quot;">​</a></h2><p><a href="https://v3-migration.vuejs.org/zh/breaking-changes/" target="_blank" rel="noreferrer">https://v3-migration.vuejs.org/zh/breaking-changes/</a></p>`,129);function w(P,V,R,B,E,j){const n=e("font");return o(),l("div",null,[C,t("p",null,[s("就采用这种写法："),i(n,{color:"red"},{default:c(()=>[s("getter 函数并且加上 deep")]),_:1})]),x])}const M=p(y,[["render",w]]);export{I as __pageData,M as default};
+<span class="line"><span>&lt;/Suspense&gt;</span></span></code></pre></div><h2 id="全局-api-转移到应用对象" tabindex="-1">全局 API 转移到应用对象 <a class="header-anchor" href="#全局-api-转移到应用对象" aria-label="Permalink to &quot;全局 API 转移到应用对象&quot;">​</a></h2><ul><li>app.component</li><li>app.config</li><li>app.directive</li><li>app.mount</li><li>app.unmount</li><li>app.use</li></ul><h2 id="非兼容性改变" tabindex="-1">非兼容性改变 <a class="header-anchor" href="#非兼容性改变" aria-label="Permalink to &quot;非兼容性改变&quot;">​</a></h2><p><a href="https://v3-migration.vuejs.org/zh/breaking-changes/" target="_blank" rel="noreferrer">https://v3-migration.vuejs.org/zh/breaking-changes/</a></p>`,133);function w(P,V,R,B,E,j){const n=e("font");return o(),l("div",null,[C,t("p",null,[s("就采用这种写法："),i(n,{color:"red"},{default:c(()=>[s("getter 函数并且加上 deep")]),_:1})]),x])}const M=p(y,[["render",w]]);export{I as __pageData,M as default};

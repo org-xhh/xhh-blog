@@ -143,41 +143,45 @@ return (
 ```
 
 ## 路由鉴权
-authRouter.js:
+authRouter.tsx:
 
 ```
-import { getToken } from "../utils/storage";
-import { Navigate, useLocation } from "react-router-dom";
+import { getToken } from "@/utils/storage"
+import { Navigate, useLocation } from "react-router-dom"
 
-const Auth = ({ children }) => {
-    const hasToken = getToken()
-    const location = useLocation() // 获取url信息
-    if (hasToken) {
-        if (location.pathname === '/login') {
-            return <Navigate to="/" replace />
-        } else {
-            return <>{children}</>
-        }
-    } else {
-        // 未登录
-        if (location.pathname === '/login') {
-            return <>{children}</>
-        } else {
-            return <Navigate to="/login" replace />
-        }
-    }
+interface AuthRouteProps {
+  children: React.ReactNode
 }
 
-export default Auth
+const AuthRoute: React.FC<AuthRouteProps> = ({ children }) => {
+  const hasToken = getToken()
+  const location = useLocation() // 获取url信息
+  if (hasToken) {
+    if (location.pathname === '/login') {
+      return <Navigate to="/" replace />
+    } else {
+      return <>{children}</>
+    }
+  } else {
+    // 未登录
+    if (location.pathname === '/login') {
+      return <>{children}</>
+    } else {
+      return <Navigate to="/login" replace />
+    }
+  }
+}
+
+export default AuthRoute
 ``` 
 
-router/index.js:
+router/index.tsx:
 ```
-import { Auth } from './authRoute'
+import { AuthRoute } from './authRoute.tsx'
 
 {
   path: '/article',
-  element: <Auth><Article /></Auth>
+  element: <AuthRoute><Article /></AuthRoute>
 }
 ```
 优化，兼容不需要授权的路由：
@@ -185,7 +189,7 @@ import { Auth } from './authRoute'
 const routes = [
   ...
 ]
-import Auth from './authRouter.js'
+import AuthRoute from './authRouter.tsx'
 
 const authRoutes = (routes) => {
     return routes.map((item) => {
@@ -193,9 +197,9 @@ const authRoutes = (routes) => {
             return {
                 path: item.path,
                 element: (
-                    <Auth>
+                    <AuthRoute>
                         {item.element}
-                    </Auth>
+                    </AuthRoute>
                 )
             }
         } else {
@@ -473,7 +477,7 @@ import './App.css';
 style 是对象形式,其中的key是驼峰式
 
 ```
-const divStyle = {
+const divStyle: React.CSSProperties = {
   color: 'red',
   marginBottom: '10px'
 };
@@ -530,12 +534,12 @@ import styles from './styles.module.css';
 #### 安装
 
 ```
-npm install tailwindcss postcss autoprefixer -D
+npm install tailwindcss@3 postcss autoprefixer -S
 ```
 
 #### npx tailwindcss init
 
-生成 tailwind.config.js 并编辑
+执行命令后自动生成 tailwind.config.js 文件，编辑
 
 ```
 /** @type {import('tailwindcss').Config} */
@@ -548,17 +552,20 @@ module.exports = {
 }
 ```
 
-#### 项目引入 tailwindcss
-
-tailwind.css：
-
+#### 项目样式文件引入 tailwindcss
 ```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
 
-#### 新增 postcss.config.js
+#### 安装 @types/tailwindcss
+在 TypeScript 中获得智能提示（比如自动完成和类型检查）
+```
+npm install @types/tailwindcss -D
+```
+
+#### 新增 postcss.config.ts
 
 ```
 module.exports = {
