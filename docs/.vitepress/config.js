@@ -38,6 +38,7 @@ export default {
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react-document" },
           { text: "React Native", link: "/technology/react-native/react-native使用" },
+          { text: "项目打包上传", link: "/technology/server/项目打包上传" }
         ]
       },
       {
@@ -123,7 +124,6 @@ export default {
           { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
           { text: "vue指令", link: "/technology/vue/vue指令"},
           { text: "i18n", link: "/technology/vue/i18n" },
-          { text: "nginx", link: "/technology/vue/nginx" },
           { text: "通信", link: "/technology/vue/通信"}
         ],
       },
@@ -169,6 +169,13 @@ export default {
           { text: "Umi", link: "/technology/react/umi" },
           { text: "Umi Max", link: "/technology/react/umimax" }
         ],
+      },
+      "/technology/server/": {
+        text: "server",
+        items: [
+          { text: "项目打包上传", link: "/technology/server/项目打包上传" },
+          { text: "nginx", link: "/technology/server/nginx" },
+        ]
       },
       "/tool/gitsvn/": {
         text: "git知识",
