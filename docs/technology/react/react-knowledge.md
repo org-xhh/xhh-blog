@@ -1060,6 +1060,7 @@ const [count, setCount] = useState(0);
 setCount((count) => count + 1) // 如果页面中 count 是 6
 console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值
 // 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef
+// 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count
 ```
 state 是不可变数据 (不能 count++，视图不更新)
 ```
@@ -1089,15 +1090,15 @@ useEffect(() => {
   const connection = createConnection(serverUrl, roomId);
   connection.connect();
   return () => {
-    // 清除副作用（组件销毁时自动执行）
+    // 清除函数
     connection.disconnect();
   };
 }, [serverUrl, roomId]);
 ```
 
 - ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行
-- ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。
-- ‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行。
+- ‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，组件挂载时执行副作用函数，卸载时执行清除函数。
+- ‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行，执行新的副作用之前会调用清除函数。
 
 ### useLayoutEffect‌
 
@@ -1261,7 +1262,7 @@ function Parent() {
   <Child list={list}/>
 }
 ```
-3. 使用useMemo缓存，即使父组件状态更新，子组件也不会重新渲染。
+3. 使用useMemo缓存，即使父组件状态更新，但是list不变，子组件也不会重新渲染。
 ```
 function Parent() {
   ...
@@ -1274,6 +1275,8 @@ function Parent() {
 
   <Child list={list}/>
 }
+
+// 子组件必须进行memo优化，否则useMemo没有任何性能提升。
 ```
 
 ### useCallback
@@ -1300,7 +1303,10 @@ const handleChange = useCallback((value) => {
 }, [])
 
 <Child onChange={handleChange} />
+
+// 子组件必须进行memo优化，否则useCallback没有任何性能提升。
 ```
+
 
 ### forwardRef
 父组件通过ref属性获取子组件实例，并调用子组件实例的方法。

@@ -575,7 +575,8 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>// 或</span></span>
 <span class="line"><span>setCount((count) =&gt; count + 1) // 如果页面中 count 是 6</span></span>
 <span class="line"><span>console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值</span></span>
-<span class="line"><span>// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef</span></span></code></pre></div><p>state 是不可变数据 (不能 count++，视图不更新)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 修改对象</span></span>
+<span class="line"><span>// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef</span></span>
+<span class="line"><span>// 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count</span></span></code></pre></div><p>state 是不可变数据 (不能 count++，视图不更新)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 修改对象</span></span>
 <span class="line"><span>setUserInfo({</span></span>
 <span class="line"><span>  ...userInfo,</span></span>
 <span class="line"><span>  age: 21</span></span>
@@ -590,10 +591,10 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  const connection = createConnection(serverUrl, roomId);</span></span>
 <span class="line"><span>  connection.connect();</span></span>
 <span class="line"><span>  return () =&gt; {</span></span>
-<span class="line"><span>    // 清除副作用（组件销毁时自动执行）</span></span>
+<span class="line"><span>    // 清除函数</span></span>
 <span class="line"><span>    connection.disconnect();</span></span>
 <span class="line"><span>  };</span></span>
-<span class="line"><span>}, [serverUrl, roomId]);</span></span></code></pre></div><ul><li>‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行</li><li>‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，副作用函数仅在组件挂载和卸载时执行一次。</li><li>‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行。</li></ul><h3 id="uselayouteffect‌" tabindex="-1">useLayoutEffect‌ <a class="header-anchor" href="#uselayouteffect‌" aria-label="Permalink to &quot;useLayoutEffect‌&quot;">​</a></h3><p>同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。</p><h3 id="useref" tabindex="-1">useRef <a class="header-anchor" href="#useref" aria-label="Permalink to &quot;useRef&quot;">​</a></h3><p>访问 DOM 元素或保存不触发渲染的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divRef = useRef(null);</span></span>
+<span class="line"><span>}, [serverUrl, roomId]);</span></span></code></pre></div><ul><li>‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行</li><li>‌第二个参数为空数组‌（[]）：表示不监测任何依赖项，组件挂载时执行副作用函数，卸载时执行清除函数。</li><li>‌第二个参数为具体依赖项数组‌：组件初始渲染会执行；数组中的任意一个依赖项发生变化时，副作用函数也会执行，执行新的副作用之前会调用清除函数。</li></ul><h3 id="uselayouteffect‌" tabindex="-1">useLayoutEffect‌ <a class="header-anchor" href="#uselayouteffect‌" aria-label="Permalink to &quot;useLayoutEffect‌&quot;">​</a></h3><p>同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。</p><h3 id="useref" tabindex="-1">useRef <a class="header-anchor" href="#useref" aria-label="Permalink to &quot;useRef&quot;">​</a></h3><p>访问 DOM 元素或保存不触发渲染的变量</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const divRef = useRef(null);</span></span>
 <span class="line"><span>let count = useRef(0);</span></span>
 <span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;divRef.current: &#39;, divRef.current)</span></span>
@@ -692,7 +693,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  const list = [1,2,3]</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  &lt;Child list={list}/&gt;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><ol start="3"><li>使用useMemo缓存，即使父组件状态更新，子组件也不会重新渲染。</li></ol><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function Parent() {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><ol start="3"><li>使用useMemo缓存，即使父组件状态更新，但是list不变，子组件也不会重新渲染。</li></ol><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function Parent() {</span></span>
 <span class="line"><span>  ...</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  const list = useMemo(() =&gt; {</span></span>
@@ -702,7 +703,9 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  const [list] = useState([1, 2, 3, 4, 5])</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  &lt;Child list={list}/&gt;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="usecallback" tabindex="-1">useCallback <a class="header-anchor" href="#usecallback" aria-label="Permalink to &quot;useCallback&quot;">​</a></h3><p>作用：在组件多次重新渲染的时候缓存函数。</p><p>之前：</p><p>父组件状态更新，onChange属性值handleChange会重新创建，导致子组件重新渲染。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useCallback } from &quot;react&quot;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 子组件必须进行memo优化，否则useMemo没有任何性能提升。</span></span></code></pre></div><h3 id="usecallback" tabindex="-1">useCallback <a class="header-anchor" href="#usecallback" aria-label="Permalink to &quot;useCallback&quot;">​</a></h3><p>作用：在组件多次重新渲染的时候缓存函数。</p><p>之前：</p><p>父组件状态更新，onChange属性值handleChange会重新创建，导致子组件重新渲染。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useCallback } from &quot;react&quot;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const handleChange = (value) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;value--&#39;, value)</span></span>
@@ -714,7 +717,9 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  console.log(&#39;value--&#39;, value)</span></span>
 <span class="line"><span>}, [])</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>&lt;Child onChange={handleChange} /&gt;</span></span></code></pre></div><h3 id="forwardref" tabindex="-1">forwardRef <a class="header-anchor" href="#forwardref" aria-label="Permalink to &quot;forwardRef&quot;">​</a></h3><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
+<span class="line"><span>&lt;Child onChange={handleChange} /&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 子组件必须进行memo优化，否则useCallback没有任何性能提升。</span></span></code></pre></div><h3 id="forwardref" tabindex="-1">forwardRef <a class="header-anchor" href="#forwardref" aria-label="Permalink to &quot;forwardRef&quot;">​</a></h3><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const Input = forwardRef((props, ref) =&gt; {</span></span>
 <span class="line"><span>  return &lt;input type=&quot;text&quot; ref={ref} /&gt;</span></span>
