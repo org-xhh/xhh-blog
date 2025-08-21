@@ -2,7 +2,7 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  name: &#39;张三&#39;,</span></span>
 <span class="line"><span>  age: 19</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>// 解构出来的name不是响应式的，修改name不会触发person.name改变</span></span>
+<span class="line"><span>// 解构出来的name不是响应式的，因为响应式代理的是对象本身，解构赋值相当于把值 复制 出来了，脱离了响应式系统，修改name不会触发person.name改变。</span></span>
 <span class="line"><span>let { name, age } = person</span></span>
 <span class="line"><span>function changeName() {</span></span>
 <span class="line"><span>  name += &#39;~&#39;</span></span>

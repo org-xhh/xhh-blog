@@ -157,10 +157,13 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>// 跳转页面</span></span>
 <span class="line"><span>function jumpPage() {</span></span>
 <span class="line"><span>  // navigate(&#39;/demo?a=20&#39;)</span></span>
+<span class="line"><span>  // navigate(&#39;/demo?a=20&#39;, { replace: true })</span></span>
 <span class="line"><span>  // 或</span></span>
 <span class="line"><span>  navigate({</span></span>
 <span class="line"><span>    pathname: &#39;/demo&#39;,</span></span>
 <span class="line"><span>    search: &#39;a=20&#39;</span></span>
+<span class="line"><span>  }, {</span></span>
+<span class="line"><span>    replace: false</span></span>
 <span class="line"><span>  })</span></span>
 <span class="line"><span>  // navigate(-1) // 返回上一页</span></span>
 <span class="line"><span>}</span></span>
@@ -291,6 +294,8 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  ]</span></span>
 <span class="line"><span>  let [isTure, setIsTure] = useState(true)</span></span>
 <span class="line"><span></span></span>
+<span class="line"><span>  const valueDom: string = &#39;&lt;section style=&quot;color: red&quot;&gt;haha&lt;/section&gt;&#39;</span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>  return (</span></span>
 <span class="line"><span>    &lt;div className=&quot;App&quot;&gt;</span></span>
 <span class="line"><span>      &lt;ul&gt;</span></span>
@@ -301,6 +306,8 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>        }</span></span>
 <span class="line"><span>      &lt;/ul&gt;</span></span>
 <span class="line"><span>      { isTure &amp;&amp; &lt;div&gt;ok&lt;/div&gt; }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      &lt;div dangerouslySetInnerHTML={{__html: valueDom }}&gt;&lt;/div&gt;</span></span>
 <span class="line"><span>    &lt;/div&gt;</span></span>
 <span class="line"><span>  );</span></span>
 <span class="line"><span>}</span></span>

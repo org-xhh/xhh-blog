@@ -54,7 +54,7 @@ export default {
           { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "ESM和CJS", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
-          { text: "Babel", link: "/nodejs/babel" },
+          { text: "Babel", link: "/nodejs/babel/babel" },
           { text: "组件库", link: "/nodejs/组件库" }
         ]
       },
@@ -177,6 +177,14 @@ export default {
           { text: "nginx", link: "/technology/server/nginx" },
           { text: "从零搭建SSR", link: "/technology/server/ssr" },
         ]
+      },
+      "/nodejs/babel": {
+        text: "babel",
+        items: [
+          { text: "babel", link: "/nodejs/babel/babel" },
+          { text: "babel转换实例", link: "/nodejs/babel/babel转换实例" },
+          { text: "swc", link: "/nodejs/babel/swc" }
+        ],
       },
       "/tool/gitsvn/": {
         text: "git知识",

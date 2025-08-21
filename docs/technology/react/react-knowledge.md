@@ -302,10 +302,13 @@ const navigate = useNavigate()
 // 跳转页面
 function jumpPage() {
   // navigate('/demo?a=20')
+  // navigate('/demo?a=20', { replace: true })
   // 或
   navigate({
     pathname: '/demo',
     search: 'a=20'
+  }, {
+    replace: false
   })
   // navigate(-1) // 返回上一页
 }
@@ -608,6 +611,8 @@ function App() {
   ]
   let [isTure, setIsTure] = useState(true)
 
+  const valueDom: string = '<section style="color: red">haha</section>'
+
   return (
     <div className="App">
       <ul>
@@ -618,6 +623,8 @@ function App() {
         }
       </ul>
       { isTure && <div>ok</div> }
+
+      <div dangerouslySetInnerHTML={{__html: valueDom }}></div>
     </div>
   );
 }
