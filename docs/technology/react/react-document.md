@@ -16,21 +16,23 @@
 <!-- - [React](https://react.docschina.org/learn)
 - [React 中文网](https://react.nodejs.cn/learn) -->
 
-> React 是一个用于构建用户界面（UI）的 JavaScript 库
+React 是一个用于构建用户界面（UI）的 JavaScript 库。
 
-> 创建应用
+### 创建应用
 
-通过 create-react-app 创建：
+> 通过 create-react-app 创建
 ```
 npx create-react-app my-app --template typescript
 ```
-通过 vite 创建：
+> 通过 vite 创建
 ```
 npm create vite project-name -- --template react-ts
 ```
 
-> Next.js 是一个流行的、基于 React 构建的轻量级框架，用于构建静态和服务器端渲染的应用程序。
+> 通过 create-next-app 创建
+
+Next.js 是一个流行的、基于 React 构建的轻量级框架，用于构建静态和服务器端渲染的应用程序。
 
 ```
-npx create-next-app@latest
+npx create-next-app@latest project-name --typescript
 ```

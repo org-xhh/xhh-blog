@@ -1088,7 +1088,9 @@ setList([...list, 'z'])
 
 ### useEffect
 
-在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如数据获取、事件监听等‌，它与类组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 生命周期类似。
+在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。
+
+副作用函数：指的是那些在执行时会改变外部状态或依赖外部可变状态的函数。
 
 <font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次(&lt;React.StrictMode&gt;)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
 
@@ -1109,12 +1111,45 @@ useEffect(() => {
 
 ### useLayoutEffect‌
 
-同步执行，会在DOM更新后、浏览器绘制之前进行操作，适用于那些需要直接修改DOM样式或结构以避免页面重绘和回流的操作‌。
+- 在DOM更新完成后、浏览器绘制前‌同步执行‌，会阻塞浏览器的重绘过程
+- 典型应用场景：动态调整元素尺寸/位置、避免UI闪烁等需要即时获取布局信息的操作
+```
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
+
+function Detail() {
+  const onScrollFn = (e: React.UIEvent<HTMLDivElement>) => {
+    const scrollTop = e.currentTarget.scrollTop
+    window.history.replaceState(null, '', `?top=${scrollTop}`)
+  }
+
+  const container = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const top = window.location.search.split('=')[1]
+    if (top && container.current) {
+      container.current.scrollTo(0, Number(top))
+    }
+  }, [])
+
+  return (
+    <div onScroll={onScrollFn} ref={container} style={{ height: '400px', overflowY: 'auto' }}>
+      <div>Detail</div>
+      {
+        new Array(3000).fill(0).map((item, index) => {
+          return <div key={index}>{index}</div>
+        })
+      }
+    </div>
+  )
+}
+
+export default Detail
+```
+浏览器打开 url?top=10000会直接跳到该位置；如果用useEffect，会先在页面顶部，然后闪一下跳到10000位置。
 
 
 ### useRef
 
-访问 DOM 元素或保存不触发渲染的变量
+访问 DOM 元素或保存不触发渲染的变量(不能作为hooks的依赖项，因为它不是一个响应式状态)
 ```
 const divRef = useRef(null);
 let count = useRef(0);
@@ -1160,7 +1195,7 @@ return (
 
 export default App
 ```
-在子组件中使用 useContext 获取状态：
+在ThemeContext.Provider内的子组件中都可以使用 useContext 获取状态：
 ```
 import { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
@@ -1187,7 +1222,6 @@ useState 的替代方案，适用于管理复杂和大型的状态逻辑。
 import { useReducer } from "react"
 
 function Counter() {
-
   function reducer(state, action) {
     switch (action.type) {
       case 'increment':
@@ -1195,7 +1229,7 @@ function Counter() {
       case 'decrement':
         return {count: state.count - 1}
       case 'set':
-        return {count: action.payload}
+        return {count: action.payload1}
       default:
         return {count: state.count}
     }
@@ -1208,7 +1242,7 @@ function Counter() {
       <p>您点击了 {state.count} 次</p>
       <Button variant="outlined" onClick={() => dispatch({type: 'decrement'})}>递减</Button>
       <Button variant="outlined" onClick={() => dispatch({type: 'increment'})} style={{marginLeft: 15}}>递增</Button>
-      <Button variant="outlined" onClick={() => dispatch({type: 'set', payload: 100})} style={{marginLeft: 15}}>设为100</Button>
+      <Button variant="outlined" onClick={() => dispatch({type: 'set', payload1: 100})} style={{marginLeft: 15}}>设为100</Button>
     </>
   )}
 ```
@@ -1242,7 +1276,7 @@ function Counter() {
   )
 ```
 
-### React.memo
+#### React.memo 高阶组件
 React组件默认的渲染机制：只要父组件重新渲染子组件就会重新渲染。
 
 memo 作用：允许组件在props没有改变的情况下跳过渲染。
@@ -1315,7 +1349,7 @@ const handleChange = useCallback((value) => {
 ```
 
 
-### forwardRef
+#### forwardRef 高阶组件
 父组件通过ref属性获取子组件实例，并调用子组件实例的方法。
 
 子组件：
@@ -1345,6 +1379,16 @@ function App() {
 ### useImperativeHandle
 
 用于暴露子组件的属性和方法，实现父组件对子组件的控制。
+```
+useImperativeHandle(ref, () => {
+  return {
+    
+  }
+}, [deps])
+```
+- 不传入依赖deps参数，useImperativeHandle会在组件挂载时执行一次，状态更新时也会执行
+- deps 传 []，useImperativeHandle会在组件挂载时执行一次，状态更新时不会执行
+- deps 传依赖项，useImperativeHandle会在组件挂载时执行一次，依赖项变化时也会执行
 
 子组件：
 ```
@@ -1355,8 +1399,8 @@ const MyInput = forwardRef((props:any, ref:any) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useImperativeHandle(ref, () => ({
-    focus: ()=> {
-      inputRef.current?.focus();
+    focus: () => {
+      inputRef.current?.focus()
     },
     testValue: 123
   }));
@@ -1381,17 +1425,67 @@ function buttonClick() {
 </form>
 ```
 
+### useSyncExternalStore
+用于从外部存储(例如状态管理库、浏览器API等)获取状态并在数据更新时触发组件更新。
+
+用法：
+```
+const res = useSyncExternalStore(subscribe, getSnapshot, getServerSnapShot?)
+```
+- subscribe: 订阅数据源的变化，接收一个回调函数，在数据源更新时调用该回调函数
+- getSnapshot: 获取数据源的快照（当前状态）
+- getServerSnapShot?: 在服务端渲染时用来获取数据源的快照（可选）
+
+useStorage.ts:
+```
+import { useSyncExternalStore } from "react";
+export function useStorage(key: string, initValue: any) {
+  const subscribe = (callback: () => void) => {
+    // 订阅
+    window.addEventListener("storage", callback);
+    return () => {
+      // 取消订阅
+      window.removeEventListener("storage", callback);
+    }
+  }
+  const getSnapshot = () => {
+    const data = window.localStorage.getItem(key);
+    return data ? JSON.parse(data) : initValue;
+  }
+
+  // 不用 useState 也能达到数据更新
+  const res = useSyncExternalStore(subscribe, getSnapshot)
+  const updateStorage = (value: any) => {
+    window.localStorage.setItem(key, JSON.stringify(value));
+    // 通知订阅者
+    window.dispatchEvent(new StorageEvent("storage"));
+  }
+
+  return [res, updateStorage]
+}
+```
+```
+const [count, setCount] = useStorage('count', 0)
+
+<div>
+  <Button type="primary" onClick={() => setCount(count - 1)}>-</Button>
+  <div>{ count }</div>
+  <Button type="primary" onClick={() => setCount(count + 1)}>+</Button>
+</div>
+```
+![alt text](image-20.png)
+
 ### useTransition
 
-useTransition 是在不阻塞 UI 的情况下更新状态的 React Hook。
+useTransition 不阻塞 UI 的情况下更新状态。
 ```
 const [isPending, startTransition] = useTransition()
 
-// 紧急更新: 显示输入的内容
+// 紧急更新: 实时显示输入的内容不卡顿
 setInputValue(input);
 
 startTransition(() => {
-  // 过渡更新: 展示结果（低优先级，防止页面卡顿的情况）
+  // 过渡更新: 展示结果列表，低优先级
   setResultList(input);
 });
 
@@ -1405,10 +1499,17 @@ startTransition(() => {
 
 延迟更新 UI 的某些部分。
 ```
-const deferredValue = useDeferredValue(value)
+const [inputValue, setInputValue] = useState('')
 
-<SearchResults query={deferredValue} />
+const deferredValue = useDeferredValue(inputValue)
+console.log('deferredValue:'+deferredValue+' ,inputValue:'+ inputValue)
+// deferredValue === inputValue 执行某些操作
+
+<Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
 ```
+deferredValue 是延迟更新的值。和防抖的区别是：防抖是固定一个时间值，useDeferredValue返回的延迟值取决于设备的性能。
+
+![alt text](image-21.png)
 
 ### 自定义 hooks
 ```

@@ -173,11 +173,11 @@ class Animal {
     this.name = name;
   }
   sayHi(): string {
-    return `My name is ${this.name}`;
+    return `Hello, name is ${this.name}`;
   }
 }
 
-let a: Animal = new Animal('xiehui');
+let a: Animal = new Animal('cat');
 console.log(a.sayHi());
 ```
 
@@ -187,7 +187,13 @@ console.log(a.sayHi());
 type Name = string;
 let name: Name = 'Tom'
 ```
-
+```
+const initData = { count: 0 }
+type State = typeof initData
+const reducer = (state: State) => {
+  return state
+}
+```
 ```
 type Person = {
   name: string;
