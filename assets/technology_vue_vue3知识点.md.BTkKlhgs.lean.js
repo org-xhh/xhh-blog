@@ -598,14 +598,14 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  width: 400px;</span></span>
 <span class="line"><span>  height: 400px;</span></span>
 <span class="line"><span>  filter: saturate(200%);</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>当父元素（如 body 或 div）开启 filter 效果时，CSS 会为该元素创建一个新的包含块。此时，使用 position: fixed 样式的元素的定位基准会从浏览器视窗（viewport）切换到该父元素，即子组件 fixed 会相对于父元素进行定位。</p><p>子组件 Modal：</p><p>为了使该组件还是相对于浏览器定位，需要使用 teleport 组件。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>当父元素（如 body 或 div）开启 filter 效果时，CSS 会为该元素创建一个新的包含块。此时，使用 position: fixed 样式的元素的定位基准会从浏览器视窗（viewport）切换到该父元素，即子组件 fixed 会相对于父元素进行定位。</p><p>子组件 Modal：</p><p>为了使该组件还是相对于浏览器定位，需要使用 Teleport 组件。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
 <span class="line"><span>  &lt;button @click=&quot;isShow = true&quot;&gt;展示弹框&lt;/button&gt;</span></span>
-<span class="line"><span>  &lt;teleport to=&quot;body&quot;&gt;</span></span>
+<span class="line"><span>  &lt;Teleport to=&quot;body&quot;&gt;</span></span>
 <span class="line"><span>    &lt;div v-if=&quot;isShow&quot; class=&quot;modal&quot;&gt;</span></span>
 <span class="line"><span>      &lt;div&gt;modal&lt;/div&gt;</span></span>
 <span class="line"><span>      &lt;button @click=&quot;isShow = false&quot;&gt;关闭弹框&lt;/button&gt;</span></span>
 <span class="line"><span>    &lt;/div&gt;</span></span>
-<span class="line"><span>  &lt;/teleport&gt;</span></span>
+<span class="line"><span>  &lt;/Teleport&gt;</span></span>
 <span class="line"><span>&lt;/template&gt;</span></span></code></pre></div><p><img src="`+q+`" alt="alt text"></p><h2 id="suspense" tabindex="-1">Suspense <a class="header-anchor" href="#suspense" aria-label="Permalink to &quot;Suspense&quot;">​</a></h2><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;script setup&gt;</span></span>
 <span class="line"><span>...</span></span>
 <span class="line"><span>import axios from &#39;axios&#39;</span></span>

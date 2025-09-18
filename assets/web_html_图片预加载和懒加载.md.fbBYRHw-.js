@@ -64,7 +64,7 @@ import{_ as a,c as n,o as s,a3 as e}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>query(&#39;img&#39;).forEach(function(item) {</span></span>
 <span class="line"><span>  // 观察每个图片对象</span></span>
 <span class="line"><span>  observer.observe(item)</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h3 id="第三方插件-vue-lazyload" tabindex="-1">第三方插件 vue-lazyload <a class="header-anchor" href="#第三方插件-vue-lazyload" aria-label="Permalink to &quot;第三方插件 vue-lazyload&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Vue from &#39;vue&#39;</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h3 id="第三方插件-vue-的-vue-lazyload" tabindex="-1">第三方插件 vue 的 vue-lazyload <a class="header-anchor" href="#第三方插件-vue-的-vue-lazyload" aria-label="Permalink to &quot;第三方插件 vue 的 vue-lazyload&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import Vue from &#39;vue&#39;</span></span>
 <span class="line"><span>import VueLazyload from &#39;vue-lazyload&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>Vue.use(VueLazyload, {</span></span>
