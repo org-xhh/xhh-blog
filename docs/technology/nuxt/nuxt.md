@@ -38,6 +38,8 @@ npx create-nuxt-app demo-project
 
 #### 1. Universal (SSR / SSG) 和 Server (Node.js hosting)
 
+> SSR (服务端渲染)
+
 即：
 ```
 ssr: true         （默认）
@@ -65,6 +67,8 @@ npm run start
 
 #### 2. Universal (SSR / SSG) 和 Static (Static/Jamstack hosting)
 
+> SSG(静态站点生成)
+
 即：
 ```
 ssr: true         （默认）
@@ -76,14 +80,34 @@ target: 'static'
 nuxt generate
 ```
 
-直接把dist目录放到服务器
+直接把dist目录放到服务器。
+
+如果要生成含有动态[id].vue的页面：
+```
+generate: {
+  // routes: ['/aboutus', '/news', '/news/1']
+  async routes() {
+    // 假设 API 返回 新闻id 数组
+    const response = await fetch('https://api.example.com/ids') 
+    const newIds = await response.json()
+    return ['/aboutus', '/news'].concat(newIds.map(id => `/news/${id}`))
+  }
+}
+```
 
 #### 3. Single Page App 和 Static (Static/Jamstack hosting)
+
+> CSR(客户端渲染)
 
 即：
 ```
 ssr: false         
 target: 'static'  
+```
+
+打包命令：
+```
+nuxt build
 ```
 
 #### 4. Single Page App 和 Server (Node.js hosting)

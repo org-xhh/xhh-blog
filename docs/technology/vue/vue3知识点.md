@@ -1008,17 +1008,17 @@ const { msg } = useMsgRef('Hello', 1000)
 
 子组件 Modal：
 
-为了使该组件还是相对于浏览器定位，需要使用 teleport 组件。
+为了使该组件还是相对于浏览器定位，需要使用 Teleport 组件。
 
 ```
 <template>
   <button @click="isShow = true">展示弹框</button>
-  <teleport to="body">
+  <Teleport to="body">
     <div v-if="isShow" class="modal">
       <div>modal</div>
       <button @click="isShow = false">关闭弹框</button>
     </div>
-  </teleport>
+  </Teleport>
 </template>
 ```
 

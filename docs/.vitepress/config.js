@@ -167,7 +167,8 @@ export default {
           { text: "React Knowledge", link: "/technology/react/react-knowledge" },
           { text: "Dva", link: "/technology/react/dva" },
           { text: "Umi", link: "/technology/react/umi" },
-          { text: "Umi Max", link: "/technology/react/umimax" }
+          { text: "Umi Max", link: "/technology/react/umimax" },
+          { text: "Next.js", link: "/technology/react/next" }
         ],
       },
       "/technology/server/": {

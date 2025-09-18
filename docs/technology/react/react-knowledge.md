@@ -227,7 +227,7 @@ const ManageLayout: FC = () => {
       <Link to="/">home</Link>
       <Link to="/demo">demo</Link>
       <div>
-        {/* 配置二级路由渲染位置 */}
+        {/* 路由出口，配置二级路由渲染位置 */}
         <Outlet />
       </div>
       <h1>---ManageLayout footer---</h1>
@@ -516,6 +516,11 @@ create-react-app 内置了对 CSS Module 的支持。
 .color-yellow {
   color: #FFF766;
 }
+
+// 在CSS Module中导出变量
+:export {
+  primaryColor: red;
+}
 ```
 
 2.引入样式 ‌
@@ -530,6 +535,7 @@ import styles from './styles.module.css';
 
 ```
 <div className={styles['color-yellow']}>
+<span style={{ color: styles.primaryColor }}>222</span>
 ```
 
 ### Tailwind CSS
@@ -634,6 +640,7 @@ export default App;
 
 ### 动态类名
 ```
+// 使用模板字符串和三元运算符(逻辑与)构建类名字符串
 <div className={`nav ${isActive && 'active'}`}>
 ```
 或使用 classnames 库
@@ -1144,6 +1151,8 @@ function Detail() {
 
 export default Detail
 ```
+DOM 更新完毕后立刻调整位置，浏览器在绘制时就已经是最终位置，避免闪烁。
+
 浏览器打开 url?top=10000会直接跳到该位置；如果用useEffect，会先在页面顶部，然后闪一下跳到10000位置。
 
 

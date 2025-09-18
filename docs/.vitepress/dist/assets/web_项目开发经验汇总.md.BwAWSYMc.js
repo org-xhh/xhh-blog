@@ -96,6 +96,7 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>// 在这里_blank ios没反应，还在初始页面无法打开/home</span></span>
 <span class="line"><span>window.open(&#39;/home&#39;, &#39;_blank&#39;) </span></span>
 <span class="line"><span></span></span>
+<span class="line"><span>next(path) // 使用 push 方法，新增历史记录</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>next({ // 直接替换初始页面进入到/home</span></span>
 <span class="line"><span>    path: &#39;/home&#39;,</span></span>
@@ -181,4 +182,4 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>requestIdleCallback(processTasks)</span></span></code></pre></div><p>这种模式会将可能阻塞线程的大任务，拆分成多个小任务块。在浏览器空闲时期，一小部分一小部分地执行。</p>`,113),g=[u];function b(m,v,k,q,f,x){return n(),s("div",null,g)}const w=a(d,[["render",b]]);export{_ as __pageData,w as default};
+<span class="line"><span>requestIdleCallback(processTasks)</span></span></code></pre></div><p>这种模式会将可能阻塞线程的大任务，拆分成多个小任务块。在浏览器空闲时期，一小部分一小部分地执行。</p>`,113),g=[u];function b(m,v,k,q,x,f){return n(),s("div",null,g)}const w=a(d,[["render",b]]);export{_ as __pageData,w as default};
