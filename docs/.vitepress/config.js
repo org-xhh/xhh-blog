@@ -99,6 +99,7 @@ export default {
         text: "javascript知识",
         items: [
           { text: "Can I use", link: "/web/js/caniuse" },
+          { text: 'JS中的this', link: "/web/js/this"},
           { text: "Ecma国际", link: "/web/js/ecma" },
           { text: "HTTP缓存", link: "/web/js/http缓存"},
           { text: "前端埋点", link: "/web/js/前端埋点"},

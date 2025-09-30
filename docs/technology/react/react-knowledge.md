@@ -966,6 +966,8 @@ import type { ResType } from './common.ts'
 <!-- 
 ## 受控组件
 受控组件：值同步到 state，使用 value 属性
+
+将UI状态完全交给state或者props管理，不允许直接修改value。
 ```
 const [text, setText] = useState('hello')
 function changeText(e: ChangeEvent<HTMLInputElement>) {

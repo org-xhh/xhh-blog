@@ -2,7 +2,7 @@
 
 ## forEach()
 
-- 处理引用类型的数组，forEach会改变原数组
+- 处理引用类型的数组，forEach会改变原数组，否则不会改变原数组
 
 - 不能使用break，continue
 
@@ -16,11 +16,11 @@
 
 - 支持链式调用
 
-- 处理引用类型的数组，map会改变原数组
+- 处理引用类型的数组，map会改变原数组，否则不会改变原数组
 
 - 不能使用break，continue
 
-- return 返回值
+- return 返回新数组
 
 ## for
 ```
@@ -36,9 +36,13 @@ continue：跳过当前循环，继续下一次循环
 
 ## for...in
 
-遍历**对象**的可枚举属性，迭代顺序是不确定的；
+遍历**对象**的可枚举属性，迭代顺序是不确定的（不能‌遍历对象的Symbol属性）；
 
-循环遍历对象时，会遍历对象的原型链，并且会包含从原型链继承的属性，可以使用 hasOwnProperty 方法来检查属性是否为对象自身的属性
+循环遍历对象时，会遍历对象的**原型链**，并且会包含从原型链继承的属性，可以使用 **hasOwnProperty** 方法来检查属性是否为对象自身的属性。
+
+<!-- Object.prototype.hasOwnProperty.call(obj, a)
+
+obj.hasOwnProperty('a') -->
 
 可以与 break、continue 配合使用
 
@@ -140,7 +144,7 @@ arr.every(function (elem, index, arr) {
 ```
 
 ## Object.keys()
-遍历对象的属性
+遍历对象自身的属性
 ```
 let obj = {
   value1: 123,
@@ -151,7 +155,7 @@ Object.keys(obj) // ['value1', 'value2']
 只返回可枚举的属性
 
 ## Object.getOwnPropertyNames()
-遍历对象的属性
+遍历对象自身的属性
 ```
 let a = ['Hello', 'World'];
 Object.keys(a) // ['0', '1']
@@ -159,6 +163,11 @@ Object.getOwnPropertyNames(a) // ['0', '1', 'length']
 ```
 能返回不可枚举的属性
 
+## Object.getOwnPropertySymbols()
+返回自身所有的Symbol属性
+
+## Reflect.ownKeys()
+返回自身所有的属性
 
 ## Object.values()
 遍历对象的属性值
@@ -192,6 +201,7 @@ Object.entries(obj)
 ]
 ```
 
-
-
-
+<!-- 
+### 会改变数组的方法
+push、pop、unshift、shift、splice、sort、reverse
+-->
