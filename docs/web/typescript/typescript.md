@@ -567,7 +567,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
 ```
 {
   "compilerOptions": {
-    "target": "es5", // 目标语言的版本
+    "target": "esnext", // 目标语言的版本
     "lib": [ // 指定编译时包含的内置库，默认根据 target 自动选择
       "dom",
       "dom.iterable",

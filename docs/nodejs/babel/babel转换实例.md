@@ -26,7 +26,7 @@ const res = babel.transform(code, {
       presetEnv, 
       {
         useBuiltIns: 'usage', // 引入需要的垫片, entry 手动引入
-        corejs: 3 // 转换高级 js 语法糖
+        corejs: 3
       }
     ]
   ]
@@ -66,7 +66,7 @@ const res = babel.transform(code, {
     [
       presetEnv, {
         useBuiltIns: 'usage', // 引入需要的垫片, entry 手动引入
-        corejs: 3 // 转换高级 js 语法糖
+        corejs: 3
       }
     ], 
     presetReact

@@ -93,7 +93,9 @@ app.listen(3000, () => {
 })
 ```
 打开 localhost:3000:
+
 ![alt text](image-2.png)
+
 此时点击事件不生效，需要客户端使用 hydrateRoot 进行水合
 
 ### 修改index.html

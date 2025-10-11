@@ -670,7 +670,7 @@ export default App;
 ```
 
 
-## 状态管理 Redux
+## 状态管理
 
 ### 独立使用的Redux
 - 定义一个 <font color=red>reducer 函数</font>
@@ -787,7 +787,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-        <App />
+      <App />
     </Provider>
   </React.StrictMode>
 );
@@ -867,7 +867,53 @@ useEffect(() => {
 }, [dispatch])
 ```
 
-## 异步请求 axios
+### zustand
+
+#### 安装
+```
+npm i zustand -S
+```
+
+#### 创建 store
+```
+import { create } from 'zustand'
+// zustand 只有一个核心API: create
+
+const useCounterStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+  decrement: () => set((state) => ({ count: state.count - 1 })),
+  incrementByAmount: (amount) => set((state) => ({ count: state.count + amount }))
+}))
+
+export default useCounterStore
+```
+
+#### 使用
+```
+import useCounterStore from '@/store/counterStore'
+
+
+// 直接从 store 解析出需要的 state 和 action
+const count = useCounterStore((state) => state.count)
+const increment = useCounterStore((state) => state.increment)
+const decrement = useCounterStore((state) => state.decrement)
+const incrementByAmount = useCounterStore((state) => state.incrementByAmount)
+
+// 或者一次性获取所有（但不推荐，可能导致不必要的渲染）
+// const { count, increment, decrement, incrementByAmount } = useCounterStore()
+
+
+<div>{count}</div>
+<div>
+  <Button onClick={() => increment()}>Increment</Button>
+  <Button onClick={() => incrementByAmount(5)}>Increment 5</Button>
+  <Button onClick={decrement}>Decrement</Button>
+</div>
+```
+
+
+## 异步请求
 
 安装
 
@@ -1073,7 +1119,7 @@ const [count, setCount] = useState(0);
 
 // setCount(count + 1) // 这种写法多次执行count只累加一次（合并更新）
 // 或
-setCount((count) => count + 1) // 如果页面中 count 是 6
+setCount((count) => count + 1) // (函数式更新) 如果页面中 count 是 6
 console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值
 // 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef
 // 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count
@@ -1120,7 +1166,7 @@ useEffect(() => {
 
 ### useLayoutEffect‌
 
-- 在DOM更新完成后、浏览器绘制前‌同步执行‌，会阻塞浏览器的重绘过程
+- 在DOM更新完成后、浏览器绘制前‌同步执行‌，会阻塞浏览器的绘制过程
 - 典型应用场景：动态调整元素尺寸/位置、避免UI闪烁等需要即时获取布局信息的操作
 ```
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
@@ -1172,6 +1218,7 @@ function clickFn() {
   console.log('count:', count.current)
 }
 
+<!-- 关联 ref 到 div 元素 -->
 return <div ref={divRef} onClick={clickFn}</div>
 ```
 
@@ -1259,7 +1306,7 @@ function Counter() {
 ```
 
 ### useMemo
-在组件每次重新渲染的时候缓存计算的结果。
+缓存计算结果；依赖项变化时才重新计算，否则返回缓存值。
 ```
   function fib(n) {
     console.log('执行')
@@ -1332,7 +1379,7 @@ function Parent() {
 ```
 
 ### useCallback
-作用：在组件多次重新渲染的时候缓存函数。
+缓存函数引用
 
 之前：
 
@@ -1352,7 +1399,7 @@ import { useCallback } from "react"
 
 const handleChange = useCallback((value) => {
   console.log('value--', value)
-}, [])
+}, []) // 依赖项为空，函数引用稳定
 
 <Child onChange={handleChange} />
 
@@ -1391,11 +1438,9 @@ function App() {
 
 用于暴露子组件的属性和方法，实现父组件对子组件的控制。
 ```
-useImperativeHandle(ref, () => {
-  return {
-    
-  }
-}, [deps])
+useImperativeHandle(ref, () => ({
+  customMethod: () => {...}
+}), [deps])
 ```
 - 不传入依赖deps参数，useImperativeHandle会在组件挂载时执行一次，状态更新时也会执行
 - deps 传 []，useImperativeHandle会在组件挂载时执行一次，状态更新时不会执行
@@ -1492,14 +1537,22 @@ useTransition 不阻塞 UI 的情况下更新状态。
 ```
 const [isPending, startTransition] = useTransition()
 
-// 紧急更新: 实时显示输入的内容不卡顿
-setInputValue(input);
+const handleChange = (e) => {
+  // 紧急更新: 实时显示输入的内容不卡顿
+  setInputValue(e.target.value)
 
-startTransition(() => {
-  // 过渡更新: 展示结果列表，低优先级
-  setResultList(input);
-});
+  startTransition(() => {
+    // 过渡更新: 低优先级，展示结果列表
+    setResultList(e.target.value)
+  });
+}
 
+return (
+  <>
+    <input type="text" value={inputValue} onChange={handleChange} />"
+    { isPending && <div>Loading...</div> }
+  <>
+)
 ```
 
 ![alt text](image-2.png)
@@ -1514,7 +1567,7 @@ const [inputValue, setInputValue] = useState('')
 
 const deferredValue = useDeferredValue(inputValue)
 console.log('deferredValue:'+deferredValue+' ,inputValue:'+ inputValue)
-// deferredValue === inputValue 执行某些操作
+// deferredValue === inputValue 执行某些操作，比如加载搜索列表
 
 <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
 ```

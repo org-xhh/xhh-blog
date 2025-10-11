@@ -27,4 +27,4 @@ import{_ as s,c as a,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const p
 <span class="line"><span>  &quot;editor.codeActionsOnSave&quot;: {</span></span>
 <span class="line"><span>    &quot;source.fixAll.eslint&quot;: &quot;explicit&quot;</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>代码保存时，就会通过 eslint 和 prettier 自动格式化代码</p>`,19),l=[i];function o(c,r,d,u,h,m){return n(),a("div",null,l)}const v=s(t,[["render",o]]);export{b as __pageData,v as default};
+<span class="line"><span>}</span></span></code></pre></div><p>代码保存时，就会通过 eslint 自动格式化代码</p>`,19),l=[i];function o(c,r,d,u,h,m){return n(),a("div",null,l)}const v=s(t,[["render",o]]);export{b as __pageData,v as default};
