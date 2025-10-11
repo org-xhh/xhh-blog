@@ -58,7 +58,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span></span></span>
 <span class="line"><span>app.listen(3000, () =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;Server listening on port 3000&#39;)</span></span>
-<span class="line"><span>})</span></span></code></pre></div><p>打开 localhost:3000: <img src="`+l+`" alt="alt text"> 此时点击事件不生效，需要客户端使用 hydrateRoot 进行水合</p><h3 id="修改index-html" tabindex="-1">修改index.html <a class="header-anchor" href="#修改index-html" aria-label="Permalink to &quot;修改index.html&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;body&gt;</span></span>
+<span class="line"><span>})</span></span></code></pre></div><p>打开 localhost:3000:</p><p><img src="`+l+`" alt="alt text"></p><p>此时点击事件不生效，需要客户端使用 hydrateRoot 进行水合</p><h3 id="修改index-html" tabindex="-1">修改index.html <a class="header-anchor" href="#修改index-html" aria-label="Permalink to &quot;修改index.html&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;body&gt;</span></span>
 <span class="line"><span>    ssr</span></span>
 <span class="line"><span>    &lt;div id=&quot;app&quot;&gt;</span></span>
 <span class="line"><span>        &lt;!--app-html--&gt;</span></span>
@@ -86,4 +86,4 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>      ...</span></span>
 <span class="line"><span>    &lt;/div&gt;</span></span>
 <span class="line"><span>  );</span></span>
-<span class="line"><span>};</span></span></code></pre></div><h3 id="功能展示" tabindex="-1">功能展示 <a class="header-anchor" href="#功能展示" aria-label="Permalink to &quot;功能展示&quot;">​</a></h3><p><img src="`+t+'" alt="alt text"><img src="'+i+'" alt="alt text"></p>',30),r=[c];function d(h,m,g,u,b,v){return n(),a("div",null,r)}const q=s(o,[["render",d]]);export{k as __pageData,q as default};
+<span class="line"><span>};</span></span></code></pre></div><h3 id="功能展示" tabindex="-1">功能展示 <a class="header-anchor" href="#功能展示" aria-label="Permalink to &quot;功能展示&quot;">​</a></h3><p><img src="`+t+'" alt="alt text"><img src="'+i+'" alt="alt text"></p>',32),r=[c];function d(h,m,g,u,b,v){return n(),a("div",null,r)}const q=s(o,[["render",d]]);export{k as __pageData,q as default};

@@ -15,7 +15,7 @@ import{_ as s,c as a,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const p
 <span class="line"><span>      presetEnv, </span></span>
 <span class="line"><span>      {</span></span>
 <span class="line"><span>        useBuiltIns: &#39;usage&#39;, // 引入需要的垫片, entry 手动引入</span></span>
-<span class="line"><span>        corejs: 3 // 转换高级 js 语法糖</span></span>
+<span class="line"><span>        corejs: 3</span></span>
 <span class="line"><span>      }</span></span>
 <span class="line"><span>    ]</span></span>
 <span class="line"><span>  ]</span></span>
@@ -38,7 +38,7 @@ import{_ as s,c as a,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const p
 <span class="line"><span>    [</span></span>
 <span class="line"><span>      presetEnv, {</span></span>
 <span class="line"><span>        useBuiltIns: &#39;usage&#39;, // 引入需要的垫片, entry 手动引入</span></span>
-<span class="line"><span>        corejs: 3 // 转换高级 js 语法糖</span></span>
+<span class="line"><span>        corejs: 3</span></span>
 <span class="line"><span>      }</span></span>
 <span class="line"><span>    ], </span></span>
 <span class="line"><span>    presetReact</span></span>

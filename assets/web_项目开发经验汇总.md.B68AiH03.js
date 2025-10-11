@@ -190,5 +190,10 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  }</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  // 埋点，即使页面已经关闭，数据发送也会在后台继续进行</span></span>
-<span class="line"><span>  navigator.sendBeacon(&#39;/logs&#39;, data);</span></span>
-<span class="line"><span>})</span></span></code></pre></div><p>pagehide 比 unload 更可靠，推荐使用 pagehide 代替 unload。</p>`,116),g=[u];function b(m,v,k,q,x,f){return n(),s("div",null,g)}const w=a(r,[["render",b]]);export{_ as __pageData,w as default};
+<span class="line"><span>  const success = navigator.sendBeacon(&#39;/logs&#39;, data)</span></span>
+<span class="line"><span>  if (success) {</span></span>
+<span class="line"><span>    console.log(&#39;日志已成功加入发送队列&#39;)</span></span>
+<span class="line"><span>  } else {</span></span>
+<span class="line"><span>    console.error(&#39;无法发送日志&#39;)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span></code></pre></div><p>pagehide 比 unload 更可靠，推荐使用 pagehide 代替 unload。</p>`,116),g=[u];function b(m,v,k,f,q,x){return n(),s("div",null,g)}const w=a(r,[["render",b]]);export{_ as __pageData,w as default};
