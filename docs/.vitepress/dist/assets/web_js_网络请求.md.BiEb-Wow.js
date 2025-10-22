@@ -25,8 +25,8 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>    &#39;Content-Type&#39;: &#39;application/json&#39;</span></span>
 <span class="line"><span>  }，</span></span>
 <span class="line"><span>  body: JSON.stringify(data),</span></span>
-<span class="line"><span>  signal</span></span>
-<span class="line"><span>  // keepalive: true, // 会在页面卸载后继续发送异步请求</span></span>
+<span class="line"><span>  signal: signal</span></span>
+<span class="line"><span>  // keepalive: true, // 会在页面卸载后继续发送异步请求(请求大小限制大约64KB)</span></span>
 <span class="line"><span>})</span></span>
 <span class="line"><span>.then(response =&gt; {</span></span>
 <span class="line"><span>  if (response.ok) {</span></span>

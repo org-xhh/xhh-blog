@@ -73,3 +73,17 @@ Mac：Command + Shift + P
 
 ### Performance
 点击左上角的灰色圆点，变成红色就可以开始记录了，这时可以模仿用户使用网站，使用完毕后点击 stop，然后就能看到网站运行期间的性能报告。如果有红色的块，代表有掉帧的情况；如果是绿色，则代表 FPS 很好。
+
+#### 统计静态资源加载耗时
+```
+const observer = new PerformanceObserver((list) => {
+  const entries = list.getEntries()
+  for (const entry of entries) {
+    if (["img", "script", "css", "link"].includes(entry.initiatorType)) {
+      console.log(`资源 ${entry.name} 类型 ${entry.initiatorType} 耗时：${entry.duration.toFixed(2)} 毫秒`)
+    }
+  }
+})
+
+observer.observe({ entryTypes: ["resource"] })
+```

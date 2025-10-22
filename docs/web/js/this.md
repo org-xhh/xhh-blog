@@ -62,6 +62,39 @@ hiFn()
 
 ![alt text](image-6.png)
 
+## 手写 apply
+```
+Function.prototype.myApply = function(context, argsArray) {
+  if (context === null || context === undefined) {
+    context = globalThis // 浏览器环境是window，Node环境是global
+  } else {
+    // 将非对象类型转换为对象，确保可以添加属性
+    context = Object(context)
+  }
+  
+  // 生成唯一属性名，避免覆盖context原有属性
+  const fnKey = Symbol('fn')
+  context[fnKey] = this
+  
+  const args = Array.isArray(argsArray) ? argsArray : []
+  
+  // context[fnKey]调用context对象的fnKey函数，此时this就是context对象
+  const result = context[fnKey](...args)
+  
+  // 避免污染原对象
+  delete context[fnKey]
+  
+  return result
+}
+
+function greet(age, sex) {
+  return `greet: ${this.name}, ${age}, ${sex}`
+}
+const person = { name: 'Amy' }
+
+console.log(greet.myApply(person, ['15', '男'])) // 输出: greet: Amy, 15, 男
+```
+
 
 ## new 绑定
 场景：使用 new 关键字调用函数(构造函数)

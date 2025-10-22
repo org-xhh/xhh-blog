@@ -254,6 +254,18 @@ watchEffect(() => {
   }
 })
 ```
+```
+watchEffect((onInvalidate) => {
+  const timer = setInterval(() => {
+    ...
+  }, 1000)
+
+  // 清理函数：组件卸载或依赖变化时执行
+  onInvalidate(() => {
+    clearInterval(timer)
+  })
+})
+```
 
 ## 标签 ref 属性
 
@@ -402,6 +414,14 @@ withDefaults(defineProps<{ list?: Persons }>(), {
 })
 ```
 
+defineEmits类型校验：
+```
+const emit = defineEmits<{
+  change: [id: number]
+  update: [value: string]
+}>()
+```
+
 ## Router
 
 创建路由：
@@ -418,7 +438,7 @@ const router = createRouter({
       meta: {
         title: '登录'
       },
-      component: () => import('../views/login')
+      component: () => import('../views/login') // import 路由懒加载
     },
     ...
   ],
@@ -524,6 +544,24 @@ router.replace({
   redirect: '/home'
 }
 ```
+
+## defineAsyncComponent
+仅在路由匹配或交互触发时加载组件，避免加载未使用的组件资源。
+```
+// 懒加载路由组件：仅当访问 /about 时才加载 About.vue
+const About = defineAsyncComponent(() => import('../About.vue'))
+```
+```
+const MyComponent = defineAsyncComponent({
+  loader: () => import('./MyComponent.vue'),
+  loadingComponent: LoadingComponent, // 加载中的组件
+  errorComponent: ErrorComponent,     // 错误时的组件
+  delay: 200,                        // 延迟显示加载组件，单位为毫秒
+  timeout: 3000,                     // 超时时间，单位为毫秒
+  // 其他选项...
+});
+```
+
 
 ## pinia
 

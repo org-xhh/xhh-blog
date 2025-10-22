@@ -141,6 +141,13 @@ return (
   <RouterProvider router={routerConfig}></RouterProvider>
 )
 ```
+---
+
+扩充：react-activation
+
+主要解决React项目中的页面缓存需求，类似于 vue 中的 keep-alive
+
+---
 
 ## 路由鉴权
 authRouter.tsx:
@@ -471,10 +478,11 @@ tsconfig.json添加配置：
 ### 引入样式文件，使用类
 
 ```
-import './App.css';
+import './test.css';
 
 <div className="foo">test</div>
 ```
+注意：同样类名会影响到其他组件
 
 ### inline 样式
 style 是对象形式,其中的key是驼峰式
@@ -536,6 +544,19 @@ import styles from './styles.module.css';
 ```
 <div className={styles['color-yellow']}>
 <span style={{ color: styles.primaryColor }}>222</span>
+```
+
+### CSS-in-JS 库（如Styled Components）
+```
+import styled from 'styled-components'
+
+const MyComponent = styled.div`
+  color: yellow;
+`;
+
+function App() {
+  return <MyComponent>Hello</MyComponent>;
+}
 ```
 
 ### Tailwind CSS
@@ -600,7 +621,7 @@ JSX是Javascript和XML(HTML)的缩写，表示在JS代码中编写HTML模板结�
 
 通过大括号{}识别JavaScript中的表达式。
 
-注意：if语句，switch语句，变量声明属于语句，不是表达式，不能出现在{}中。
+注意：if语句，switch语句，变量声明等属于语句，不是表达式，不能出现在{}中。
 
 ```
 // 组件（函数）首字母必须大写

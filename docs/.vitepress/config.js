@@ -42,7 +42,7 @@ export default {
         ]
       },
       {
-        text: 'node与包',
+        text: '包管理工具',
         items: [
           { text: "文档", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },

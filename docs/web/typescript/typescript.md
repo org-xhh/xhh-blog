@@ -1,24 +1,29 @@
-# typescript 学习
+# typescript
 
 TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。
 
 TypeScript 是静态编译语言，在 编译期间 进行类型检查，可以在编辑器中发现大部分类型错误。
 
-## 基本类型
+## TS 数据类型
 
+### number、string、boolean
 ```
-let bool: boolean = false // 布尔值
-let str: string = 'string text'; // 字符串
-let num: number = 10; // 数值
-let value: null = null; // null
-let text: undefined = undefined; // undefined
+let num: number = 10;
+let str: string = 'string text';
+let bool: boolean = false
+```
+### null、undefined
+```
+let value: null = null;
+let text: undefined = undefined;
+```
+### void
+```
 function getName(name: string): void { // 空值
   console.log('My name is ' + name);
 }
 ```
-
-## 任意值
-
+### any 
 任意值 any 处理不确定的数据结构，禁用类型检查，可能导致错误难以捕获，不建议使用。
 
 ```
@@ -33,32 +38,19 @@ let list: any[] = [1, true, "free"];
 list[1] = 100;
 ```
 
-## 联合类型
+### unknown
+| 特性	| any	| unknown |
+| -----------   | ------------ | ----------- |
+| 编译时 | 如果类型错误，编译通过运行报错 | 如果类型错误，编译就报错 |
+| 访问属性/方法 |	无限制访问 | 必须先进行类型守卫 |
+| 运算操作 |	无限制 | 必须先进行类型检查 |
+| 可赋值性 | 可赋值给任何类型 | 仅可赋值给 unknown 或 any |
 
-union 联合 取值可以为多种类型中的一种
+### never
+抛出异常或根本就不会有返回值的函数表达式或箭头函数的返回类型。
 
-```
-let result: number | string;
 
-result = 10; // 可以是数字
-result = "Hi"; // 可以是字符串
-```
-
-## 交叉类型
-
-```
-interface A {
-  a(): void;
-}
-interface B {
-  b(): void;
-}
-
-// 表示同时具备 A 和 B 的特性
-type C = A & B;
-```
-
-## 数组
+### 数组
 
 ```
 let fibonacci: number[] = [1, 1, 2, 3, 5];
@@ -79,7 +71,7 @@ interface NumberArray {
 let fibonacci: NumberArray = [1, 1, 2, 3, 5];
 ```
 
-## 元祖
+### 元祖
 
 元组是一种特殊的数据结构，允许将不同类型的值放在一个数组中，每个值都可以有自己的类型，每个位置上的类型必须与元组类型定义中对应的位置类型相匹配。
 
@@ -103,10 +95,9 @@ optionalTuple = ['Bob', 30]
 let restTuple: [string, ...number[]] = ['Tom', 1, 2, 3]
 ```
 
-## 枚举
+### 枚举
 
 枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。
-
 ```
 enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
 
@@ -142,6 +133,59 @@ function handleDirectionFn(direction: Direction) {
 }
 ```
 
+### object 
+Object 和 object 的区别：
+
+- Object 是原型链上的Object类型，所有数据类型都会指向 Object
+
+- object 表示的是对象类型，只允许引用数据类型
+
+{} 和 Object 的效果相同，相当于 new Object()
+```
+let a:Object = {
+  name:'tom',
+  age: 18,
+}
+
+let b:object = {}
+
+let c:{} = {
+  name:'tom',
+  age: 18,
+}
+```
+
+
+<!-- 
+### 字面量
+
+Literal 字面量 类型允许将变量的值限制为特定的字面量值（如具体的字符串、数字或布尔值）。
+
+```
+type EventNames = 'click' | 'scroll' | 'mousemove';
+function handleEvent(ele: Element, event: EventNames) {
+  // do something
+}
+
+handleEvent(document.getElementById('hello'), 'scroll');  // 没问题
+handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不能为 'dblclick'
+
+// index.ts(7,47): error TS2345: Argument of type '"dblclick"' is not assignable to parameter of type 'EventNames'.
+``` 
+-->
+
+
+### 联合类型
+
+union 联合 取值可以为多种类型中的一种
+
+```
+let result: number | string;
+
+result = 10; // 可以是数字
+result = "Hi"; // 可以是字符串
+```
+
 ## 类型断言
 
 as 强制编译器推断类型
@@ -156,17 +200,9 @@ if (username) {
 }
 ```
 
-## 函数
-
-```
-function sum(x: number, y: number): number {
-  return x + y;
-}
-sum(1, 2);
-```
-
 ## 接口
 
+描述对象的形状
 ```
 interface Person {
   name: string;
@@ -208,21 +244,51 @@ let users: User[] = [
 ]
 ```
 
-## 类
-
+只读属性：
 ```
-class Animal {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  sayHi(): string {
-    return `Hello, name is ${this.name}`;
-  }
+interface TestObj  {
+  readonly propName: number
+}
+```
+
+继承：
+```
+interface Circle extends TestObj { 
+  xxx: string
+}
+```
+
+重名接口，属性合并：
+```
+interface TestObj {
+  width: number
+}
+interface TestObj {
+  height: number
 }
 
-let a: Animal = new Animal('cat');
-console.log(a.sayHi());
+const obj: TestObj = {
+  width: 375;
+  height: 667;
+}
+```
+
+## 函数
+
+```
+function sum(x: number, y: number): number {
+  return x + y;
+}
+sum(1, 2);
+```
+接口描述函数：
+```
+interface ISum {
+  (x:number,y:number):number
+}
+const sum:ISum = (x, y) => {
+  return x + y
+}
 ```
 
 ## 类型别名
@@ -255,20 +321,35 @@ let person: Person = {
 }
 ```
 
-## 字面量
-
-Literal 字面量 类型允许将变量的值限制为特定的字面量值（如具体的字符串、数字或布尔值）。
+## 交叉类型
 
 ```
-type EventNames = 'click' | 'scroll' | 'mousemove';
-function handleEvent(ele: Element, event: EventNames) {
-  // do something
+interface A {
+  a(): void;
+}
+interface B {
+  b(): void;
 }
 
-handleEvent(document.getElementById('hello'), 'scroll');  // 没问题
-handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不能为 'dblclick'
+// 表示同时具备 A 和 B 的特性
+type C = A & B;
+```
 
-// index.ts(7,47): error TS2345: Argument of type '"dblclick"' is not assignable to parameter of type 'EventNames'.
+## 类
+
+```
+class Animal {
+  name: string = 'lucky'; // 默认值
+  constructor(name: string) {
+    this.name = name;
+  }
+  sayHi(): string {
+    return `Hello, name is ${this.name}`;
+  }
+}
+
+let a: Animal = new Animal('dog');
+console.log(a.sayHi());
 ```
 
 ## 命名空间
@@ -295,6 +376,8 @@ MyNamespace.sayHello(); // Hello, TypeScript!
 
 ## 泛型
 
+泛型（Generics）是允许同一个函数接受不同类型参数的一种模板；
+
 泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示。
 
 举例：
@@ -309,16 +392,7 @@ function identity<T>(value: T): T {
 <br/>
 <font color=red>T</font> 是一个类型参数，可以是任何类型；
 <br/>
-函数参数是<font color=red>T</font>，返回值的类型也是<font color=red>T</font>。
-
-```
-// 调用函数
-identity<number>(10)
-或
-identity(10)
-```
-
-传参 number 类型，返回值的类型也是 number。传参 string 类型，返回值的类型也是 string。
+函数参数是<font color=red>T</font>，返回值的类型也是<font color=red>T</font>；传参 number 类型，那返回值的类型也是 number。
 
 #### 泛型类
 
@@ -341,8 +415,8 @@ class Goods<T> {
 举例：
 
 ```
-let goods = new Goods<string>("Hi");
-console.log(goods.getValue()); // 输出：Hi
+let goods = new Goods<string>('Hi');
+console.log(goods.getValue()); // 输出：'Hi'
 ```
 
 接口搭配泛型，应用在 class 上
@@ -567,7 +641,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
 ```
 {
   "compilerOptions": {
-    "target": "esnext", // 目标语言的版本
+    "target": "esnext", // 设置编译后的 JavaScript 目标版本，比如"ES5"、"ES6"等
     "lib": [ // 指定编译时包含的内置库，默认根据 target 自动选择
       "dom",
       "dom.iterable",
@@ -580,7 +654,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "esModuleInterop": true, // 自动处理好 CommonJS 与 ES 模块之间的兼容性问题
     "strict": false, // 开启所有严格的类型检查，默认 false
     "alwaysStrict": false, // 编译后的文件是否开启严格模式，默认 false
-    "noImplicitAny": false, // 允许隐式的any，默认 false(允许)
+    "noImplicitAny": false, // 不允许具有隐式any类型的表达式和声明，默认 false(允许)
     "noImplicitThis": false, // 不允许隐式的this，默认 false(允许)
     "forceConsistentCasingInFileNames": true, // 是否强制代码中使用的模块文件名必须和文件系统中的文件名保持大小写一致
     "noFallthroughCasesInSwitch": true, // 是否检查switch语句中的case是否都有break语句或return语句
@@ -594,8 +668,8 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     },
     "noEmit": true, // 默认值为 false（生成输出文件），设置为 true 时仅执行类型检查不生成任何输出文件
     "allowImportingTsExtensions": true,
-    "jsx": "react-jsx", // 输出的js 文件，将 JSX 语法转换为经过优化的针对生产环境调用的 _jsx
-    "module": "esnext", // 模块系统，可选择 commonjs、es6等
+    "jsx": "react-jsx", // 在.tsx文件中支持 JSX
+    "module": "esnext", // 指定生成的代码所使用的模块系统，如"CommonJS"、"ES6"等。
     "moduleResolution": "node", // 模块解析策略
     "allowSyntheticDefaultImports": true
   },

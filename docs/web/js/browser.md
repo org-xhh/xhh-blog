@@ -32,6 +32,9 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/Screen
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator
 
+#### navigator.userAgent
+判断用户设备
+
 #### Navigator.mediaDevices 
 
 <font color=gray>

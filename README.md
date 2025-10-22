@@ -17,7 +17,7 @@
 - [Nuxt](https://org-xhh.github.io/xhh-blog/technology/nuxt/nuxt.html)
 - ...
 
-### node与包相关
+### node、npm 相关
 
 - [node版本管理](https://org-xhh.github.io/xhh-blog/nodejs/node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86.html)
 - [npm常用命令](https://org-xhh.github.io/xhh-blog/nodejs/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html)

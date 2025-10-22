@@ -8,6 +8,12 @@ var(): CSS 函数可以插入一个自定义属性
     --theme-color: #f00;
 }
 ```
+或在节点上：
+```
+<div :style="{'--theme-color': '#f00'}">
+    Hello
+</div>
+```
 
 ### 页面中使用
 ```

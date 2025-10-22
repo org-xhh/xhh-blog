@@ -52,7 +52,7 @@ https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 ### 发布为h5
 
 发行 - 网站-PC Web或 手机 H5
-打包文件目录：unpackage\dist\build\dist
+打包文件目录：unpackage\dist\build\web
 
 
 ### 发布微信小程序
