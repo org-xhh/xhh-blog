@@ -27,7 +27,10 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>  fontSize: {</span></span>
 <span class="line"><span>    // 字体的大小</span></span>
 <span class="line"><span>    type: Number,</span></span>
-<span class="line"><span>    default: 40</span></span>
+<span class="line"><span>    default: 40,</span></span>
+<span class="line"><span>    validator: (value) =&gt; {</span></span>
+<span class="line"><span>      return value &gt;= 10</span></span>
+<span class="line"><span>    }</span></span>
 <span class="line"><span>  },</span></span>
 <span class="line"><span>  gap: {</span></span>
 <span class="line"><span>    // 水印重复的间隔</span></span>
