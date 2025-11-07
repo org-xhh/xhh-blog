@@ -1,4 +1,4 @@
-import{_ as a,c as n,o as s,a3 as e}from"./chunks/framework.C5U8cnJv.js";const h=JSON.parse('{"title":"Image","description":"","frontmatter":{},"headers":[],"relativePath":"web/html/图片预加载和懒加载.md","filePath":"web/html/图片预加载和懒加载.md"}'),p={name:"web/html/图片预加载和懒加载.md"},t=e(`<h1 id="image" tabindex="-1">Image <a class="header-anchor" href="#image" aria-label="Permalink to &quot;Image&quot;">​</a></h1><h2 id="图片预加载" tabindex="-1">图片预加载 <a class="header-anchor" href="#图片预加载" aria-label="Permalink to &quot;图片预加载&quot;">​</a></h2><p>图片预加载是指在页面加载时提前加载图片，使其缓存在浏览器中，当用户需要查看图片时立即显示，不需要等待加载。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let image = new Image();</span></span>
+import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h=JSON.parse('{"title":"Image","description":"","frontmatter":{},"headers":[],"relativePath":"web/html/图片预加载和懒加载.md","filePath":"web/html/图片预加载和懒加载.md"}'),e={name:"web/html/图片预加载和懒加载.md"},t=p(`<h1 id="image" tabindex="-1">Image <a class="header-anchor" href="#image" aria-label="Permalink to &quot;Image&quot;">​</a></h1><h2 id="图片预加载" tabindex="-1">图片预加载 <a class="header-anchor" href="#图片预加载" aria-label="Permalink to &quot;图片预加载&quot;">​</a></h2><p>图片预加载是指在页面加载时提前加载图片，使其缓存在浏览器中，当用户需要查看图片时立即显示，不需要等待加载。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let image = new Image();</span></span>
 <span class="line"><span>image.src = &#39;image.jpg&#39;;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>.image {</span></span>
@@ -43,23 +43,21 @@ import{_ as a,c as n,o as s,a3 as e}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>let observer = new IntersectionObserver(function(entries) {</span></span>
 <span class="line"><span>  entries.forEach(function(entry) {</span></span>
-<span class="line"><span>    let target = entry.target</span></span>
-<span class="line"><span>    console.log(entry.intersectionRatio, entry.isIntersecting)</span></span>
-<span class="line"><span>    // 有时isIntersecting可见，intersectionRatio却为0，修复一下</span></span>
-<span class="line"><span>    if ((entry.intersectionRatio &gt; 0 &amp;&amp; entry.intersectionRatio &lt;= 1) ||</span></span>
-<span class="line"><span>    (entry.intersectionRatio === 0 &amp;&amp; entry.isIntersecting)) {</span></span>
-<span class="line"><span>      if (target.dataset.src) {</span></span>
+<span class="line"><span>    if (entry.isIntersecting) {</span></span>
+<span class="line"><span>      let img = entry.target</span></span>
+<span class="line"><span>      if (img.dataset.src) {</span></span>
 <span class="line"><span>        // dataset.src 就是 获取 &quot;data-src&quot; 属性值</span></span>
-<span class="line"><span>        target.src = target.dataset.src</span></span>
-<span class="line"><span>        target.removeAttribute(&#39;data-src&#39;)</span></span>
+<span class="line"><span>        img.src = img.dataset.src</span></span>
+<span class="line"><span>        img.removeAttribute(&#39;data-src&#39;)</span></span>
 <span class="line"><span>        // 图片已加载， 解除观察</span></span>
-<span class="line"><span>        observer.unobserve(target)</span></span>
+<span class="line"><span>        observer.unobserve(img)</span></span>
 <span class="line"><span>      } else {</span></span>
-<span class="line"><span>        observer.unobserve(target)</span></span>
+<span class="line"><span>        observer.unobserve(img)</span></span>
 <span class="line"><span>      }</span></span>
 <span class="line"><span>    }</span></span>
 <span class="line"><span>  })</span></span>
-<span class="line"><span>}, { threshold: [0] }) // 默认</span></span>
+<span class="line"><span>}, { threshold: [0] }) // 0%可见时触发；</span></span>
+<span class="line"><span>// rootMargin: &#39;50px&#39;  提前50px触发</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>query(&#39;img&#39;).forEach(function(item) {</span></span>
 <span class="line"><span>  // 观察每个图片对象</span></span>
@@ -77,4 +75,4 @@ import{_ as a,c as n,o as s,a3 as e}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;div v-for=&quot;(item, index) in imgList&quot; :key=&quot;index&quot;&gt;</span></span>
 <span class="line"><span>  &lt;img v-lazy=&quot;item&quot;&gt;</span></span>
-<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="loading-lazy" tabindex="-1">loading=&quot;lazy&quot; <a class="header-anchor" href="#loading-lazy" aria-label="Permalink to &quot;loading=&quot;lazy&quot;&quot;">​</a></h3><p>loading 是 &lt;img&gt; 和 &lt;iframe&gt;&gt; 标签的新属性，在 &lt;img&gt; 标签上添加 loading=&quot;lazy&quot;，浏览器就会在图片滚动到视口附近时才开始加载。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;img src=&quot;image.jpg&quot; loading=&quot;lazy&quot; width=&quot;350&quot; height=&quot;220&quot; alt=&quot;图片&quot;&gt;</span></span></code></pre></div>`,16),l=[t];function i(o,c,r,d,g,u){return s(),n("div",null,l)}const b=a(p,[["render",i]]);export{h as __pageData,b as default};
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="loading-lazy" tabindex="-1">loading=&quot;lazy&quot; <a class="header-anchor" href="#loading-lazy" aria-label="Permalink to &quot;loading=&quot;lazy&quot;&quot;">​</a></h3><p>loading 是 &lt;img&gt; 和 &lt;iframe&gt;&gt; 标签的新属性，在 &lt;img&gt; 标签上添加 loading=&quot;lazy&quot;，浏览器就会在图片滚动到视口附近时才开始加载。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;img src=&quot;image.jpg&quot; loading=&quot;lazy&quot; width=&quot;350&quot; height=&quot;220&quot; alt=&quot;图片&quot;&gt;</span></span></code></pre></div>`,16),l=[t];function i(o,c,r,d,g,u){return n(),s("div",null,l)}const b=a(e,[["render",i]]);export{h as __pageData,b as default};
