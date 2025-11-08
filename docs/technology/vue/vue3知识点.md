@@ -130,7 +130,8 @@ let val3 = reactive({
 watch(val3, (newValue) => {
   console.log('监听val3变化', newValue)
 })
-function changeVal3Name() { // reactive定义的数据不能直接修改，可以通过Object.assign()方法修改
+// reactive定义的对象或数组不能直接修改(否则会失去响应式)
+function changeVal3Name() { 
   // val3.name = 888
   Object.assign(val3, { name: 999 })
 }
@@ -251,6 +252,9 @@ watchEffect(() => {
   // num1、num2 任何一个发生变化都会执行
   if (num1.value >= 10 || num2.value >= 10) {
     console.log('超过10')
+  }
+  return () => {
+    console.log('Cleaning up...')
   }
 })
 ```
@@ -1063,24 +1067,19 @@ const { msg } = useMsgRef('Hello', 1000)
 ![alt text](image-13.png)
 
 ## Suspense
-
-子组件：
-
 ```
-<script setup>
-...
-import axios from 'axios'
-let data = await axios.get('https://www.test.shop/home')
-console.log('data--', data.data.title)
-```
+import { defineAsyncComponent } from 'vue'
+const AsyncComponent = defineAsyncComponent({
+  loader: () => import('./components/AsyncComponent.vue'),
+  onError: (error, retry, fail, attempts) => {
+    // 处理错误逻辑
+  },）
+  timeout: 3000 // 可选，超时时间（毫秒）
+})
 
-父组件：
-
-```
-<!-- <CommonHeader ref="compRef" /> -->
 <Suspense>
   <template #default>
-    <CommonHeader ref="compRef" />
+     <AsyncComponent />
   </template>
   <template v-slot:fallback>
     <h3>加载中...</h3>

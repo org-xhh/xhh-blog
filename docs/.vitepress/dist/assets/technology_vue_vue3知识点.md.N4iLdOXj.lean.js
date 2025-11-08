@@ -80,7 +80,8 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>watch(val3, (newValue) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;监听val3变化&#39;, newValue)</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>function changeVal3Name() { // reactive定义的数据不能直接修改，可以通过Object.assign()方法修改</span></span>
+<span class="line"><span>// reactive定义的对象或数组不能直接修改(否则会失去响应式)</span></span>
+<span class="line"><span>function changeVal3Name() { </span></span>
 <span class="line"><span>  // val3.name = 888</span></span>
 <span class="line"><span>  Object.assign(val3, { name: 999 })</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h3 id="一个函数返回一个值-getter-函数" tabindex="-1">一个函数返回一个值(getter 函数) <a class="header-anchor" href="#一个函数返回一个值-getter-函数" aria-label="Permalink to &quot;一个函数返回一个值(getter 函数)&quot;">​</a></h3><h4 id="监听响应式对象某个属性-且该属性是基本类型" tabindex="-1">监听响应式对象某个属性，且该属性是基本类型： <a class="header-anchor" href="#监听响应式对象某个属性-且该属性是基本类型" aria-label="Permalink to &quot;监听响应式对象某个属性，且该属性是基本类型：&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let val3 = reactive({</span></span>
@@ -156,6 +157,9 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  // num1、num2 任何一个发生变化都会执行</span></span>
 <span class="line"><span>  if (num1.value &gt;= 10 || num2.value &gt;= 10) {</span></span>
 <span class="line"><span>    console.log(&#39;超过10&#39;)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>  return () =&gt; {</span></span>
+<span class="line"><span>    console.log(&#39;Cleaning up...&#39;)</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>})</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>watchEffect((onInvalidate) =&gt; {</span></span>
 <span class="line"><span>  const timer = setInterval(() =&gt; {</span></span>
@@ -626,16 +630,20 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>      &lt;button @click=&quot;isShow = false&quot;&gt;关闭弹框&lt;/button&gt;</span></span>
 <span class="line"><span>    &lt;/div&gt;</span></span>
 <span class="line"><span>  &lt;/Teleport&gt;</span></span>
-<span class="line"><span>&lt;/template&gt;</span></span></code></pre></div><p><img src="`+q+`" alt="alt text"></p><h2 id="suspense" tabindex="-1">Suspense <a class="header-anchor" href="#suspense" aria-label="Permalink to &quot;Suspense&quot;">​</a></h2><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;script setup&gt;</span></span>
-<span class="line"><span>...</span></span>
-<span class="line"><span>import axios from &#39;axios&#39;</span></span>
-<span class="line"><span>let data = await axios.get(&#39;https://www.test.shop/home&#39;)</span></span>
-<span class="line"><span>console.log(&#39;data--&#39;, data.data.title)</span></span></code></pre></div><p>父组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!-- &lt;CommonHeader ref=&quot;compRef&quot; /&gt; --&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span></code></pre></div><p><img src="`+q+`" alt="alt text"></p><h2 id="suspense" tabindex="-1">Suspense <a class="header-anchor" href="#suspense" aria-label="Permalink to &quot;Suspense&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { defineAsyncComponent } from &#39;vue&#39;</span></span>
+<span class="line"><span>const AsyncComponent = defineAsyncComponent({</span></span>
+<span class="line"><span>  loader: () =&gt; import(&#39;./components/AsyncComponent.vue&#39;),</span></span>
+<span class="line"><span>  onError: (error, retry, fail, attempts) =&gt; {</span></span>
+<span class="line"><span>    // 处理错误逻辑</span></span>
+<span class="line"><span>  },）</span></span>
+<span class="line"><span>  timeout: 3000 // 可选，超时时间（毫秒）</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>&lt;Suspense&gt;</span></span>
 <span class="line"><span>  &lt;template #default&gt;</span></span>
-<span class="line"><span>    &lt;CommonHeader ref=&quot;compRef&quot; /&gt;</span></span>
+<span class="line"><span>     &lt;AsyncComponent /&gt;</span></span>
 <span class="line"><span>  &lt;/template&gt;</span></span>
 <span class="line"><span>  &lt;template v-slot:fallback&gt;</span></span>
 <span class="line"><span>    &lt;h3&gt;加载中...&lt;/h3&gt;</span></span>
 <span class="line"><span>  &lt;/template&gt;</span></span>
-<span class="line"><span>&lt;/Suspense&gt;</span></span></code></pre></div><h2 id="全局-api-转移到应用对象" tabindex="-1">全局 API 转移到应用对象 <a class="header-anchor" href="#全局-api-转移到应用对象" aria-label="Permalink to &quot;全局 API 转移到应用对象&quot;">​</a></h2><ul><li>app.component</li><li>app.config</li><li>app.directive</li><li>app.mount</li><li>app.unmount</li><li>app.use</li></ul><h2 id="非兼容性改变" tabindex="-1">非兼容性改变 <a class="header-anchor" href="#非兼容性改变" aria-label="Permalink to &quot;非兼容性改变&quot;">​</a></h2><p><a href="https://v3-migration.vuejs.org/zh/breaking-changes/" target="_blank" rel="noreferrer">https://v3-migration.vuejs.org/zh/breaking-changes/</a></p>`,140);function w(P,V,R,B,E,j){const n=e("font");return o(),l("div",null,[C,t("p",null,[s("就采用这种写法："),i(n,{color:"red"},{default:c(()=>[s("getter 函数并且加上 deep")]),_:1})]),x])}const M=p(y,[["render",w]]);export{D as __pageData,M as default};
+<span class="line"><span>&lt;/Suspense&gt;</span></span></code></pre></div><h2 id="全局-api-转移到应用对象" tabindex="-1">全局 API 转移到应用对象 <a class="header-anchor" href="#全局-api-转移到应用对象" aria-label="Permalink to &quot;全局 API 转移到应用对象&quot;">​</a></h2><ul><li>app.component</li><li>app.config</li><li>app.directive</li><li>app.mount</li><li>app.unmount</li><li>app.use</li></ul><h2 id="非兼容性改变" tabindex="-1">非兼容性改变 <a class="header-anchor" href="#非兼容性改变" aria-label="Permalink to &quot;非兼容性改变&quot;">​</a></h2><p><a href="https://v3-migration.vuejs.org/zh/breaking-changes/" target="_blank" rel="noreferrer">https://v3-migration.vuejs.org/zh/breaking-changes/</a></p>`,137);function w(P,V,R,B,E,j){const n=e("font");return o(),l("div",null,[C,t("p",null,[s("就采用这种写法："),i(n,{color:"red"},{default:c(()=>[s("getter 函数并且加上 deep")]),_:1})]),x])}const M=p(y,[["render",w]]);export{D as __pageData,M as default};

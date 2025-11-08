@@ -175,14 +175,15 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span></span></span>
 <span class="line"><span>requestIdleCallback(processTasks)</span></span></code></pre></div><p>这种模式会将可能阻塞线程的大任务，拆分成多个小任务块。在浏览器空闲时期，一小部分一小部分地执行。</p><h3 id="如何判断用户是否离开了当前页面" tabindex="-1">如何判断用户是否离开了当前页面? <a class="header-anchor" href="#如何判断用户是否离开了当前页面" aria-label="Permalink to &quot;如何判断用户是否离开了当前页面?&quot;">​</a></h3><h4 id="_1-page-visibility-api" tabindex="-1">1. Page Visibility API <a class="header-anchor" href="#_1-page-visibility-api" aria-label="Permalink to &quot;1. Page Visibility API&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>document.addEventListener(&#39;visibilitychange&#39;, () =&gt; {</span></span>
 <span class="line"><span>  if (document.hidden) {</span></span>
-<span class="line"><span>    console.log(&#39;用户离开了当前页面（切换标签页或最小化）&#39;)</span></span>
+<span class="line"><span>    console.log(&#39;页面不可见&#39;)</span></span>
 <span class="line"><span>    // 在这里暂停视频、动画等</span></span>
 <span class="line"><span>    pauseVideo()</span></span>
 <span class="line"><span>  } else {</span></span>
 <span class="line"><span>    // 页面恢复可见</span></span>
 <span class="line"><span>    playVideo()</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>});</span></span></code></pre></div><h4 id="_2-pagehide-和-pageshow-事件" tabindex="-1">2. pagehide 和 pageshow 事件 <a class="header-anchor" href="#_2-pagehide-和-pageshow-事件" aria-label="Permalink to &quot;2. pagehide 和 pageshow 事件&quot;">​</a></h4><p>现代浏览器引入了“往返缓存”（Back-Forward Cache, bfcache）。当用户导航到其他页面点击返回，浏览器可能会直接从缓存中恢复上一个页面，而不是重新加载。在这种情况下，unload 事件可能根本不会触发。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>window.addEventListener(&#39;pagehide&#39;, (event) =&gt; {</span></span>
+<span class="line"><span>});</span></span></code></pre></div><h4 id="_2-pagehide-和-pageshow-事件" tabindex="-1">2. pagehide 和 pageshow 事件 <a class="header-anchor" href="#_2-pagehide-和-pageshow-事件" aria-label="Permalink to &quot;2. pagehide 和 pageshow 事件&quot;">​</a></h4><p>现代浏览器引入了“往返缓存”（Back-Forward Cache, bfcache）。当用户导航到其他页面点击返回，浏览器可能会直接从缓存中恢复上一个页面，而不是重新加载。在这种情况下，unload 事件可能根本不会触发。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 关闭标签页、跳转页面等</span></span>
+<span class="line"><span>window.addEventListener(&#39;pagehide&#39;, (event) =&gt; {</span></span>
 <span class="line"><span>  if (event.persisted) {</span></span>
 <span class="line"><span>    console.log(&#39;页面正在进入 bfcache&#39;)</span></span>
 <span class="line"><span>  } else {</span></span>

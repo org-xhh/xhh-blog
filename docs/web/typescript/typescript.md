@@ -514,8 +514,23 @@ function isString(s: unknown): s is string {
 
 ## 内置的工具类型
 
-比如 Capitalize &lt;T&gt; 将字符串类型 T 的首字母转换为大写。
+‌Partial&lt;T&gt;：将类型T的所有属性变为可选
 
+‌Required&lt;T&gt;：将类型T的所有属性变为必填
+
+‌Pick&lt;T, K&gt;：从类型T中选择指定属性K来创建一个新类型
+
+‌Omit&lt;T, K&gt;：从类型T中排除指定属性K来创建一个新类型
+
+Uppercase&lt;T&gt;：将字符串T转换为大写
+
+‌Lowercase&lt;T&gt;：将字符串T转换为小写
+
+‌Capitalize&lt;T&gt;：将字符串T的首字母大写
+
+‌Uncapitalize&lt;T&gt;：将字符串T的首字母小写
+
+...
 ```
 type T = 'hi'
 type Result = Capitalize<T> // 'Hi'
@@ -586,19 +601,25 @@ import { foo } from 'node-plugin';
 foo(global.process);
 ```
 
+<!-- 
 ## 内置对象
 
 ECMAScript 的内置对象
 
-Boolean、Error、Date、RegExp 等
+Number、String、Boolean、Array、Date、RegExp、JSON、Math、Error 等
 
 ```
 let r: RegExp = /[a-z]/;
 ```
 
-DOM 和 BOM 的内置对象
+DOM 的内置对象：
 
-Document、HTMLElement、Event、NodeList 等
+Document、HTMLElement、HTMLDivElement、Event、NodeList 等
+
+BOM 的内置对象：
+
+Storage、Location、Promise 等 
+-->
 
 ## 装饰器
 
@@ -684,6 +705,23 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
   "extends":"../tsconfig.base.json", // 继承另一个文件的配置
   "files":["a.ts","b.ts"], // 指定编译的文件列表
   "references": [] // 用于配置项目引用，管理 TypeScript 项目之间的依赖关系
+}
+```
+
+新项目建议开启 strict
+```
+{
+  "compilerOptions": {
+    "strict": true,
+    // 相当于同时开启：
+    // "noImplicitAny": true,
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    // "strictBindCallApply": true,
+    // "strictPropertyInitialization": true,
+    // "noImplicitThis": true,
+    // "alwaysStrict": true
+  }
 }
 ```
 

@@ -57,7 +57,7 @@ import{_ as l,D as i,c as o,j as s,I as e,w as p,a as n,a3 as t,o as c}from"./ch
 <span class="line"><span>// counter.$patch((state) =&gt; {</span></span>
 <span class="line"><span>//   state.count = counter.count + 1</span></span>
 <span class="line"><span>// })</span></span>
-<span class="line"><span>// counter.increment()</span></span></code></pre></div>`,2),S={id:"事件总线-mitt",tabindex:"-1"},D=s("a",{class:"header-anchor",href:"#事件总线-mitt","aria-label":'Permalink to "<font color=red>事件总线（Mitt）</font>"'},"​",-1),E=t(`<p>适用于无直接关系的组件</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install mitt</span></span>
+<span class="line"><span>// counter.increment()</span></span></code></pre></div>`,2),S={id:"事件总线-mitt",tabindex:"-1"},D=s("a",{class:"header-anchor",href:"#事件总线-mitt","aria-label":'Permalink to "<font color=red>事件总线（Mitt）</font>"'},"​",-1),E=t(`<p>适用于无直接关系的组件，支持TS</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install mitt</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// eventBus.js</span></span>

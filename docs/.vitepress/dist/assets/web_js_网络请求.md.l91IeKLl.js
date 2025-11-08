@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x=JSON.parse('{"title":"前端发送网络请求","description":"","frontmatter":{},"headers":[],"relativePath":"web/js/网络请求.md","filePath":"web/js/网络请求.md"}'),e={name:"web/js/网络请求.md"},l=p(`<h1 id="前端发送网络请求" tabindex="-1">前端发送网络请求 <a class="header-anchor" href="#前端发送网络请求" aria-label="Permalink to &quot;前端发送网络请求&quot;">​</a></h1><h2 id="axios" tabindex="-1">axios <a class="header-anchor" href="#axios" aria-label="Permalink to &quot;axios&quot;">​</a></h2><h3 id="取消请求" tabindex="-1">取消请求 <a class="header-anchor" href="#取消请求" aria-label="Permalink to &quot;取消请求&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 第一种方式</span></span>
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x=JSON.parse('{"title":"前端发送网络请求","description":"","frontmatter":{},"headers":[],"relativePath":"web/js/网络请求.md","filePath":"web/js/网络请求.md"}'),e={name:"web/js/网络请求.md"},l=p(`<h1 id="前端发送网络请求" tabindex="-1">前端发送网络请求 <a class="header-anchor" href="#前端发送网络请求" aria-label="Permalink to &quot;前端发送网络请求&quot;">​</a></h1><h2 id="axios" tabindex="-1">axios <a class="header-anchor" href="#axios" aria-label="Permalink to &quot;axios&quot;">​</a></h2><p>返回 Promise 对象，支持链式调用，可以使用 .then() 和 .catch() 等方法处理响应。 ‌</p><h3 id="取消请求" tabindex="-1">取消请求 <a class="header-anchor" href="#取消请求" aria-label="Permalink to &quot;取消请求&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 第一种方式</span></span>
 <span class="line"><span>const CancelToken = axios.CancelToken</span></span>
 <span class="line"><span>const source = CancelToken.source()</span></span>
 <span class="line"><span>axios.get(&#39;xxx&#39;, {</span></span>
@@ -15,7 +15,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>    cancel = c</span></span>
 <span class="line"><span>  })</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
+<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>axios.defaults.withCredentials = true // 携带凭证 cookies</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
 <span class="line"><span>const controller = new AbortController();</span></span>
 <span class="line"><span>const signal = controller.signal;</span></span>
 <span class="line"><span></span></span>
@@ -25,8 +25,10 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>    &#39;Content-Type&#39;: &#39;application/json&#39;</span></span>
 <span class="line"><span>  }，</span></span>
 <span class="line"><span>  body: JSON.stringify(data),</span></span>
-<span class="line"><span>  signal: signal</span></span>
+<span class="line"><span>  signal: signal,</span></span>
 <span class="line"><span>  // keepalive: true, // 会在页面卸载后继续发送异步请求(请求大小限制大约64KB)</span></span>
+<span class="line"><span>  mode: &#39;cors&#39;, </span></span>
+<span class="line"><span>  credentials: &#39;include&#39; // 携带凭证 cookies</span></span>
 <span class="line"><span>})</span></span>
 <span class="line"><span>.then(response =&gt; {</span></span>
 <span class="line"><span>  if (response.ok) {</span></span>
@@ -106,4 +108,4 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>hw.next()</span></span>
 <span class="line"><span>// { value: &#39;ending&#39;, done: true }</span></span>
 <span class="line"><span>hw.next()</span></span>
-<span class="line"><span>// { value: undefined, done: true</span></span></code></pre></div>`,20),i=[l];function t(c,o,r,h,d,u){return a(),n("div",null,i)}const b=s(e,[["render",t]]);export{x as __pageData,b as default};
+<span class="line"><span>// { value: undefined, done: true</span></span></code></pre></div>`,22),i=[l];function t(c,o,r,d,h,u){return a(),n("div",null,i)}const b=s(e,[["render",t]]);export{x as __pageData,b as default};

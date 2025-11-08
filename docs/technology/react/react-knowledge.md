@@ -1262,6 +1262,11 @@ import { ThemeContext } from './ThemeContext'
 function App() {
 const [theme, setTheme] = useState('light')
 
+// export const ThemeContext = createContext({
+//     theme: 'light',
+//     toggleTheme: () => {},
+// })
+// 如果value={{ theme, toggleTheme }} 传多个，useContext(ThemeContext)就获取多个字段
 return (
     <ThemeContext.Provider value={theme}>
       ...
@@ -1662,6 +1667,35 @@ https://ahooks.js.org/zh-CN
 https://github.com/streamich/react-use
 
 
+## API use 
+React19+，use 结合 &lt;Suspense&gt;，实现数据加载loading
+```
+import { Suspense, use } from 'react'
+
+const fetchMessage = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('hello world')
+    }, 2000)
+  })
+}
+const Message = ({ messagePromise }) => {
+  const message = use(messagePromise)
+  return <div>{message}</div>
+}
+
+const App = () => {
+  const messagePromise = fetchMessage()
+
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}> 
+        <Message messagePromise={messagePromise} />
+      </Suspense>
+    </div>
+  )
+}
+```
 
 ## Ant Design
 
@@ -1698,6 +1732,7 @@ https://mobile.ant.design/zh/guide/theming
 ## 富文本编辑器
 react-quill 
 -->
+
 
 ## 配置多环境
 
