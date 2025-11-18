@@ -25,7 +25,7 @@ export default {
           { text: "css", link: "/web/css/css单位和dpr" },
           { text: "javascript", link: "/web/js/caniuse" },
           { text: "typescript", link: "/web/typescript/typescript" },
-          { text: "项目开发经验汇总", link: "/web/项目开发经验汇总" },
+          // { text: "项目开发经验汇总", link: "/web/项目开发经验汇总" },
         ]
       },
       {
@@ -54,6 +54,7 @@ export default {
           { text: "发布npm包", link: "/nodejs/发布npm包" },
           { text: "ESM和CJS", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
+          { text: "cli工具", link: "/nodejs/cli工具" },
           { text: "Babel", link: "/nodejs/babel/babel" },
           { text: "组件库", link: "/nodejs/组件库" }
         ]

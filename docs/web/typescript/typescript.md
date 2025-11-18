@@ -155,11 +155,20 @@ let c:{} = {
 }
 ```
 
+## 联合类型
 
-<!-- 
-### 字面量
+union 联合类型取值可以为多种类型中的一种
 
-Literal 字面量 类型允许将变量的值限制为特定的字面量值（如具体的字符串、数字或布尔值）。
+```
+let result: number | string;
+
+result = 10; // 可以是数字
+result = "Hi"; // 可以是字符串
+```
+
+## 字面量
+
+Literal 字面量类型允许将变量的值限制为特定值
 
 ```
 type EventNames = 'click' | 'scroll' | 'mousemove';
@@ -171,19 +180,6 @@ handleEvent(document.getElementById('hello'), 'scroll');  // 没问题
 handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不能为 'dblclick'
 
 // index.ts(7,47): error TS2345: Argument of type '"dblclick"' is not assignable to parameter of type 'EventNames'.
-``` 
--->
-
-
-### 联合类型
-
-union 联合 取值可以为多种类型中的一种
-
-```
-let result: number | string;
-
-result = 10; // 可以是数字
-result = "Hi"; // 可以是字符串
 ```
 
 ## 类型断言

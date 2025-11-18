@@ -1431,6 +1431,18 @@ const handleChange = useCallback((value) => {
 
 // 子组件必须进行memo优化，否则useCallback没有任何性能提升。
 ```
+和 useEffect 结合使用：
+```
+// 初始化和userId更新时才请求异步
+let userId = props.userId
+const fnn = useCallback(() =>{
+  console.log('发起异步请求--', userId)
+}, [userId])
+
+useEffect(() => {
+  fnn()
+}, [fnn])
+```
 
 
 #### forwardRef 高阶组件
