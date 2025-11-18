@@ -802,7 +802,15 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;Child onChange={handleChange} /&gt;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// 子组件必须进行memo优化，否则useCallback没有任何性能提升。</span></span></code></pre></div><h4 id="forwardref-高阶组件" tabindex="-1">forwardRef 高阶组件 <a class="header-anchor" href="#forwardref-高阶组件" aria-label="Permalink to &quot;forwardRef 高阶组件&quot;">​</a></h4><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
+<span class="line"><span>// 子组件必须进行memo优化，否则useCallback没有任何性能提升。</span></span></code></pre></div><p>和 useEffect 结合使用：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 初始化和userId更新时才请求异步</span></span>
+<span class="line"><span>let userId = props.userId</span></span>
+<span class="line"><span>const fnn = useCallback(() =&gt;{</span></span>
+<span class="line"><span>  console.log(&#39;发起异步请求--&#39;, userId)</span></span>
+<span class="line"><span>}, [userId])</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>  fnn()</span></span>
+<span class="line"><span>}, [fnn])</span></span></code></pre></div><h4 id="forwardref-高阶组件" tabindex="-1">forwardRef 高阶组件 <a class="header-anchor" href="#forwardref-高阶组件" aria-label="Permalink to &quot;forwardRef 高阶组件&quot;">​</a></h4><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const Input = forwardRef((props, ref) =&gt; {</span></span>
 <span class="line"><span>  return &lt;input type=&quot;text&quot; ref={ref} /&gt;</span></span>
@@ -1121,4 +1129,4 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  return () =&gt; {</span></span>
 <span class="line"><span>    clearInterval(timerRef.current)</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}, [])</span></span></code></pre></div>`,130);function y(q,P,A,R,w,S){const n=i("font");return o(),c("div",null,[k,a("ul",null,[a("li",null,[s("定义一个 "),p(n,{color:"red"},{default:e(()=>[s("reducer 函数")]),_:1})]),a("li",null,[s("使用 "),p(n,{color:"red"},{default:e(()=>[s("createStore")]),_:1}),s(" 方法传入 reducer 函数 生成一个 store 实例对象")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("subscribe 方法")]),_:1}),s(" 订阅数据的变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("dispatch方法提交action对象")]),_:1}),s(" 触发数据变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("getState方法")]),_:1}),s(" 获取最新的状态数据更新到视图中")])]),x,p(n,{size:"2.5"},{default:e(()=>[s("注：react18 开始，useEffect 在开发环境下会执行两次(<React.StrictMode>)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),C])}const E=t(f,[["render",y]]);export{M as __pageData,E as default};
+<span class="line"><span>}, [])</span></span></code></pre></div>`,132);function y(q,P,A,R,w,S){const n=i("font");return o(),c("div",null,[k,a("ul",null,[a("li",null,[s("定义一个 "),p(n,{color:"red"},{default:e(()=>[s("reducer 函数")]),_:1})]),a("li",null,[s("使用 "),p(n,{color:"red"},{default:e(()=>[s("createStore")]),_:1}),s(" 方法传入 reducer 函数 生成一个 store 实例对象")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("subscribe 方法")]),_:1}),s(" 订阅数据的变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("dispatch方法提交action对象")]),_:1}),s(" 触发数据变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("getState方法")]),_:1}),s(" 获取最新的状态数据更新到视图中")])]),x,p(n,{size:"2.5"},{default:e(()=>[s("注：react18 开始，useEffect 在开发环境下会执行两次(<React.StrictMode>)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),C])}const E=t(f,[["render",y]]);export{M as __pageData,E as default};
