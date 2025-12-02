@@ -15,7 +15,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>    cancel = c</span></span>
 <span class="line"><span>  })</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>axios.defaults.withCredentials = true // 携带凭证 cookies</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
+<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>axios.defaults.withCredentials = true // 允许跨域时携带凭证 cookies</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
 <span class="line"><span>const controller = new AbortController();</span></span>
 <span class="line"><span>const signal = controller.signal;</span></span>
 <span class="line"><span></span></span>
@@ -27,7 +27,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const x
 <span class="line"><span>  body: JSON.stringify(data),</span></span>
 <span class="line"><span>  signal: signal,</span></span>
 <span class="line"><span>  // keepalive: true, // 会在页面卸载后继续发送异步请求(请求大小限制大约64KB)</span></span>
-<span class="line"><span>  mode: &#39;cors&#39;, </span></span>
+<span class="line"><span>  mode: &#39;cors&#39;, // 发送带有CORS头部的请求</span></span>
 <span class="line"><span>  credentials: &#39;include&#39; // 携带凭证 cookies</span></span>
 <span class="line"><span>})</span></span>
 <span class="line"><span>.then(response =&gt; {</span></span>
