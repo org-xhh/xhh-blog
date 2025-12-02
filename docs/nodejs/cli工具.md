@@ -13,6 +13,8 @@
 ### 项目目录
 ![alt text](image-16.png)
 
+bin：把脚本变成命令行工具
+
 ### 入口文件 index.js
 
 关键代码：

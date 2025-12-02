@@ -80,3 +80,22 @@ https://test.com/photos/1
 
 ## 中间件 Middleware
 ![alt text](image-35.png)
+
+## SSR、SSG、ISR
+
+- SSR：服务端渲染，getServerSideProps
+
+- SSG：静态站点生成，getStaticPaths、getStaticProps
+
+- ISR：增量静态再生，SSG的增强版，getStaticPaths、getStaticProps、revalidate
+```
+export async function getStaticProps() {
+  const data = await fetch("https://api.test.cn/data")
+  return {
+    props: { 
+      data 
+    },
+    revalidate: 60 // 每60秒更新页面
+  }
+}
+```

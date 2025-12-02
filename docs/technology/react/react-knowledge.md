@@ -514,15 +514,17 @@ npm i sass -D
 
 ### CSS Module
 
-解决className可能重复的问题；
-create-react-app 内置了对 CSS Module 的支持。
+解决className可能重复的问题
 
 ‌1.更改文件名 ‌
 
-将 CSS 文件名从 styles.css 更改为 styles.module.css
+styles.module.scss
 ```
 .color-yellow {
   color: #FFF766;
+  .sub-style {
+    font-size: 12px;
+  }
 }
 
 // 在CSS Module中导出变量
@@ -536,13 +538,15 @@ create-react-app 内置了对 CSS Module 的支持。
 在组件文件中，使用 ES6 模块语法引入样式文件
 
 ```
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 ```
 
 ‌3.使用样式 ‌
 
 ```
 <div className={styles['color-yellow']}>
+  <span className={`${styles['sub-style']} flex`}>111</span>
+</div>
 <span style={{ color: styles.primaryColor }}>222</span>
 ```
 

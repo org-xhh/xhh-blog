@@ -30,6 +30,14 @@ npm install uglify-js
 uglifyjs utils.js -c -m -o utils-uglify.js
 ```
 
+### 发布的文件
+- files
+
+package.json 设置 files，可以把需要发布的文件写进去
+- .npmignore
+
+排除不想发布上去的文件（.npmignore文件不会被发布到npm）
+
 ### 登录 <font color=red>npm login</font>
 会提示输入用户名，密码，邮箱和邮箱一次性验证码
 
@@ -37,9 +45,11 @@ uglifyjs utils.js -c -m -o utils-uglify.js
 
 ### 如何发布作用域包?
 1.创建组织
+
 ![alt text](image-10.png)
 
 2.为组织取一个作用域名
+
 ![alt text](image-11.png)
 比如取名:  web-xhh
 

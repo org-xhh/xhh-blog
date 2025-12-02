@@ -63,17 +63,15 @@ npm v7 会自动安装 peerDependencies 里面的模块。
 
 ## dependencies
 
-运行时的依赖。发布后，即生产环境下还需要用的模块（生产依赖）
+运行时的依赖。发布后，即生产环境下需要用的模块（生产依赖）
 
-默认情况下，npm install 和 yarn add 会将包的依赖信息添加到dependencies中。
-
-npm install --production 指令，只会安装dependencies 目录下的依赖；
+npm install --production 指令，只会安装 dependencies 目录下的依赖；
 
 引入npm发布的包时，包中有生产依赖dependencies和开发依赖devDependencies时只会下载dependencies中的依赖。
 
 ## devDependencies
 
-开发时的依赖。里面的模块是开发时用的，生产环境(npm run build)不会被打入包内，比如webpack。
+开发时的依赖。
 
 ## peerDependencies
 

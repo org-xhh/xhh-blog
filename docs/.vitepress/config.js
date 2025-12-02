@@ -37,6 +37,7 @@ export default {
           { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react-document" },
+          { text: "微前端", link: "/technology/microApp/微前端" },
           { text: "React Native", link: "/technology/react-native/react-native使用" },
           { text: "server", link: "/technology/server/项目打包上传" }
         ]
@@ -44,7 +45,7 @@ export default {
       {
         text: '包管理工具',
         items: [
-          { text: "文档", link: "/nodejs/文档" },
+          { text: "文档及组件库", link: "/nodejs/文档" },
           { text: "node版本管理", link: "/nodejs/node版本管理" },
           { text: "npm常用命令", link: "/nodejs/npm常用命令" },
           { text: "项目统一版本", link: "/nodejs/项目统一版本" },
@@ -55,8 +56,7 @@ export default {
           { text: "ESM和CJS", link: "/nodejs/模块化方案" },
           { text: "npm link", link: "/nodejs/npm link" },
           { text: "cli工具", link: "/nodejs/cli工具" },
-          { text: "Babel", link: "/nodejs/babel/babel" },
-          { text: "组件库", link: "/nodejs/组件库" }
+          { text: "Babel", link: "/nodejs/babel/babel" }
         ]
       },
       {

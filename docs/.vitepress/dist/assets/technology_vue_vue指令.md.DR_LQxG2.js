@@ -14,6 +14,7 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>  // Vue.$forceUpdata() // 慎用，虽然也能解决输入中文后双向绑定失效问题</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span>Vue.directive(&#39;integer0number&#39;, {</span></span>
+<span class="line"><span>  // 在初始阶段一次性配置</span></span>
 <span class="line"><span>  bind(el, binding, vnode) {</span></span>
 <span class="line"><span>    let inputEl =</span></span>
 <span class="line"><span>      (el.getElementsByClassName(&#39;el-input__inner&#39;) &amp;&amp;</span></span>
@@ -81,6 +82,7 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>    )</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>})</span></span></code></pre></div><h3 id="输入金额显示千分位" tabindex="-1">输入金额显示千分位 <a class="header-anchor" href="#输入金额显示千分位" aria-label="Permalink to &quot;输入金额显示千分位&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Vue.directive(&#39;inputThousands&#39;, {</span></span>
+<span class="line"><span>  // 当元素绑定到父节点</span></span>
 <span class="line"><span>  inserted(el, binding) {</span></span>
 <span class="line"><span>    const input = el.querySelector(&#39;input&#39;) || el</span></span>
 <span class="line"><span>    input.addEventListener(&#39;input&#39;, formatThousand)</span></span>

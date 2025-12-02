@@ -21,6 +21,7 @@ function integer0NumberFn(el) {
   // Vue.$forceUpdata() // 慎用，虽然也能解决输入中文后双向绑定失效问题
 }
 Vue.directive('integer0number', {
+  // 在初始阶段一次性配置
   bind(el, binding, vnode) {
     let inputEl =
       (el.getElementsByClassName('el-input__inner') &&
@@ -98,6 +99,7 @@ Vue.directive('twodecimal', {
 ### 输入金额显示千分位
 ```
 Vue.directive('inputThousands', {
+  // 当元素绑定到父节点
   inserted(el, binding) {
     const input = el.querySelector('input') || el
     input.addEventListener('input', formatThousand)
