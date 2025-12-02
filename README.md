@@ -15,6 +15,7 @@
 - [配置全局使用less变量](https://org-xhh.github.io/xhh-blog/technology/packaging-tool/%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E4%BD%BF%E7%94%A8less%E5%8F%98%E9%87%8F.html)
 - [微信小程序动态主题设置](https://org-xhh.github.io/xhh-blog/technology/miniprogram/%E5%8A%A8%E6%80%81%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE.html)
 - [Nuxt](https://org-xhh.github.io/xhh-blog/technology/nuxt/nuxt.html)
+- [React](https://org-xhh.github.io/xhh-blog/technology/react/react-knowledge.html)
 - ...
 
 ### node、npm 相关
