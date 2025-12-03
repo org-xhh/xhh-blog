@@ -262,7 +262,7 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>}&gt;()</span></span></code></pre></div><h2 id="router" tabindex="-1">Router <a class="header-anchor" href="#router" aria-label="Permalink to &quot;Router&quot;">​</a></h2><p>创建路由：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createRouter, createWebHistory } from &#39;vue-router&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const router = createRouter({</span></span>
-<span class="line"><span>  history: createWebHistory(import.meta.env.BASE_URL),</span></span>
+<span class="line"><span>  history: createWebHistory(import.meta.env.BASE_URL), // vite.config.js 里的 base 设置</span></span>
 <span class="line"><span>  routes: [</span></span>
 <span class="line"><span>    {</span></span>
 <span class="line"><span>      path: &#39;/login&#39;,</span></span>
@@ -622,7 +622,7 @@ import{_ as p,D as e,c as l,j as t,a as s,I as i,w as c,a3 as a,o}from"./chunks/
 <span class="line"><span>  width: 400px;</span></span>
 <span class="line"><span>  height: 400px;</span></span>
 <span class="line"><span>  filter: saturate(200%);</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>当父元素（如 body 或 div）开启 filter 效果时，CSS 会为该元素创建一个新的包含块。此时，使用 position: fixed 样式的元素的定位基准会从浏览器视窗（viewport）切换到该父元素，即子组件 fixed 会相对于父元素进行定位。</p><p>子组件 Modal：</p><p>为了使该组件还是相对于浏览器定位，需要使用 Teleport 组件。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>当父元素（如 body 或 div）开启 filter 效果时，CSS 会为该元素创建一个新的包含块。此时，使用 position: fixed 样式的元素的定位基准会从浏览器视窗（viewport）切换到该父元素，即子组件 fixed 会相对于父元素进行定位。</p><p>子组件 Modal：</p><p>为了使该组件还是相对于浏览器定位，需要使用内置组件 Teleport。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
 <span class="line"><span>  &lt;button @click=&quot;isShow = true&quot;&gt;展示弹框&lt;/button&gt;</span></span>
 <span class="line"><span>  &lt;Teleport to=&quot;body&quot;&gt;</span></span>
 <span class="line"><span>    &lt;div v-if=&quot;isShow&quot; class=&quot;modal&quot;&gt;</span></span>
