@@ -434,7 +434,7 @@ const emit = defineEmits<{
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL), // vite.config.js 里的 base 设置
   routes: [
     {
       path: '/login',
@@ -1050,7 +1050,7 @@ const { msg } = useMsgRef('Hello', 1000)
 
 子组件 Modal：
 
-为了使该组件还是相对于浏览器定位，需要使用 Teleport 组件。
+为了使该组件还是相对于浏览器定位，需要使用内置组件 Teleport。
 
 ```
 <template>

@@ -28,11 +28,15 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    element: &lt;LayoutPage /&gt;,</span></span>
 <span class="line"><span>    children: [</span></span>
 <span class="line"><span>      {</span></span>
-<span class="line"><span>        path: &#39;vue-project/?*&#39;, // 通配符匹配 /vue-project、 /vue-project/goodsDetail</span></span>
+<span class="line"><span>        index: true, // 默认打开</span></span>
+<span class="line"><span>        element: &lt;Home /&gt;</span></span>
+<span class="line"><span>      },</span></span>
+<span class="line"><span>      {</span></span>
+<span class="line"><span>        path: &#39;vue-project/?/*&#39;, // 通配符匹配 /vue-project、 /vue-project/goodsDetail</span></span>
 <span class="line"><span>        element: &lt;EmptyPage /&gt;</span></span>
 <span class="line"><span>      },</span></span>
 <span class="line"><span>      {</span></span>
-<span class="line"><span>        path: &#39;react-project/?*&#39;,</span></span>
+<span class="line"><span>        path: &#39;react-project/?/*&#39;,</span></span>
 <span class="line"><span>        element: &lt;EmptyPage /&gt;</span></span>
 <span class="line"><span>      }</span></span>
 <span class="line"><span>    ]</span></span>
@@ -90,8 +94,7 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    element: &lt;LayoutPage /&gt;,</span></span>
 <span class="line"><span>    children: [</span></span>
 <span class="line"><span>      {</span></span>
-<span class="line"><span>        index: true, // 默认打开</span></span>
-<span class="line"><span>        // path: &#39;home&#39;,</span></span>
+<span class="line"><span>        index: true,</span></span>
 <span class="line"><span>        element: &lt;Home /&gt;</span></span>
 <span class="line"><span>      },</span></span>
 <span class="line"><span>      {</span></span>
@@ -165,7 +168,10 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  unmount() {</span></span>
 <span class="line"><span>    root.unmount()</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h3 id="启动应用" tabindex="-1">启动应用 <a class="header-anchor" href="#启动应用" aria-label="Permalink to &quot;启动应用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>})</span></span></code></pre></div><h3 id="子应用跳到其他应用" tabindex="-1">子应用跳到其他应用 <a class="header-anchor" href="#子应用跳到其他应用" aria-label="Permalink to &quot;子应用跳到其他应用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 跳到其他子应用</span></span>
+<span class="line"><span>window.history.pushState({}, &#39;&#39;, &#39;/react-project/article/list&#39;)</span></span>
+<span class="line"><span>// 跳到主应用</span></span>
+<span class="line"><span>window.history.pushState({}, &#39;&#39;, &#39;/&#39;);</span></span></code></pre></div><h3 id="启动应用" tabindex="-1">启动应用 <a class="header-anchor" href="#启动应用" aria-label="Permalink to &quot;启动应用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
 <span class="line"><span>  &quot;name&quot;: &quot;xhh-qiankun-project&quot;,</span></span>
 <span class="line"><span>  &quot;version&quot;: &quot;1.0.0&quot;,</span></span>
 <span class="line"><span>  &quot;private&quot;: true,</span></span>
@@ -230,4 +236,4 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>})</span></span></code></pre></div><p>监听全局状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>actions.onGlobalStateChange((state, prev) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;全局状态改变：&#39;, state, prev)</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',44),t=[i];function c(o,r,u,d,h,g){return a(),s("div",null,t)}const b=n(l,[["render",c]]);export{m as __pageData,b as default};
+<span class="line"><span>})</span></span></code></pre></div><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',46),t=[i];function c(o,r,u,d,h,g){return a(),s("div",null,t)}const b=n(l,[["render",c]]);export{m as __pageData,b as default};
