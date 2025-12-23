@@ -1,4 +1,4 @@
-import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e="/xhh-blog/assets/image.BLmP7i3R.png",m=JSON.parse('{"title":"微前端qiankun 使用","description":"","frontmatter":{},"headers":[],"relativePath":"technology/microApp/微前端.md","filePath":"technology/microApp/微前端.md"}'),l={name:"technology/microApp/微前端.md"},i=p(`<h1 id="微前端qiankun-使用" tabindex="-1">微前端qiankun 使用 <a class="header-anchor" href="#微前端qiankun-使用" aria-label="Permalink to &quot;微前端qiankun 使用&quot;">​</a></h1><p>多框架集成、子应用并行运行、跨应用通信</p><h3 id="主应用注册微应用并启动" tabindex="-1">主应用注册微应用并启动 <a class="header-anchor" href="#主应用注册微应用并启动" aria-label="Permalink to &quot;主应用注册微应用并启动&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i qiankun -S</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { registerMicroApps, start } from &#39;qiankun&#39;</span></span>
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e="/xhh-blog/assets/image.BLmP7i3R.png",v=JSON.parse('{"title":"微前端qiankun 使用","description":"","frontmatter":{},"headers":[],"relativePath":"technology/microApp/微前端.md","filePath":"technology/microApp/微前端.md"}'),l={name:"technology/microApp/微前端.md"},i=p(`<h1 id="微前端qiankun-使用" tabindex="-1">微前端qiankun 使用 <a class="header-anchor" href="#微前端qiankun-使用" aria-label="Permalink to &quot;微前端qiankun 使用&quot;">​</a></h1><p>多框架集成、子应用并行运行、跨应用通信</p><h3 id="主应用注册微应用并启动" tabindex="-1">主应用注册微应用并启动 <a class="header-anchor" href="#主应用注册微应用并启动" aria-label="Permalink to &quot;主应用注册微应用并启动&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i qiankun -S</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { registerMicroApps, start } from &#39;qiankun&#39;</span></span>
 <span class="line"><span>import type { MicroAppStateActions } from &#39;qiankun&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>interface SharedProps {</span></span>
@@ -40,11 +40,13 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>})</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>start({</span></span>
-<span class="line"><span>  // prefetch: true, // 开启预加载</span></span>
-<span class="line"><span>  // prefetch: &#39;all&#39;,</span></span>
-<span class="line"><span>  // prefetch: [&#39;vue3-project&#39;],</span></span>
+<span class="line"><span>  // prefetch: true, // 开启预加载，在浏览器空闲时，预先加载其他子应用的资源</span></span>
+<span class="line"><span>  // prefetch: &#39;all&#39;, // 预加载所有子应用</span></span>
+<span class="line"><span>  // prefetch: [&#39;vue3-project&#39;, &#39;umi-project&#39;], // 只预加载指定的应用</span></span>
+<span class="line"><span>  // prefetch: (apps) =&gt; apps.filter(app =&gt; app.name !== &#39;test-app&#39;),</span></span>
 <span class="line"><span>  sandbox: {</span></span>
-<span class="line"><span>    experimentalStyleIsolation: true // 样式隔离</span></span>
+<span class="line"><span>    // strictStyleIsolation: false,  // CSS 严格隔离，每个子应用被包裹在 Shadow DOM 中，样式完全隔离</span></span>
+<span class="line"><span>    experimentalStyleIsolation: true // CSS 实验性隔离，Scoped CSS，qiankun 会给子应用的所有样式添加特殊前缀</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>})</span></span></code></pre></div><h3 id="主应用设置跳转子应用的入口" tabindex="-1">主应用设置跳转子应用的入口 <a class="header-anchor" href="#主应用设置跳转子应用的入口" aria-label="Permalink to &quot;主应用设置跳转子应用的入口&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const routes = createBrowserRouter([</span></span>
 <span class="line"><span>  {</span></span>
@@ -85,7 +87,9 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    port: 8101,</span></span>
 <span class="line"><span>    cors: true,</span></span>
 <span class="line"><span>    origin: &quot;//localhost:8101&quot;, // 不加这个静态资源404</span></span>
-<span class="line"><span>    headers: { &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39; }</span></span>
+<span class="line"><span>    headers: { </span></span>
+<span class="line"><span>      &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39; </span></span>
+<span class="line"><span>    }</span></span>
 <span class="line"><span>  },</span></span>
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>})</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>export default defineConfig({</span></span>
@@ -282,7 +286,7 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>}</span></span></code></pre></div><h3 id="vue2-webpack3-子应用配置" tabindex="-1">vue2+webpack3 子应用配置 <a class="header-anchor" href="#vue2-webpack3-子应用配置" aria-label="Permalink to &quot;vue2+webpack3 子应用配置&quot;">​</a></h3><p>设置端口号：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>devServer: {</span></span>
 <span class="line"><span>  port: 8105,</span></span>
 <span class="line"><span>  headers: {</span></span>
-<span class="line"><span>    &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39;</span></span>
+<span class="line"><span>    &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39; // 子应用允许跨域</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>路由前缀：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>export default new Router({</span></span>
 <span class="line"><span>  base: window.__POWERED_BY_QIANKUN__ ? &#39;/vue2-project&#39; : &#39;/&#39;,</span></span>
@@ -294,11 +298,13 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    library: &#39;vue2-project&#39;,</span></span>
 <span class="line"><span>    libraryTarget: &#39;umd&#39;,</span></span>
 <span class="line"><span>    jsonpFunction: \`webpackJsonp_vue2\`,</span></span>
+<span class="line"><span>    publicPath: &#39;http://localhost:8105/&#39; // 设置这个就不需要引入 public-path.js 了</span></span>
 <span class="line"><span>    ...</span></span>
 <span class="line"><span>  },  </span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>public-path.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>if (window.__POWERED_BY_QIANKUN__) {</span></span>
 <span class="line"><span>  // eslint-disable-next-line camelcase, no-undef</span></span>
 <span class="line"><span>  __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__</span></span>
+<span class="line"><span>  // __webpack_public_path__ 值是：http://localhost:8105/</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>添加生命周期：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>...</span></span>
 <span class="line"><span>import &#39;./public-path.js&#39;</span></span>
 <span class="line"><span></span></span>
@@ -331,6 +337,63 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  console.log(&#39;vue2 --- unmount&#39;)</span></span>
 <span class="line"><span>  instance.$destroy()</span></span>
 <span class="line"><span>  instance = null</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="dva-子应用配置" tabindex="-1">dva 子应用配置 <a class="header-anchor" href="#dva-子应用配置" aria-label="Permalink to &quot;dva 子应用配置&quot;">​</a></h3><p>设置端口号：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>scripts&quot;: {</span></span>
+<span class="line"><span>  &quot;dev&quot;: &quot;cross-env BROWSER=none PORT=8107 SOCKET_SERVER=none roadhog server&quot;,</span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span>},</span></span></code></pre></div><p>路由前缀：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import createHistory from &#39;history/createBrowserHistory&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>function render() {</span></span>
+<span class="line"><span>  app = dva({</span></span>
+<span class="line"><span>    history: createHistory({ // history路由模式</span></span>
+<span class="line"><span>      basename: window.__POWERED_BY_QIANKUN__ ? &#39;/dva-project/&#39; : &#39;/&#39;</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>新建 webpack.config.js：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>module.exports = (webpackConfig, env) =&gt; {</span></span>
+<span class="line"><span>  webpackConfig.output.library = &quot;dva-project&quot;;</span></span>
+<span class="line"><span>  webpackConfig.output.libraryTarget = &quot;umd&quot;;</span></span>
+<span class="line"><span>  webpackConfig.output.jsonpFunction = &quot;webpackJsonp_dva&quot;;</span></span>
+<span class="line"><span>  return webpackConfig</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>public-path.js:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>if (window.__POWERED_BY_QIANKUN__) {</span></span>
+<span class="line"><span>  // eslint-disable-next-line camelcase, no-undef</span></span>
+<span class="line"><span>  __webpack_public_path__ = window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>添加生命周期：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import dva from &#39;dva&#39;;</span></span>
+<span class="line"><span>import createHistory from &#39;history/createBrowserHistory&#39;</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>import &#39;./public-path.js&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>let app = null</span></span>
+<span class="line"><span>function render() {</span></span>
+<span class="line"><span>  app = dva({</span></span>
+<span class="line"><span>    history: createHistory({</span></span>
+<span class="line"><span>      basename: window.__POWERED_BY_QIANKUN__ ? &#39;/dva-project/&#39; : &#39;/&#39;</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>  });</span></span>
+<span class="line"><span>  window.dvaApp = app</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  app.start(&#39;#rootdva&#39;)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if (!window.__POWERED_BY_QIANKUN__) {</span></span>
+<span class="line"><span>  render({})</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function bootstrap() {</span></span>
+<span class="line"><span>  console.log(&#39;dva--- bootstraped&#39;)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function mount(props) {</span></span>
+<span class="line"><span>  console.log(&#39;dva--- mount&#39;)</span></span>
+<span class="line"><span>  render(props)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export async function unmount() {</span></span>
+<span class="line"><span>  console.log(&#39;dva--- unmount&#39;)</span></span>
+<span class="line"><span>  app = null</span></span>
+<span class="line"><span>  window.dvaApp = null</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h3 id="子应用跳到其他应用" tabindex="-1">子应用跳到其他应用 <a class="header-anchor" href="#子应用跳到其他应用" aria-label="Permalink to &quot;子应用跳到其他应用&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 跳到其他子应用</span></span>
 <span class="line"><span>window.history.pushState({}, &#39;&#39;, &#39;/react18-project/article/list&#39;)</span></span>
 <span class="line"><span>// 跳到主应用</span></span>
@@ -448,4 +511,4 @@ import{_ as n,c as s,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>})</span></span></code></pre></div><p>监听全局状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>actions.onGlobalStateChange((state, prev) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;全局状态改变：&#39;, state, prev)</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',87),t=[i];function c(o,r,u,d,h,g){return a(),s("div",null,t)}const v=n(l,[["render",c]]);export{m as __pageData,v as default};
+<span class="line"><span>})</span></span></code></pre></div><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',98),t=[i];function c(o,r,u,d,h,g){return a(),n("div",null,t)}const m=s(l,[["render",c]]);export{v as __pageData,m as default};
