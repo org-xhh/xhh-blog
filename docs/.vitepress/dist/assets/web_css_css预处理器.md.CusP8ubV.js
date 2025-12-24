@@ -37,7 +37,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const S
 <span class="line"><span>      color: #666;</span></span>
 <span class="line"><span>    }</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="stylus" tabindex="-1">Stylus <a class="header-anchor" href="#stylus" aria-label="Permalink to &quot;Stylus&quot;">​</a></h2><p>Stylus的语法非常宽松，去除了许多不必要的符号，如分号和括号。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 简洁的变量定义和使用</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="stylus" tabindex="-1">Stylus <a class="header-anchor" href="#stylus" aria-label="Permalink to &quot;Stylus&quot;">​</a></h2><p>Stylus后缀名是.styl，语法宽松，去除了许多不必要的符号，如分号和括号。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 简洁的变量定义和使用</span></span>
 <span class="line"><span>primaryColor = #0055fe</span></span>
 <span class="line"><span>baseFontSize = 16px</span></span>
 <span class="line"><span></span></span>

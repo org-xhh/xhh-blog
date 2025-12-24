@@ -605,7 +605,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>    backgroundColor: props.bgColor</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>  function clickFn() {</span></span>
-<span class="line"><span>    // 子传父</span></span>
+<span class="line"><span>    // 子组件向父组件传递数据：回调函数</span></span>
 <span class="line"><span>    props.onMessageChange(&#39;来自子组件&#39;)</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span></span></span>
@@ -642,7 +642,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>// 修改数组</span></span>
 <span class="line"><span>setList(list.concat(&#39;z&#39;))</span></span>
 <span class="line"><span>setList([...list, &#39;z&#39;]) </span></span>
-<span class="line"><span>// filter</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h3 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h3><p>在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。</p><p>副作用函数：指的是那些在执行时会改变外部状态或依赖外部可变状态的函数。</p>`,62),y=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>// filter</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h3 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h3><p>在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。</p><p>副作用函数：指的是那些不直接属于“渲染 UI”的操作，在执行时会改变外部状态或依赖外部可变状态的函数。</p>`,62),C=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  const connection = createConnection(serverUrl, roomId);</span></span>
 <span class="line"><span>  connection.connect();</span></span>
 <span class="line"><span>  return () =&gt; {</span></span>
@@ -688,7 +688,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;!-- 关联 ref 到 div 元素 --&gt;</span></span>
-<span class="line"><span>return &lt;div ref={divRef} onClick={clickFn}&lt;/div&gt;</span></span></code></pre></div><h3 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h3><p>跨层级组件通信。</p><p>ThemeContext.js</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createContext } from &#39;react&#39;</span></span>
+<span class="line"><span>return &lt;div ref={divRef} onClick={clickFn}&lt;/div&gt;</span></span></code></pre></div><h3 id="usecontext" tabindex="-1">useContext <a class="header-anchor" href="#usecontext" aria-label="Permalink to &quot;useContext&quot;">​</a></h3><p>跨层级组件通信。Context的变动会引起所有消费者组件重新渲染，避免过度使用Context。</p><p>ThemeContext.js</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { createContext } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 默认值 &#39;light&#39;</span></span>
 <span class="line"><span>export const ThemeContext = createContext(&#39;light&#39;)</span></span></code></pre></div><p>在顶层用 Provider 提供状态:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { useState } from &#39;react&#39;</span></span>
@@ -803,19 +803,11 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span></span></span>
 <span class="line"><span>const handleChange = useCallback((value) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;value--&#39;, value)</span></span>
-<span class="line"><span>}, []) // 依赖项为空，函数引用稳定</span></span>
+<span class="line"><span>}, []) // 依赖项为空，仅创建一次</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>&lt;Child onChange={handleChange} /&gt;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// 子组件必须进行memo优化，否则useCallback没有任何性能提升。</span></span></code></pre></div><p>和 useEffect 结合使用：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 初始化和userId更新时才请求异步</span></span>
-<span class="line"><span>let userId = props.userId</span></span>
-<span class="line"><span>const fnn = useCallback(() =&gt;{</span></span>
-<span class="line"><span>  console.log(&#39;发起异步请求--&#39;, userId)</span></span>
-<span class="line"><span>}, [userId])</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>useEffect(() =&gt; {</span></span>
-<span class="line"><span>  fnn()</span></span>
-<span class="line"><span>}, [fnn])</span></span></code></pre></div><h4 id="forwardref-高阶组件" tabindex="-1">forwardRef 高阶组件 <a class="header-anchor" href="#forwardref-高阶组件" aria-label="Permalink to &quot;forwardRef 高阶组件&quot;">​</a></h4><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
+<span class="line"><span>// 子组件必须进行memo优化，否则useCallback没有任何性能提升。</span></span></code></pre></div><h4 id="forwardref-高阶组件" tabindex="-1">forwardRef 高阶组件 <a class="header-anchor" href="#forwardref-高阶组件" aria-label="Permalink to &quot;forwardRef 高阶组件&quot;">​</a></h4><p>父组件通过ref属性获取子组件实例，并调用子组件实例的方法。</p><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { forwardRef } from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const Input = forwardRef((props, ref) =&gt; {</span></span>
 <span class="line"><span>  return &lt;input type=&quot;text&quot; ref={ref} /&gt;</span></span>
@@ -1084,19 +1076,19 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>    &quot;src&quot;</span></span>
 <span class="line"><span>  ]</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>声明文件 react-app-env.d.ts：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>declare module &#39;*.svg&#39; {</span></span>
-<span class="line"><span>  import * as React from &#39;react&#39;;</span></span>
+<span class="line"><span>  import * as React from &#39;react&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>  export const ReactComponent: React.FunctionComponent&lt;React.SVGProps&lt;</span></span>
-<span class="line"><span>    SVGSVGElement</span></span>
-<span class="line"><span>  &gt; &amp; { title?: string }&gt;;</span></span>
+<span class="line"><span>  export const ReactComponent: React.FunctionComponent&lt;</span></span>
+<span class="line"><span>    React.SVGProps&lt;SVGSVGElement&gt; &amp; { title?: string }</span></span>
+<span class="line"><span>  &gt;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>  const src: string;</span></span>
-<span class="line"><span>  export default src;</span></span>
+<span class="line"><span>  const src: string</span></span>
+<span class="line"><span>  export default src</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>declare module &#39;*.module.scss&#39; {</span></span>
-<span class="line"><span>  const classes: { readonly [key: string]: string };</span></span>
-<span class="line"><span>  export default classes;</span></span>
+<span class="line"><span>  const classes: { readonly [key: string]: string }</span></span>
+<span class="line"><span>  export default classes</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>将文件重命名为 .tsx 或 .ts 文件。</p><h3 id="props与ts" tabindex="-1">Props与TS <a class="header-anchor" href="#props与ts" aria-label="Permalink to &quot;Props与TS&quot;">​</a></h3><p>子组件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type Props = {</span></span>
 <span class="line"><span>  className: string,</span></span>
 <span class="line"><span>  title?: string,</span></span>
@@ -1134,4 +1126,4 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  return () =&gt; {</span></span>
 <span class="line"><span>    clearInterval(timerRef.current)</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}, [])</span></span></code></pre></div>`,132);function C(q,P,A,R,w,S){const n=i("font");return o(),c("div",null,[k,a("ul",null,[a("li",null,[s("定义一个 "),p(n,{color:"red"},{default:e(()=>[s("reducer 函数")]),_:1})]),a("li",null,[s("使用 "),p(n,{color:"red"},{default:e(()=>[s("createStore")]),_:1}),s(" 方法传入 reducer 函数 生成一个 store 实例对象")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("subscribe 方法")]),_:1}),s(" 订阅数据的变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("dispatch方法提交action对象")]),_:1}),s(" 触发数据变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("getState方法")]),_:1}),s(" 获取最新的状态数据更新到视图中")])]),x,p(n,{size:"2.5"},{default:e(()=>[s("注：react18 开始，useEffect 在开发环境下会执行两次(<React.StrictMode>)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),y])}const E=t(f,[["render",C]]);export{M as __pageData,E as default};
+<span class="line"><span>}, [])</span></span></code></pre></div>`,130);function y(q,P,A,R,w,S){const n=i("font");return o(),c("div",null,[k,a("ul",null,[a("li",null,[s("定义一个 "),p(n,{color:"red"},{default:e(()=>[s("reducer 函数")]),_:1})]),a("li",null,[s("使用 "),p(n,{color:"red"},{default:e(()=>[s("createStore")]),_:1}),s(" 方法传入 reducer 函数 生成一个 store 实例对象")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("subscribe 方法")]),_:1}),s(" 订阅数据的变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("dispatch方法提交action对象")]),_:1}),s(" 触发数据变化")]),a("li",null,[s("使用 store 实例的 "),p(n,{color:"red"},{default:e(()=>[s("getState方法")]),_:1}),s(" 获取最新的状态数据更新到视图中")])]),x,p(n,{size:"2.5"},{default:e(()=>[s("注：react18 开始，useEffect 在开发环境下会执行两次(<React.StrictMode>)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。")]),_:1}),C])}const z=t(f,[["render",y]]);export{M as __pageData,z as default};

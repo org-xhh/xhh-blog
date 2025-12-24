@@ -1097,7 +1097,7 @@ function Button(props) {
     backgroundColor: props.bgColor
   }
   function clickFn() {
-    // 子传父
+    // 子组件向父组件传递数据：回调函数
     props.onMessageChange('来自子组件')
   }
 
@@ -1170,7 +1170,7 @@ setList([...list, 'z'])
 
 在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。
 
-副作用函数：指的是那些在执行时会改变外部状态或依赖外部可变状态的函数。
+副作用函数：指的是那些不直接属于“渲染 UI”的操作，在执行时会改变外部状态或依赖外部可变状态的函数。
 
 <font size=2.5>注：react18 开始，useEffect 在开发环境下会执行两次(&lt;React.StrictMode&gt;)，模拟组件创建、销毁、再创建的完整流程，及早暴露问题；生产环境下只执行一次。</font>
 
@@ -1249,7 +1249,7 @@ return <div ref={divRef} onClick={clickFn}</div>
 
 ### useContext
 
-跨层级组件通信。
+跨层级组件通信。Context的变动会引起所有消费者组件重新渲染，避免过度使用Context。
 
 ThemeContext.js
 ```
@@ -1429,23 +1429,11 @@ import { useCallback } from "react"
 
 const handleChange = useCallback((value) => {
   console.log('value--', value)
-}, []) // 依赖项为空，函数引用稳定
+}, []) // 依赖项为空，仅创建一次
 
 <Child onChange={handleChange} />
 
 // 子组件必须进行memo优化，否则useCallback没有任何性能提升。
-```
-和 useEffect 结合使用：
-```
-// 初始化和userId更新时才请求异步
-let userId = props.userId
-const fnn = useCallback(() =>{
-  console.log('发起异步请求--', userId)
-}, [userId])
-
-useEffect(() => {
-  fnn()
-}, [fnn])
 ```
 
 
@@ -1755,7 +1743,6 @@ react-quill
 Create React App 搭建的项目，npm run start 指向 development，npm run build 指向 production，通过 process.env.NODE_ENV 获取。
 
 #### 第一种方式：使用 cross-env
-
 ```
 // 安装 cross-env
 npm i cross-env -D
@@ -1904,19 +1891,19 @@ tsconfig.json:
 
 ```
 declare module '*.svg' {
-  import * as React from 'react';
+  import * as React from 'react'
 
-  export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
-  > & { title?: string }>;
+  export const ReactComponent: React.FunctionComponent<
+    React.SVGProps<SVGSVGElement> & { title?: string }
+  >
 
-  const src: string;
-  export default src;
+  const src: string
+  export default src
 }
 
 declare module '*.module.scss' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
+  const classes: { readonly [key: string]: string }
+  export default classes
 }
 ```
 

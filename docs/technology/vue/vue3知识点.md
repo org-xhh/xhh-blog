@@ -1,6 +1,6 @@
 # vue3 部分知识点
 
-## toRefs, toRef
+## toRefs, toRef, unref
 
 ```
 let person = reactive({
@@ -26,6 +26,12 @@ console.log('name---', name) // ObjectRefImpl
 function changeName() {
   name.value += '~'
 }
+```
+```
+let name1 = unref(name)
+setTimeout(() => {
+  name1 = '该变量失去响应式'
+}, 2000)
 ```
 
 ## computed
@@ -552,18 +558,18 @@ router.replace({
 ## defineAsyncComponent
 仅在路由匹配或交互触发时加载组件，避免加载未使用的组件资源。
 ```
-// 懒加载路由组件：仅当访问 /about 时才加载 About.vue
-const About = defineAsyncComponent(() => import('../About.vue'))
+// show 为 true 时才加载 AboutComp
+<AboutComp v-if="show" />
+const AboutComp = defineAsyncComponent(() => import('../About.vue'))
 ```
 ```
-const MyComponent = defineAsyncComponent({
+const MyComponentComp = defineAsyncComponent({
   loader: () => import('./MyComponent.vue'),
   loadingComponent: LoadingComponent, // 加载中的组件
   errorComponent: ErrorComponent,     // 错误时的组件
-  delay: 200,                        // 延迟显示加载组件，单位为毫秒
-  timeout: 3000,                     // 超时时间，单位为毫秒
-  // 其他选项...
-});
+  delay: 200,                         // 延迟200毫秒显示loading组件
+  timeout: 3000,                      // 超时时间
+})
 ```
 
 
@@ -1067,25 +1073,31 @@ const { msg } = useMsgRef('Hello', 1000)
 ![alt text](image-13.png)
 
 ## Suspense
+具有异步功能的组件用 &lt;Suspense&gt; 包装。
 ```
-import { defineAsyncComponent } from 'vue'
-const AsyncComponent = defineAsyncComponent({
-  loader: () => import('./components/AsyncComponent.vue'),
-  onError: (error, retry, fail, attempts) => {
-    // 处理错误逻辑
-  },）
-  timeout: 3000 // 可选，超时时间（毫秒）
-})
+<template>
+  <div>{{ str }}</div>
+</template>
 
+<script setup>
+import { ref } from 'vue'
+await new Promise((resolve) => setTimeout(() => {
+  resolve()
+}, 2000))
+let str = ref('你好，异步组件')
+</script>
+```
+```
 <Suspense>
   <template #default>
      <AsyncComponent />
   </template>
   <template v-slot:fallback>
-    <h3>加载中...</h3>
+    <h3>Loading...</h3>
   </template>
 </Suspense>
 ```
+2s的Loading，后显示组件
 
 ## 全局 API 转移到应用对象
 

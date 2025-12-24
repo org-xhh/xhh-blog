@@ -33,7 +33,7 @@ export default {
         items: [
           { text: "Vue", link: "/technology/vue/vue文档" },
           { text: "构建打包工具", link: "/technology/packaging-tool/webpack" },
-          { text: "微信小程序", link: "/technology/miniprogram/微信小程序开发使用" },
+          { text: "微信小程序", link: "/technology/miniprogram/微信小程序使用手册" },
           { text: "uni-app", link: "/technology/uni-app/uni-app" },
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react-document" },
@@ -147,8 +147,8 @@ export default {
       "/technology/miniprogram/": {
         text: "微信小程序知识",
         items: [
-          { text: "微信小程序开发使用", link: "/technology/miniprogram/微信小程序开发使用" },
-          { text: "动态主题设置", link: "/technology/miniprogram/动态主题设置" },
+          { text: "微信小程序使用手册", link: "/technology/miniprogram/微信小程序使用手册" },
+          { text: "微信小程序知识", link: "/technology/miniprogram/微信小程序知识" },
           { text: "微信公众号", link: "/technology/miniprogram/微信公众号" }
         ],
       },

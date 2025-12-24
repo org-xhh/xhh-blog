@@ -47,7 +47,7 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const u
 <span class="line"><span>    position: absolute;</span></span>
 <span class="line"><span>    width: 100px;</span></span>
 <span class="line"><span>    height: 100px;</span></span>
-<span class="line"><span>    left: calc(50% - 50px); // 水平居中</span></span>
+<span class="line"><span>    left: calc(50% - 50px); // 水平居中（操作符-左右必须有空格）</span></span>
 <span class="line"><span>    top: calc(50% - 50px); // 垂直居中</span></span>
 <span class="line"><span>    background-color: green;</span></span>
 <span class="line"><span>  }</span></span>
