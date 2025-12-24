@@ -468,7 +468,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>&lt;CommonComp /&gt;</span></span></code></pre></div><h3 id="主子应用通信" tabindex="-1">主子应用通信 <a class="header-anchor" href="#主子应用通信" aria-label="Permalink to &quot;主子应用通信&quot;">​</a></h3><h4 id="主应用" tabindex="-1">主应用 <a class="header-anchor" href="#主应用" aria-label="Permalink to &quot;主应用&quot;">​</a></h4><p>initGlobalState设置全局状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { initGlobalState, MicroAppStateActions } from &#39;qiankun&#39;</span></span>
+<span class="line"><span>&lt;CommonComp /&gt;</span></span></code></pre></div><h3 id="主子应用通信" tabindex="-1">主子应用通信 <a class="header-anchor" href="#主子应用通信" aria-label="Permalink to &quot;主子应用通信&quot;">​</a></h3><hr><h4 id="_1-initglobalstate" tabindex="-1">1. initGlobalState <a class="header-anchor" href="#_1-initglobalstate" aria-label="Permalink to &quot;1. initGlobalState&quot;">​</a></h4><h5 id="主应用" tabindex="-1">主应用 <a class="header-anchor" href="#主应用" aria-label="Permalink to &quot;主应用&quot;">​</a></h5><p>initGlobalState设置全局状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { initGlobalState, MicroAppStateActions } from &#39;qiankun&#39;</span></span>
 <span class="line"><span>   </span></span>
 <span class="line"><span>const initialState = {}</span></span>
 <span class="line"><span>const actions: MicroAppStateActions = initGlobalState(initialState)</span></span>
@@ -496,7 +496,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    setTheme(&#39;dark&#39;)</span></span>
 <span class="line"><span>    actions.setGlobalState({ theme: &#39;dark&#39; })</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h4 id="子应用" tabindex="-1">子应用 <a class="header-anchor" href="#子应用" aria-label="Permalink to &quot;子应用&quot;">​</a></h4><p>先配置一个空的 actions 实例：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Actions {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h5 id="子应用" tabindex="-1">子应用 <a class="header-anchor" href="#子应用" aria-label="Permalink to &quot;子应用&quot;">​</a></h5><p>先配置一个空的 actions 实例：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Actions {</span></span>
 <span class="line"><span>  actions = { onGlobalStateChange: () =&gt; {}, setGlobalState: () =&gt; {} }</span></span>
 <span class="line"><span>  setActions(actions) { this.actions = actions }</span></span>
 <span class="line"><span>  onGlobalStateChange(...args) { return this.actions.onGlobalStateChange(...args) }</span></span>
@@ -508,7 +508,20 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    actions.setActions(props.actions)</span></span>
 <span class="line"><span>    render()</span></span>
 <span class="line"><span>  },</span></span>
+<span class="line"><span>  unmount(props) {</span></span>
+<span class="line"><span>    // 取消监听，避免内存泄露</span></span>
+<span class="line"><span>    props.actions.offGlobalStateChange()</span></span>
+<span class="line"><span>    app.unmount()</span></span>
+<span class="line"><span>  }</span></span>
 <span class="line"><span>  ...</span></span>
 <span class="line"><span>})</span></span></code></pre></div><p>监听全局状态：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>actions.onGlobalStateChange((state, prev) =&gt; {</span></span>
 <span class="line"><span>  console.log(&#39;全局状态改变：&#39;, state, prev)</span></span>
-<span class="line"><span>})</span></span></code></pre></div><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',98),t=[i];function c(o,r,u,d,h,g){return a(),n("div",null,t)}const m=s(l,[["render",c]]);export{v as __pageData,m as default};
+<span class="line"><span>}, true) // 第二个参数设为true, 初始化时立即触发一次</span></span></code></pre></div><hr><h4 id="_2-自定义事件通信" tabindex="-1">2. 自定义事件通信 <a class="header-anchor" href="#_2-自定义事件通信" aria-label="Permalink to &quot;2. 自定义事件通信&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 应用1 发送事件</span></span>
+<span class="line"><span>window.dispatchEvent(new CustomEvent(&#39;app-message&#39;, {</span></span>
+<span class="line"><span>  detail: { msg: &#39;message from App A&#39; }</span></span>
+<span class="line"><span>}))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 应用2 接收事件</span></span>
+<span class="line"><span>window.addEventListener(&#39;app-message&#39;, (e) =&gt; {</span></span>
+<span class="line"><span>  console.log(e.detail.msg)</span></span>
+<span class="line"><span>})</span></span></code></pre></div><hr><h4 id="_3-props" tabindex="-1">3. props <a class="header-anchor" href="#_3-props" aria-label="Permalink to &quot;3. props&quot;">​</a></h4><hr><h4 id="_4-storage" tabindex="-1">4. storage <a class="header-anchor" href="#_4-storage" aria-label="Permalink to &quot;4. storage&quot;">​</a></h4><h3 id="效果图" tabindex="-1">效果图 <a class="header-anchor" href="#效果图" aria-label="Permalink to &quot;效果图&quot;">​</a></h3><p><img src="`+e+'" alt="alt text"></p><hr><p>参考文档</p><p><a href="https://qiankun.umijs.org/zh/api#initglobalstatestate" target="_blank" rel="noreferrer">https://qiankun.umijs.org/zh/api#initglobalstatestate</a></p>',107),t=[i];function c(o,r,u,d,h,g){return a(),n("div",null,t)}const m=s(l,[["render",c]]);export{v as __pageData,m as default};
