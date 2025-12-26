@@ -30,6 +30,35 @@ esbuild 强力加持：依赖预构建，将非ESM依赖转换为ESM；将大型
 console.log(import.meta.env.VITE_SOME_KEY) 
 ```
 
+### 配置全局使用 less 变量
+vite 和 webpack 不同，不需要 less-loader，只需要安装 less 模块
+
+vite.config.js:
+```
+export default defineConfig(({ mode }) => ({
+    ...
+    css: {
+      preprocessorOptions: {
+        less: {
+         math: 'always', // 括号内使用数学计算
+         additionalData: `@import "@/assets/css/public.less";`
+        }
+      },
+      ...
+    }
+}))
+```
+
+### 加载图片
+```
+// import.meta.url 提供当前模块的基准 URL
+new URL(`./assets/${name}.png`, import.meta.url).href
+```
+```
+// 静态导入
+import staticImage from '@/assets/static.png'
+```
+
 ### 热更新
 
 Vite 内置了基于浏览器原生模块热更新的开发服务器，无需额外配置即可实现快速的热更新。

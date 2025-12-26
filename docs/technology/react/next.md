@@ -3,7 +3,7 @@
 | 模块             | 版本 |
 | ---------------- | ---- |
 | node             | 18+  |
-| next             | 14+  |
+| next             | 14  |
 | react            | 18+  |
 | react-dom        | 18+  |
 
@@ -81,7 +81,9 @@ https://test.com/photos/1
 ## 中间件 Middleware
 ![alt text](image-35.png)
 
-## SSR、SSG、ISR
+<!-- 
+## Next13
+### SSR、SSG、ISR
 
 - SSR：服务端渲染，getServerSideProps
 
@@ -98,4 +100,5 @@ export async function getStaticProps() {
     revalidate: 60 // 每60秒更新页面
   }
 }
-```
+``` 
+-->

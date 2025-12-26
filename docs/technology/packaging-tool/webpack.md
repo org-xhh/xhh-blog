@@ -27,6 +27,34 @@ process.env.BASE_URL
 process.env.VUE_APP_BASE_API
 ```
 
+### 配置全局使用 less 变量
+安装 less、less-loader 模块
+
+vue.config.js:
+```
+module.exports = {
+  css: {
+    loaderOptions: {
+      less: {
+        additionalData: `@import "@/public.less";`
+      }
+    }
+  }
+}
+```
+
+### 加载图片
+Webpack 使用自己的模块解析系统
+```
+// 动态 require
+const imageUrl = require('@/assets/img1.jpg')
+<img :src="imagePath" />
+```
+```
+// 静态导入
+import staticImage from '@/assets/static.png'
+```
+
 ### 热更新
 
 Webpack 的热更新通常需要借助 webpack-dev-server 等插件，在一些情况下配置起来比较复杂。
