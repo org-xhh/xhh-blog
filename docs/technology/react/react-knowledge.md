@@ -257,12 +257,9 @@ const router = createBrowserRouter([
     element: <ManageLayout />,
     children: [
       {
-        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)
-        // path: 'home',
-
-        path: '/',
-        // or
-        index: true, // 默认二级路由页面,打开/ 渲染出home
+        // path: '/',
+        // path: '',
+        index: true, // 默认二级路由页面，打开 / 渲染出 Home 页面
 
         element: <Home />
       },
@@ -507,7 +504,7 @@ return <div style={divStyle}>content</div>
 create-react-app 原生支持 sass module，只需要安装
 
 ```
-npm i sass -D
+npm i sass -S
 ```
 
 <!-- <font size=3 color=#ccc>要使用 less 的话，需要 npm run eject 暴露出 webpack 修改配置 或 使用其他工具。</font> -->

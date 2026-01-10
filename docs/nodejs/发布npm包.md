@@ -38,12 +38,7 @@ package.json 设置 files，可以把需要发布的文件写进去
 
 排除不想发布上去的文件（.npmignore文件不会被发布到npm）
 
-### 登录 <font color=red>npm login</font>
-会提示输入用户名，密码，邮箱和邮箱一次性验证码
-
-### 发布 <font color=red>npm publish</font>
-
-### 如何发布作用域包?
+### 设置作用域包
 1.创建组织
 
 ![alt text](image-10.png)
@@ -66,4 +61,22 @@ npm publish --access public
 
 发布成功后就可以在该组织下看到已发布的Packages
 
+### 身份验证令牌
+
+1.登录npm => 头像 => Access Tokens => Generate New Token
+![alt text](image-19.png)
+
+2.项目新建 .npmrc 文件设置 token:
+```
+//registry.npmjs.org/:_authToken=
+
+```
+
+### 登录 <font color=red>npm login</font>
+会提示输入用户名，密码，邮箱和邮箱一次性验证码
+
+### 发布 <font color=red>npm publish</font>
+
+
+---
 https://www.npmjs.com/settings/web-xhh/packages

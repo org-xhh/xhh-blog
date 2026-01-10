@@ -129,12 +129,9 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>    element: &lt;ManageLayout /&gt;,</span></span>
 <span class="line"><span>    children: [</span></span>
 <span class="line"><span>      {</span></span>
-<span class="line"><span>        // 这样写打开/ 无法渲染出二级路由(跳转时 /home)</span></span>
-<span class="line"><span>        // path: &#39;home&#39;,</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>        path: &#39;/&#39;,</span></span>
-<span class="line"><span>        // or</span></span>
-<span class="line"><span>        index: true, // 默认二级路由页面,打开/ 渲染出home</span></span>
+<span class="line"><span>        // path: &#39;/&#39;,</span></span>
+<span class="line"><span>        // path: &#39;&#39;,</span></span>
+<span class="line"><span>        index: true, // 默认二级路由页面，打开 / 渲染出 Home 页面</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>        element: &lt;Home /&gt;</span></span>
 <span class="line"><span>      },</span></span>
@@ -261,7 +258,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span></span></span>
 <span class="line"><span>return &lt;div style={divStyle}&gt;content&lt;/div&gt;</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div style={{ cursor: &#39;pointer&#39;,marginTop: &#39;50px&#39; }}&gt;</span></span>
 <span class="line"><span>  内容</span></span>
-<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="使用-scss" tabindex="-1">使用 scss <a class="header-anchor" href="#使用-scss" aria-label="Permalink to &quot;使用 scss&quot;">​</a></h3><p>create-react-app 原生支持 sass module，只需要安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i sass -D</span></span></code></pre></div><h3 id="css-module" tabindex="-1">CSS Module <a class="header-anchor" href="#css-module" aria-label="Permalink to &quot;CSS Module&quot;">​</a></h3><p>解决className可能重复的问题</p><p>‌1.更改文件名 ‌</p><p>styles.module.scss</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.color-yellow {</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span></code></pre></div><h3 id="使用-scss" tabindex="-1">使用 scss <a class="header-anchor" href="#使用-scss" aria-label="Permalink to &quot;使用 scss&quot;">​</a></h3><p>create-react-app 原生支持 sass module，只需要安装</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i sass -S</span></span></code></pre></div><h3 id="css-module" tabindex="-1">CSS Module <a class="header-anchor" href="#css-module" aria-label="Permalink to &quot;CSS Module&quot;">​</a></h3><p>解决className可能重复的问题</p><p>‌1.更改文件名 ‌</p><p>styles.module.scss</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.color-yellow {</span></span>
 <span class="line"><span>  color: #FFF766;</span></span>
 <span class="line"><span>  .sub-style {</span></span>
 <span class="line"><span>    font-size: 12px;</span></span>

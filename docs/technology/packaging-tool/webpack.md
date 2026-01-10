@@ -18,7 +18,7 @@ Webpack 先打包再启动开发服务器。
 vue-cli-service build --mode release
 ```
 
-代码中访问：
+process.env 是 Node.js 的环境变量接口，代码中访问：
 ```
 process.env.NODE_ENV
 

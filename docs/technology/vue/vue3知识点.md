@@ -557,6 +557,19 @@ router.replace({
 
 ## defineAsyncComponent
 仅在路由匹配或交互触发时加载组件，避免加载未使用的组件资源。
+
+路由匹配：
+```
+const routes = [
+  {
+    path: '/home',
+    component: () => import('@/views/home')
+  }
+]
+```
+Vue Router的import()语法，底层就是用的defineAsyncComponent
+
+交互触发：
 ```
 // show 为 true 时才加载 AboutComp
 <AboutComp v-if="show" />
@@ -567,7 +580,7 @@ const MyComponentComp = defineAsyncComponent({
   loader: () => import('./MyComponent.vue'),
   loadingComponent: LoadingComponent, // 加载中的组件
   errorComponent: ErrorComponent,     // 错误时的组件
-  delay: 200,                         // 延迟200毫秒显示loading组件
+  delay: 200,                         // 延迟200ms再显示loading组件
   timeout: 3000,                      // 超时时间
 })
 ```
@@ -739,7 +752,7 @@ const newValue = computed({
 })
 </script>
 ```
-或 Vue3.4+ defineModel:
+或 Vue3.4+ defineModel 宏:
 ```
 <template>
   <input v-model="model" />
@@ -747,6 +760,7 @@ const newValue = computed({
 
 <script lang="ts" setup>
 const model = defineModel()
+// model.value = "xxx"
 </script>
 ```
 
@@ -1098,6 +1112,13 @@ let str = ref('你好，异步组件')
 </Suspense>
 ```
 2s的Loading，后显示组件
+
+## 样式穿透
+| 写法	| 适用版本 | 现状 |
+| -----------   | ------------ | -------|
+| >>>	 | Vue2（ Sass/Less 等预处理器不认 >>>）| 已废弃，不推荐 |
+| ::v-deep |	Vue2 + Vue3 | 过渡方案 |
+| :deep()	| Vue3 | 官方推荐 |
 
 ## 全局 API 转移到应用对象
 

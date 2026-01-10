@@ -9,7 +9,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    index  index.html index.htm;</span></span>
 <span class="line"><span>    try_files $uri $uri/ /index.html;</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>Vue 是单页面应用（SPA），history 路由模式下，我们只需要将任意页面都重定向到 index.html，把路由交由前端router处理。</p><p><a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90" target="_blank" rel="noreferrer">vue 中 history 模式服务器配置示例</a></p><h3 id="静态资源缓存策略" tabindex="-1">静态资源缓存策略 <a class="header-anchor" href="#静态资源缓存策略" aria-label="Permalink to &quot;静态资源缓存策略&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>server {</span></span>
-<span class="line"><span>    # 入口index.html 文件不缓存</span></span>
+<span class="line"><span>    # 入口 index.html 文件不缓存</span></span>
 <span class="line"><span>    location = /index.html {</span></span>
 <span class="line"><span>        expires -1;</span></span>
 <span class="line"><span>        add_header Cache-Control &quot;no-cache, must-revalidate&quot;;</span></span>

@@ -25,7 +25,7 @@ esbuild 强力加持：依赖预构建，将非ESM依赖转换为ESM；将大型
 
 只有以 VITE_ 为前缀的变量才会暴露给经过 vite 处理的代码。
 
-代码中访问：
+import.meta.env 是 Vite（ESM）在构建期注入的前端环境变量，代码中访问：
 ```
 console.log(import.meta.env.VITE_SOME_KEY) 
 ```
