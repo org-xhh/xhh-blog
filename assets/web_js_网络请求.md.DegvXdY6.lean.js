@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m=JSON.parse('{"title":"前端发送网络请求","description":"","frontmatter":{},"headers":[],"relativePath":"web/js/网络请求.md","filePath":"web/js/网络请求.md"}'),e={name:"web/js/网络请求.md"},l=p("",22),i=[l];function t(c,o,r,d,h,u){return a(),n("div",null,i)}const x=s(e,[["render",t]]);export{m as __pageData,x as default};
