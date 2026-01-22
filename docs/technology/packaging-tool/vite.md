@@ -18,17 +18,22 @@ esbuild 强力加持：依赖预构建，将非ESM依赖转换为ESM；将大型
 开发时用 esbuild，生产时用 rollup 构建。
 -->
 
-### 环境变量
-```
-.env.[mode]
-```
-
-只有以 VITE_ 为前缀的变量才会暴露给经过 vite 处理的代码。
-
+### 环境变量与模式
 import.meta.env 是 Vite（ESM）在构建期注入的前端环境变量，代码中访问：
 ```
-console.log(import.meta.env.VITE_SOME_KEY) 
+console.log(import.meta.env.MODE) 
 ```
+只有以 VITE_ 为前缀的变量才会暴露给经过 vite 处理的代码。
+
+.env.[mode] 文件：
+```
+VITE_API_URL=https://api.example.com
+```
+scripts 命令可以通过传递 --mode 选项选择不同的模式，代码中获取：
+```
+import.meta.env.VITE_API_URL
+```
+
 
 ### 配置全局使用 less 变量
 vite 和 webpack 不同，不需要 less-loader，只需要安装 less 模块

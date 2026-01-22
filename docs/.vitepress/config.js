@@ -134,7 +134,9 @@ export default {
         items: [
           { text: "webpack", link: "/technology/packaging-tool/webpack" },
           { text: "webpack配置实例", link: "/technology/packaging-tool/webpack配置实例" },
-          { text: "Vite", link: "/technology/packaging-tool/vite" }
+          // { text: "webpack配置项", link: "/technology/packaging-tool/webpack配置项" },
+          { text: "Vite", link: "/technology/packaging-tool/vite" },
+          // { text: "Vite配置项", link: "/technology/packaging-tool/vite配置项" }
         ],
       },
       "/technology/uni-app/": {

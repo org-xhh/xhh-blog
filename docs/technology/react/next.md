@@ -81,6 +81,32 @@ https://test.com/photos/1
 ## 中间件 Middleware
 ![alt text](image-35.png)
 
+## 环境变量
+
+1.默认注入2套环境：开发模式development和生产模式production，获取方式：
+```
+process.env.NODE_ENV
+```
+
+2.扩充环境变量:  .env.development文件
+```
+NEXT_PUBLIC_API = https://dev.api.cn
+```
+获取：
+```
+process.env.NEXT_PUBLIC_API
+```
+
+3.新增release环境
+```
+"dev": "cross-env NEXT_PUBLIC__ENV=release next dev"
+```
+获取：
+```
+process.env.NEXT_PUBLIC__ENV // release
+```
+
+
 <!-- 
 ## Next13
 ### SSR、SSG、ISR

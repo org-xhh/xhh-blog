@@ -75,28 +75,6 @@ max_line_length = off
 trim_trailing_whitespace = false
 ```
 
-## Prettier - Code formatter
-- 安装 VSCode 插件
-- 安装 prettier
-```
-npm install prettier -D
-```
-- 新建 .prettierrc 
-```
-{
-  "useTabs": false,
-  "tabWidth": 2,
-  "printWidth": 120,
-  "semi": false, // 末尾加分号
-  "singleQuote": true, // 是否单引号
-  "trailingComma": "none" //最后一个元素后添加尾随逗号
-}
-```
-- package.json 配置格式化代码
-```
-"format": "prettier --write ."
-```
-
 ## 已安装插件
 ![alt text](image-6.png)
 ![alt text](image-7.png)

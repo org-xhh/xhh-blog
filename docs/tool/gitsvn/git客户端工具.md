@@ -8,11 +8,8 @@
 
 ### 分支合并
 
-把master合并到develop分支(旧版)
-![alt text](把master合并到develop分支旧.png)
-
-把master合并到develop分支(新版)
-![alt text](把master合并到develop分支新.png)
+把master合并到develop分支
+![alt text](把master合并到develop分支.png)
 
 ## [SourceTreee](https://www.sourcetreeapp.com/)
 
