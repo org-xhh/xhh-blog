@@ -38,7 +38,7 @@ presets: [
 
 ```
 presets: [
-  // @babel/preset-env 只转换语法，不要提供 polyfill
+  // useBuiltIns 设为 false, 不注入垫片
   [
     "@babel/preset-env", 
     {

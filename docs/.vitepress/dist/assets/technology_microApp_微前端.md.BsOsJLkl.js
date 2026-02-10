@@ -44,6 +44,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  // prefetch: &#39;all&#39;, // 预加载所有子应用</span></span>
 <span class="line"><span>  // prefetch: [&#39;vue3-project&#39;, &#39;umi-project&#39;], // 只预加载指定的应用</span></span>
 <span class="line"><span>  // prefetch: (apps) =&gt; apps.filter(app =&gt; app.name !== &#39;test-app&#39;),</span></span>
+<span class="line"><span>  singular: false, // 多实例子应用共存</span></span>
 <span class="line"><span>  sandbox: {</span></span>
 <span class="line"><span>    // strictStyleIsolation: false,  // CSS 严格隔离，每个子应用被包裹在 Shadow DOM 中，样式完全隔离</span></span>
 <span class="line"><span>    experimentalStyleIsolation: true // CSS 实验性隔离，Scoped CSS，qiankun 会给子应用的所有样式添加特殊前缀</span></span>
@@ -85,9 +86,10 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  ],</span></span>
 <span class="line"><span>  server: { // 本地启动</span></span>
 <span class="line"><span>    port: 8101,</span></span>
-<span class="line"><span>    cors: true,</span></span>
+<span class="line"><span>    cors: true, // 允许跨域（主应用加载子应用资源需要） </span></span>
 <span class="line"><span>    origin: &quot;//localhost:8101&quot;, // 不加这个静态资源404</span></span>
 <span class="line"><span>    headers: { </span></span>
+<span class="line"><span>      // 允许主应用访问子应用的资源（CORS 配置）</span></span>
 <span class="line"><span>      &#39;Access-Control-Allow-Origin&#39;: &#39;*&#39; </span></span>
 <span class="line"><span>    }</span></span>
 <span class="line"><span>  },</span></span>

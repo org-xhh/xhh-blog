@@ -3,8 +3,16 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>const source = CancelToken.source()</span></span>
 <span class="line"><span>axios.get(&#39;xxx&#39;, {</span></span>
 <span class="line"><span> cancelToken: source.token</span></span>
-<span class="line"><span>})</span></span>
-<span class="line"><span>// 取消请求(请求原因可选)</span></span>
+<span class="line"><span>}).then(response =&gt; {</span></span>
+<span class="line"><span>  console.log(response.data)</span></span>
+<span class="line"><span>}).catch(function (thrown) {</span></span>
+<span class="line"><span>  // 判断是否是取消请求</span></span>
+<span class="line"><span>  if (axios.isCancel(thrown)) {</span></span>
+<span class="line"><span>    console.log(&#39;请求被取消:&#39;, thrown.message)</span></span>
+<span class="line"><span>  } else {</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>});</span></span>
 <span class="line"><span>source.cancel(&#39;主动取消请求&#39;)</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 第二种方式</span></span>

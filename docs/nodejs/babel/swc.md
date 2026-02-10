@@ -1,5 +1,5 @@
 # [SWC](https://swc.rs/docs/usage/core)
-swc既可用于编译，也可用于打包。底层使用编译型语言，比babel快。
+swc(Speedy Web Compiler) ：既可用于编译，也可用于打包。底层使用编译型语言，比babel快。
 
 ### 编译
 ```

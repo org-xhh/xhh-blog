@@ -35,3 +35,8 @@
 - [抓包工具](https://org-xhh.github.io/xhh-blog/tool/packet-capture/fiddler/fiddler.html)
 - [VSCode](https://org-xhh.github.io/xhh-blog/tool/vscode/vscode插件.html)
 - ...
+
+## 发布到 GitHub pages
+```
+sh deploy.sh
+```

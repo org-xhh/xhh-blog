@@ -659,7 +659,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
 {
   "compilerOptions": {
     "target": "esnext", // 设置编译后的 JavaScript 目标版本，比如"ES5"、"ES6"等
-    "lib": [ // 指定编译时包含的内置库，默认根据 target 自动选择
+    "lib": [ // 指定 TS 编译时参考的类型定义库版本（决定 TS 认识哪些内置对象 / 方法），默认根据 target 自动选择
       "dom",
       "dom.iterable",
       "esnext"

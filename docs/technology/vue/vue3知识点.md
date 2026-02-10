@@ -1,5 +1,68 @@
 # vue3 部分知识点
 
+## ref, reactive
+
+### reactive定义的对象直接赋值会失去响应式
+```
+let state = reactive({ list: [] })
+// 页面不更新
+state = [{ name: 'xxx' }]
+```
+解决方案1：
+
+使用Object.assign或修改内部属性
+```
+let state = reactive({ 
+  list: [
+    { name: "name1", age: 18 },
+    { name: "name2", age: 19 }
+  ] 
+})
+const updateList = () => {
+  // Object.assign(state, {
+  //   list: [
+  //     { name: "new name1", age: 20 },
+  //     { name: "new name2", age: 21 }
+  //   ]
+  // })
+  state.list = [
+    { name: "new name1", age: 20 },
+    { name: "new name2", age: 21 }
+  ]
+}
+```
+解决方案2：
+
+使用push、splice等方法修改原数组
+```
+let state = reactive([
+  { name: "name1", age: 18 },
+  { name: "name2", age: 19 }
+])
+const updateList = () => {
+  state.splice(0, state.length, ...[
+    { name: "new name1", age: 20 },
+    { name: "new name2", age: 21 }
+  ])
+}
+```
+解决方案3：
+
+对需要整体替换的场景使用 ref
+```
+let state = ref([
+  { name: "name1", age: 18 },
+  { name: "name2", age: 19 }
+])
+const updateList = () => {
+  state.value = [
+    { name: "new name1", age: 20 },
+    { name: "new name2", age: 21 }
+  ]
+}
+```
+
+
 ## toRefs, toRef, unref
 
 ```
@@ -7,10 +70,10 @@ let person = reactive({
   name: '张三',
   age: 19
 })
-// 解构出来的name不是响应式的，因为响应式代理的是对象本身，解构赋值相当于把值 复制 出来了，脱离了响应式系统，修改name不会触发person.name改变。
+// 解构出来的name不是响应式的，因为响应式代理的是对象本身，解构赋值相当于把值 复制 出来了，脱离了响应式系统
 let { name, age } = person
 function changeName() {
-  name += '~'
+  name += '~' // 页面不会更新
 }
 ```
 
@@ -136,9 +199,7 @@ let val3 = reactive({
 watch(val3, (newValue) => {
   console.log('监听val3变化', newValue)
 })
-// reactive定义的对象或数组不能直接修改(否则会失去响应式)
 function changeVal3Name() { 
-  // val3.name = 888
   Object.assign(val3, { name: 999 })
 }
 ```
@@ -260,6 +321,7 @@ watchEffect(() => {
     console.log('超过10')
   }
   return () => {
+    // 组件卸载 watchEffect 会自动停止
     console.log('Cleaning up...')
   }
 })
@@ -276,6 +338,9 @@ watchEffect((onInvalidate) => {
   })
 })
 ```
+
+## v-memo
+长列表或复杂组件，可以使用v-memo缓存渲染结果，仅当依赖数据变化时才重新渲染，减少 DOM 操作。
 
 ## 标签 ref 属性
 
@@ -585,6 +650,102 @@ const MyComponentComp = defineAsyncComponent({
 })
 ```
 
+## keep-alive
+keep-alive 缓存组件
+
+场景：从首页 home 进入列表页 list，不需要缓存；从列表页进入详情页 detail，再从详情页返回到列表页，这时列表页需要使用上次缓存的内容不要刷新。
+
+App.vue
+```
+<script setup>
+import { watch, ref } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+let cachedComponents = ref([])
+watch(route, (val) => {
+    if (val.name === 'home') {
+      cachedComponents.value = ['']
+    } else {
+      cachedComponents.value = ['list']
+    }
+  }, { immediate: true }
+)
+</script>
+
+<template>
+  <router-view v-slot="{ Component }">
+    <keep-alive :include="cachedComponents">
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
+</template>
+```
+list 页面生命周期：
+```
+import { onMounted, onActivated, onDeactivated } from 'vue'
+
+onMounted(() => {
+  // 从首页进入 触发
+  // 从详情页返回 不再触发，list被缓存，不走 mounted 了
+  console.log('onMounted')
+})
+onActivated(() => {
+  // 从首页进入 触发
+  // 从详情页返回 触发
+  console.log('active')
+})
+onDeactivated(() => {
+  // 离开列表页 触发
+  console.log('inactive')
+})
+```
+缓存的list页面保留上次滚动位置：
+```
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [...],
+  scrollBehavior: (to, from) => {
+    if (to.path !== '/list' || (to.path === '/list' && from.path === '/home')) {
+      // 新开页面滚动条回到顶部
+      return { top: 0 }
+    }
+  }
+})
+```
+vue2 keep-alive 配置：
+```
+<template>
+  <div id="app">
+    <keep-alive :include="cachedViews">
+      <router-view />
+    </keep-alive>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      cachedViews: ['list']
+    }
+  },
+  watch: {
+    '$route': {
+      handler(val) {
+        if (val.name === 'home') {
+          this.cachedViews = []
+        } else {
+          this.cachedViews = ['list']
+        }
+      },
+      immediate: true
+    }
+  }
+}
+</script>
+```
 
 ## pinia
 
@@ -613,6 +774,7 @@ export const useCounterStore = defineStore('counter', {
     double: (state) => state.count * 2
   },
   actions: {
+    // 修改状态（支持同步/异步）
     increment(value) {
       this.count += value
     }
@@ -880,41 +1042,58 @@ const list = reactive([
 import { shallowRef } from 'vue'
 const sum = shallowRef(0)
 const person = shallowRef({
-  // 只能处理第一层的响应式
   name: 'zs',
   age: 29,
 })
-function changeSum() {
+function changeSum() { // 生效
   sum.value += 1
 }
-function changePersonName() { // ref定义的生效，shallowRef定义的修改不生效
-  person.value.name = 'ls'
-}
-function changePersonAge() { // ref定义的生效，shallowRef定义的修改不生效
-  person.value.age += 1
-}
-function changePerson() {
+function changePerson() { // 生效
   person.value = {
     name: 'new name',
     age: 99,
   }
+}
+function changePersonName() { // 不生效
+  person.value.name = 'ls'
+}
+function changePersonAge() { // 不生效
+  person.value.age += 1
 }
 ```
 
 ```
 import { shallowReactive } from 'vue'
 const person = shallowReactive({
-  // 只能处理第一层的响应式
   name: 'zs',
   inner: {
     age: 18,
   },
 })
-function changePersonName() {
+function changePersonName() { // 生效
   person.name = 'ls'
 }
 function changePersonAge() { // 不生效
   person.inner.age += 1
+}
+```
+
+## triggerRef 
+强制触发对 shallowRef 内层属性的响应
+```
+import { shallowRef, triggerRef } from 'vue'
+
+// 使用 shallowRef，只有 .value 是响应式的，内部不做深代理
+const bigDeepData = shallowRef({
+  list: Array(100).fill(null).map((_, i) => ({
+    id: i,
+    info: { detail: { deep: { num: i } } }
+  }))
+})
+
+const updateDeep = () => {
+  bigDeepData.value.list[0].info.detail.deep.num = 999999
+  triggerRef(bigDeepData)  // 手动触发更新，强制刷新界面
 }
 ```
 
@@ -1049,6 +1228,7 @@ const { msg } = useMsgRef('Hello', 1000)
 ```
 
 ## Teleport
+需要将组件渲染到指定 DOM 节点，适用弹框、通知等场景。
 
 父组件：
 
@@ -1076,9 +1256,11 @@ const { msg } = useMsgRef('Hello', 1000)
 <template>
   <button @click="isShow = true">展示弹框</button>
   <Teleport to="body">
-    <div v-if="isShow" class="modal">
-      <div>modal</div>
-      <button @click="isShow = false">关闭弹框</button>
+    <div v-if="isShow" class="modal-mask" @click="isShow = false">
+      <div class="modal-content" @click.stop>
+        <div>被渲染到body下，脱离父组件DOM</div>
+        <button @click="isShow = false">关闭弹框</button>
+      </div>
     </div>
   </Teleport>
 </template>

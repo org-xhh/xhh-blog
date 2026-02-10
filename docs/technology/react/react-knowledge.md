@@ -141,13 +141,13 @@ return (
   <RouterProvider router={routerConfig}></RouterProvider>
 )
 ```
----
 
+<!-- 
 扩充：react-activation
 
-主要解决React项目中的页面缓存需求，类似于 vue 中的 keep-alive
+主要解决React项目中的页面缓存需求，类似于 vue 中的 keep-alive 
+-->
 
----
 
 ## 路由鉴权
 authRouter.tsx:
@@ -567,10 +567,11 @@ function App() {
 ```
 npm install tailwindcss@3 postcss autoprefixer -S
 ```
+postcss 用于处理 Tailwind 配置，autoprefixer 自动添加浏览器前缀。
 
 #### npx tailwindcss init
 
-执行命令后自动生成 tailwind.config.js 文件，编辑
+执行上面命令后自动生成 tailwind.config.js 文件，编辑
 
 ```
 /** @type {import('tailwindcss').Config} */
@@ -1149,7 +1150,7 @@ console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 s
 // 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef
 // 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count
 ```
-state 是不可变数据 (不能 count++，视图不更新)
+state 是不可变数据 (不能直接 count++，视图不会更新的)
 ```
 // 修改对象
 setUserInfo({
@@ -1162,9 +1163,28 @@ setUserInfo({
 // 修改数组
 setList(list.concat('z'))
 setList([...list, 'z']) 
-// filter
+// 也可以使用 filter
 ```
-> 可以使用 **immer** 修改 state 不可变数据
+#### immer
+可以使用 **immer** 修改 state 不可变数据，适用结构深、嵌套多、需要频繁深层更新的情况
+```
+import { produce } from 'immer'
+
+const [draft, setDraft] = useState({
+  obj1: {
+    obj2: { 
+      isOk: false
+    }
+  }
+})
+function setDraftFn() {
+  setDraft(prev =>
+    produce(prev, (draft) => {
+      draft.obj1.obj2.isOk = true
+    })
+  )
+}
+```
 
 ### useEffect
 
@@ -1297,6 +1317,10 @@ const Child = () => {
   );
 };
 ```
+<!-- 
+use-context-selector 核心 API：createContext/useContextSelector 可以用来创建 context 和从 context 中选取属性，如果这个属性没有发生变化则不会导致组件发生 re-render。 
+-->
+
 
 ### useReducer
 

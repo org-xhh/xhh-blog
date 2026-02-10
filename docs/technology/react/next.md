@@ -37,9 +37,12 @@ src/app/dashboard/layout.tsx:
 'use client'
 import React from 'react'
 import { Button } from 'antd'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 
 export default function Page() {
+  const pathname = usePathname()
+  console.log(pathname)
+  
   let router = useRouter()
   const jump = () => {
     router.push('/dashboard/about')
@@ -97,13 +100,27 @@ NEXT_PUBLIC_API = https://dev.api.cn
 process.env.NEXT_PUBLIC_API
 ```
 
-3.新增release环境
+3.通过 cross-env 新增release环境
 ```
 "dev": "cross-env NEXT_PUBLIC__ENV=release next dev"
 ```
 获取：
 ```
 process.env.NEXT_PUBLIC__ENV // release
+```
+
+4.通过 dotenv-cli 新增release环境
+```
+npm i @dotenv-cli@7 -D
+```
+配置：
+```
+"build:release": "dotenv -e .env.release -- next build",
+"start:release": "dotenv -e .env.release -- next start -p 3001",
+```
+新增 .env.release 文件：
+```
+NEXT_PUBLIC_SITE_URL=https://release.example.com
 ```
 
 
