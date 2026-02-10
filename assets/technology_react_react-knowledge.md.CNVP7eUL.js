@@ -47,7 +47,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span></span></span>
 <span class="line"><span>return (</span></span>
 <span class="line"><span>  &lt;RouterProvider router={routerConfig}&gt;&lt;/RouterProvider&gt;</span></span>
-<span class="line"><span>)</span></span></code></pre></div><hr><p>扩充：react-activation</p><p>主要解决React项目中的页面缓存需求，类似于 vue 中的 keep-alive</p><hr><h2 id="路由鉴权" tabindex="-1">路由鉴权 <a class="header-anchor" href="#路由鉴权" aria-label="Permalink to &quot;路由鉴权&quot;">​</a></h2><p>authRouter.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { getToken } from &quot;@/utils/storage&quot;</span></span>
+<span class="line"><span>)</span></span></code></pre></div><h2 id="路由鉴权" tabindex="-1">路由鉴权 <a class="header-anchor" href="#路由鉴权" aria-label="Permalink to &quot;路由鉴权&quot;">​</a></h2><p>authRouter.tsx:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { getToken } from &quot;@/utils/storage&quot;</span></span>
 <span class="line"><span>import { Navigate, useLocation } from &quot;react-router-dom&quot;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>interface AuthRouteProps {</span></span>
@@ -279,7 +279,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span></span></span>
 <span class="line"><span>function App() {</span></span>
 <span class="line"><span>  return &lt;MyComponent&gt;Hello&lt;/MyComponent&gt;;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="tailwind-css" tabindex="-1">Tailwind CSS <a class="header-anchor" href="#tailwind-css" aria-label="Permalink to &quot;Tailwind CSS&quot;">​</a></h3><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install tailwindcss@3 postcss autoprefixer -S</span></span></code></pre></div><h4 id="npx-tailwindcss-init" tabindex="-1">npx tailwindcss init <a class="header-anchor" href="#npx-tailwindcss-init" aria-label="Permalink to &quot;npx tailwindcss init&quot;">​</a></h4><p>执行命令后自动生成 tailwind.config.js 文件，编辑</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/** @type {import(&#39;tailwindcss&#39;).Config} */</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="tailwind-css" tabindex="-1">Tailwind CSS <a class="header-anchor" href="#tailwind-css" aria-label="Permalink to &quot;Tailwind CSS&quot;">​</a></h3><h4 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-label="Permalink to &quot;安装&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm install tailwindcss@3 postcss autoprefixer -S</span></span></code></pre></div><p>postcss 用于处理 Tailwind 配置，autoprefixer 自动添加浏览器前缀。</p><h4 id="npx-tailwindcss-init" tabindex="-1">npx tailwindcss init <a class="header-anchor" href="#npx-tailwindcss-init" aria-label="Permalink to &quot;npx tailwindcss init&quot;">​</a></h4><p>执行上面命令后自动生成 tailwind.config.js 文件，编辑</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/** @type {import(&#39;tailwindcss&#39;).Config} */</span></span>
 <span class="line"><span>module.exports = {</span></span>
 <span class="line"><span>  content: [&quot;./src/**/*.{js,jsx,ts,tsx}&quot;],</span></span>
 <span class="line"><span>  theme: {</span></span>
@@ -348,7 +348,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>  );</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>export default App;</span></span></code></pre></div><h2 id="状态管理" tabindex="-1">状态管理 <a class="header-anchor" href="#状态管理" aria-label="Permalink to &quot;状态管理&quot;">​</a></h2><h3 id="独立使用的redux" tabindex="-1">独立使用的Redux <a class="header-anchor" href="#独立使用的redux" aria-label="Permalink to &quot;独立使用的Redux&quot;">​</a></h3>`,118),x=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// cdn 引入 redux 库</span></span>
+<span class="line"><span>export default App;</span></span></code></pre></div><h2 id="状态管理" tabindex="-1">状态管理 <a class="header-anchor" href="#状态管理" aria-label="Permalink to &quot;状态管理&quot;">​</a></h2><h3 id="独立使用的redux" tabindex="-1">独立使用的Redux <a class="header-anchor" href="#独立使用的redux" aria-label="Permalink to &quot;独立使用的Redux&quot;">​</a></h3>`,115),x=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// cdn 引入 redux 库</span></span>
 <span class="line"><span>function reducer(state = {count: 0}, action) {</span></span>
 <span class="line"><span>  // 数据不可变：基于原始状态生成一个新状态</span></span>
 <span class="line"><span>  if (action.type === &#39;INCREMENT&#39;) {</span></span>
@@ -631,7 +631,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>setCount((count) =&gt; count + 1) // (函数式更新) 如果页面中 count 是 6</span></span>
 <span class="line"><span>console.log(count) // 那这里是 5，异步更新无法直接拿到最新的 state 值</span></span>
 <span class="line"><span>// 如果 state 不用于 JSX 中显示，那就不要用 useState，用 useRef</span></span>
-<span class="line"><span>// 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count</span></span></code></pre></div><p>state 是不可变数据 (不能 count++，视图不更新)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 修改对象</span></span>
+<span class="line"><span>// 可以使用 useEffect 把 count 作为依赖进行监听，实时获取最新 count</span></span></code></pre></div><p>state 是不可变数据 (不能直接 count++，视图不会更新的)</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 修改对象</span></span>
 <span class="line"><span>setUserInfo({</span></span>
 <span class="line"><span>  ...userInfo,</span></span>
 <span class="line"><span>  age: 21</span></span>
@@ -642,7 +642,22 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>// 修改数组</span></span>
 <span class="line"><span>setList(list.concat(&#39;z&#39;))</span></span>
 <span class="line"><span>setList([...list, &#39;z&#39;]) </span></span>
-<span class="line"><span>// filter</span></span></code></pre></div><blockquote><p>可以使用 <strong>immer</strong> 修改 state 不可变数据</p></blockquote><h3 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h3><p>在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。</p><p>副作用函数：指的是那些不直接属于“渲染 UI”的操作，在执行时会改变外部状态或依赖外部可变状态的函数。</p>`,62),C=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
+<span class="line"><span>// 也可以使用 filter</span></span></code></pre></div><h4 id="immer" tabindex="-1">immer <a class="header-anchor" href="#immer" aria-label="Permalink to &quot;immer&quot;">​</a></h4><p>可以使用 <strong>immer</strong> 修改 state 不可变数据，适用结构深、嵌套多、需要频繁深层更新的情况</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { produce } from &#39;immer&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const [draft, setDraft] = useState({</span></span>
+<span class="line"><span>  obj1: {</span></span>
+<span class="line"><span>    obj2: { </span></span>
+<span class="line"><span>      isOk: false</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span>
+<span class="line"><span>function setDraftFn() {</span></span>
+<span class="line"><span>  setDraft(prev =&gt;</span></span>
+<span class="line"><span>    produce(prev, (draft) =&gt; {</span></span>
+<span class="line"><span>      draft.obj1.obj2.isOk = true</span></span>
+<span class="line"><span>    })</span></span>
+<span class="line"><span>  )</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="useeffect" tabindex="-1">useEffect <a class="header-anchor" href="#useeffect" aria-label="Permalink to &quot;useEffect&quot;">​</a></h3><p>在组件渲染到屏幕之后异步执行(dom可用)。这意味着它不会阻塞浏览器的绘制和更新，适用于大多数不会直接影响页面布局和视觉呈现的操作，用于执行副作用操作，如本地存储、ajax、操作DOM、计时器等‌。</p><p>副作用函数：指的是那些不直接属于“渲染 UI”的操作，在执行时会改变外部状态或依赖外部可变状态的函数。</p>`,64),C=l(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>useEffect(() =&gt; {</span></span>
 <span class="line"><span>  const connection = createConnection(serverUrl, roomId);</span></span>
 <span class="line"><span>  connection.connect();</span></span>
 <span class="line"><span>  return () =&gt; {</span></span>

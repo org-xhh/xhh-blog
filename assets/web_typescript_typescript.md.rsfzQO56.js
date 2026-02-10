@@ -235,7 +235,7 @@ import{_ as l,D as i,c as o,I as n,w as p,a as s,a3 as e,j as t,o as c}from"./ch
 <span class="line"><span>Animal.run(); // is running</span></span></code></pre></div><h2 id="tsconfig-json" tabindex="-1">tsconfig.json <a class="header-anchor" href="#tsconfig-json" aria-label="Permalink to &quot;tsconfig.json&quot;">​</a></h2><p>tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告诉编译器如何编译当前项目。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>{</span></span>
 <span class="line"><span>  &quot;compilerOptions&quot;: {</span></span>
 <span class="line"><span>    &quot;target&quot;: &quot;esnext&quot;, // 设置编译后的 JavaScript 目标版本，比如&quot;ES5&quot;、&quot;ES6&quot;等</span></span>
-<span class="line"><span>    &quot;lib&quot;: [ // 指定编译时包含的内置库，默认根据 target 自动选择</span></span>
+<span class="line"><span>    &quot;lib&quot;: [ // 指定 TS 编译时参考的类型定义库版本（决定 TS 认识哪些内置对象 / 方法），默认根据 target 自动选择</span></span>
 <span class="line"><span>      &quot;dom&quot;,</span></span>
 <span class="line"><span>      &quot;dom.iterable&quot;,</span></span>
 <span class="line"><span>      &quot;esnext&quot;</span></span>
