@@ -1196,13 +1196,13 @@ function setDraftFn() {
 
 ```
 useEffect(() => {
-  const connection = createConnection(serverUrl, roomId);
-  connection.connect();
+  window.addEventListener('resize', pageResizeFn)
+
+  // 清理函数
   return () => {
-    // 清除函数
-    connection.disconnect();
-  };
-}, [serverUrl, roomId]);
+    window.removeEventListener('resize', pageResizeFn)
+  }
+}, [])
 ```
 
 - ‌不传第二个参数‌：监测所有状态和属性，任何变化都会触发副作用函数：组件初始渲染+组件更新时执行

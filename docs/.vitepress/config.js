@@ -62,7 +62,7 @@ export default {
       {
         text: '前端工具',
         items: [
-          { text: "版本控制工具(git)", link: "/tool/gitsvn/git常用命令" },
+          { text: "版本控制", link: "/tool/gitsvn/git常用命令" },
           { text: "抓包工具", link: "/tool/packet-capture/fiddler/fiddler" },
           { text: "VSCode", link: "/tool/vscode/vscode插件" },
           { text: "Chrome", link: "/tool/chrome/chrome" },
@@ -123,7 +123,6 @@ export default {
           { text: "vue3知识点", link: "/technology/vue/vue3知识点" },
           { text: "环境变量", link: "/technology/vue/环境变量" },
           { text: "检测新版发布", link: "/technology/vue/检测新版发布"},
-          { text: "本地Proxy处理跨域", link: "/technology/vue/本地Proxy处理跨域" },
           { text: "vue指令", link: "/technology/vue/vue指令"},
           { text: "i18n", link: "/technology/vue/i18n" },
           { text: "通信", link: "/technology/vue/通信"}
@@ -157,10 +156,10 @@ export default {
         text: "nuxt知识",
         items: [
           { text: "Nuxt.js", link: "/technology/nuxt/nuxt" },
-          { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
-          { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" },
           { text: "i18n", link: "/technology/nuxt/i18n" },
-          { text: "网站地图", link: "/technology/nuxt/网站地图" }
+          { text: "网站地图", link: "/technology/nuxt/网站地图" },
+           { text: "全局引入less变量", link: "/technology/nuxt/全局引入less变量" },
+          { text: "本地启动标签页个数问题", link: "/technology/nuxt/本地启动标签页个数问题" },
         ],
       },
       "/technology/react/": {
