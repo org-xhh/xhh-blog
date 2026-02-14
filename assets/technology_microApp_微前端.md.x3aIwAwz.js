@@ -86,7 +86,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  ],</span></span>
 <span class="line"><span>  server: { // 本地启动</span></span>
 <span class="line"><span>    port: 8101,</span></span>
-<span class="line"><span>    cors: true, // 允许跨域（主应用加载子应用资源需要） </span></span>
+<span class="line"><span>    cors: true, // 允许跨域，主应用才能访问</span></span>
 <span class="line"><span>    origin: &quot;//localhost:8101&quot;, // 不加这个静态资源404</span></span>
 <span class="line"><span>    headers: { </span></span>
 <span class="line"><span>      // 允许主应用访问子应用的资源（CORS 配置）</span></span>
