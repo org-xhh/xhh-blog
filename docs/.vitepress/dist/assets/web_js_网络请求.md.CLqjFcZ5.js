@@ -23,7 +23,9 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>    cancel = c</span></span>
 <span class="line"><span>  })</span></span>
 <span class="line"><span>})</span></span>
-<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>axios.defaults.withCredentials = true // 允许跨域时携带凭证 cookies</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
+<span class="line"><span>cancel(&#39;取消接口避免重复调用&#39;)</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 允许跨域时携带凭证 cookies</span></span>
+<span class="line"><span>// 服务器必须在响应头中明确允许特定来源</span></span>
+<span class="line"><span>axios.defaults.withCredentials = true</span></span></code></pre></div><h2 id="fetch" tabindex="-1">fetch <a class="header-anchor" href="#fetch" aria-label="Permalink to &quot;fetch&quot;">​</a></h2><p>浏览器原生方法</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 创建 AbortController 实例</span></span>
 <span class="line"><span>const controller = new AbortController();</span></span>
 <span class="line"><span>const signal = controller.signal;</span></span>
 <span class="line"><span></span></span>

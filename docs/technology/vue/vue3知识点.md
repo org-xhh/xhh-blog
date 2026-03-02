@@ -667,7 +667,7 @@ watch(route, (val) => {
     if (val.name === 'home') {
       cachedComponents.value = ['']
     } else {
-      cachedComponents.value = ['list']
+      cachedComponents.value = ['list'] // 组件的name
     }
   }, { immediate: true }
 )
@@ -950,7 +950,7 @@ const emit = defineEmits(['update:modelValueOther'])
 
 ### 默认插槽
 
-在子组件
+子组件：
 
 ```
 <slot></slot>
@@ -960,17 +960,8 @@ const emit = defineEmits(['update:modelValueOther'])
 
 ### 具名插槽
 
+子组件 Child.vue：
 ```
-<Person>
-  <template v-slot:title>
-    <div>this is title</div>
-  </template>
-  <template #header>
-    <div>this is header</div>
-  </template>
-</Person>
-
-
 <div>
   <div>Person组件：</div>
   <slot name="header"></slot>
@@ -978,32 +969,26 @@ const emit = defineEmits(['update:modelValueOther'])
 </div>
 ```
 
+父组件：
+```
+<Child>
+  <template v-slot:title>
+    <div>this is title</div>
+  </template>
+  <template #header>
+    <div>this is header</div>
+  </template>
+</Child>
+```
+
 ![alt text](image-9.png)
 
 ### 作用域插槽
 
+子组件 Child.vue：
 ```
-<Person>
-  <template v-slot="params">
-    <ul>
-      <li v-for="(item, index) in params.listP" :key="index">
-        {{ item.title }}
-      </li>
-    </ul>
-  </template>
-</Person>
-<Person>
-  <template v-slot="{ listP }">
-    <ol>
-      <li v-for="(item, index) in listP" :key="index">
-        {{ item.title }}
-      </li>
-    </ol>
-  </template>
-</Person>
-
-// Person.vue
 <slot :listP="list"></slot>
+
 import { reactive } from 'vue'
 const list = reactive([
   {
@@ -1021,17 +1006,43 @@ const list = reactive([
 ])
 ```
 
+父组件：
+```
+<Child>
+  <template v-slot="params">
+    <ul>
+      <li v-for="(item, index) in params.listP" :key="index">
+        {{ item.title }}
+      </li>
+    </ul>
+  </template>
+</Child>
+
+<Child>
+  <template v-slot="{ listP }">
+    <ol>
+      <li v-for="(item, index) in listP" :key="index">
+        {{ item.title }}
+      </li>
+    </ol>
+  </template>
+</Child>
+```
+
 ![alt text](image-10.png)
 
-和具名插槽结合在一起
+和具名插槽结合在一起：
 
+子组件：
+```
+<slot name="listcon" :listP="list"></slot>
+```
+
+父组件：
 ```
 <template v-slot:listcon="{ listP }">
 // or
 <template #listcon="{ listP }">
-
-// Person.vue
-<slot name="listcon" :listP="list"></slot>
 ```
 
 ## shallowRef, shallowReactive
@@ -1157,49 +1168,14 @@ let mockJs = markRaw(mockjs)
 
 作用：创建一个自定义的 ref，并对其依赖项跟踪和更新触发进行逻辑控制。
 
-使用 Vue 提供的 ref 定义的响应式数据，数据一变，页面立即更新。如果想过几秒再更新页面，ref 就做不到了。
-
-```
-<template>
-  <div>
-    <div>{{ msg }}</div>
-    <input type="text" v-model="msg" placeholder="请输入" />
-  </div>
-</template>
-
-<script setup lang="ts">
-import { customRef } from 'vue'
-
-let initialValue = ''
-let timer: number
-const msg = customRef((track, trigger) => {
-  return {
-    get() {
-      track() // 告诉Vue追踪这个值，一旦msg变化就更新页面
-      return initialValue
-    },
-    set(newValue) {
-      clearTimeout(timer)
-      timer = setTimeout(() => {
-        initialValue = newValue
-        trigger() // 通知vue数据msg变化了
-      }, 1000)
-    },
-  }
-})
-</script>
-```
-
-封装优化：
-
-useMsgRef.ts:
+自定义customRef实现防抖功能：
 
 ```
 import { customRef } from 'vue'
 
-export default function (initialValue: string, delay: number) {
+function debouncedRef(initialValue: string, delay: number = 300) {
   let timer: number
-  const msg = customRef((track, trigger) => {
+  return customRef((track, trigger) => {
     return {
       get() {
         track() // 告诉Vue追踪这个值，一旦msg变化就更新页面
@@ -1211,20 +1187,13 @@ export default function (initialValue: string, delay: number) {
           initialValue = newValue
           trigger() // 通知vue数据msg变化了
         }, delay)
-      },
+      }
     }
   })
-
-  return {
-    msg,
-  }
 }
 ```
-
 ```
-import useMsgRef from './useMsgRef'
-
-const { msg } = useMsgRef('Hello', 1000)
+const msg = debouncedRef('', 500)
 ```
 
 ## Teleport

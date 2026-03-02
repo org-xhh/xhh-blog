@@ -18,6 +18,7 @@ let value: null = null;
 let text: undefined = undefined;
 ```
 ### void
+函数没有有效返回值（可返回undefined和null）
 ```
 function getName(name: string): void { // 空值
   console.log('My name is ' + name);
@@ -39,6 +40,10 @@ list[1] = 100;
 ```
 
 ### unknown
+
+any禁用所有类型检查，相当于退化到JS；
+unknown要求在使用前显式断言或类型检查，确保操作的安全性。
+
 | 特性	| any	| unknown |
 | -----------   | ------------ | ----------- |
 | 编译时 | 如果类型错误，编译通过运行报错 | 如果类型错误，编译报错 |
@@ -194,6 +199,15 @@ const username = document.getElementById('username');
 if (username) {
   (username as HTMLInputElement).value;
 }
+```
+```
+// 非空断言（!）
+const user!: { name: string } // 强制认为非空（危险！）
+const el = document.querySelector('.ele')!
+
+// const 断言（值不可变）
+let arr = [1, 2] as const // 类型变为 readonly [1, 2]
+arr.push(3) // 编译错误
 ```
 
 ## 接口
@@ -376,7 +390,7 @@ MyNamespace.sayHello(); // Hello, TypeScript!
 
 泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示。
 
-举例：
+#### 泛型函数
 
 ```
 function identity<T>(value: T): T {
@@ -384,8 +398,6 @@ function identity<T>(value: T): T {
 }
 ```
 
-<font color=red>&lt;T&gt; </font> 表示这是一个泛型函数；
-<br/>
 <font color=red>T</font> 是一个类型参数，可以是任何类型；
 <br/>
 函数参数是<font color=red>T</font>，返回值的类型也是<font color=red>T</font>；传参 number 类型，那返回值的类型也是 number。
@@ -437,35 +449,20 @@ let personName = new People<people>({ name: "xh", age: 18 });
 console.log(personName.sayHi())
 ```
 
-#### 泛型约束
-
-```
-interface HasLength {
-  length: number;
-}
-
-function getLength<T extends HasLength>(obj: T): number {
-  return obj.length;
-}
-
-let str = "Hi";
-console.log(getLength(str)); // 输出 2
-
-let obj = null;
-console.log(getLength(obj)); // 报错 Argument of type 'null' is not assignable to parameter of type 'HasLength'.
-```
-
-泛型约束 T extends HasLength 来限制泛型类型 T 必须满足 HasLength 接口的要求，即具有 length 属性。
-
 #### 泛型接口
-
+```
+interface KeyValuePair<K, V> {
+  key: K;
+  value: V;
+}
+let pair: KeyValuePair<number, string> = { key: 11, value: 'abc' }
+```
+下面代码定义了一个泛型接口 Transformer，它有两个类型参数 T 和 U，用于定义输入类型和输出类型：
 ```
 interface Transformer<T, U> {
   transform(input: T): U;
 }
 ```
-
-上面代码定义了一个泛型接口 Transformer，它有两个类型参数 T 和 U，用于定义输入类型和输出类型。
 
 ```
 class typeTransformer implements Transformer<string, number> { // 类实现接口
@@ -484,7 +481,36 @@ let transformer = new typeTransformer()
 console.log(transformer.transform("1.12")) // 输出：1.12
 ```
 
-## is 类型守卫
+#### 泛型约束
+```
+interface HasLength {
+  length: number;
+}
+
+function getLength<T extends HasLength>(obj: T): number {
+  return obj.length;
+}
+
+let str = "Hi";
+console.log(getLength(str)); // 输出 2
+
+let obj = null;
+console.log(getLength(obj)); // 报错 Argument of type 'null' is not assignable to parameter of type 'HasLength'.
+```
+
+泛型约束 T extends HasLength 来限制泛型类型 T 必须满足 HasLength 接口的要求，即具有 length 属性。
+
+#### 默认类型
+```
+interface Pagination<T = string> {
+  data: T[];
+  page: number;
+}
+let pagination: Pagination = { data: ['a', 'b'], page: 1; } // T默认string
+```
+
+
+## 自定义类型守卫 is
 
 is 关键字一般用于函数返回值类型中，判断参数是否属于某一类型，并根据结果返回对应的布尔类型。
 语法：prop is type
@@ -508,15 +534,13 @@ function isString(s: unknown): s is string {
 }
 ```
 
-## 内置的工具类型
+## 内置工具类型
 
 ‌Partial&lt;T&gt;：将类型T的所有属性变为可选
 
 ‌Required&lt;T&gt;：将类型T的所有属性变为必填
 
-‌Pick&lt;T, K&gt;：从类型T中选择指定属性K来创建一个新类型
-
-‌Omit&lt;T, K&gt;：从类型T中排除指定属性K来创建一个新类型
+Readonly&lt;T&gt;：将类型T的所有属性变为只读
 
 Uppercase&lt;T&gt;：将字符串T转换为大写
 
@@ -526,39 +550,101 @@ Uppercase&lt;T&gt;：将字符串T转换为大写
 
 ‌Uncapitalize&lt;T&gt;：将字符串T的首字母小写
 
+‌Pick&lt;T, K&gt;：从类型T中选择指定属性K来创建一个新类型
+
+‌Omit&lt;T, K&gt;：从类型T中排除指定属性K来创建一个新类型
+
+Record&lt;K, T&gt;：创建键为K类型，值为T类型的对象
+
 ...
 ```
-type T = 'hi'
-type Result = Capitalize<T> // 'Hi'
+type User = {
+  id: number;
+  name: string;
+  email?: string;
+}
+// 所有属性可选
+type UserUpdate = Partial<User>
+
+// 只选取 id 和 name
+type UserObj = Pick<User, 'id' | 'name'>
+
+// 排除 email 创建新类型
+type UserData = Omit<User, 'email'>
+
+// 创建权限映射
+type PermissionValue = 'read' | 'write' | 'admin'
+const permissions: Record<PermissionValue, boolean> = {
+  read: true,
+  write: false,
+  admin: true
+}
 ```
 
 ## 声明文件
 
 声明文件必需以 .d.ts 为后缀，用于描述已有 JavaScript 代码库的类型信息。
 
-假如使用第三方库 jQuery，一种常见的方式是在 html 中通过 script 标签引入 jQuery，然后就可以使用全局变量 $ 或 jQuery 了。
-
-通常这样获取一个 id 是 foo 的元素：
-
+示例一：
 ```
-$('#foo');
+$('#foo')
 // or
-jQuery('#foo');
+jQuery('#foo')
 ```
-
-但是在 ts 中，编译器并不知道 $ 或 jQuery 是什么
-
+在 ts 中，编译器并不知道 $ 或 jQuery 是什么
 ```
-jQuery('#foo');
+jQuery('#foo')
 // ERROR: Cannot find name 'jQuery'.
 ```
 
 这时需要使用 declare var 来定义它的类型：
 
 ```
-declare var jQuery: (selector: string) => any;
+declare var jQuery: (selector: string) => any
 
-jQuery('#foo');
+jQuery('#foo') // 不报错了
+```
+示例二：
+
+为‌没有类型定义的第三方库‌添加类型支持
+```
+// src/@types/untyped-lib.d.ts
+declare module 'untyped-lib' {
+  export function calculate(a: number, b: number): number;
+}
+```
+确保 tsconfig.json 中的 include 包含该目录
+```
+import { calculate } from 'untyped-lib'
+const result = calculate(10, 20) // 不会报类型问题了
+```
+
+#### 全局类型声明
+在window上使用一个未被声明的变量，会报错
+![alt text](image.png)
+
+解决办法：添加全局可访问的类型/变量
+
+global.d.ts:
+```
+// 扩展window接口
+// 类型声明（不产生实际代码）
+declare global {
+  interface Window {
+    currentUser: {
+      name: string
+    }
+  }
+}
+
+// 导出一个空对象，让文件成为模块
+export {}
+```
+```
+// 运行时赋值，产生实际代码
+// 不再有报错提示
+window.currentUser = { name: 'xhh' }
+console.log(window.currentUser.name)
 ```
 
 #### 三斜线指令
@@ -667,7 +753,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "allowJs": false, // 允许编译器编译JS、JSX文件，默认 false
     "checkJs": false, // 是否检查js代码是否符合语法规范，默认 false
     "removeComments": false, // 是否移除注释，默认 false
-    "skipLibCheck": true, // 跳过声明文件内的类型检查，加快编译速度
+    "skipLibCheck": true, // 跳过库类型检查，提升编译速度
     "esModuleInterop": true, // 自动处理好 CommonJS 与 ES 模块之间的兼容性问题
     "strict": false, // 开启所有严格的类型检查，默认 false
     "alwaysStrict": false, // 编译后的文件是否开启严格模式，默认 false
@@ -678,7 +764,8 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "resolveJsonModule": true, // 是否解析JSON模块
     "isolatedModules": true, // 将每个文件作为单独的模块来编译
     "noEmitOnError": true, // 错误时不生成输出文件
-    "sourceMap": false, // 是否生成sourceMap，默认 false
+    "sourceMap": true, // 是否生成源码映射文件，默认 false
+    "declaration": false, // 是否生成 .d.ts 类型声明文件，库开发必备，需搭配 outDir 使用
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
@@ -687,10 +774,10 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx", // 在.tsx文件中支持 JSX
     "module": "esnext", // 指定生成的代码所使用的模块系统，如"CommonJS"、"ES6"等。
-    "moduleResolution": "node", // 模块解析策略
+    "moduleResolution": "node", // 模块解析策略，模拟Node.js的模块解析逻辑
     "allowSyntheticDefaultImports": true
   },
-  "include": [ // 指定所要编译的文件列表
+  "include": [ // 指定需被编译器包含的文件路径
     "src/**/*"
   ],
   "exclude":[ // 从编译列表中去除指定文件
@@ -699,7 +786,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "**/node_modules/*"
   ],
   "extends":"../tsconfig.base.json", // 继承另一个文件的配置
-  "files":["a.ts","b.ts"], // 指定编译的文件列表
+  "files":["a.ts","b.ts"], // 显式列出参与类型的文件列表，优先级高于 include
   "references": [] // 用于配置项目引用，管理 TypeScript 项目之间的依赖关系
 }
 ```
@@ -711,10 +798,10 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "strict": true,
     // 相当于同时开启：
     // "noImplicitAny": true,
-    // "strictNullChecks": true,
-    // "strictFunctionTypes": true,
-    // "strictBindCallApply": true,
-    // "strictPropertyInitialization": true,
+    // "strictNullChecks": true, // 强制空值检查
+    // "strictFunctionTypes": true, // 函数参数逆变检查
+    // "strictBindCallApply": true, // 严格绑定函数参数
+    // "strictPropertyInitialization": true, // 类属性初始化检查
     // "noImplicitThis": true,
     // "alwaysStrict": true
   }

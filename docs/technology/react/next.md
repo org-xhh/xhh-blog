@@ -129,6 +129,16 @@ NEXT_PUBLIC_SITE_URL=https://release.example.com
 ### SSR、SSG、ISR
 
 - SSR：服务端渲染，getServerSideProps
+```
+export async function getServerSideProps(context) {
+  const data = await fetchData(context.data.id)
+  return { props: { data } } // 传递给页面组件
+}
+
+function Page({ data }) {
+  return <div>{data}</div>
+}
+```
 
 - SSG：静态站点生成，getStaticPaths、getStaticProps
 
