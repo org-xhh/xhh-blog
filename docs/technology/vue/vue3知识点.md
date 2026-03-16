@@ -2,6 +2,10 @@
 
 ## ref, reactive
 
+ref：把原始值包裹成一个对象，通过访问器属性（get/set）拦截 .value 的读写，从而实现响应式。
+
+reactive：核心是通过 Proxy 拦截对象操作。
+
 ### reactive定义的对象直接赋值会失去响应式
 ```
 let state = reactive({ list: [] })
@@ -385,7 +389,7 @@ defineExpose({ keywords })
 
 ![alt text](image-4.png)
 
-## 组件 props
+## 组件 props 和 自定义事件
 
 父组件：
 
@@ -489,11 +493,27 @@ withDefaults(defineProps<{ list?: Persons }>(), {
 })
 ```
 
-defineEmits类型校验：
+defineEmits 自定义事件（子传父）
 ```
+const emit = defineEmits(['update:title', 'submit'])
+
+const handleClick = () => {
+  emit('update:title', '标题')
+  emit('submit', { data: '提交数据' })
+}
+```
+TypeScript 写法：
+```
+// 方式1：数组声明
 const emit = defineEmits<{
-  change: [id: number]
-  update: [value: string]
+  (e: 'update:title', value: string): void
+  (e: 'submit', data: any): void
+}>()
+
+// 方式2：Vue 3.3+ 对象声明
+const emit = defineEmits<{
+  'update:title': [value: string]
+  'submit': [data: any]
 }>()
 ```
 
@@ -917,12 +937,13 @@ const newValue = computed({
 或 Vue3.4+ defineModel 宏:
 ```
 <template>
-  <input v-model="model" />
+  <input v-model="modelValue" />
 </template>
 
 <script lang="ts" setup>
-const model = defineModel()
-// model.value = "xxx"
+const modelValue = defineModel()
+// defineModel() 返回的是 ref，会自动与父组件的 v-model 值保持同步
+// modelValue.value = "xxx"
 </script>
 ```
 

@@ -16,16 +16,30 @@ $1
 ## Git工具
 
 暂存、提交：
+
 ![alt text](image-13.png)
 
 推送到远程：
+
 ![alt text](image-14.png)
 
 左下角点击当前分支名切换分支：
+
 ![alt text](image-15.png)
 
 切换到origin/develop分支；如要将个人分支代码合并到develop，步骤如下：
+
 ![alt text](image-16.png)
+
 点Merge会出来分支列表，找到个人分支，即可将个人分支合到develop；然后点击push。
 
+## 代码恢复
+
+在资源管理器中右键被还原的文件，选择 ‌"Open Timeline"
+
+![alt text](image-17.png)
+
+在时间线中找到还原前的版本，右击选择 ‌"Restore" 完全恢复
+
+![alt text](image-18.png)
 

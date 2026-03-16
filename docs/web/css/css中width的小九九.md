@@ -88,7 +88,17 @@ box-sizing：content-box;
 最终宽度：500 - 1(子元素padding)∗2 - 10(子元素border)∗2 = 478
 ```
 
-### 四、结论
+### 四、CSS盒模型
+- 标准盒模型（content-box）
+
+  width只包含content，padding和border额外增加，这是浏览器的默认行为。
+
+- 怪异盒模型（border-box）
+
+  width是content、padding和border的总和。设置的宽度width是最终占据的宽度（不含margin）。
+
+
+### 五、结论
 * width:auto 是子元素的 content + padding + border + margin 撑满父元素的 content。
 * width:100% 是子元素的 content 撑满父元素的 content。
 * 在开发中尽量选择设置 width: auto，避免子元素设置 padding、border、margin等导致子元素溢出父元素。

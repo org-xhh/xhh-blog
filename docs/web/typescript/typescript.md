@@ -17,6 +17,11 @@ let bool: boolean = false
 let value: null = null;
 let text: undefined = undefined;
 ```
+
+### bigint
+
+### symbol
+
 ### void
 函数没有有效返回值（可返回undefined和null）
 ```
@@ -772,7 +777,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     },
     "noEmit": true, // 默认值为 false（生成输出文件），设置为 true 时仅执行类型检查不生成任何输出文件
     "allowImportingTsExtensions": true,
-    "jsx": "react-jsx", // 在.tsx文件中支持 JSX
+    "jsx": "react-jsx",
     "module": "esnext", // 指定生成的代码所使用的模块系统，如"CommonJS"、"ES6"等。
     "moduleResolution": "node", // 模块解析策略，模拟Node.js的模块解析逻辑
     "allowSyntheticDefaultImports": true

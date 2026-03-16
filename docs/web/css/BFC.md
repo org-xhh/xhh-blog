@@ -9,7 +9,8 @@ BFC(Block Formatting Context)，块级格式化上下文。拥有BFC属性的元
 - html根元素
 - float（不为none）：left、right
 - position：absolute、fixed
-- display：inline-block、flex、inline-flex、grid、inline-grid、flow-root
+- display：flow-root（推荐，无副作用）
+- display：inline-block、flex、inline-flex、grid、inline-grid
 - overflow(除了 visible 以外的值):  hidden、auto、scroll
 
 ## BFC 应用场景
@@ -41,7 +42,7 @@ BFC(Block Formatting Context)，块级格式化上下文。拥有BFC属性的元
 
 p元素占满了整个容器宽度，那如何让p元素只占除了图片之外的宽度呢？
 
-解决方法：使 img 成为 BFC(overflow: hidden)，这样p标签就会形成一个独立的渲染区域，宽度不会延伸到img那里。
+解决方法：使 p 成为 BFC(overflow: hidden)，这样p标签就会形成一个独立的渲染区域，宽度不会延伸到img那里。
 
 - 2. 解决 子元素外边距使父元素塌陷的问题
 ```
@@ -64,6 +65,8 @@ p元素占满了整个容器宽度，那如何让p元素只占除了图片之外
 
 给子元素设置margin-top，结果父元素跟着塌陷。
 
-解决方法：使 .con2 成为 BFC (overflow: hidden)
+解决方法1：给父元素设置border-top或padding-top，这就像在父子元素之间加了一道“隔离墙”，阻止margin传递；
+
+解决方法2：使 .con2 成为 BFC (overflow: hidden)
 
 ![alt text](image-6.png)

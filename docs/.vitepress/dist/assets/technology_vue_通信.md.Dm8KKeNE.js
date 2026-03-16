@@ -3,7 +3,7 @@ import{_ as l,D as o,c as i,j as s,I as e,w as p,a as n,a3 as t,o as c}from"./ch
 <span class="line"><span>const emitEvent = defineEmits([&#39;emitCarousel&#39;])</span></span>
 <span class="line"><span>function emitCarousel(item) {</span></span>
 <span class="line"><span>  emitEvent(&#39;emitCarousel&#39;, item)</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,1),f={id:"defineexpose",tabindex:"-1"},v=s("a",{class:"header-anchor",href:"#defineexpose","aria-label":'Permalink to "<font color=red>defineExpose</font>"'},"​",-1),m=t(`<p>父组件通过 ref 获取子组件实例，调用子组件defineExpose暴露的方法。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>子组件：</span></span>
+<span class="line"><span>}</span></span></code></pre></div>`,1),f={id:"ref、defineexpose",tabindex:"-1"},v=s("a",{class:"header-anchor",href:"#ref、defineexpose","aria-label":'Permalink to "<font color=red>ref、defineExpose</font>"'},"​",-1),m=t(`<p>父组件通过 ref 获取子组件实例，调用子组件defineExpose暴露的方法。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>子组件：</span></span>
 <span class="line"><span>const list = ref([&#39;html&#39;,&#39;css&#39;])</span></span>
 <span class="line"><span>defineExpose({list})</span></span>
 <span class="line"><span></span></span>
@@ -12,7 +12,7 @@ import{_ as l,D as o,c as i,j as s,I as e,w as p,a as n,a3 as t,o as c}from"./ch
 <span class="line"><span></span></span>
 <span class="line"><span>const childRef = ref(null)</span></span>
 <span class="line"><span>onMounted(()=&gt;{</span></span>
-<span class="line"><span>    console.log(childRef.value.list)</span></span>
+<span class="line"><span>  console.log(childRef.value.list)</span></span>
 <span class="line"><span>})</span></span></code></pre></div>`,2),k={id:"跨级组件通信",tabindex:"-1"},A=s("a",{class:"header-anchor",href:"#跨级组件通信","aria-label":'Permalink to "<font color=red>跨级组件通信</font>"'},"​",-1),T=t(`<p>provide 用于提供可以被后代组件注入的值。</p><p>inject 注入一个由祖先组件或整个应用 (通过 app.provide()) 提供的值</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import { provide, ref } from &#39;vue&#39;</span></span>
 <span class="line"><span>const val = ref(100)</span></span>
 <span class="line"><span>function updateVal(value: number) {</span></span>
@@ -162,25 +162,25 @@ import{_ as l,D as o,c as i,j as s,I as e,w as p,a as n,a3 as t,o as c}from"./ch
 <span class="line"><span>$bus.$on()</span></span>
 <span class="line"><span>$bus.$off()</span></span></code></pre></div>`,1),ls={id:"root",tabindex:"-1"},os=s("a",{class:"header-anchor",href:"#root","aria-label":'Permalink to "<font color=red>$root</font>"'},"​",-1),is={id:"vuex",tabindex:"-1"},cs=s("a",{class:"header-anchor",href:"#vuex","aria-label":'Permalink to "<font color=red>Vuex</font>"'},"​",-1),rs=s("p",null,"状态管理",-1),ds={id:"slot",tabindex:"-1"},hs=s("a",{class:"header-anchor",href:"#slot","aria-label":'Permalink to "<font color=red>slot</font>"'},"​",-1),us=t(`<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 子组件</span></span>
 <span class="line"><span>&lt;template&gt;</span></span>
-<span class="line"><span>    &lt;div&gt;</span></span>
-<span class="line"><span>        &lt;slot :user=&quot;user&quot;&gt;&lt;/slot&gt;</span></span>
-<span class="line"><span>    &lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;div&gt;</span></span>
+<span class="line"><span>    &lt;slot :user=&quot;user&quot;&gt;&lt;/slot&gt;</span></span>
+<span class="line"><span>  &lt;/div&gt;</span></span>
 <span class="line"><span>&lt;/template&gt;</span></span>
 <span class="line"><span>export default{</span></span>
-<span class="line"><span>    data(){</span></span>
-<span class="line"><span>        return {</span></span>
-<span class="line"><span>            user: {</span></span>
-<span class="line"><span>                name: &quot;xhh&quot;</span></span>
-<span class="line"><span>            }</span></span>
-<span class="line"><span>        }</span></span>
+<span class="line"><span>  data(){</span></span>
+<span class="line"><span>    return {</span></span>
+<span class="line"><span>      user: {</span></span>
+<span class="line"><span>        name: &quot;xhh&quot;</span></span>
+<span class="line"><span>      }</span></span>
 <span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 父组件</span></span>
 <span class="line"><span>&lt;template&gt;</span></span>
-<span class="line"><span>    &lt;div&gt;</span></span>
-<span class="line"><span>        &lt;child v-slot=&quot;slotProps&quot;&gt;</span></span>
-<span class="line"><span>            {{ slotProps.user.name }}</span></span>
-<span class="line"><span>        &lt;/child&gt;</span></span>
-<span class="line"><span>    &lt;/div&gt;</span></span>
-<span class="line"><span>&lt;/template&gt;</span></span></code></pre></div>`,1),_s={id:"localstorage、sessionstorage-1",tabindex:"-1"},gs=s("a",{class:"header-anchor",href:"#localstorage、sessionstorage-1","aria-label":'Permalink to "<font color=red>localStorage、sessionStorage</font>"'},"​",-1);function bs(fs,vs,ms,ks,As,Ts){const a=o("font");return c(),i("div",null,[h,u,s("h3",_,[e(a,{color:"red"},{default:p(()=>[n("父子通信")]),_:1}),n(),g]),b,s("h3",f,[e(a,{color:"red"},{default:p(()=>[n("defineExpose")]),_:1}),n(),v]),m,s("h3",k,[e(a,{color:"red"},{default:p(()=>[n("跨级组件通信")]),_:1}),n(),A]),T,s("h3",C,[e(a,{color:"red"},{default:p(()=>[n("attrs")]),_:1}),n(),x]),P,s("h3",y,[e(a,{color:"red"},{default:p(()=>[n("pinia")]),_:1}),n(),q]),V,s("h3",S,[e(a,{color:"red"},{default:p(()=>[n("事件总线（Mitt）")]),_:1}),n(),D]),I,s("h3",E,[e(a,{color:"red"},{default:p(()=>[n("$refs, $parent")]),_:1}),n(),N]),j,s("h3",M,[e(a,{color:"red"},{default:p(()=>[n("localStorage、sessionStorage")]),_:1}),n(),Z]),B,s("h3",$,[e(a,{color:"red"},{default:p(()=>[n("app.config.globalProperties")]),_:1}),n(),z]),w,s("h3",R,[e(a,{color:"red"},{default:p(()=>[n("BroadcastChannel API")]),_:1}),n(),J]),O,s("h3",L,[e(a,{color:"red"},{default:p(()=>[n("父子通信")]),_:1}),n(),H]),K,s("h3",F,[e(a,{color:"red"},{default:p(()=>[n("ref")]),_:1}),n(),X]),G,s("h3",Q,[e(a,{color:"red"},{default:p(()=>[n("$attrs / $listeners")]),_:1}),n(),U]),Y,s("h3",W,[e(a,{color:"red"},{default:p(()=>[n("$children / $parent")]),_:1}),n(),ss]),s("h3",ns,[e(a,{color:"red"},{default:p(()=>[n("provide / inject")]),_:1}),n(),as]),s("h3",es,[e(a,{color:"red"},{default:p(()=>[n("中央事件总线 EventBus")]),_:1}),n(),ps]),ts,s("h3",ls,[e(a,{color:"red"},{default:p(()=>[n("$root")]),_:1}),n(),os]),s("h3",is,[e(a,{color:"red"},{default:p(()=>[n("Vuex")]),_:1}),n(),cs]),rs,s("h3",ds,[e(a,{color:"red"},{default:p(()=>[n("slot")]),_:1}),n(),hs]),us,s("h3",_s,[e(a,{color:"red"},{default:p(()=>[n("localStorage、sessionStorage")]),_:1}),n(),gs])])}const Ps=l(d,[["render",bs]]);export{xs as __pageData,Ps as default};
+<span class="line"><span>  &lt;div&gt;</span></span>
+<span class="line"><span>    &lt;child v-slot=&quot;slotProps&quot;&gt;</span></span>
+<span class="line"><span>      {{ slotProps.user.name }}</span></span>
+<span class="line"><span>    &lt;/child&gt;</span></span>
+<span class="line"><span>  &lt;/div&gt;</span></span>
+<span class="line"><span>&lt;/template&gt;</span></span></code></pre></div>`,1),_s={id:"localstorage、sessionstorage-1",tabindex:"-1"},gs=s("a",{class:"header-anchor",href:"#localstorage、sessionstorage-1","aria-label":'Permalink to "<font color=red>localStorage、sessionStorage</font>"'},"​",-1);function bs(fs,vs,ms,ks,As,Ts){const a=o("font");return c(),i("div",null,[h,u,s("h3",_,[e(a,{color:"red"},{default:p(()=>[n("父子通信")]),_:1}),n(),g]),b,s("h3",f,[e(a,{color:"red"},{default:p(()=>[n("ref、defineExpose")]),_:1}),n(),v]),m,s("h3",k,[e(a,{color:"red"},{default:p(()=>[n("跨级组件通信")]),_:1}),n(),A]),T,s("h3",C,[e(a,{color:"red"},{default:p(()=>[n("attrs")]),_:1}),n(),x]),P,s("h3",y,[e(a,{color:"red"},{default:p(()=>[n("pinia")]),_:1}),n(),q]),V,s("h3",S,[e(a,{color:"red"},{default:p(()=>[n("事件总线（Mitt）")]),_:1}),n(),D]),I,s("h3",E,[e(a,{color:"red"},{default:p(()=>[n("$refs, $parent")]),_:1}),n(),N]),j,s("h3",M,[e(a,{color:"red"},{default:p(()=>[n("localStorage、sessionStorage")]),_:1}),n(),Z]),B,s("h3",$,[e(a,{color:"red"},{default:p(()=>[n("app.config.globalProperties")]),_:1}),n(),z]),w,s("h3",R,[e(a,{color:"red"},{default:p(()=>[n("BroadcastChannel API")]),_:1}),n(),J]),O,s("h3",L,[e(a,{color:"red"},{default:p(()=>[n("父子通信")]),_:1}),n(),H]),K,s("h3",F,[e(a,{color:"red"},{default:p(()=>[n("ref")]),_:1}),n(),X]),G,s("h3",Q,[e(a,{color:"red"},{default:p(()=>[n("$attrs / $listeners")]),_:1}),n(),U]),Y,s("h3",W,[e(a,{color:"red"},{default:p(()=>[n("$children / $parent")]),_:1}),n(),ss]),s("h3",ns,[e(a,{color:"red"},{default:p(()=>[n("provide / inject")]),_:1}),n(),as]),s("h3",es,[e(a,{color:"red"},{default:p(()=>[n("中央事件总线 EventBus")]),_:1}),n(),ps]),ts,s("h3",ls,[e(a,{color:"red"},{default:p(()=>[n("$root")]),_:1}),n(),os]),s("h3",is,[e(a,{color:"red"},{default:p(()=>[n("Vuex")]),_:1}),n(),cs]),rs,s("h3",ds,[e(a,{color:"red"},{default:p(()=>[n("slot")]),_:1}),n(),hs]),us,s("h3",_s,[e(a,{color:"red"},{default:p(()=>[n("localStorage、sessionStorage")]),_:1}),n(),gs])])}const Ps=l(d,[["render",bs]]);export{xs as __pageData,Ps as default};
