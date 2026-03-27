@@ -15,7 +15,7 @@ Vite 采用了即时编译的方式，在开发模式下通过浏览器原生支
 ### esbuild
 esbuild 强力加持：依赖预构建，将非ESM依赖转换为ESM；将大型依赖内部众多小模块打包成单一模块。 
 
-开发时用 esbuild，生产时用 rollup 构建。
+开发时用 esbuild，生产时用 Rollup 构建；未来用 Rolldown 统一。
 -->
 
 ### 环境变量与模式

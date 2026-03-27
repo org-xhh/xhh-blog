@@ -87,10 +87,10 @@ export default defineConfig({
         },
     },
 
-    // 配置依赖优化
+    // lodash是CommonJS，module.exports=...浏览器不认识，Vite预构建转成ESM
     optimizeDeps: {
-        // 预构建的依赖列表
-        include: ['vue', 'vue-router', 'pinia', 'axios', 'element-plus', '@vueuse/core'],
+        // 提前预构建这些包
+        include: ['vue', 'vue-router', 'lodash-es']
     },
 })
 ```
