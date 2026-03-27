@@ -2,7 +2,8 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>const CancelToken = axios.CancelToken</span></span>
 <span class="line"><span>const source = CancelToken.source()</span></span>
 <span class="line"><span>axios.get(&#39;xxx&#39;, {</span></span>
-<span class="line"><span> cancelToken: source.token</span></span>
+<span class="line"><span> cancelToken: source.token,</span></span>
+<span class="line"><span> responseType: &#39;json&#39;, // text blob arraybuffer</span></span>
 <span class="line"><span>}).then(response =&gt; {</span></span>
 <span class="line"><span>  console.log(response.data)</span></span>
 <span class="line"><span>}).catch(function (thrown) {</span></span>
