@@ -71,6 +71,15 @@ export default {
           // { text: "phpStudy", link: "/tool/phpStudy" }
         ]
       },
+      // {
+      //   text: 'AI',
+      //   items: [
+      //     { text: "文档", link: "/ai/文档" },
+      //     { text: "claude code", link: "/ai/claudecode" },
+      //     { text: "提示词", link: "/ai/提示词" },
+      //     { text: "使用ai工具", link: "/ai/使用ai工具" },
+      //   ]
+      // }
     ],
     sidebar: { // 侧边栏
       "/web/html/": {

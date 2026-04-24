@@ -2,11 +2,13 @@ import{_ as s,c as n,o as a,a3 as e}from"./chunks/framework.C5U8cnJv.js";const v
 <span class="line"><span>let targetNode = document.getElementById(&#39;root&#39;)</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// observer配置项</span></span>
+<span class="line"><span>// attributeFilter: [&#39;style&#39;] 只监听style属性变化</span></span>
 <span class="line"><span>let config = { attributes: true, childList: true, subtree: true }</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 节点发生变化时需要执行的函数</span></span>
 <span class="line"><span>let callback = function(mutationsList, observer) {</span></span>
 <span class="line"><span>  for (let mutation of mutationsList) {</span></span>
+<span class="line"><span>    // mutation.target: el 节点</span></span>
 <span class="line"><span>    if (mutation.type === &#39;childList&#39;) {</span></span>
 <span class="line"><span>      console.log(&#39;子节点新增或删除&#39;)</span></span>
 <span class="line"><span>    } else if (mutation.type === &#39;attributes&#39;) {</span></span>

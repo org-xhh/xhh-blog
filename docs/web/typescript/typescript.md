@@ -261,7 +261,7 @@ let users: User[] = [
 
 只读属性：
 ```
-interface TestObj  {
+interface TestObj {
   readonly propName: number
 }
 ```
@@ -391,9 +391,7 @@ MyNamespace.sayHello(); // Hello, TypeScript!
 
 ## 泛型
 
-泛型（Generics）是允许同一个函数接受不同类型参数的一种模板；
-
-泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示。
+泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示，在使用时再指定类型。
 
 #### 泛型函数
 
@@ -543,7 +541,7 @@ function isString(s: unknown): s is string {
 
 ‌Partial&lt;T&gt;：将类型T的所有属性变为可选
 
-‌Required&lt;T&gt;：将类型T的所有属性变为必填
+‌Required&lt;T&gt;：将类型T的所有属性变为必选
 
 Readonly&lt;T&gt;：将类型T的所有属性变为只读
 
