@@ -43,7 +43,8 @@ import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>let observer = new IntersectionObserver(function(entries) {</span></span>
 <span class="line"><span>  entries.forEach(function(entry) {</span></span>
-<span class="line"><span>    if (entry.isIntersecting) {</span></span>
+<span class="line"><span>    // intersectionRatio 图片可见比例 0-1</span></span>
+<span class="line"><span>    if (entry.isIntersecting) { // 在视口</span></span>
 <span class="line"><span>      let img = entry.target</span></span>
 <span class="line"><span>      if (img.dataset.src) {</span></span>
 <span class="line"><span>        // dataset.src 就是 获取 &quot;data-src&quot; 属性值</span></span>

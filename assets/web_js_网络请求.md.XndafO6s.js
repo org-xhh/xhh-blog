@@ -31,7 +31,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>const signal = controller.signal;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>fetch(&#39;https://www.test.com/&#39;, {</span></span>
-<span class="line"><span>  method: &#39;GET&#39;,</span></span>
+<span class="line"><span>  method: &#39;POST&#39;,</span></span>
 <span class="line"><span>  headers: {</span></span>
 <span class="line"><span>    &#39;Content-Type&#39;: &#39;application/json&#39;</span></span>
 <span class="line"><span>  }，</span></span>

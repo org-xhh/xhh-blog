@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as c,a3 as d}from"./chunks/framework.C5U8cnJv.js";const k=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"ai/claudecode.md","filePath":"ai/claudecode.md"}'),s={name:"ai/claudecode.md"},t=d("",30),i=[t];function l(o,n,p,h,u,r){return c(),a("div",null,i)}const g=e(s,[["render",l]]);export{k as __pageData,g as default};
