@@ -1,4 +1,4 @@
-# [cursor](https://cursor.com/cn/docs/agent/overview)
+# [Cursor](https://cursor.com/cn/docs/agent/overview)
 
 ## 编写规则
 
@@ -19,15 +19,15 @@ AI 聊天；
 
 ## skills
 
-- 内置 skill 所在目录： ~/.cursor/skills-cursor/
+- 内置 skill 所在目录： ~/.cursor/skills-cursor/，不要动
 
 - 个人技能：~/.cursor/skills/技能名/SKILL.md
 
 - 项目技能：项目根目录 .cursor/skills/技能名/SKILL.md
 
-- 一键创建：/create-skill, 按提示填：名称、描述、指令，自动生成
+- 一键创建：/create-skill, 填写：名称、描述、指令等，自动生成
 
-- 触发：聊天框输入 /, 选择 skill，即可使用该技能
+- 触发：自动激活相关技能；聊天框输入 /, 选择 skill，即可使用该技能
 
 
 最小可用模板:
