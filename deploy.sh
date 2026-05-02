@@ -17,7 +17,7 @@ git add -A
 git commit -m 'sh deploy.sh'
 
 # push 到 github 项目的 gh-pages 分支
-git push -f https://github.com/org-xhh/xhh-blog.git master:gh-pages
+git push -f git@github.com:org-xhh/xhh-blog.git master:gh-pages
 
 cd -
 
@@ -26,4 +26,4 @@ git add -A
 git commit -m 'deploy'
 
 # push 到 master
-git push -f https://github.com/org-xhh/xhh-blog.git master:master
+git push -f git@github.com:org-xhh/xhh-blog.git master:master
