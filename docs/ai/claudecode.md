@@ -1,3 +1,92 @@
+# [Claude Code](https://www.runoob.com/claude-code/claude-code-tutorial.html)
+
+## Mac 安装 claude code，接入国产大模型
+
+### Homebrew 安装 claude code
+
+在终端输入：
+```
+brew install --cask claude-code
+```
+
+### 查看 claude code 版本
+```
+claude --version
+```
+
+### 安装 CC Switch
+```
+brew tap farion1231/ccswitch
+
+brew install --cask cc-switch
+```
+
+### 接入 DeepSeek 大模型
+
+获取 DeepSeek API key:
+
+https://platform.deepseek.com/api_keys
+
+<!-- sk-685cd1de7999449d82b6f7e753143418 -->
+
+打开 cc switch，添加新供应商，选择 DeepSeek，输入 API key，点添加即可。
+
+![alt text](165f201a-382e-4d59-9d80-972cc73220c9.png)
+
+### 接入千问大模型
+
+![alt text](img_model.png)
+
+![alt text](2885d82e-d3f3-426c-84bf-8b7b5c0ff129.png)
+
+注意：免费额度用完会自动扣费，先在后台设置用完即停。
+
+### 启动 claude code
+
+在终端输入 /claude，回车，就可以正常启动 claude code了；
+
+第一次使用，会有一些初始化设置，比如颜色模式等，选中回车。后续可以输入 /theme 修改。
+
+![alt text](img_claude.png)
+
+### 切换模型
+```
+/model
+```
+
+### 安装 skill
+注册插件市场源
+```
+/plugin marketplace add anthropics/skills
+```
+安装插件：
+
+/plugin => Marketplaces =>  选中 anthropic-agent-skills => Browse plugins => Discover => example skills
+
+或
+
+/plugin install example-skills@anthropic-agent-skills
+
+查看插件： /skills
+
+![alt text](d8ae2a2b-50db-486b-9fac-1661099089f4.png)
+
+### 退出 claude code
+```
+/exit
+```
+
+### 手动更新 claude-code
+```
+brew upgrade claude-code
+```
+
+### 卸载 claude code
+```
+brew uninstall --cask claude-code
+```
+
+<!--
 ## 安装 claude code、接入 deepseek
 
 ### 需要工具：
@@ -56,6 +145,4 @@ cc-switch 是一个图形化工具‌
 打开 API 中转平台，创建 API 密钥，在“分组”里选择模型；
 
 打开 cc-switch，添加新供应商（+号），选择自定义配置，粘贴密钥，保存。在模型列表启用当前模型。
-
-
-
+-->
