@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as e,a3 as l}from"./chunks/framework.C5U8cnJv.js";const _=JSON.parse('{"title":"Cursor","description":"","frontmatter":{},"headers":[],"relativePath":"ai/cursor.md","filePath":"ai/cursor.md"}'),n={name:"ai/cursor.md"},r=l("",13),t=[r];function i(o,p,c,d,h,u){return e(),s("div",null,t)}const m=a(n,[["render",i]]);export{_ as __pageData,m as default};
