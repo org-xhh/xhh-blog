@@ -77,7 +77,7 @@ export default {
           { text: "AI 知识", link: "/ai/ai" },
           { text: "cursor", link: "/ai/cursor" },
           { text: "claude code", link: "/ai/claudecode" },
-          { text: "提示词", link: "/ai/提示词" },
+          // { text: "提示词", link: "/ai/提示词" },
           { text: "使用ai工具", link: "/ai/使用ai工具" },
         ]
       }
