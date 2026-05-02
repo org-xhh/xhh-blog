@@ -60,6 +60,10 @@ cd ~/.ssh
 ssh -T git@github.com
 ```
 
+如果报错
+![alt text](979dc996-1f5c-43d7-bb8c-eb09e82de7bf.png)
+
+删除 ～/.ssh/known_hosts 里 github.com 那一行，重新连接即可。
 
 
 ### 六、用户名，邮箱配置
