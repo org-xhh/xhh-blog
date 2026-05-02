@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"ai/使用ai工具.md","filePath":"ai/使用ai工具.md"}'),p={name:"ai/使用ai工具.md"},t=e("",7),i=[t];function l(c,o,r,d,h,u){return n(),s("div",null,i)}const _=a(p,[["render",l]]);export{g as __pageData,_ as default};

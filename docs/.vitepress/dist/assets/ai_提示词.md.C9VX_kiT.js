@@ -34,4 +34,4 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m
 <span class="line"><span>- 导出默认组件</span></span>
 <span class="line"><span>- 不要使用任何外部 UI 库</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>请直接输出代码，不要解释。</span></span></code></pre></div><h3 id="项目搭建" tabindex="-1">项目搭建 <a class="header-anchor" href="#项目搭建" aria-label="Permalink to &quot;项目搭建&quot;">​</a></h3><p>帮我用 Vue 3 写一个后台管理系统基础布局，包含顶部导航、左侧菜单、右侧内容区，要求布局稳定，适合后续接路由页面和权限菜单，然后写一个用户资料页组件，包含头像、昵称、简介、标签、数据统计和编辑按钮，要求模块划分自然，后续便于接接口和状态。</p>`,8),i=[e];function c(t,o,r,d,h,_){return n(),a("div",null,i)}const b=s(l,[["render",c]]);export{m as __pageData,b as default};
+<span class="line"><span>请直接输出代码，不要解释。</span></span></code></pre></div><hr><p>提示词相关文档：</p><p><a href="https://www.prompt123.cn/" target="_blank" rel="noreferrer">https://www.prompt123.cn/</a></p>`,9),i=[e];function c(t,o,r,d,h,_){return n(),a("div",null,i)}const g=s(l,[["render",c]]);export{m as __pageData,g as default};

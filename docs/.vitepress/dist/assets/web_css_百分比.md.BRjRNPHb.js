@@ -1,10 +1,29 @@
-import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const b=JSON.parse('{"title":"css中的%","description":"","frontmatter":{},"headers":[],"relativePath":"web/css/百分比.md","filePath":"web/css/百分比.md"}'),p={name:"web/css/百分比.md"},i=e(`<h1 id="css中的" tabindex="-1">css中的% <a class="header-anchor" href="#css中的" aria-label="Permalink to &quot;css中的%&quot;">​</a></h1><h3 id="元素的宽度和高度" tabindex="-1">元素的宽度和高度 <a class="header-anchor" href="#元素的宽度和高度" aria-label="Permalink to &quot;元素的宽度和高度&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>div {</span></span>
+import{_ as n,D as e,c as p,I as i,w as t,a3 as a,o as l,a as c}from"./chunks/framework.C5U8cnJv.js";const x=JSON.parse('{"title":"css中的%","description":"","frontmatter":{},"headers":[],"relativePath":"web/css/百分比.md","filePath":"web/css/百分比.md"}'),o={name:"web/css/百分比.md"},d=a(`<h1 id="css中的" tabindex="-1">css中的% <a class="header-anchor" href="#css中的" aria-label="Permalink to &quot;css中的%&quot;">​</a></h1><h3 id="元素的宽度和高度" tabindex="-1">元素的宽度和高度 <a class="header-anchor" href="#元素的宽度和高度" aria-label="Permalink to &quot;元素的宽度和高度&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>div {</span></span>
 <span class="line"><span>  width: 50%;  /* 元素宽度为父元素宽度的50% */</span></span>
 <span class="line"><span>  height: 20%; /* 元素高度为父元素高度的20% */</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h3 id="最大-最小宽度和高度" tabindex="-1">最大/最小宽度和高度 <a class="header-anchor" href="#最大-最小宽度和高度" aria-label="Permalink to &quot;最大/最小宽度和高度&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>div {</span></span>
 <span class="line"><span>  min-width: 50%;  /* 元素最小宽度是父元素宽度的50% */</span></span>
 <span class="line"><span>  max-height: 80%; /* 元素最大高度是父元素高度的80% */</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="padding和margin" tabindex="-1">padding和margin <a class="header-anchor" href="#padding和margin" aria-label="Permalink to &quot;padding和margin&quot;">​</a></h3><p>相对于<strong>父元素的宽度</strong></p><h3 id="absolute-relative-定位元素" tabindex="-1">absolute(relative) 定位元素 <a class="header-anchor" href="#absolute-relative-定位元素" aria-label="Permalink to &quot;absolute(relative) 定位元素&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>div {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="padding和margin" tabindex="-1">padding和margin <a class="header-anchor" href="#padding和margin" aria-label="Permalink to &quot;padding和margin&quot;">​</a></h3><p>相对于<strong>父元素的宽度</strong></p><p>例如：child 元素设置 padding-top: 75%，也就是父元素宽度的75%，通过 padding-top 撑起高度，从而实现宽高比 4:3</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div class=&quot;parent&quot;&gt;</span></span>
+<span class="line"><span>  &lt;div class=&quot;child&quot;&gt;</span></span>
+<span class="line"><span>    &lt;div class=&quot;container&quot;&gt;这是内容&lt;/div&gt;</span></span>
+<span class="line"><span>  &lt;/div&gt;</span></span>
+<span class="line"><span>&lt;/div&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>.parent {</span></span>
+<span class="line"><span>  width: 50%;</span></span>
+<span class="line"><span>  .child {</span></span>
+<span class="line"><span>    position: relative;</span></span>
+<span class="line"><span>    width: 100%;</span></span>
+<span class="line"><span>    padding-top: 75%;</span></span>
+<span class="line"><span>    height: 0;</span></span>
+<span class="line"><span>    .container {</span></span>
+<span class="line"><span>      position: absolute;</span></span>
+<span class="line"><span>      inset: 0;</span></span>
+<span class="line"><span>      background-color: #aaa;</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div>`,9),h=a(`<h3 id="absolute-relative-定位元素" tabindex="-1">absolute(relative) 定位元素 <a class="header-anchor" href="#absolute-relative-定位元素" aria-label="Permalink to &quot;absolute(relative) 定位元素&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>div {</span></span>
 <span class="line"><span>  position: absolute;</span></span>
 <span class="line"><span>  left: 15%; /* 父元素宽度的15% */</span></span>
 <span class="line"><span>  top: 10%; /* 父元素高度的10% */</span></span>
@@ -20,4 +39,4 @@ import{_ as a,c as s,o as n,a3 as e}from"./chunks/framework.C5U8cnJv.js";const b
 <span class="line"><span>}</span></span></code></pre></div><h3 id="line-height" tabindex="-1">line-height <a class="header-anchor" href="#line-height" aria-label="Permalink to &quot;line-height&quot;">​</a></h3><p>基于当前字体大小的比例</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.ele {</span></span>
 <span class="line"><span>    font-size: 20px;</span></span>
 <span class="line"><span>    line-height: 120%; /* 20px * 120% = 24px */</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,18),t=[i];function l(c,o,d,h,r,u){return n(),s("div",null,t)}const v=a(p,[["render",l]]);export{b as __pageData,v as default};
+<span class="line"><span>}</span></span></code></pre></div>`,11);function r(g,u,b,v,m,_){const s=e("font");return l(),p("div",null,[d,i(s,{size:"2",color:"gray"},{default:t(()=>[c("直接在 .parent 设置 aspect-ratio: 4/3，也能实现宽高4:3，但是考虑浏览器兼容性。")]),_:1}),h])}const f=n(o,[["render",r]]);export{x as __pageData,f as default};
