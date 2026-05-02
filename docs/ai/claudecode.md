@@ -27,8 +27,6 @@ brew install --cask cc-switch
 
 https://platform.deepseek.com/api_keys
 
-<!-- sk-685cd1de7999449d82b6f7e753143418 -->
-
 打开 cc switch，添加新供应商，选择 DeepSeek，输入 API key，点添加即可。
 
 ![alt text](165f201a-382e-4d59-9d80-972cc73220c9.png)

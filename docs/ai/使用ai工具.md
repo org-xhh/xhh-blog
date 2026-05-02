@@ -24,7 +24,6 @@ async chatWithAI(message) {
     return data.output.text
 }
 ```
-<!-- sk-0999a1d937594d8abe1456cc0360d193 -->
 
 ### 文生图
 ```
