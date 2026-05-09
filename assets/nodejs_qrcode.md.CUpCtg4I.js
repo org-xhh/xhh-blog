@@ -1,4 +1,8 @@
-import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e="/xhh-blog/assets/image-14.BoS3fAT8.png",v=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/qrcode.md","filePath":"nodejs/qrcode.md"}'),l={name:"nodejs/qrcode.md"},t=p(`<h2 id="qrcodejs2-生成中间带logo的二维码" tabindex="-1"><a href="https://www.npmjs.com/package/qrcodejs2" target="_blank" rel="noreferrer">qrcodejs2</a> 生成中间带logo的二维码 <a class="header-anchor" href="#qrcodejs2-生成中间带logo的二维码" aria-label="Permalink to &quot;[qrcodejs2](https://www.npmjs.com/package/qrcodejs2) 生成中间带logo的二维码&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i qrcodejs2 --save-dev</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div ref=&quot;qrCodeUrl&quot; /&gt;</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/**</span></span>
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e="/xhh-blog/assets/image-14.BoS3fAT8.png",v=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/qrcode.md","filePath":"nodejs/qrcode.md"}'),l={name:"nodejs/qrcode.md"},t=p(`<h2 id="qrcodejs2-生成中间带logo的二维码" tabindex="-1"><a href="https://www.npmjs.com/package/qrcodejs2" target="_blank" rel="noreferrer">qrcodejs2</a> 生成中间带logo的二维码 <a class="header-anchor" href="#qrcodejs2-生成中间带logo的二维码" aria-label="Permalink to &quot;[qrcodejs2](https://www.npmjs.com/package/qrcodejs2) 生成中间带logo的二维码&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i qrcodejs2 --save-dev</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;div ref=&quot;qrCodeUrl&quot; /&gt;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>import QRCode from &#39;qrcodejs2&#39;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
 <span class="line"><span> * @description 生成二维码</span></span>
 <span class="line"><span> * @param {string} url 链接</span></span>
 <span class="line"><span> * @param {number} w 二维码宽度</span></span>
@@ -24,8 +28,6 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    let qrImg = this.qrcode._el.getElementsByTagName(&#39;img&#39;)[0]</span></span>
 <span class="line"><span>    let canvas = this.qrcode._el.getElementsByTagName(&#39;canvas&#39;)[0]</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>    canvas.style.display = &#39;inline-block&#39;</span></span>
-<span class="line"><span>    // canvas.style.display = &#39;none&#39; // 这个隐藏，显示图片浏览器可识别保存</span></span>
 <span class="line"><span>    let ctx = canvas.getContext(&#39;2d&#39;)</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // logo白色背景</span></span>
@@ -47,8 +49,6 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span></span></span>
 <span class="line"><span>    // 二维码图片url地址</span></span>
 <span class="line"><span>    qrImg.src = canvas.toDataURL() // canvas.toDataURL(&#39;image/png&#39;)</span></span>
-<span class="line"><span>    qrImg.style.display = &#39;none&#39;</span></span>
-<span class="line"><span>    // qrImg.style.display = &#39;block&#39; // 显示图片浏览器长按可识别保存</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h2 id="canvas-和-qrcode-1-生成带背景图和文字的二维码" tabindex="-1">canvas 和 qrcode@1 生成带背景图和文字的二维码 <a class="header-anchor" href="#canvas-和-qrcode-1-生成带背景图和文字的二维码" aria-label="Permalink to &quot;canvas 和 qrcode@1 生成带背景图和文字的二维码&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;template&gt;</span></span>
 <span class="line"><span>  &lt;footer&gt;</span></span>
@@ -119,4 +119,4 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  top: 50px;</span></span>
 <span class="line"><span>  right: 150px;</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span>&lt;/style&gt;</span></span></code></pre></div><p><img src="`+e+'" alt="alt text"></p>',7),i=[t];function c(o,r,g,d,h,m){return a(),n("div",null,i)}const q=s(l,[["render",c]]);export{v as __pageData,q as default};
+<span class="line"><span>&lt;/style&gt;</span></span></code></pre></div><p><img src="`+e+'" alt="alt text"></p>',6),c=[t];function i(o,r,g,d,h,m){return a(),n("div",null,c)}const q=s(l,[["render",i]]);export{v as __pageData,q as default};

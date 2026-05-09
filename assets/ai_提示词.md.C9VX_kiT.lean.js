@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"ai/提示词.md","filePath":"ai/提示词.md"}'),l={name:"ai/提示词.md"},e=p("",9),i=[e];function c(t,o,r,d,h,_){return n(),a("div",null,i)}const g=s(l,[["render",c]]);export{m as __pageData,g as default};
