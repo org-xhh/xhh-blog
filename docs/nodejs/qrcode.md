@@ -3,12 +3,11 @@
 ```
 npm i qrcodejs2 --save-dev
 ```
-
 ```
 <div ref="qrCodeUrl" />
-```
 
-``` 
+import QRCode from 'qrcodejs2'
+
 /**
  * @description 生成二维码
  * @param {string} url 链接
@@ -35,8 +34,6 @@ createQrcode(url, w = 80, h = 80) {
     let qrImg = this.qrcode._el.getElementsByTagName('img')[0]
     let canvas = this.qrcode._el.getElementsByTagName('canvas')[0]
 
-    canvas.style.display = 'inline-block'
-    // canvas.style.display = 'none' // 这个隐藏，显示图片浏览器可识别保存
     let ctx = canvas.getContext('2d')
 
     // logo白色背景
@@ -58,8 +55,6 @@ createQrcode(url, w = 80, h = 80) {
 
     // 二维码图片url地址
     qrImg.src = canvas.toDataURL() // canvas.toDataURL('image/png')
-    qrImg.style.display = 'none'
-    // qrImg.style.display = 'block' // 显示图片浏览器长按可识别保存
   }
 }
 ```

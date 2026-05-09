@@ -42,3 +42,37 @@ description: Brief description of what this skill does and when to us
 ## Instructions
 Clear, step-by-step guidance for the agent.
 ```
+
+## 配置 MCP
+
+### 1. 获取 Figma 的 API Key
+
+Figma => Settings => Security => Generate new token，勾选各类读取权限，将生成的 token 复制保存好。
+
+### 2. 建立 Figma 与 Cursor 的 “数据通信桥梁”
+
+打开 Figma GitHub 仓库：
+
+https://github.com/GLips/Figma-Context-MCP
+
+找到仓库中的 MCP 配置代码，根据本机设备系统直接复制全部内容
+
+![alt text](9f4d5b6f-e475-4372-9e70-8ba3af00e3e9.png)
+
+将刚才生成的 Figma API KEY 替换掉 MCP 配置代码中的 "YOUR-KEY"。
+
+### 3. 在 Cursor 中配置 MCP
+
+Cursor Settings => Tools & MCPs => New MCP Server
+
+将上面 MCP 配置代码复制到 mcp.json 文件中。
+
+然后重启 Cursor
+
+![alt text](image-1.png)
+
+出现绿灯就代表连接好了。
+
+## .cursorignore
+
+设置不让 AI 访问的文件或目录，和 .gitignore 语法一样。

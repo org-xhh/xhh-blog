@@ -25,6 +25,23 @@ async chatWithAI(message) {
 }
 ```
 
+<!--
+```
+// 流式读取是可选功能，需接口明确支持并正确配置才能使用
+const reader = response.body.getReader()
+const decoder = new TextDecoder('utf-8')
+while (1) {
+    const { done, value } = await reader.read()
+    if (done) {
+        console.log('Stream complete')
+        break
+    }
+    const chunk = decoder.decode(value)
+    return chunk
+}
+```
+-->
+
 ### 文生图
 ```
 async chatWithAI(message) {
