@@ -1,4 +1,14 @@
-## skills
+# AI
+
+## Prompt
+
+提示词
+
+## LLM 
+
+大语言模型(Large Language Model)，通过 Prompt 接收指令，生成文本或结构化内容
+
+## Skills
 
 - 官方技能市场：https://skills.sh/
 
@@ -46,3 +56,11 @@ npx openskills install anthropics/skills -g
 ```
 openskills list
 ```
+
+## MCP
+
+模型上下文协议(Model Context Protocol)
+
+统一接入外部工具
+
+[Cursor配置MCP](./cursor.md)

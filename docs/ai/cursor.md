@@ -1,6 +1,8 @@
 # [Cursor](https://cursor.com/cn/docs/agent/overview)
 
-## 编写规则
+## rules
+
+编写规则
 
 - 项目根目录下创建 .cursor/rules 文件夹
 - 新建规则文件，使用 .mdc（Markdown with Metadata）格式
@@ -15,7 +17,9 @@ AI 聊天；
 
 选中代码 => Add to Chat
 
-## @ 符号增加上下文
+## @ 符号
+
+@ 符号增加上下文
 
 ## skills
 
@@ -43,7 +47,7 @@ description: Brief description of what this skill does and when to us
 Clear, step-by-step guidance for the agent.
 ```
 
-## 配置 MCP
+## MCP
 
 ### 1. 获取 Figma 的 API Key
 
@@ -73,6 +77,17 @@ Cursor Settings => Tools & MCPs => New MCP Server
 
 出现绿灯就代表连接好了。
 
+### 4. 调用 MCP 生成 html 页面
+
+设计稿，右键选择 Copy as Code 或 Copy as link 
+![alt text](copylink.png)
+
+<!-- https://www.figma.com/design/oQsidlMJnlnIlYfMT4lboB/newfile1?node-id=1-1103&t=GUz1bbxKkzBN34J9-4 -->
+
+将链接或代码粘贴到 Cursor 对话框中
+![alt text](cursor-mcp.png)
+生成的 html 页面如下
+![alt text](mcp-html.png)
 ## .cursorignore
 
 设置不让 AI 访问的文件或目录，和 .gitignore 语法一样。
