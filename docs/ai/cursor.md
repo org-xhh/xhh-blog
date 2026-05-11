@@ -61,7 +61,7 @@ https://github.com/GLips/Figma-Context-MCP
 
 找到仓库中的 MCP 配置代码，根据本机设备系统直接复制全部内容
 
-![alt text](9f4d5b6f-e475-4372-9e70-8ba3af00e3e9.png)
+![alt text](github-mcp.png)
 
 将刚才生成的 Figma API KEY 替换掉 MCP 配置代码中的 "YOUR-KEY"。
 

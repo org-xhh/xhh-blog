@@ -1,8 +1,8 @@
 # [Claude Code](https://www.runoob.com/claude-code/claude-code-tutorial.html)
 
-## Mac 安装 claude code，接入国产大模型
+## 安装 claude code
 
-### Homebrew 安装 claude code
+### Mac Homebrew 安装 claude code
 
 在终端输入：
 ```
@@ -20,6 +20,7 @@ brew tap farion1231/ccswitch
 
 brew install --cask cc-switch
 ```
+## 接入国产大模型
 
 ### 接入 DeepSeek 大模型
 
@@ -29,13 +30,13 @@ https://platform.deepseek.com/api_keys
 
 打开 cc switch，添加新供应商，选择 DeepSeek，输入 API key，点添加即可。
 
-![alt text](165f201a-382e-4d59-9d80-972cc73220c9.png)
+![alt text](ccswitch.png)
 
 ### 接入千问大模型
 
 ![alt text](img_model.png)
 
-![alt text](2885d82e-d3f3-426c-84bf-8b7b5c0ff129.png)
+![alt text](ccswitch-model.png)
 
 注意：免费额度用完会自动扣费，先在后台设置用完即停。
 
@@ -52,7 +53,7 @@ https://platform.deepseek.com/api_keys
 /model
 ```
 
-### 安装 skill
+## 安装 skill
 注册插件市场源
 ```
 /plugin marketplace add anthropics/skills
@@ -67,7 +68,7 @@ https://platform.deepseek.com/api_keys
 
 查看插件： /skills
 
-![alt text](d8ae2a2b-50db-486b-9fac-1661099089f4.png)
+![alt text](claude-skills.png)
 
 ### 退出 claude code
 ```
@@ -82,6 +83,30 @@ brew upgrade claude-code
 ### 卸载 claude code
 ```
 brew uninstall --cask claude-code
+```
+
+## 连接 Figma MCP
+
+打开 Figma 官网文档，先安装 MCP：
+
+https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#claude-code
+
+![alt text](image-2.png)
+
+在终端输入
+```
+claude mcp add --scope user --transport http figma https://mcp.figma.com/mcp
+```
+启动 claude，输入 /mcp，选择 figma，进行 figma 鉴权。
+
+列出所有已配置的服务器
+```
+claude mcp list
+```
+
+检查服务器状态
+```
+/mcp
 ```
 
 <!--
