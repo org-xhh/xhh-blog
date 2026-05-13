@@ -75,9 +75,10 @@ export default {
         text: 'AI',
         items: [
           { text: "AI 知识", link: "/ai/ai" },
-          { text: "cursor", link: "/ai/cursor" },
-          { text: "claude code", link: "/ai/claudecode" },
-          { text: "使用ai工具", link: "/ai/使用ai工具" },
+          { text: "Cursor", link: "/ai/cursor" },
+          { text: "Codex", link: "/ai/codex" },
+          { text: "Claude Code", link: "/ai/claudecode" },
+          { text: "GitHub Copilot", link: "/ai/githubcopilot" }
         ]
       }
     ],

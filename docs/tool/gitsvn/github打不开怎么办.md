@@ -37,6 +37,11 @@ windows：ipconfig /flushdns
 
 Mac：sudo killall -HUP mDNSResponder​
 
-二、dev-sidecar
+二、Watt Toolkit
 
-三、VPN
+window搜索 => store => Microsoft Store => 搜索 Watt Toolkit => 安装
+=> 网络加速 => 勾选 Github => 一键加速
+
+三、dev-sidecar
+
+四、VPN

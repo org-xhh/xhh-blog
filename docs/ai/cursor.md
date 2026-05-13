@@ -21,7 +21,7 @@ AI 聊天；
 
 @ 符号增加上下文
 
-## skills
+## Skills
 
 - 内置 skill 所在目录： ~/.cursor/skills-cursor/，不要动
 
