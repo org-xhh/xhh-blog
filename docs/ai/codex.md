@@ -18,6 +18,19 @@ C:\Users\Administrator\.codex\config.toml
 ~/.codex/config.toml
 ```
 
-## codex使用 api 教程
+## codex 使用 api 教程
 
 https://jcn08oaqmm57.feishu.cn/docx/ExXAdFe5GonHrJxR49icUDEFnAg
+
+![alt text](image-3.png)
+
+## 添加 Figma MCP 服务器
+```
+codex mcp add figma --url https://mcp.figma.com/mcp
+```
+跳到授权页，同意即可
+```
+codex mcp list
+```
+![alt text](image-4.png)
+![alt text](image-5.png)
