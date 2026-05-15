@@ -9,7 +9,7 @@ npm install -g @openai/codex
 codex --version
 ```
 
-或 桌面应用App
+或 桌面应用
 
 ## 配置文件
 ```
@@ -24,6 +24,18 @@ https://jcn08oaqmm57.feishu.cn/docx/ExXAdFe5GonHrJxR49icUDEFnAg
 
 ![alt text](image-3.png)
 
+## 使用 codex
+```
+codex
+```
+切换模型
+```
+/model
+```
+查看更多命令：
+
+https://www.runoob.com/codex/codex-commands.html
+
 ## 添加 Figma MCP 服务器
 ```
 codex mcp add figma --url https://mcp.figma.com/mcp
@@ -34,3 +46,21 @@ codex mcp list
 ```
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+
+## 配置千问模型
+https://help.aliyun.com/zh/model-studio/codex?spm=a2c4g.11186623.help-menu-2400256.d_0_4_5.3c386fd113oSgO&scm=20140722.H_3031966._.OR_help-T_cn~zh-V_1#cdx-payg-win-cmd-h
+
+.codex/config.toml文件配置当前模型：
+```
+# 使用千问模型
+model_provider = "Model_Studio"
+model = "qwen-plus"
+```
+
+终端：
+
+![alt text](image-6.png)
+
+桌面应用：
+
+![alt text](image-7.png)
