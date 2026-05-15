@@ -97,16 +97,11 @@ https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#c
 ```
 claude mcp add --scope user --transport http figma https://mcp.figma.com/mcp
 ```
-启动 claude，输入 /mcp，选择 figma，进行 figma 鉴权。
+启动 claude，输入 /mcp，选择 figma，点击 ‌Authenticate，授权访问。
 
 列出所有已配置的服务器
 ```
 claude mcp list
-```
-
-检查服务器状态
-```
-/mcp
 ```
 
 <!--
