@@ -20,9 +20,12 @@ C:\Users\Administrator\.codex\config.toml
 
 ## codex 使用 api 教程
 
+API 中转站
+
 https://jcn08oaqmm57.feishu.cn/docx/ExXAdFe5GonHrJxR49icUDEFnAg
 
 ![alt text](image-3.png)
+
 
 ## 使用 codex
 ```
