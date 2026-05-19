@@ -39,9 +39,21 @@ https://quickrouter.ai/
 ```
 codex
 ```
-切换模型
+切换模型：
 ```
 /model
+```
+新开一个对话，并且清除之前的对话记录：
+```
+/new
+```
+调整 Codex 的运行权限：
+```
+/approvals
+```
+列出所有安装过的 MCP 工具：
+```
+/mcp
 ```
 查看更多命令：
 
@@ -82,20 +94,6 @@ model = "qwen-plus"
 ```
 该命令让 Codex 通读当前文件夹。Codex 会把他学到的关于项目的信息保存到 AGENTS.md 文件中。
 
-## 命令
-新开一个对话，并且清除之前的对话记录：
-```
-/new
-```
-调整 Codex 的运行权限：
-```
-/approvals
-```
-列出所有安装过的 MCP 工具：
-```
-/mcp
-```
-...
 
 ## 上下文记忆
 config.toml
