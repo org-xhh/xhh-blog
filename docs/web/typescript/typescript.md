@@ -770,7 +770,7 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "sourceMap": true, // 是否生成源码映射文件，默认 false
     "declaration": false, // 是否生成 .d.ts 类型声明文件，库开发必备，需搭配 outDir 使用
     "baseUrl": ".",
-    "paths": {
+    "paths": { // 模块别名 @
       "@/*": ["src/*"]
     },
     "noEmit": true, // 默认值为 false（生成输出文件），设置为 true 时仅执行类型检查不生成任何输出文件

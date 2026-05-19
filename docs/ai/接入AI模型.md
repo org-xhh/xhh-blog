@@ -210,13 +210,3 @@ async chatWithAI(message) {
   return data.output.choices[0].message.content[0].image
 }
 ```
-
-## 使用 API 中转站
-
-### QuickRouter API
-
-https://quickrouter.ai/
-
-### 星火 API
-
-https://www.iuseapi.com/

@@ -308,7 +308,7 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>    &quot;sourceMap&quot;: true, // 是否生成源码映射文件，默认 false</span></span>
 <span class="line"><span>    &quot;declaration&quot;: false, // 是否生成 .d.ts 类型声明文件，库开发必备，需搭配 outDir 使用</span></span>
 <span class="line"><span>    &quot;baseUrl&quot;: &quot;.&quot;,</span></span>
-<span class="line"><span>    &quot;paths&quot;: {</span></span>
+<span class="line"><span>    &quot;paths&quot;: { // 模块别名 @</span></span>
 <span class="line"><span>      &quot;@/*&quot;: [&quot;src/*&quot;]</span></span>
 <span class="line"><span>    },</span></span>
 <span class="line"><span>    &quot;noEmit&quot;: true, // 默认值为 false（生成输出文件），设置为 true 时仅执行类型检查不生成任何输出文件</span></span>

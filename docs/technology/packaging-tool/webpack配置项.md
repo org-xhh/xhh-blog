@@ -193,7 +193,7 @@ module.exports = merge(baseConfig, {
         proxy: {
             '/api': {
                 target: "http://www.test.com", // 后台服务器地址
-                changeOrigin: true, // 是否跨域
+                changeOrigin: true,
                 pathRewrite: { // 把 '/api' 替换为 ''
                     '^/api': ''
                 }
