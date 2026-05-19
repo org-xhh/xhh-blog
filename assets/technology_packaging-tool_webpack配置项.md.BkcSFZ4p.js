@@ -187,7 +187,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>        proxy: {</span></span>
 <span class="line"><span>            &#39;/api&#39;: {</span></span>
 <span class="line"><span>                target: &quot;http://www.test.com&quot;, // 后台服务器地址</span></span>
-<span class="line"><span>                changeOrigin: true, // 是否跨域</span></span>
+<span class="line"><span>                changeOrigin: true,</span></span>
 <span class="line"><span>                pathRewrite: { // 把 &#39;/api&#39; 替换为 &#39;&#39;</span></span>
 <span class="line"><span>                    &#39;^/api&#39;: &#39;&#39;</span></span>
 <span class="line"><span>                }</span></span>
