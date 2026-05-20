@@ -39,7 +39,8 @@ export default {
           { text: "React", link: "/technology/react/react-document" },
           { text: "微前端", link: "/technology/microApp/微前端" },
           { text: "React Native", link: "/technology/react-native/react-native使用" },
-          { text: "server", link: "/technology/server/项目打包上传" }
+          { text: "server", link: "/technology/server/项目打包上传" },
+          { text: "python", link: "/technology/python/python" }
         ]
       },
       {
