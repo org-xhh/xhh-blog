@@ -7,7 +7,7 @@ width属性定义元素内容区的宽度，在内容区外面可以增加内边
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="viewport-fit=cover,width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     <title>css中width的小九九</title>
   </head>
 

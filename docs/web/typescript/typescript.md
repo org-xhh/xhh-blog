@@ -778,7 +778,11 @@ tsconfig.json 是 TypeScript 项目的配置文件，指定不同的选项来告
     "jsx": "react-jsx",
     "module": "esnext", // 指定生成的代码所使用的模块系统，如"CommonJS"、"ES6"等。
     "moduleResolution": "node", // 模块解析策略，模拟Node.js的模块解析逻辑
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   },
   "include": [ // 指定需被编译器包含的文件路径
     "src/**/*"
