@@ -15,6 +15,8 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 
 Ctrl+Alt+I‌ 打开聊天界面；
 
+选中行 => Add Selection to Chat;
+
 在输入代码或注释时，Copilot 会以灰色“ghost text”形式给出建议；
 
 按 Tab 接受建议；按 ‌Esc‌ 忽略；
@@ -56,7 +58,7 @@ Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 
 同意授权即可。
 
-> 此方式对免费账号有调用次数限制（如每月仅 6 次）
+<!-- 此方式对免费账号有调用次数限制（如每月仅 6 次）-->
 
 
 ## 参考文档

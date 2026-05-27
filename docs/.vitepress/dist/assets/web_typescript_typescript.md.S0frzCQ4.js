@@ -316,7 +316,11 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>    &quot;jsx&quot;: &quot;react-jsx&quot;,</span></span>
 <span class="line"><span>    &quot;module&quot;: &quot;esnext&quot;, // 指定生成的代码所使用的模块系统，如&quot;CommonJS&quot;、&quot;ES6&quot;等。</span></span>
 <span class="line"><span>    &quot;moduleResolution&quot;: &quot;node&quot;, // 模块解析策略，模拟Node.js的模块解析逻辑</span></span>
-<span class="line"><span>    &quot;allowSyntheticDefaultImports&quot;: true</span></span>
+<span class="line"><span>    &quot;allowSyntheticDefaultImports&quot;: true,</span></span>
+<span class="line"><span>    &quot;typeRoots&quot;: [</span></span>
+<span class="line"><span>      &quot;./node_modules/@types&quot;,</span></span>
+<span class="line"><span>      &quot;./src/types&quot;</span></span>
+<span class="line"><span>    ]</span></span>
 <span class="line"><span>  },</span></span>
 <span class="line"><span>  &quot;include&quot;: [ // 指定需被编译器包含的文件路径</span></span>
 <span class="line"><span>    &quot;src/**/*&quot;</span></span>

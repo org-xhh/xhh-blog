@@ -27,6 +27,7 @@ async chatWithAI(message) {
 }
 ```
 ### 流式输出
+<!--
 ```
 <div @click="chatWithAIFn">请介绍一下自己</div>
 
@@ -185,6 +186,20 @@ async chatWithAI() {
 }
 ```
 ![alt text](image-8.png)
+
+-->
+```
+body: JSON.stringify({
+  model: 'qwen-plus',
+  messages: [
+    { role: 'system', content: 'You are a helpful assistant.' },
+    { role: 'user', content: '你的问题' }
+  ],
+  stream: true, // 流式请求
+  stream_options: { include_usage: true }
+})
+```
+![alt text](image-13.png)
 
 文档：
 
