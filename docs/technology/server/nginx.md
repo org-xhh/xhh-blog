@@ -54,7 +54,7 @@ Vue 是单页面应用（SPA），history 路由模式下，我们只需要将�
 server {
     # 入口 index.html 文件不缓存
     location = /index.html {
-        expires -1;
+        expires -1; 
         add_header Cache-Control "no-cache, must-revalidate";
         add_header Pragma "no-cache";
         add_header Expires "0";
@@ -118,9 +118,12 @@ http {
     gzip on; # 开启 Gzip
     gzip_min_length 1k; # 大于 1KB 的文件才压缩
     gzip_comp_level 6; # 压缩级别 (1-9, 6 是较好的平衡点)
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript; # 压缩的文件类型
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml; # 压缩的文件类型
     gzip_vary on; # 告诉客户端支持 Gzip
     gzip_disable "msie6"; # 对旧 IE 不启用
+
+    # 优先使用 br
+    brotli on;
 }
 ```
 
