@@ -4,6 +4,13 @@ TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。
 
 TypeScript 是静态编译语言，在 编译期间 进行类型检查，可以在编辑器中发现大部分类型错误。
 
+## TS编译器
+```
+npm i -g typescript
+
+tsc test.ts # 生成对应的test.js文件
+```
+
 ## TS 数据类型
 
 ### number、string、boolean
@@ -146,9 +153,9 @@ function handleDirectionFn(direction: Direction) {
 ### object 
 Object 和 object 的区别：
 
-- Object 是原型链上的Object类型，所有数据类型都会指向 Object
+- Object 广义对象（几乎囊括所有值，等同于any）
 
-- object 表示的是对象类型，只允许引用数据类型
+- object 狭义对象（仅包含对象、数组、函数）
 
 {} 和 Object 的效果相同，相当于 new Object()
 ```
@@ -308,7 +315,7 @@ const sum:ISum = (x, y) => {
 
 ## 类型别名
 
-类型别名用来给一个类型起个新名字
+类型别名用来给一个类型起个新名字，功能更强大，可定义对象、联合类型、交叉类型等
 
 ```
 type Name = string;

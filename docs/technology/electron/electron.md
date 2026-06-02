@@ -85,6 +85,7 @@ app.whenReady().then(() => {
 显示控制台，在 main.js 添加代码：
 
 ```
+// 或 ctrl+shift+i
 win.webContents.openDevTools();
 ```
 
@@ -268,6 +269,209 @@ window.electronAPI.receive('notify-message', (...data) => {
 1.将主进程作为渲染器之间的消息代理。这需要将消息从一个渲染器发送到主进程，然后主进程将消息转发到另一个渲染器。
 
 2.[MessagePort](https://www.electronjs.org/zh/docs/latest/tutorial/message-ports)
+
+### 打开系统 dialog
+
+preload.js:
+```
+showOpenDialog: (properties) => ipcRenderer.invoke('show-open-dialog', properties)
+```
+main.js:
+```
+const fs = require('fs');
+const { promisify } = require('util');
+const readFileAsync = promisify(fs.readFile);
+
+ipcMain.handle('show-open-dialog', async (event, properties) => {
+  const { canceled, filePaths } = await dialog.showOpenDialog({ properties })
+  if (!canceled) {
+    const content = await readFileAsync(filePaths[0], 'utf-8')
+    return {
+      content,
+      filePath: filePaths[0]
+    }
+  } else {
+    return 'canceled'
+  }
+})
+```
+index.js:
+```
+document.getElementById("openFile").addEventListener("click", () => {
+  window.electronAPI.showOpenDialog(['openFile']).then(result => {
+    console.log('Selected file:', result)
+  })
+})
+```
+![alt text](image-5.png)
+
+### 保存文件对话框
+```
+ipcMain.handle('show-save-dialog', async (event) => {
+  let result = await dialog.showSaveDialog({
+    title: '保存文件', // 标题
+    defaultPath: 'test.txt', // 默认保存的文件名
+    buttonLabel: "保存文件" // 确认保存文件按钮
+  })
+  if(result.canceled) return '取消保存';
+  try {
+    await fs.promises.writeFile(result.filePath, 'hello world')
+    return '保存成功';
+  } catch (error) {
+    return error;
+  }
+})
+```
+
+### 消息对话框
+弹出对话框
+```
+dialog.showMessageBox({ 
+  type: 'info',
+  title: '提示',
+  message: '这是对话框',
+  buttons: ['确定', '取消']
+}).then(result => {
+  console.log(result.response) // buttons 下标
+})
+```
+
+### 创建菜单
+新建 menu.js:
+```
+const { Menu } = require('electron')
+
+let menutap = [
+  {
+    label: '角色',
+    submenu: [
+      { label: '最小化', role: 'minimize', click: () => { console.log('点击了复制') }},
+      { type: 'separator' },
+      { label: 'windows', type: 'submenu', role: 'windowMenu' }, //这里两个属性必须同时给出
+      { type: 'separator' },
+      {
+        label: '打开',
+        icon: '',
+        accelerator: 'ctrl + o', // 定义执行点击事件的快捷键
+        click () {
+          console.log('打开操作')
+        }
+      }
+    ]
+  }
+]
+// 创建一个menu
+let menu = Menu.buildFromTemplate(menutap)
+// 将菜单添加至app上
+Menu.setApplicationMenu(menu)
+```
+main.js 导入菜单：
+```
+const createWindow = () => {
+  let win = new BrowserWindow({
+    ...
+  })
+
+  require('./menu')
+  ...
+}
+```
+添加菜单项：
+```
+...
+require('./menu')
+
+// 获取当前应用程序菜单
+let currentMenu = Menu.getApplicationMenu()
+// 如果菜单不存在，则创建一个新菜单
+if (!currentMenu) {
+  currentMenu = new Menu()
+}
+// 追加菜单
+currentMenu.append(new MenuItem({
+  label: '打开控制台',
+  accelerator: 'ctrl+shift+i', 
+  click () {
+    win.webContents.openDevTools()
+  }
+}))
+// 设置应用程序菜单
+Menu.setApplicationMenu(currentMenu)
+```
+
+### 右键菜单
+preload.js:
+```
+createContextMenu: (params) => ipcRenderer.send('create-context-menu')
+```
+index.js:
+```
+window.addEventListener('contextmenu', (event) => {
+  event.preventDefault(); // 阻止默认的浏览器上下文菜单
+  window.electronAPI.createContextMenu()
+}, false);
+```
+main.js:
+```
+// 监听
+ipcMain.on('create-context-menu', (event, params) => {
+  createContextMenu(win);
+})
+
+function createContextMenu(win) {
+  const template = [
+    { label: '复制', role: 'copy' },
+    { label: '粘贴', role: 'paste', enabled: false } // 根据需要启用或禁用
+  ];
+  const menu = Menu.buildFromTemplate(template);
+  // 右键菜单
+  menu.popup({ window: win });
+}
+```
+
+### 子窗口向父窗口传递信息
+主窗口：
+```
+// 打开electron子窗口
+document.getElementById("openWin").addEventListener('click', () => {
+  window.open('./subIndex.html')
+})
+window.addEventListener('message', (e) => {
+  console.log('index window received message:', e.data)
+})
+```
+子窗口：
+```
+window.opener.postMessage('info~~~', '*')
+```
+
+### a标签通过浏览器打开链接
+```
+let ahref = document.getElementById("ahref");
+ahref.addEventListener('click', (e) => {
+  e.preventDefault() // 阻止在窗口内打开
+  shell.openExternal(ahref.href) // 使用shell在浏览器打开链接
+})
+```
+
+### 注册全局快捷键
+```
+globalShortcut.register('ctrl + f', () => {
+  console.log('this is ctrl + f')
+})
+let isRegister = globalShortcut.isRegistered('ctrl + f')
+console.log('isRegister:', isRegister)
+
+app.on('will-quit', () => {
+  console.log('will quit~')
+  // 将要退出时时注销全局快捷键
+  globalShortcut.unregisterAll()
+})
+```
+
+### 配置热更新
+
+nodemon
 
 
 ### 打包应用
