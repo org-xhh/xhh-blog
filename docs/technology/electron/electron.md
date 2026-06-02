@@ -1,5 +1,7 @@
 # [Electron](https://www.electronjs.org/zh/docs/latest/tutorial/tutorial-first-app#%E5%B0%86%E7%BD%91%E9%A1%B5%E8%A3%85%E8%BD%BD%E5%88%B0-browserwindow)
 
+Electron 是一个使用 Web 技术（HTML、CSS、JavaScript）构建跨平台桌面应用的框架，基于 Chromium 渲染引擎和 Node.js 运行时。
+
 ### 安装
 ```
 npm install electron --save
@@ -104,8 +106,14 @@ window.onload = function () {
 }
 ```
 
+### 主进程和渲染进程
+
+主进程‌：只有一个，负责生命周期管理、窗口创建、系统 API 调用（如文件读写、系统通知）
+
+‌渲染进程‌：每个窗口对应一个独立进程，负责页面渲染和用户交互，本质是 Chromium 浏览器标签页 
+
 ### 上下文隔离
-渲染进程通过 预加载preload暴露的api 执行electron的方法
+安全封装方案，在 preload 脚本中暴露有限 API 给渲染进程
 
 创建 preload.js 提供暴露的方法:
 ```
