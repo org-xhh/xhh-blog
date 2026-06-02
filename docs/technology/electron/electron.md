@@ -345,9 +345,9 @@ let menutap = [
   {
     label: '角色',
     submenu: [
-      { label: '最小化', role: 'minimize', click: () => { console.log('点击了复制') }},
+      { label: '最小化', role: 'minimize', click: () => { console.log('点击了') }},
       { type: 'separator' },
-      { label: 'windows', type: 'submenu', role: 'windowMenu' }, //这里两个属性必须同时给出
+      { label: 'windows', type: 'submenu', role: 'windowMenu' },
       { type: 'separator' },
       {
         label: '打开',
@@ -383,7 +383,7 @@ require('./menu')
 
 // 获取当前应用程序菜单
 let currentMenu = Menu.getApplicationMenu()
-// 如果菜单不存在，则创建一个新菜单
+// 如果菜单不存在，就创建一个新菜单
 if (!currentMenu) {
   currentMenu = new Menu()
 }

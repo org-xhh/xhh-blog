@@ -178,9 +178,9 @@ import{_ as p,D as e,c as l,j as s,a as t,I as i,w as c,a3 as n,o}from"./chunks/
 <span class="line"><span>  {</span></span>
 <span class="line"><span>    label: &#39;角色&#39;,</span></span>
 <span class="line"><span>    submenu: [</span></span>
-<span class="line"><span>      { label: &#39;最小化&#39;, role: &#39;minimize&#39;, click: () =&gt; { console.log(&#39;点击了复制&#39;) }},</span></span>
+<span class="line"><span>      { label: &#39;最小化&#39;, role: &#39;minimize&#39;, click: () =&gt; { console.log(&#39;点击了&#39;) }},</span></span>
 <span class="line"><span>      { type: &#39;separator&#39; },</span></span>
-<span class="line"><span>      { label: &#39;windows&#39;, type: &#39;submenu&#39;, role: &#39;windowMenu&#39; }, //这里两个属性必须同时给出</span></span>
+<span class="line"><span>      { label: &#39;windows&#39;, type: &#39;submenu&#39;, role: &#39;windowMenu&#39; },</span></span>
 <span class="line"><span>      { type: &#39;separator&#39; },</span></span>
 <span class="line"><span>      {</span></span>
 <span class="line"><span>        label: &#39;打开&#39;,</span></span>
@@ -208,7 +208,7 @@ import{_ as p,D as e,c as l,j as s,a as t,I as i,w as c,a3 as n,o}from"./chunks/
 <span class="line"><span></span></span>
 <span class="line"><span>// 获取当前应用程序菜单</span></span>
 <span class="line"><span>let currentMenu = Menu.getApplicationMenu()</span></span>
-<span class="line"><span>// 如果菜单不存在，则创建一个新菜单</span></span>
+<span class="line"><span>// 如果菜单不存在，就创建一个新菜单</span></span>
 <span class="line"><span>if (!currentMenu) {</span></span>
 <span class="line"><span>  currentMenu = new Menu()</span></span>
 <span class="line"><span>}</span></span>
