@@ -194,6 +194,13 @@ export default {
           { text: "从零搭建SSR", link: "/technology/server/ssr" },
         ]
       },
+      "/technology/electron/": {
+        text: "electron",
+        items: [
+          { text: "electron", link: "/technology/electron/electron" },
+          { text: "electron forge", link: "/technology/electron/electron-forge" },
+        ]
+      },
       "/nodejs/babel": {
         text: "babel",
         items: [

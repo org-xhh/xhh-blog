@@ -108,16 +108,43 @@ window.onload = function () {
 
 ### 主进程和渲染进程
 
-主进程‌：只有一个，负责生命周期管理、窗口创建、系统 API 调用（如文件读写、系统通知）
+**主进程 Main Process**
 
-‌渲染进程‌：每个窗口对应一个独立进程，负责页面渲染和用户交互，本质是 Chromium 浏览器标签页 
+每个 Electron 应用都有一个单一的主进程，作为应用程序的入口点。主进程在 Node.js 环境中运行，这意味着它具有 require 模块和使用所有 Node.js API 的能力。
+- 窗口管理
+- 应用程序生命周期
+- 原生 API
+
+---
+
+**渲染器进程 Renderer Process**
+
+每个 Electron 应用都会为每个打开的 BrowserWindow 生成一个单独的渲染器进程。渲染器负责 渲染 网页内容。
+
+渲染器无权直接访问 require 或其他 Node.js API。
 
 ### 上下文隔离
-安全封装方案，在 preload 脚本中暴露有限 API 给渲染进程
+安全封装方案，通过 预加载preload 脚本暴露有限 API 给渲染进程
 
-创建 preload.js 提供暴露的方法:
+| 可用的 API            | 详细信息                                               |
+| --------------------- | ------------------------------------------------------ |
+| Electron 模块         | 渲染进程模块                                           |
+| Node.js 模块          | events、timers、url                                   |
+| Polyfilled 的全局模块 | Buffer、process、clearImmediate、setImmediate         |
+
+https://www.electronjs.org/zh/docs/latest/tutorial/sandbox
+
+示例：
+
+创建 preload.js 提供暴露的变量和方法:
 ```
 const {contextBridge} = require('electron')
+
+contextBridge.exposeInMainWorld('versions', {
+  node: process.versions.node,
+  chrome: process.versions.chrome,
+  electron: process.versions.electron,
+})
 
 contextBridge.exposeInMainWorld('electronAPI', {
   print: (content) => console.log('content', content)
@@ -134,6 +161,7 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       preload: join(__dirname, 'preload.js'), // 指定 preload 脚本的路径
+      // 这个设为 true 的话，preload 脚本将具有 Node.js 环境的所有能力
       nodeIntegration: false, // 控制渲染进程中是否启用 Node.js 集成
       contextIsolation: true, // 启用上下文隔离
       enableRemoteModule: false // 禁用 remote 模块以进一步提高安全性
@@ -142,10 +170,39 @@ const createWindow = () => {
   ...
 }
 ```
-index.js 中调用暴露的API:
+index.js(渲染进程) 中调用暴露的变量和方法:
 ```
+window.versions.node
+
 window.electronAPI.print()
 ```
+<!--
+### enableRemoteModule 
+不推荐
+
+remote 模块提供了一个桥梁，可以在渲染进程中直接使用主进程中的属性和方法。
+
+安装
+```
+npm install --save @electron/remote
+```
+主进程初始化
+```
+// 初始化
+require('@electron/remote/main').initialize()
+
+// 启用 electron > 10
+require("@electron/remote/main").enable(win.webContents)
+```
+preload.js
+```
+contextBridge.exposeInMainWorld('require', require)
+```
+渲染进程获取主进程的模块
+```
+const { dialog } = window.require('@electron/remote')
+```
+-->
 
 ### 进程间通信
 
@@ -165,7 +222,6 @@ contextBridge.exposeInMainWorld(
   'electronAPI', {
     // print: (content) => console.log('content:', content)
     send: (channel, data) => {
-      // whitelist channels
       let validChannels = ['toMain'];
       if (validChannels.includes(channel)) {
         ipcRenderer.send(channel, data);
@@ -174,7 +230,6 @@ contextBridge.exposeInMainWorld(
     receive: (channel, func) => {
       let validChannels = ['fromMain'];
       if (validChannels.includes(channel)) {
-        // Deliberately strip event as it includes `sender` 
         ipcRenderer.on(channel, (event, ...args) => func(...args));
       }
     }
@@ -204,7 +259,10 @@ const createWindow = () => {
   // 监听渲染进程发送的消息
   ipcMain.on('toMain', (event, arg) => {
     console.log('接收渲染进程数据: ', arg);
-    event.sender.send('fromMain', 'Main has received');
+
+    let webContents = event.sender;
+    // 经 channel 向渲染进程发送异步带参消息
+    webContents.send('fromMain', 'Main has received');
   })
   ...
 }
@@ -213,7 +271,7 @@ const createWindow = () => {
 
 - 模式 2
 
-渲染进程到主进程（双向），使用 ipcRenderer.invoke 与 ipcMain.handle(有返回值)
+双向通信，使用 ipcRenderer.invoke 与 ipcMain.handle(有返回值)
 
 preload.js 中添加：
 ```
@@ -243,7 +301,7 @@ ipcMain.handle('invoke-message', (event, arg1, arg2) => {
 
 - 模式 3
 
-主进程到渲染进程，使用 win.webContents.send 发送消息，ipcRenderer.on 接收消息
+主进程到渲染进程（单向），使用 win.webContents.send 发送消息，ipcRenderer.on 接收消息
 
 preload.js 添加 ipcRenderer 监听事件：
 ```
@@ -480,6 +538,12 @@ app.on('will-quit', () => {
 ### 配置热更新
 
 nodemon
+
+示例：
+```
+"start": "nodemon --watch main.js --exec \"electron .\"",
+```
+nodemon 监听 main.js 文件变化，然后执行命令 electron .
 
 
 ### 打包应用
