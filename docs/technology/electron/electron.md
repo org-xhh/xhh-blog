@@ -390,7 +390,6 @@ ipcMain.handle('show-save-dialog', async (event) => {
 ```
 
 ### 消息对话框
-弹出对话框
 ```
 dialog.showMessageBox({ 
   type: 'info',
@@ -513,6 +512,8 @@ window.opener.postMessage('info~~~', '*')
 
 ### a标签通过浏览器打开链接
 ```
+const { shell } = require('electron')
+
 let ahref = document.getElementById("ahref");
 ahref.addEventListener('click', (e) => {
   e.preventDefault() // 阻止在窗口内打开
@@ -522,6 +523,8 @@ ahref.addEventListener('click', (e) => {
 
 ### 注册全局快捷键
 ```
+const { globalShortcut } = require('electron')
+
 globalShortcut.register('ctrl + f', () => {
   console.log('this is ctrl + f')
 })

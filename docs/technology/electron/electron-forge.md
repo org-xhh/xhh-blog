@@ -103,7 +103,7 @@ npm run package 后生成 out 文件夹：
 - macOS 可以打包 macOS 和 Linux 版本
 - Linux 可以打包 Linux 版本
 
-## 探究 asar 文件格式
+## asar 文件格式
 
 https://github.com/electron/asar
 
@@ -129,7 +129,7 @@ asar extract-file app.asar package.json
 ```
 packagerConfig: {
   name: 'electron-forge-project',
-  icon: './assets/icon', // 安装包图标
+  icon: './assets/icon', // 应用图标
   asar: true, // 将源码打包成 asar 归档格式
 },
 ```
@@ -212,9 +212,26 @@ npm run publish
 ```
 ![alt text](image-6.png)
 
-编辑后可以发为 Release
+编辑后可以发布 Release
 
 ## 应用自动更新
+<!--
+**autoUpdater**
+```
+const { autoUpdater } = require('electron-updater');
+
+autoUpdater.setFeedURL({
+  // 需要一个支持更新协议的服务器
+  url: 'https://your-server.com/updates/latest'
+});
+
+autoUpdater.checkForUpdates();
+
+autoUpdater.on('update-downloaded', () => {
+  autoUpdater.quitAndInstall();
+});
+```
+-->
 
 https://github.com/electron/update-electron-app
 
@@ -222,20 +239,20 @@ https://github.com/electron/update-electron-app
 
 仓库地址：https://github.com/electron/update.electronjs.org
 
-是一个由 Electron 团队维护的免费、开源的更新服务。
+update-electron-app 是一个由 Electron 团队维护的免费、开源的更新服务。 封装了 Electron 内置的 autoUpdater 模块，开发者无需手动配置更新协议的服务器。
 
 工作方式：
 
-- 它依赖 GitHub Releases 作为更新分发源。
-- 当你的应用发布新版本到 GitHub 时，update.electronjs.org 会生成对应的更新 feed（例如 https://update.electronjs.org/owner/repo/platform/version）, 供客户端查询。
+- 依赖 GitHub Releases 作为更新分发源。
+- 当应用发布新版本到 GitHub 时，update.electronjs.org 会生成对应的更新 feed（例如 https://update.electronjs.org/owner/repo/platform/version）, 供客户端查询。
 - 应用必须是开源的，且托管在公开的 GitHub 仓库。
 
 ```
-npm i update-electron-app
+npm i update-electron-app -S
 ```
 main.ts:
 ```
-const { updateElectronApp } = require('update-electron-app')
+import { updateElectronApp } from 'update-electron-app';
 
 updateElectronApp({
   repo: 'org-xhh/electron-forge-project',
