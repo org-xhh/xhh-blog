@@ -18,8 +18,24 @@ C:\Users\Administrator\.codex\config.toml
 ~/.codex/config.toml
 ```
 
-### codex 使用中转站 api
+配置示例：
 
+config.toml:
+```
+[model_providers.xxx]
+name = "xxx"
+base_url = ""
+env_key = "XXX_API_KEY"
+```
+auth.json:
+```
+{
+  "auth_mode": "apikey",
+  "XXX_API_KEY": "sk-xxx"
+}
+```
+
+### codex 使用中转站 api
 <!-- 
 ### API 中转站1
 
