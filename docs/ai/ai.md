@@ -26,11 +26,21 @@ npx skills add <owner/repo@skill> -y -g
 
 - find-skills 技能发现神器
 ```
+Source: https://github.com/vercel-labs/skills.git
+
+Details: https://skills.sh/vercel-labs/skills
+```
+```
 npx skills add https://github.com/vercel-labs/skills --skill find-skills -g
 ```
 触发场景：当你说 "有没有处理 docx 的技能" 时自动激活，搜索技能市场
 
 - frontend-design 前端界面设计神器
+```
+Source: https://github.com/anthropics/skills.git
+
+Details: https://skills.sh/anthropics/skills
+```
 ```
 npx skills add anthropics/skills --skill frontend-design -g
 ```

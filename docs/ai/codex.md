@@ -18,8 +18,9 @@ C:\Users\Administrator\.codex\config.toml
 ~/.codex/config.toml
 ```
 
-## codex 使用 api 教程
+### codex 使用中转站 api
 
+<!-- 
 ### API 中转站1
 
 https://jcn08oaqmm57.feishu.cn/docx/ExXAdFe5GonHrJxR49icUDEFnAg
@@ -30,12 +31,14 @@ https://jcn08oaqmm57.feishu.cn/docx/ExXAdFe5GonHrJxR49icUDEFnAg
 
 https://quickrouter.ai/
 
+-->
+
 ![alt text](image-9.png)
 
 ![alt text](image-10.png)
 
 
-## 使用 codex
+## codex 命令
 ```
 codex
 ```
@@ -51,13 +54,14 @@ codex
 ```
 /approvals
 ```
+通读当前文件夹把关于项目的信息保存到 AGENTS.md 文件中：
+```
+/init
+```
 列出所有安装过的 MCP 工具：
 ```
 /mcp
 ```
-查看更多命令：
-
-https://www.runoob.com/codex/codex-commands.html
 
 ## 添加 Figma MCP 服务器
 ```
@@ -88,13 +92,7 @@ model = "qwen-plus"
 
 ![alt text](image-7.png)
 
-## AGENTS.md
-```
-/init
-```
-该命令让 Codex 通读当前文件夹。Codex 会把他学到的关于项目的信息保存到 AGENTS.md 文件中。
-
-
+<!--
 ## 上下文记忆
 config.toml
 ```
@@ -102,6 +100,11 @@ config.toml
 memories = true
 ```
 Codex 会把 Memories 存放在 Codex 主目录下，默认 ~/.codex
+-->
+
+## VSCode 使用 codex 插件
+
+![alt text](image-14.png)
 
 
 

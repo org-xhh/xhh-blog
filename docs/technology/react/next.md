@@ -55,6 +55,30 @@ export default function Page() {
 }
 ```
 
+## next/dynamic
+next/dynamic 用于组件的按需加载，只有用户访问该页面时才会加载（仅在事件触发时加载）
+
+```
+import dynamic from 'next/dynamic';
+
+const HeavyComponent = dynamic(
+  () => import('@/components/HeavyComponent'),
+  {
+    loading: () => <p>Loading...</p>,
+    ssr: false
+  }
+);
+
+export default function DemoPage() {
+  return (
+    <div>
+      <h1>Hi</h1>
+      <HeavyComponent />
+    </div>
+  );
+}
+```
+
 ## Metadata
 ![alt text](image-28.png)
 页面组件 List renderItem 是客户端渲染，需要在页面头部添加 'use client'，但是 metadata 又是服务端渲染，导致页面报错。

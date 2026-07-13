@@ -225,10 +225,11 @@ autoUpdater.setFeedURL({
   url: 'https://your-server.com/updates/latest'
 });
 
+// 检查更新
 autoUpdater.checkForUpdates();
 
 autoUpdater.on('update-downloaded', () => {
-  autoUpdater.quitAndInstall();
+  autoUpdater.quitAndInstall(); // 立即安装并重启
 });
 ```
 -->

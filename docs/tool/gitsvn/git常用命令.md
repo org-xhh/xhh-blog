@@ -97,6 +97,9 @@ git checkout tags/v1.0.0
 
 git checkout v1.0.0
 
+### 基于某个tag创建分支
+git checkout -b tag-branch v1.0.0
+
 ### 启用 Git 长路径支持
 
 文件层级深：Filename too long fatal: Unable to process path vendor/a/b/c...，拉取及提交代码均有报错。

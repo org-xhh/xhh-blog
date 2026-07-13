@@ -26,7 +26,7 @@ npm install electron --save
 ```
 
 ### 启动
-新建 main.js 文件，输入内容
+新建 main.js 主程序入口文件，输入内容
 
 ![alt text](image.png)
 

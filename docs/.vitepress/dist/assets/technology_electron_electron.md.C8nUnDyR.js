@@ -11,7 +11,7 @@ import{_ as p,D as e,c as l,j as s,a as t,I as i,w as c,a3 as n,o}from"./chunks/
 <span class="line"><span>  &quot;dependencies&quot;: {</span></span>
 <span class="line"><span>    &quot;electron&quot;: &quot;^32.3.3&quot;</span></span>
 <span class="line"><span>  }</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h3 id="启动" tabindex="-1">启动 <a class="header-anchor" href="#启动" aria-label="Permalink to &quot;启动&quot;">​</a></h3><p>新建 main.js 文件，输入内容</p><p><img src="`+r+`" alt="alt text"></p><h3 id="创建窗体" tabindex="-1">创建窗体 <a class="header-anchor" href="#创建窗体" aria-label="Permalink to &quot;创建窗体&quot;">​</a></h3><p>新建 index.html 文件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h3 id="启动" tabindex="-1">启动 <a class="header-anchor" href="#启动" aria-label="Permalink to &quot;启动&quot;">​</a></h3><p>新建 main.js 主程序入口文件，输入内容</p><p><img src="`+r+`" alt="alt text"></p><h3 id="创建窗体" tabindex="-1">创建窗体 <a class="header-anchor" href="#创建窗体" aria-label="Permalink to &quot;创建窗体&quot;">​</a></h3><p>新建 index.html 文件：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;!DOCTYPE html&gt;</span></span>
 <span class="line"><span>&lt;html&gt;</span></span>
 <span class="line"><span>  &lt;head&gt;</span></span>
 <span class="line"><span>    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span></span>
