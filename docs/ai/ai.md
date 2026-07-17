@@ -6,7 +6,16 @@
 
 ## LLM 
 
-大语言模型(Large Language Model)，通过 Prompt 接收指令，生成文本或结构化内容
+大语言模型(Large Language Model)，通过 Prompt 接收指令，生成文本或结构化内容。
+
+LangChain 是一个基于大型语言模型（LLM）的编程框架，统一调用模型。
+
+
+| Model Class | initChatModel |
+| ---- | ---- |
+| ![alt text](image-15.png) | ![alt text](image-16.png) |
+
+https://docs.langchain.com/oss/javascript/langchain/models
 
 ## Skills
 

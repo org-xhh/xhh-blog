@@ -90,6 +90,7 @@ Cursor Settings => Tools & MCPs => New MCP Server
 ![alt text](cursor-mcp.png)
 生成的 html 页面如下
 ![alt text](mcp-html.png)
+
 ## .cursorignore
 
 设置不让 AI 访问的文件或目录，和 .gitignore 语法一样。
