@@ -55,6 +55,19 @@ https://quickrouter.ai/
 
 
 ## codex 命令
+查看完整命令：
+```
+codex --help
+```
+登录：
+```
+codex login
+```
+诊断环境：
+```
+codex doctor
+```
+启动交互式 CLI：
 ```
 codex
 ```

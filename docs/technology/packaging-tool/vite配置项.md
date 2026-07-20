@@ -79,7 +79,7 @@ export default defineConfig({
             '/test': {
                 // 代理目标地址
                 target: 'http://www.test.com',
-                // 改变请求头中的Origin
+                // 有些后端服务会校验Origin，开启这个选项可以避免被拒绝
                 changeOrigin: true,
                 // 允许HTTPS证书无效
                 secure: false,

@@ -91,6 +91,10 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
 
+        # 针对SSE流式，需要禁用缓冲响应；关闭缓冲后，数据会立即透传给前端
+        proxy_buffering off;
+        proxy_cache off;
+
         # 可选，WebSocket 代理支持
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;

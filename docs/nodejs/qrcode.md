@@ -98,6 +98,7 @@ async function generateQRCode() {
 
   // 生成二维码
   const qrUrl = 'https://org-xhh.github.io/xhh-blog/'
+  // 将二维码生成 Base64 格式的图像
   const qrCodeDataUrl = await QRCode.toDataURL(qrUrl)
   const qrCodeImage = new Image()
   qrCodeImage.src = qrCodeDataUrl
@@ -133,3 +134,12 @@ async function generateQRCode() {
 </style>
 ```
 ![alt text](image-14.png)
+
+将二维码直接生成到 canvas 元素中
+```
+QRCode.toCanvas(canvas, url, {
+  margin: 1,
+  width: 100,
+  errorCorrectionLevel: 'H' // 高容错率(H)，防止中间logo遮挡后无法扫码
+})
+```

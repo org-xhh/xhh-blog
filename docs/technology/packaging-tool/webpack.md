@@ -71,7 +71,7 @@ module.exports = {
     proxy: {
       '/api': {
         target: "http://www.test.com", // 后台服务器地址
-        changeOrigin: true, // 把 Host 改为目标服务器的地址，避免被拒
+        changeOrigin: true,
         pathRewrite: { // 把 '/api' 替换为 ''
           '^/api': ''
         }
