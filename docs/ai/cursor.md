@@ -77,7 +77,7 @@ Cursor Settings => Tools & MCPs => New MCP Server
 
 出现绿灯就代表连接好了。
 
-> 备注：Node20+ 才支持 MCP，请自行升级 Node。
+> 备注：Node22+ 才支持 MCP，请自行升级 Node。
 
 ### 4. 调用 MCP 生成 html 页面
 

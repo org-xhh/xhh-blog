@@ -87,6 +87,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span></span></span>
 <span class="line"><span>  // 生成二维码</span></span>
 <span class="line"><span>  const qrUrl = &#39;https://org-xhh.github.io/xhh-blog/&#39;</span></span>
+<span class="line"><span>  // 将二维码生成 Base64 格式的图像</span></span>
 <span class="line"><span>  const qrCodeDataUrl = await QRCode.toDataURL(qrUrl)</span></span>
 <span class="line"><span>  const qrCodeImage = new Image()</span></span>
 <span class="line"><span>  qrCodeImage.src = qrCodeDataUrl</span></span>
@@ -119,4 +120,8 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>  top: 50px;</span></span>
 <span class="line"><span>  right: 150px;</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span>&lt;/style&gt;</span></span></code></pre></div><p><img src="`+e+'" alt="alt text"></p>',6),c=[t];function i(o,r,g,d,h,m){return a(),n("div",null,c)}const q=s(l,[["render",i]]);export{v as __pageData,q as default};
+<span class="line"><span>&lt;/style&gt;</span></span></code></pre></div><p><img src="`+e+`" alt="alt text"></p><p>将二维码直接生成到 canvas 元素中</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>QRCode.toCanvas(canvas, url, {</span></span>
+<span class="line"><span>  margin: 1,</span></span>
+<span class="line"><span>  width: 100,</span></span>
+<span class="line"><span>  errorCorrectionLevel: &#39;H&#39; // 高容错率(H)，防止中间logo遮挡后无法扫码</span></span>
+<span class="line"><span>})</span></span></code></pre></div>`,8),i=[t];function c(o,r,g,d,h,m){return a(),n("div",null,i)}const q=s(l,[["render",c]]);export{v as __pageData,q as default};

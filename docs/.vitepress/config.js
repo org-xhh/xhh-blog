@@ -80,8 +80,8 @@ export default {
           { text: "Cursor", link: "/ai/cursor" },
           { text: "Codex", link: "/ai/codex" },
           { text: "GitHub Copilot", link: "/ai/githubcopilot" },
-          { text: "Claude Code", link: "/ai/claudecode" }
-          // { text: "接入AI模型", link: "/ai/接入AI模型" }
+          { text: "Claude Code", link: "/ai/claudecode" },
+          { text: "接入AI模型", link: "/ai/接入AI模型" }
         ]
       }
     ],

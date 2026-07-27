@@ -648,7 +648,7 @@ function App() {
     <div className="App">
       <ul>
         {
-          list.map((item) => {
+          list.length > 0 && list.map((item) => {
             return <li key={item.id}>
               {item.title}
               {item.isAdmin && <span className="badge">主管</span>}
@@ -656,6 +656,10 @@ function App() {
           })
         }
       </ul>
+      <!-- 对象转成数组 -->
+      {Object.entries(obj).map(([key, value]) => (
+        <li key={key}>{key}: {value}</li>
+      ))}
 
       <div dangerouslySetInnerHTML={{__html: valueDom }}></div>
     </div>

@@ -26,6 +26,28 @@ async chatWithAI(message) {
     return data.output.text
 }
 ```
+
+### 文生图
+```
+async chatWithAI(message) {
+  let url = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation'
+  const response = await fetch(url, {
+    method: 'POST',
+    credentials: 'omit',
+    headers: {
+      'Authorization': 'Bearer YOURTOKEN',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'qwen-image-2.0-pro',
+      input: { messages: [{ role: 'user', content: [{ text: message }] }] }
+    })
+  })
+  const data = await response.json()
+  return data.output.choices[0].message.content[0].image
+}
+```
+
 ### 流式输出
 <!--
 ```
@@ -189,14 +211,24 @@ async chatWithAI() {
 
 -->
 ```
-body: JSON.stringify({
-  model: 'qwen-plus',
-  messages: [
-    { role: 'system', content: 'You are a helpful assistant.' },
-    { role: 'user', content: '你的问题' }
-  ],
-  stream: true, // 流式请求
-  stream_options: { include_usage: true }
+// https://help.aliyun.com/zh/model-studio/base-url?spm=a2c4g.11186623.help-menu-2400256.d_0_0_4.49c13011DfPXCv&scm=20140722.H_3042998._.OR_help-T_cn~zh-V_1
+const url = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions'
+const response = await fetch(url, {
+  method: 'POST',
+  credentials: 'omit',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ******`
+  },
+  body: JSON.stringify({
+    model: 'qwen-plus',
+    messages: [
+      { role: 'system', content: 'You are a helpful assistant.' },
+      { role: 'user', content: '请介绍一下自己' }
+    ],
+    stream: true, // 流式请求
+    stream_options: { include_usage: true }
+  })
 })
 ```
 ![alt text](image-13.png)
@@ -205,23 +237,18 @@ body: JSON.stringify({
 
 https://bailian.console.aliyun.com/cn-beijing?spm=5176.support-home.nav-v2-dropdown-menu-0.d_main_2_0.25b0156fNIxxGV&tab=doc&scm=20140722.M_10944401._.V_1#/doc/?type=model&url=2866129
 
-### 文生图
-```
-async chatWithAI(message) {
-  let url = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation'
-  const response = await fetch(url, {
-    method: 'POST',
-    credentials: 'omit',
-    headers: {
-      'Authorization': 'Bearer YOURTOKEN',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'qwen-image-2.0-pro',
-      input: { messages: [{ role: 'user', content: [{ text: message }] }] }
-    })
-  })
-  const data = await response.json()
-  return data.output.choices[0].message.content[0].image
-}
-```
+
+### DashScope 原生与 OpenAI 兼容模式对比
+
+| 项目 | DashScope 原生 | OpenAI 兼容模式 |
+| ---- | -------------- | --------------- |
+| BaseURL 前缀 | `https://dashscope.aliyuncs.com/api/v1` | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
+| 完整对话 POST 地址 | `/api/v1/services/aigc/text-generation/generation` | `/compatible-mode/v1/chat/completions` |
+| 请求规范 | 阿里云自定义 | OpenAI 标准协议 |
+| 推荐 SDK | dashscope 官方 SDK | openai SDK、各类 AI 框架 |
+| 能否调用 qwen-plus | 可以 | 可以 |
+| 能否调用百炼内 DeepSeek、GLM 等 | 可以 | 可以 |
+
+三方模型调用教程：
+
+https://help.aliyun.com/zh/model-studio/deepseek-api#ds-bu-cn-ds-h

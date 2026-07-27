@@ -4,6 +4,8 @@
 
 提示词
 
+例：https://www.prompt123.cn/
+
 ## LLM 
 
 大语言模型(Large Language Model)，通过 Prompt 接收指令，生成文本或结构化内容。
@@ -82,6 +84,8 @@ openskills list
 
 统一接入外部工具
 
-[cursor配置MCP](./cursor.md)
+[cursor配置Figma MCP](./cursor.md)
 
-[codex配置MCP](./codex.md)
+[codex配置Figma MCP](./codex.md)
+
+[copilot配置Figma MCP](./githubcopilot.md)
