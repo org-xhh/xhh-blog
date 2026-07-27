@@ -77,7 +77,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const f
 <span class="line"><span>            &#39;/test&#39;: {</span></span>
 <span class="line"><span>                // 代理目标地址</span></span>
 <span class="line"><span>                target: &#39;http://www.test.com&#39;,</span></span>
-<span class="line"><span>                // 改变请求头中的Origin</span></span>
+<span class="line"><span>                // 有些后端服务会校验Origin，开启这个选项可以避免被拒绝</span></span>
 <span class="line"><span>                changeOrigin: true,</span></span>
 <span class="line"><span>                // 允许HTTPS证书无效</span></span>
 <span class="line"><span>                secure: false,</span></span>

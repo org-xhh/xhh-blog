@@ -318,7 +318,7 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>    &lt;div className=&quot;App&quot;&gt;</span></span>
 <span class="line"><span>      &lt;ul&gt;</span></span>
 <span class="line"><span>        {</span></span>
-<span class="line"><span>          list.map((item) =&gt; {</span></span>
+<span class="line"><span>          list.length &gt; 0 &amp;&amp; list.map((item) =&gt; {</span></span>
 <span class="line"><span>            return &lt;li key={item.id}&gt;</span></span>
 <span class="line"><span>              {item.title}</span></span>
 <span class="line"><span>              {item.isAdmin &amp;&amp; &lt;span className=&quot;badge&quot;&gt;主管&lt;/span&gt;}</span></span>
@@ -326,6 +326,10 @@ import{_ as t,D as i,c,j as a,a as s,I as p,w as e,a3 as l,o}from"./chunks/frame
 <span class="line"><span>          })</span></span>
 <span class="line"><span>        }</span></span>
 <span class="line"><span>      &lt;/ul&gt;</span></span>
+<span class="line"><span>      &lt;!-- 对象转成数组 --&gt;</span></span>
+<span class="line"><span>      {Object.entries(obj).map(([key, value]) =&gt; (</span></span>
+<span class="line"><span>        &lt;li key={key}&gt;{key}: {value}&lt;/li&gt;</span></span>
+<span class="line"><span>      ))}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>      &lt;div dangerouslySetInnerHTML={{__html: valueDom }}&gt;&lt;/div&gt;</span></span>
 <span class="line"><span>    &lt;/div&gt;</span></span>
