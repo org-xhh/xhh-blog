@@ -7,20 +7,23 @@ ref：把原始值包裹成一个对象，通过访问器属性（get/set）拦�
 reactive：核心是通过 Proxy 拦截对象操作。
 
 ### reactive定义的对象直接赋值会失去响应式
+
 ```
 let state = reactive({ list: [] })
 // 页面不更新
 state = [{ name: 'xxx' }]
 ```
+
 解决方案1：
 
 使用Object.assign或修改内部属性
+
 ```
-let state = reactive({ 
+let state = reactive({
   list: [
     { name: "name1", age: 18 },
     { name: "name2", age: 19 }
-  ] 
+  ]
 })
 const updateList = () => {
   // Object.assign(state, {
@@ -35,9 +38,11 @@ const updateList = () => {
   ]
 }
 ```
+
 解决方案2：
 
 使用push、splice等方法修改原数组
+
 ```
 let state = reactive([
   { name: "name1", age: 18 },
@@ -50,9 +55,11 @@ const updateList = () => {
   ])
 }
 ```
+
 解决方案3：
 
 对需要整体替换的场景使用 ref
+
 ```
 let state = ref([
   { name: "name1", age: 18 },
@@ -65,7 +72,6 @@ const updateList = () => {
   ]
 }
 ```
-
 
 ## toRefs, toRef, unref
 
@@ -94,6 +100,7 @@ function changeName() {
   name.value += '~'
 }
 ```
+
 ```
 let name1 = unref(name)
 setTimeout(() => {
@@ -203,7 +210,7 @@ let val3 = reactive({
 watch(val3, (newValue) => {
   console.log('监听val3变化', newValue)
 })
-function changeVal3Name() { 
+function changeVal3Name() {
   Object.assign(val3, { name: 999 })
 }
 ```
@@ -330,6 +337,7 @@ watchEffect(() => {
   }
 })
 ```
+
 ```
 watchEffect((onInvalidate) => {
   const timer = setInterval(() => {
@@ -344,6 +352,7 @@ watchEffect((onInvalidate) => {
 ```
 
 ## v-memo
+
 长列表或复杂组件，可以使用v-memo缓存渲染结果，仅当依赖数据变化时才重新渲染，减少 DOM 操作。
 
 ## 标签 ref 属性
@@ -494,6 +503,7 @@ withDefaults(defineProps<{ list?: Persons }>(), {
 ```
 
 defineEmits 自定义事件（子传父）
+
 ```
 const emit = defineEmits(['update:title', 'submit'])
 
@@ -502,7 +512,9 @@ const handleClick = () => {
   emit('submit', { data: '提交数据' })
 }
 ```
+
 TypeScript 写法：
+
 ```
 // 方式1：数组声明
 const emit = defineEmits<{
@@ -641,9 +653,11 @@ router.replace({
 ```
 
 ## defineAsyncComponent
+
 仅在路由匹配或交互触发时加载组件，避免加载未使用的组件资源。
 
 路由匹配：
+
 ```
 const routes = [
   {
@@ -652,14 +666,17 @@ const routes = [
   }
 ]
 ```
+
 Vue Router的import()语法，底层就是用的defineAsyncComponent
 
 交互触发：
+
 ```
 // show 为 true 时才加载 AboutComp
 <AboutComp v-if="show" />
 const AboutComp = defineAsyncComponent(() => import('../About.vue'))
 ```
+
 ```
 const MyComponentComp = defineAsyncComponent({
   loader: () => import('./MyComponent.vue'),
@@ -671,11 +688,13 @@ const MyComponentComp = defineAsyncComponent({
 ```
 
 ## keep-alive
+
 keep-alive 缓存组件
 
 场景：从首页 home 进入列表页 list，不需要缓存；从列表页进入详情页 detail，再从详情页返回到列表页，这时列表页需要使用上次缓存的内容不要刷新。
 
 App.vue
+
 ```
 <script setup>
 import { watch, ref } from 'vue'
@@ -701,7 +720,9 @@ watch(route, (val) => {
   </router-view>
 </template>
 ```
+
 list 页面生命周期：
+
 ```
 import { onMounted, onActivated, onDeactivated } from 'vue'
 
@@ -720,7 +741,9 @@ onDeactivated(() => {
   console.log('inactive')
 })
 ```
+
 缓存的list页面保留上次滚动位置：
+
 ```
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -733,7 +756,9 @@ const router = createRouter({
   }
 })
 ```
+
 vue2 keep-alive 配置：
+
 ```
 <template>
   <div id="app">
@@ -826,6 +851,7 @@ function addShopCart() {
 ```
 
 ### 持久化存储
+
 localStorage 或 pinia-plugin-persistedstate 插件
 
 ### storeToRefs
@@ -836,11 +862,14 @@ let countValue = counter.count
 
 console.log('--toRefs(counter)--', toRefs(counter)) // 不建议这么写
 ```
+
 ![alt text](image-14.png)
+
 ```
 // storeToRefs 获取响应式数据，只会关注store中的数组，不会对方法进行ref包裹
 let countValue = storeToRefs(counter).count
 ```
+
 ![alt text](image-15.png)
 
 ### $subscribe
@@ -913,7 +942,9 @@ defineProps(['modelValue'])
 const emit = defineEmits(['update:modelValue'])
 </script>
 ```
+
 或 子组件使用 v-model 绑定传来的变量：
+
 ```
 <template>
   <input v-model="newValue" placeholder="请输入" />
@@ -934,7 +965,9 @@ const newValue = computed({
 })
 </script>
 ```
+
 或 Vue3.4+ defineModel 宏:
+
 ```
 <template>
   <input v-model="modelValue" />
@@ -982,6 +1015,7 @@ const emit = defineEmits(['update:modelValueOther'])
 ### 具名插槽
 
 子组件 Child.vue：
+
 ```
 <div>
   <div>Person组件：</div>
@@ -991,6 +1025,7 @@ const emit = defineEmits(['update:modelValueOther'])
 ```
 
 父组件：
+
 ```
 <Child>
   <template v-slot:title>
@@ -1007,6 +1042,7 @@ const emit = defineEmits(['update:modelValueOther'])
 ### 作用域插槽
 
 子组件 Child.vue：
+
 ```
 <slot :listP="list"></slot>
 
@@ -1028,6 +1064,7 @@ const list = reactive([
 ```
 
 父组件：
+
 ```
 <Child>
   <template v-slot="params">
@@ -1055,11 +1092,13 @@ const list = reactive([
 和具名插槽结合在一起：
 
 子组件：
+
 ```
 <slot name="listcon" :listP="list"></slot>
 ```
 
 父组件：
+
 ```
 <template v-slot:listcon="{ listP }">
 // or
@@ -1110,8 +1149,10 @@ function changePersonAge() { // 不生效
 }
 ```
 
-## triggerRef 
+## triggerRef
+
 强制触发对 shallowRef 内层属性的响应
+
 ```
 import { shallowRef, triggerRef } from 'vue'
 
@@ -1213,11 +1254,13 @@ function debouncedRef(initialValue: string, delay: number = 300) {
   })
 }
 ```
+
 ```
 const msg = debouncedRef('', 500)
 ```
 
 ## Teleport
+
 需要将组件渲染到指定 DOM 节点，适用弹框、通知等场景。
 
 父组件：
@@ -1259,7 +1302,9 @@ const msg = debouncedRef('', 500)
 ![alt text](image-13.png)
 
 ## Suspense
+
 具有异步功能的组件用 &lt;Suspense&gt; 包装。
+
 ```
 <template>
   <div>{{ str }}</div>
@@ -1273,6 +1318,7 @@ await new Promise((resolve) => setTimeout(() => {
 let str = ref('你好，异步组件')
 </script>
 ```
+
 ```
 <Suspense>
   <template #default>
@@ -1283,14 +1329,16 @@ let str = ref('你好，异步组件')
   </template>
 </Suspense>
 ```
+
 2s的Loading，后显示组件
 
 ## 样式穿透
-| 写法	| 适用版本 | 现状 |
-| -----------   | ------------ | -------|
-| >>>	 | Vue2（ Sass/Less 等预处理器不认 >>>）| 已废弃，不推荐 |
-| ::v-deep |	Vue2 + Vue3 | 过渡方案 |
-| :deep()	| Vue3 | 官方推荐 |
+
+| 写法     | 适用版本                              | 现状           |
+| -------- | ------------------------------------- | -------------- |
+| >>>      | Vue2（ Sass/Less 等预处理器不认 >>>） | 已废弃，不推荐 |
+| ::v-deep | Vue2 + Vue3                           | 过渡方案       |
+| :deep()  | Vue3                                  | 官方推荐       |
 
 ## 全局 API 转移到应用对象
 
@@ -1304,3 +1352,55 @@ let str = ref('你好，异步组件')
 ## 非兼容性改变
 
 https://v3-migration.vuejs.org/zh/breaking-changes/
+
+## 百万级数据页面渲染优化
+
+1.Object.freeze() 冻结数据
+
+```
+this.bigDataList = Object.freeze(list)
+```
+
+Vue无法对被冻结的数据进行响应式劫持，能直接省去海量监听对象的创建；
+
+冻结后的数据无法修改，仅适用于纯展示类大数据列表，编辑类列表不适用。
+
+2.虚拟列表
+
+页面只渲染屏幕能看到的几十条DOM，滚动时动态替换可视区域数据，从根源减少DOM数量。
+
+```
+// listWraper 固定高度  @scroll
+handleScroll() {
+  const scrollTop = this.$refs.listWraper.scrollTop;
+  const startIndex = Math.floor(scrollTop / this.itemHeight);
+  const endIndex = startIndex + this.renderCount;
+  // 更新可视区数据
+  this.showList = this.bigDataList.slice(startIndex, endIndex);
+  // 可视区列表偏移，实现滚动跟随
+  this.transY = startIndex * this.itemHeight;
+}
+```
+
+3.分片渲染 + 异步渲染(requestIdleCallback)
+
+主线程一次只处理少量DOM渲染，利用浏览器空闲时间分片加载。
+
+```
+renderChunkData() {
+  return new Promise(resolve => {
+    // requestIdleCallback 浏览器空闲时间渲染
+    requestIdleCallback(() => {
+      const chunkData = this.bigDataList.slice(this.currentIndex, this.currentIndex + this.pageSize)
+      this.showList.push(...chunkData)
+      this.currentIndex += this.pageSize
+      // 递归分片渲染，直到全部加载完成
+      if (this.currentIndex < this.bigDataList.length) {
+        this.renderChunkData()
+      } else {
+        resolve()
+      }
+    })
+  })
+}
+```

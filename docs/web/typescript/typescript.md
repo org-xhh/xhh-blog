@@ -66,6 +66,8 @@ unknown要求在使用前显式断言或类型检查，确保操作的安全性�
 ### never
 抛出异常或根本就不会有返回值的函数表达式或箭头函数的返回类型。
 
+不存在能赋值给 never 的值
+
 
 ### 数组
 
@@ -222,6 +224,15 @@ let arr = [1, 2] as const // 类型变为 readonly [1, 2]
 arr.push(3) // 编译错误
 ```
 
+## satisfies
+```
+const config = {
+  theme: "dark",
+  language: "zh",
+} satisfies AppConfig;
+// 如果配置不符合 AppConfig，这里会报错
+```
+
 ## 接口
 
 描述对象的形状
@@ -271,6 +282,18 @@ let users: User[] = [
 interface TestObj {
   readonly propName: number
 }
+```
+
+获取键名：
+```
+interface User {
+  id: number;
+  name: string;
+}
+
+// 自动获取属性名，增加新属性时会自动同步
+// 等同 type UserFields = "id" | "name"
+type UserFields = keyof User; 
 ```
 
 继承：
@@ -324,7 +347,7 @@ let name: Name = 'Tom'
 
 ```
 const initData = { count: 0 }
-type State = typeof initData
+type State = typeof initData // 利用 typeof 复用类型
 const reducer = (state: State) => {
   return state
 }

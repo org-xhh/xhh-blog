@@ -283,13 +283,11 @@ const router = createBrowserRouter([
 之前：
 ```
 import Login from '../pages/Login/login'
-import Article from '../pages/Article/article'
 ```
 之后：
 ```
 import { Suspense, lazy } from 'react'
 const Login = lazy(() => import('../pages/Login/login'))
-const Article = lazy(() => import('../pages/Article/article'))
 
 {
   path: '/login',
@@ -1425,7 +1423,7 @@ function Counter() {
 ```
 
 #### React.memo 高阶组件
-React组件默认的渲染机制：只要父组件重新渲染子组件就会重新渲染。
+React组件默认的渲染机制：父组件 state 变化 → 所有子组件都会重新执行 render 函数，即使子组件的 props 没有变化。
 
 memo 作用：允许组件在props没有改变的情况下跳过渲染。
 ```
@@ -1768,6 +1766,30 @@ const App = () => {
       </Suspense>
     </div>
   )
+}
+```
+
+## 虚拟列表
+react-window 或 react-virtualized
+
+只渲染可视区域内的几十条
+```
+import { FixedSizeList as List } from 'react-window';
+
+function VirtualList({ items }) {
+  const Row = ({ index, style }) => (
+    <div style={style}>{items[index].name}</div>
+  );
+
+  return (
+    <List
+      height={500}        // 容器高度
+      itemCount={10000}   // 总条数
+      itemSize={50}       // 每行高度
+    >
+      {Row}
+    </List>
+  );
 }
 ```
 
