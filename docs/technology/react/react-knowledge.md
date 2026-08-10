@@ -1496,7 +1496,9 @@ const handleChange = useCallback((value) => {
 
 
 #### forwardRef 高阶组件
-forwardRef 可以让子组件通过 ref 向父组件公开dom节点，父组件获取到子组件的dom，可以执行该dom节点的方法。
+forwardRef 可以让子组件通过 ref 向父组件公开dom节点，父组件获取到子组件的dom，可以执行该dom节点的方法；
+
+React19+，不再强制使用forwardRef，ref可作为普通属性直接在函数组件中通过props.ref接收;
 
 子组件：
 ```
@@ -1740,7 +1742,9 @@ https://github.com/streamich/react-use
 
 
 ## API use 
-React19+，use 结合 &lt;Suspense&gt;，实现数据加载loading
+React19+，打破传统Hooks必须在顶层调用的限制，支持在条件、分支逻辑中直接读取Promise或Context；
+
+use 结合 &lt;Suspense&gt;，实现数据加载loading：
 ```
 import { Suspense, use } from 'react'
 

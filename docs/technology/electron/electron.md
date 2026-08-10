@@ -548,6 +548,80 @@ nodemon
 ```
 nodemon 监听 main.js 文件变化，然后执行命令 electron .
 
+<!--
+### electron-builder
+```
+"scripts": {
+  "start": "electron .",
+  "pack": "electron-builder --dir", // 构建应用程序但不生成安装包或软件包，只输出目录结构。
+  "build": "electron-builder" // 构建应用程序并生成安装包或软件包
+},
+"build": {
+  "appId": "com.hospital.bedsystem",
+  "productName": "", // 安装包显示中文名
+  "files": [
+    "electron/**/*",
+    "dist/**/*",
+    "node_modules/**/*"
+  ],
+  "extraResources": [
+    "./assets/**"
+  ],
+  "directories": {
+    "output": "release", // 打包输出目录
+    "buildResources": "build" // 图标资源目录
+  },
+  "asar": true, // 代码打包asar加密；false可解压源码
+  "asarUnpack": ["node_modules/ffmpeg/**"], // 音视频依赖不解压
+
+  // Windows专属配置
+  "win": {
+    "target": [
+      {
+        "target": "nsis", // 安装包；可选portable便携包
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "build/icon.ico",
+    "requestExecutionLevel": "asInvoker", // 权限：administrator管理员
+    "publisherName": ""
+  },
+  "nsis": {
+    "oneClick": false, // 不要一键安装，允许选择安装路径
+    "allowToChangeInstallationDirectory": true,
+    "installerIcon": "build/icon.ico",
+    "uninstallerIcon": "build/icon.ico",
+    "shortcutName": "",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  },
+
+  // Mac配置
+  "mac": {
+    "target": ["dmg", "zip"],
+    "icon": "build/icon.icns",
+    "hardenedRuntime": true,
+    "entitlements": "build/entitlements.mac.plist",
+    "entitlementsInherit": "build/entitlements.mac.plist"
+  },
+
+  // Linux
+  "linux": {
+    "target": ["deb", "rpm"],
+    "icon": "build/icon.png",
+    "category": "Utility"
+  },
+
+  // 自动更新
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "http://内网服务器/update/"
+    }
+  ]
+}
+```
+-->
 
 ### 打包应用
 [Electron Forge](https://www.electronjs.org/zh/docs/latest/tutorial/%E6%89%93%E5%8C%85%E6%95%99%E7%A8%8B)

@@ -6,6 +6,16 @@
 ## 开发者后台
 https://dev.dcloud.net.cn/pages/app/list
 
+## 新建项目
+![alt text](image-7.png)
+
+新建 uni-app 项目和 5+App 项目区别如下：
+
+- 技术栈‌：uni-app 强制使用 ‌Vue.js‌ (.vue 组件)；5+App 使用传统 ‌HTML+CSS+JS‌ (.html 入口)。
+- API 调用‌：uni-app 主用 uni.xxx 通用 API（底层兼容 5+）；5+App 直接调用 plus.xxx 原生 API。
+- 跨端能力‌：uni-app 一套代码编译至 ‌iOS/Android/H5/多端小程序‌；5+App ‌仅能打包为 App‌。
+- 发布方式：uni-app 可一键发布为 H5、小程序、App 等；5+App 一般用于打包生成 Android/iOS 原生 App 包。
+
 ## 运行
 
 ### 运行到浏览器
@@ -64,6 +74,14 @@ https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 - 4. (HBuilderX)发行 - 小程序-微信
 - 5. 微信开发者工具 “上传”
 
-### App云打包和本地打包
+### Android云打包
 
-https://uniapp.dcloud.net.cn/tutorial/app-env.html
+云端证书：
+
+![alt text](image-6.png)
+
+自有证书：
+
+https://www.yunedit.com/update/androidzhengshu/list
+
+
