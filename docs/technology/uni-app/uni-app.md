@@ -11,19 +11,19 @@
 ### uni-app 和 uni-app X 区别：
 - **uni-app（老版）**
 
-App 端：WebView/Weex 渲染，JS 代码跑在 V8/JSC 引擎，靠**JSBridge**和原生通信，属于 Web 套壳 App；
-页面文件：`.vue`，Vue2/Vue3 都支持。
+App 端：WebView(.vue)/Weex(.nvue) 渲染，JS 代码跑在 V8/JSC 引擎，靠**JSBridge**和原生通信，属于 Web 套壳 App； 页面文件：`.vue`，Vue2/Vue3 都支持；
+
+
 - **uni-app X（新版）**
 
-App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言**直接编译成 Kotlin（Android）、Swift（iOS）、ArkTS（鸿蒙），真正原生 App；
-页面文件：`.uvue`后缀，仅兼容 
+App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言**直接编译成 Kotlin（Android）、Swift（iOS）、ArkTS（鸿蒙），真正原生 App； 页面文件：`.uvue`后缀，仅兼容Vue3； 禁用 plus.xxx，全部 uni.xxx；
 
 ### 新建 uni-app 项目和 5+App 项目区别：
 
-- 技术栈‌：uni-app 强制使用 ‌Vue.js‌ (.vue 组件)；5+App 使用传统 ‌HTML+CSS+JS‌ (.html 入口)。
+- 技术栈‌：uni-app 强制使用 ‌Vue.js；5+App 使用传统 ‌HTML+CSS+JS‌ (.html 入口)。
 - API 调用‌：uni-app 主用 uni.xxx 通用 API（底层兼容 5+）；5+App 直接调用 plus.xxx 原生 API。
 - 跨端能力‌：uni-app 一套代码编译至 ‌iOS/Android/H5/多端小程序‌；5+App ‌仅能打包为 App‌。
-- 发布方式：uni-app 可一键发布为 H5、小程序、App 等；5+App 一般用于打包生成 Android/iOS 原生 App 包。
+
 
 ## 运行
 
