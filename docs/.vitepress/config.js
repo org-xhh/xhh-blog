@@ -151,12 +151,12 @@ export default {
           // { text: "Vite配置项", link: "/technology/packaging-tool/vite配置项" }
         ],
       },
-      "/technology/uni-app/": {
-        text: "uni-app知识",
-        items: [
-          { text: "uni-app", link: "/technology/uni-app/uni-app" },
-        ],
-      },
+      // "/technology/uni-app/": {
+      //   text: "uni-app知识",
+      //   items: [
+      //     { text: "uni-app", link: "/technology/uni-app/uni-app" },
+      //   ],
+      // },
       "/technology/miniprogram/": {
         text: "微信小程序知识",
         items: [
