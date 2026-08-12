@@ -13,10 +13,22 @@
 
 App 端：WebView(.vue)/Weex(.nvue) 渲染，JS 代码跑在 V8/JSC 引擎，靠**JSBridge**和原生通信，属于 Web 套壳 App； 页面文件：`.vue`，Vue2/Vue3 都支持；
 
-
 - **uni-app X（新版）**
 
 App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言**直接编译成 Kotlin（Android）、Swift（iOS）、ArkTS（鸿蒙），真正原生 App； 页面文件：`.uvue`后缀，仅兼容Vue3； 禁用 plus.xxx，全部 uni.xxx；
+
+---
+
+| 判断点 | 传统 uni-app（老版） | uni-app X |
+|--------|----------------------|-----------|
+| manifest.json | 无 `uni-app-x` 字段 | 顶层有 `"uni-app-x":{}` |
+| 文件后缀 | `.vue`、可能有`.nvue` | `.uvue`，无nvue；脚本会出现 `<script lang="uts">` |
+| plus API | App端大量使用`plus.xxx` | 完全禁用plus |
+| 条件编译 | `#ifdef APP-PLUS` 注释宏 | 运行时平台判断 `uni.getSystemInfoSync()` |
+| 页面语法 | Vue2/Vue3双支持，文字可不套text | 仅Vue3 setup，文字必须`<text>`包裹 |
+| 原生调用 | plus模块 / 5+Runtime | UTSAndroid/UTSiOS 直接调系统 |
+| 新建页面 | 默认新建 `.vue`，可选`.nvue` | 默认新建 `.uvue` |
+
 
 ### 新建 uni-app 项目和 5+App 项目区别：
 
