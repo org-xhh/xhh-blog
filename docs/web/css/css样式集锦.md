@@ -16,6 +16,7 @@ li {
     transform: scale(0.5, 0.5);
     transform-origin: 0 0;
     box-sizing: border-box;
+    pointer-events: none; /* 事件穿透 */
   }
 }
 ```
