@@ -906,7 +906,7 @@ npm i zustand -S
 #### 创建 store
 ```
 import { create } from 'zustand'
-// zustand 只有一个核心API: create
+// zustand 核心API: create
 
 const useCounterStore = create((set) => ({
   count: 0,
@@ -917,6 +917,8 @@ const useCounterStore = create((set) => ({
 
 export default useCounterStore
 ```
+zustand 是内存状态管理，负责驱动 UI 更新，页面刷新内存数据会丢失；借助 persist('zustand/middleware') 中间件搭配localStorage，页面刷新时自动读取本地数据恢复内存状态，实现状态持久保存。
+
 
 #### 使用
 ```
@@ -940,6 +942,7 @@ const incrementByAmount = useCounterStore((state) => state.incrementByAmount)
   <Button onClick={decrement}>Decrement</Button>
 </div>
 ```
+备注：`useCounterStore.getState()` 返回**整个 store 的全部内容（状态数据 + action 方法）**，没有响应式，不会让组件更新。
 
 
 ## 异步请求
