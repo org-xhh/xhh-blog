@@ -4,7 +4,7 @@ TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。
 
 TypeScript 是静态编译语言，在 编译期间 进行类型检查，可以在编辑器中发现大部分类型错误。
 
-## TS编译器
+## TS 编译器
 ```
 npm i -g typescript
 
@@ -174,17 +174,6 @@ let c:{} = {
 }
 ```
 
-## 联合类型
-
-union 联合类型取值可以为多种类型中的一种
-
-```
-let result: number | string;
-
-result = 10; // 可以是数字
-result = "Hi"; // 可以是字符串
-```
-
 ## 字面量
 
 Literal 字面量类型允许将变量的值限制为特定值
@@ -201,7 +190,7 @@ handleEvent(document.getElementById('world'), 'dblclick'); // 报错，event 不
 // index.ts(7,47): error TS2345: Argument of type '"dblclick"' is not assignable to parameter of type 'EventNames'.
 ```
 
-## 类型断言
+## as 类型断言
 
 as 强制编译器推断类型
 
@@ -224,7 +213,7 @@ let arr = [1, 2] as const // 类型变为 readonly [1, 2]
 arr.push(3) // 编译错误
 ```
 
-## satisfies
+## satisfies 类型断言
 ```
 const config = {
   theme: "dark",
@@ -233,7 +222,7 @@ const config = {
 // 如果配置不符合 AppConfig，这里会报错
 ```
 
-## 接口
+## interface 接口
 
 描述对象的形状
 ```
@@ -284,26 +273,14 @@ interface TestObj {
 }
 ```
 
-获取键名：
-```
-interface User {
-  id: number;
-  name: string;
-}
-
-// 自动获取属性名，增加新属性时会自动同步
-// 等同 type UserFields = "id" | "name"
-type UserFields = keyof User; 
-```
-
-继承：
+interface 使用 extends 关键字**继承**：
 ```
 interface Circle extends TestObj { 
   xxx: string
 }
 ```
 
-重名接口，属性合并：
+重名接口，属性自动合并：
 ```
 interface TestObj {
   width: number
@@ -317,26 +294,9 @@ const obj: TestObj = {
   height: 667;
 }
 ```
+声明合并的使用场景：扩展第三方库的类型、给全局对象添加属性。比如给 Window 对象扩展自定义属性、给 Vue 实例扩展全局属性等。
 
-## 函数
-
-```
-function sum(x: number, y: number): number {
-  return x + y;
-}
-sum(1, 2);
-```
-接口描述函数：
-```
-interface ISum {
-  (x:number,y:number):number
-}
-const sum:ISum = (x, y) => {
-  return x + y
-}
-```
-
-## 类型别名
+## type 类型别名
 
 类型别名用来给一个类型起个新名字，功能更强大，可定义对象、联合类型、交叉类型等
 
@@ -366,6 +326,36 @@ let person: Person = {
 }
 ```
 
+类型扩展，type 使用交叉类型 & 进行合并：
+```
+type BaseUser = { id: number };
+type Admin = BaseUser & { role: string };
+```
+
+获取键名：
+```
+type User = {
+  id: number;
+  name: string;
+}
+
+// 自动获取属性名，增加新属性时会自动同步
+// 等同 type UserFields = "id" | "name"
+type UserFields = keyof User; 
+```
+
+## 联合类型
+
+union 联合类型取值可以为多种类型中的一种
+
+```
+let result: number | string;
+
+result = 10; // 可以是数字
+result = "Hi"; // 可以是字符串
+```
+
+
 ## 交叉类型
 
 ```
@@ -378,6 +368,24 @@ interface B {
 
 // 表示同时具备 A 和 B 的特性
 type C = A & B;
+```
+
+## 函数
+
+```
+function sum(x: number, y: number): number {
+  return x + y;
+}
+sum(1, 2);
+```
+接口描述函数：
+```
+interface ISum {
+  (x:number,y:number):number
+}
+const sum:ISum = (x, y) => {
+  return x + y
+}
 ```
 
 ## 类

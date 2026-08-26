@@ -17,7 +17,7 @@
 ```
 const obj = {
     name: 'Lily',
-    sayHi: function() {
+    sayHi: function() { // 等价 sayHi() {
         console.log(`Hello, ${this.name}`)
     }
 }
@@ -55,10 +55,20 @@ hiFn()
     - this 指向 thisArg
     - 参数传递一个数组
 - bind
-    - .bind(thisArg)
+    - .bind(thisArg, arg1, arg2, ...)
     - 不立即调用
     - 返回一个this被永久绑定的新函数
     - 也称“硬绑定”
+    - 可以预设部分参数（函数柯里化）
+```
+function introduce(age, city) {
+  console.log(`我是${this.name}，${age}岁，来自${city}`)
+}
+const person1 = { name: '小刘' }
+// bind 不执行，返回一个新函数
+const fnn = introduce.bind(person1, 35) // 预设第一个参数 age=35
+fnn('江苏')  // 我是小刘，35岁，来自江苏
+```
 
 ![alt text](image-6.png)
 
@@ -72,8 +82,9 @@ Function.prototype.myApply = function(context, argsArray) {
     context = Object(context)
   }
   
-  // 生成唯一属性名，避免覆盖context原有属性
+  // 生成唯一属性名
   const fnKey = Symbol('fn')
+  // this 就是调用 myApply 的那个函数
   context[fnKey] = this
   
   const args = Array.isArray(argsArray) ? argsArray : []

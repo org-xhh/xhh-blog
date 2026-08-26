@@ -1,4 +1,4 @@
-import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./chunks/framework.C5U8cnJv.js";const d="/xhh-blog/assets/image.BIGT4GjJ.png",x=JSON.parse('{"title":"typescript","description":"","frontmatter":{},"headers":[],"relativePath":"web/typescript/typescript.md","filePath":"web/typescript/typescript.md"}'),r={name:"web/typescript/typescript.md"},u=e(`<h1 id="typescript" tabindex="-1">typescript <a class="header-anchor" href="#typescript" aria-label="Permalink to &quot;typescript&quot;">​</a></h1><p>TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。</p><p>TypeScript 是静态编译语言，在 编译期间 进行类型检查，可以在编辑器中发现大部分类型错误。</p><h2 id="ts编译器" tabindex="-1">TS编译器 <a class="header-anchor" href="#ts编译器" aria-label="Permalink to &quot;TS编译器&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i -g typescript</span></span>
+import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./chunks/framework.C5U8cnJv.js";const d="/xhh-blog/assets/image.BIGT4GjJ.png",x=JSON.parse('{"title":"typescript","description":"","frontmatter":{},"headers":[],"relativePath":"web/typescript/typescript.md","filePath":"web/typescript/typescript.md"}'),r={name:"web/typescript/typescript.md"},u=e(`<h1 id="typescript" tabindex="-1">typescript <a class="header-anchor" href="#typescript" aria-label="Permalink to &quot;typescript&quot;">​</a></h1><p>TypeScript 是 JavaScript 的一个超集，扩展了 JavaScript 的语法。</p><p>TypeScript 是静态编译语言，在 编译期间 进行类型检查，可以在编辑器中发现大部分类型错误。</p><h2 id="ts-编译器" tabindex="-1">TS 编译器 <a class="header-anchor" href="#ts-编译器" aria-label="Permalink to &quot;TS 编译器&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm i -g typescript</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>tsc test.ts # 生成对应的test.js文件</span></span></code></pre></div><h2 id="ts-数据类型" tabindex="-1">TS 数据类型 <a class="header-anchor" href="#ts-数据类型" aria-label="Permalink to &quot;TS 数据类型&quot;">​</a></h2><h3 id="number、string、boolean" tabindex="-1">number、string、boolean <a class="header-anchor" href="#number、string、boolean" aria-label="Permalink to &quot;number、string、boolean&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let num: number = 10;</span></span>
 <span class="line"><span>let str: string = &#39;string text&#39;;</span></span>
@@ -42,10 +42,7 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>let c:{} = {</span></span>
 <span class="line"><span>  name:&#39;tom&#39;,</span></span>
 <span class="line"><span>  age: 18,</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="联合类型" tabindex="-1">联合类型 <a class="header-anchor" href="#联合类型" aria-label="Permalink to &quot;联合类型&quot;">​</a></h2><p>union 联合类型取值可以为多种类型中的一种</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let result: number | string;</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>result = 10; // 可以是数字</span></span>
-<span class="line"><span>result = &quot;Hi&quot;; // 可以是字符串</span></span></code></pre></div><h2 id="字面量" tabindex="-1">字面量 <a class="header-anchor" href="#字面量" aria-label="Permalink to &quot;字面量&quot;">​</a></h2><p>Literal 字面量类型允许将变量的值限制为特定值</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type EventNames = &#39;click&#39; | &#39;scroll&#39; | &#39;mousemove&#39;;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="字面量" tabindex="-1">字面量 <a class="header-anchor" href="#字面量" aria-label="Permalink to &quot;字面量&quot;">​</a></h2><p>Literal 字面量类型允许将变量的值限制为特定值</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type EventNames = &#39;click&#39; | &#39;scroll&#39; | &#39;mousemove&#39;;</span></span>
 <span class="line"><span>function handleEvent(ele: Element, event: EventNames) {</span></span>
 <span class="line"><span>  // do something</span></span>
 <span class="line"><span>}</span></span>
@@ -53,7 +50,7 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>handleEvent(document.getElementById(&#39;hello&#39;), &#39;scroll&#39;);  // 没问题</span></span>
 <span class="line"><span>handleEvent(document.getElementById(&#39;world&#39;), &#39;dblclick&#39;); // 报错，event 不能为 &#39;dblclick&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>// index.ts(7,47): error TS2345: Argument of type &#39;&quot;dblclick&quot;&#39; is not assignable to parameter of type &#39;EventNames&#39;.</span></span></code></pre></div><h2 id="类型断言" tabindex="-1">类型断言 <a class="header-anchor" href="#类型断言" aria-label="Permalink to &quot;类型断言&quot;">​</a></h2><p>as 强制编译器推断类型</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const value:unknown = &#39;Hello World&#39;;</span></span>
+<span class="line"><span>// index.ts(7,47): error TS2345: Argument of type &#39;&quot;dblclick&quot;&#39; is not assignable to parameter of type &#39;EventNames&#39;.</span></span></code></pre></div><h2 id="as-类型断言" tabindex="-1">as 类型断言 <a class="header-anchor" href="#as-类型断言" aria-label="Permalink to &quot;as 类型断言&quot;">​</a></h2><p>as 强制编译器推断类型</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const value:unknown = &#39;Hello World&#39;;</span></span>
 <span class="line"><span>const s1:string = value as string;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>const username = document.getElementById(&#39;username&#39;);</span></span>
@@ -65,11 +62,11 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span></span></span>
 <span class="line"><span>// const 断言（值不可变）</span></span>
 <span class="line"><span>let arr = [1, 2] as const // 类型变为 readonly [1, 2]</span></span>
-<span class="line"><span>arr.push(3) // 编译错误</span></span></code></pre></div><h2 id="satisfies" tabindex="-1">satisfies <a class="header-anchor" href="#satisfies" aria-label="Permalink to &quot;satisfies&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const config = {</span></span>
+<span class="line"><span>arr.push(3) // 编译错误</span></span></code></pre></div><h2 id="satisfies-类型断言" tabindex="-1">satisfies 类型断言 <a class="header-anchor" href="#satisfies-类型断言" aria-label="Permalink to &quot;satisfies 类型断言&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const config = {</span></span>
 <span class="line"><span>  theme: &quot;dark&quot;,</span></span>
 <span class="line"><span>  language: &quot;zh&quot;,</span></span>
 <span class="line"><span>} satisfies AppConfig;</span></span>
-<span class="line"><span>// 如果配置不符合 AppConfig，这里会报错</span></span></code></pre></div><h2 id="接口" tabindex="-1">接口 <a class="header-anchor" href="#接口" aria-label="Permalink to &quot;接口&quot;">​</a></h2><p>描述对象的形状</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface Person {</span></span>
+<span class="line"><span>// 如果配置不符合 AppConfig，这里会报错</span></span></code></pre></div><h2 id="interface-接口" tabindex="-1">interface 接口 <a class="header-anchor" href="#interface-接口" aria-label="Permalink to &quot;interface 接口&quot;">​</a></h2><p>描述对象的形状</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface Person {</span></span>
 <span class="line"><span>  name: string;</span></span>
 <span class="line"><span>  age: number;</span></span>
 <span class="line"><span>}</span></span>
@@ -96,16 +93,9 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>  { id: 2, name: &#39;Lb&#39;, address: { city: &#39;PeiXian&#39;, zipCode: &#39;10006&#39; } }</span></span>
 <span class="line"><span>]</span></span></code></pre></div><p>只读属性：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface TestObj {</span></span>
 <span class="line"><span>  readonly propName: number</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>获取键名：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface User {</span></span>
-<span class="line"><span>  id: number;</span></span>
-<span class="line"><span>  name: string;</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>// 自动获取属性名，增加新属性时会自动同步</span></span>
-<span class="line"><span>// 等同 type UserFields = &quot;id&quot; | &quot;name&quot;</span></span>
-<span class="line"><span>type UserFields = keyof User;</span></span></code></pre></div><p>继承：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface Circle extends TestObj { </span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>interface 使用 extends 关键字<strong>继承</strong>：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface Circle extends TestObj { </span></span>
 <span class="line"><span>  xxx: string</span></span>
-<span class="line"><span>}</span></span></code></pre></div><p>重名接口，属性合并：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface TestObj {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>重名接口，属性自动合并：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface TestObj {</span></span>
 <span class="line"><span>  width: number</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span>interface TestObj {</span></span>
@@ -115,15 +105,7 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>const obj: TestObj = {</span></span>
 <span class="line"><span>  width: 375;</span></span>
 <span class="line"><span>  height: 667;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="函数" tabindex="-1">函数 <a class="header-anchor" href="#函数" aria-label="Permalink to &quot;函数&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function sum(x: number, y: number): number {</span></span>
-<span class="line"><span>  return x + y;</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span>sum(1, 2);</span></span></code></pre></div><p>接口描述函数：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface ISum {</span></span>
-<span class="line"><span>  (x:number,y:number):number</span></span>
-<span class="line"><span>}</span></span>
-<span class="line"><span>const sum:ISum = (x, y) =&gt; {</span></span>
-<span class="line"><span>  return x + y</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="类型别名" tabindex="-1">类型别名 <a class="header-anchor" href="#类型别名" aria-label="Permalink to &quot;类型别名&quot;">​</a></h2><p>类型别名用来给一个类型起个新名字，功能更强大，可定义对象、联合类型、交叉类型等</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type Name = string;</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>声明合并的使用场景：扩展第三方库的类型、给全局对象添加属性。比如给 Window 对象扩展自定义属性、给 Vue 实例扩展全局属性等。</p><h2 id="type-类型别名" tabindex="-1">type 类型别名 <a class="header-anchor" href="#type-类型别名" aria-label="Permalink to &quot;type 类型别名&quot;">​</a></h2><p>类型别名用来给一个类型起个新名字，功能更强大，可定义对象、联合类型、交叉类型等</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type Name = string;</span></span>
 <span class="line"><span>let name: Name = &#39;Tom&#39;</span></span></code></pre></div><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>const initData = { count: 0 }</span></span>
 <span class="line"><span>type State = typeof initData // 利用 typeof 复用类型</span></span>
 <span class="line"><span>const reducer = (state: State) =&gt; {</span></span>
@@ -137,7 +119,18 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>  name: &#39;Tom&#39;,</span></span>
 <span class="line"><span>  age: 25,</span></span>
 <span class="line"><span>  sayHi: () =&gt; console.log(&#39;Hi&#39;)</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="交叉类型" tabindex="-1">交叉类型 <a class="header-anchor" href="#交叉类型" aria-label="Permalink to &quot;交叉类型&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface A {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>类型扩展，type 使用交叉类型 &amp; 进行合并：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type BaseUser = { id: number };</span></span>
+<span class="line"><span>type Admin = BaseUser &amp; { role: string };</span></span></code></pre></div><p>获取键名：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>type User = {</span></span>
+<span class="line"><span>  id: number;</span></span>
+<span class="line"><span>  name: string;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 自动获取属性名，增加新属性时会自动同步</span></span>
+<span class="line"><span>// 等同 type UserFields = &quot;id&quot; | &quot;name&quot;</span></span>
+<span class="line"><span>type UserFields = keyof User;</span></span></code></pre></div><h2 id="联合类型" tabindex="-1">联合类型 <a class="header-anchor" href="#联合类型" aria-label="Permalink to &quot;联合类型&quot;">​</a></h2><p>union 联合类型取值可以为多种类型中的一种</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>let result: number | string;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>result = 10; // 可以是数字</span></span>
+<span class="line"><span>result = &quot;Hi&quot;; // 可以是字符串</span></span></code></pre></div><h2 id="交叉类型" tabindex="-1">交叉类型 <a class="header-anchor" href="#交叉类型" aria-label="Permalink to &quot;交叉类型&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface A {</span></span>
 <span class="line"><span>  a(): void;</span></span>
 <span class="line"><span>}</span></span>
 <span class="line"><span>interface B {</span></span>
@@ -145,7 +138,15 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>// 表示同时具备 A 和 B 的特性</span></span>
-<span class="line"><span>type C = A &amp; B;</span></span></code></pre></div><h2 id="类" tabindex="-1">类 <a class="header-anchor" href="#类" aria-label="Permalink to &quot;类&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Animal {</span></span>
+<span class="line"><span>type C = A &amp; B;</span></span></code></pre></div><h2 id="函数" tabindex="-1">函数 <a class="header-anchor" href="#函数" aria-label="Permalink to &quot;函数&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function sum(x: number, y: number): number {</span></span>
+<span class="line"><span>  return x + y;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>sum(1, 2);</span></span></code></pre></div><p>接口描述函数：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>interface ISum {</span></span>
+<span class="line"><span>  (x:number,y:number):number</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>const sum:ISum = (x, y) =&gt; {</span></span>
+<span class="line"><span>  return x + y</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="类" tabindex="-1">类 <a class="header-anchor" href="#类" aria-label="Permalink to &quot;类&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Animal {</span></span>
 <span class="line"><span>  name: string = &#39;lucky&#39;; // 默认值</span></span>
 <span class="line"><span>  constructor(name: string) {</span></span>
 <span class="line"><span>    this.name = name;</span></span>
@@ -164,7 +165,7 @@ import{_ as t,D as l,c as i,I as n,w as p,a as s,a3 as e,j as o,o as c}from"./ch
 <span class="line"><span>}</span></span></code></pre></div><p>app.ts:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;reference path=&quot;greet.ts&quot; /&gt;</span></span>
 <span class="line"><span>MyNamespace.sayHello(); // Hello, TypeScript!</span></span></code></pre></div><h2 id="泛型" tabindex="-1">泛型 <a class="header-anchor" href="#泛型" aria-label="Permalink to &quot;泛型&quot;">​</a></h2><p>泛型类似一个类型占位符，不直接指定具体的类型，使用尖括号 &lt;T&gt; 来表示，在使用时再指定类型。</p><h4 id="泛型函数" tabindex="-1">泛型函数 <a class="header-anchor" href="#泛型函数" aria-label="Permalink to &quot;泛型函数&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>function identity&lt;T&gt;(value: T): T {</span></span>
 <span class="line"><span>  return value;</span></span>
-<span class="line"><span>}</span></span></code></pre></div>`,101),h=o("br",null,null,-1),g=e(`<h4 id="泛型类" tabindex="-1">泛型类 <a class="header-anchor" href="#泛型类" aria-label="Permalink to &quot;泛型类&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Goods&lt;T&gt; {</span></span>
+<span class="line"><span>}</span></span></code></pre></div>`,104),h=o("br",null,null,-1),g=e(`<h4 id="泛型类" tabindex="-1">泛型类 <a class="header-anchor" href="#泛型类" aria-label="Permalink to &quot;泛型类&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>class Goods&lt;T&gt; {</span></span>
 <span class="line"><span>  private value: T;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  constructor(value: T) {</span></span>

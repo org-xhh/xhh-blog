@@ -538,6 +538,9 @@ app.on('will-quit', () => {
 })
 ```
 
+## 网络
+![alt text](network.png)
+
 ### 配置热更新
 
 nodemon

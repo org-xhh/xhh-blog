@@ -12,6 +12,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    transform: scale(0.5, 0.5);</span></span>
 <span class="line"><span>    transform-origin: 0 0;</span></span>
 <span class="line"><span>    box-sizing: border-box;</span></span>
+<span class="line"><span>    pointer-events: none; /* 事件穿透 */</span></span>
 <span class="line"><span>  }</span></span>
 <span class="line"><span>}</span></span></code></pre></div><h3 id="_0-5px-下边框" tabindex="-1">0.5px 下边框 <a class="header-anchor" href="#_0-5px-下边框" aria-label="Permalink to &quot;0.5px 下边框&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>li {</span></span>
 <span class="line"><span>  position: relative;</span></span>
