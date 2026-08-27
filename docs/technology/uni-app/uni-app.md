@@ -37,6 +37,25 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 - 跨端能力‌：uni-app 一套代码编译至 ‌iOS/Android/H5/多端小程序‌；5+App ‌仅能打包为 App‌。
 
 
+## 项目构建配置
+
+`manifest.json`
+
+![alt text](image-10.png)
+
+## 插件
+
+1.菜单 => 工具 => 插件安装
+
+安装的是【HBuilderX 编辑器本身】的插件，作用于整个软件，所有项目生效
+
+
+2.插件市场
+
+![alt text](image-11.png)
+
+会导入到 uni_modules 中
+
 ## 运行
 
 ### 运行到浏览器
@@ -59,6 +78,12 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 
 ![alt text](image-2.png)
 
+### 运行到Android真机
+
+https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
+
+制作自定义调试基座 => 运行到Android App基座
+
 ### 运行到iOS模拟器
 
 https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html#ios
@@ -77,11 +102,8 @@ https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html#ios
 
 ![alt text](image-4.png)
 
-选中上一步骤生成的基座
+选中上一步骤生成的基座。
 
-### 运行到Android真机
-
-https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 
 ## 发行
 
@@ -104,20 +126,35 @@ https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 
 ### Android云打包
 
+<!-- 
+Android平台签名证书(.keystore)生成指南：
+https://ask.dcloud.net.cn/article/35777 
+-->
+
 发行 => 原生App云打包
 
 使用云端证书：
 
 ![alt text](image-6.png)
 
-使用自有证书：
+使用自有证书(DCLOUD开发者后台)：
 
-开发者后台
-<!-- https://www.yunedit.com/update/androidzhengshu/list -->
 ![alt text](image-8.png)
 
 ### iOS云打包
-https://juejin.cn/post/7392535991973511219?searchId=20260811112141318A43FE6558DCBCB2C8
+申请ios证书教程：https://ask.dcloud.net.cn/article/152
 
 ![alt text](image-9.png)
 
+
+Apple开发者后台(证书、描述文件、设备 UDID 管理): https://developer.apple.com/account/
+
+苹果上架后台：https://appstoreconnect.apple.com/
+
+<!--
+掘金教程参考：
+
+https://juejin.cn/post/7392535991973511219?searchId=20260811112141318A43FE6558DCBCB2C8
+
+https://juejin.cn/post/7426916970661281802?searchId=202608261705422EBAF93C97C87C285713
+-->
