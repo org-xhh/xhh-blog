@@ -37,7 +37,7 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 - 跨端能力‌：uni-app 一套代码编译至 ‌iOS/Android/H5/多端小程序‌；5+App ‌仅能打包为 App‌。
 
 
-## 项目构建配置
+## 构建配置
 
 `manifest.json`
 
@@ -82,7 +82,7 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 
 https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 
-制作自定义调试基座 => 运行到Android App基座
+制作自定义调试基座 => 运行到Android App基座，选择刚才打的自定义基座
 
 ### 运行到iOS模拟器
 
@@ -146,7 +146,7 @@ https://ask.dcloud.net.cn/article/35777
 
 ![alt text](image-9.png)
 
-
+---
 Apple开发者后台(证书、描述文件、设备 UDID 管理): https://developer.apple.com/account/
 
 苹果上架后台：https://appstoreconnect.apple.com/
