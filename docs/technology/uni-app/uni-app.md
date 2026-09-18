@@ -133,13 +133,13 @@ https://ask.dcloud.net.cn/article/35777
 
 发行 => 原生App云打包
 
-使用云端证书：
-
 ![alt text](image-6.png)
 
-使用自有证书(DCLOUD开发者后台)：
+使用云端证书打包时DCLOUD开发者后台会自动创建证书。
 
 ![alt text](image-8.png)
+
+包所在目录：/unpackage/release/apk/__UNI__1BB5B53__20260918173349.apk
 
 ### iOS云打包
 申请ios证书教程：https://ask.dcloud.net.cn/article/152

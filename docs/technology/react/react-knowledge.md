@@ -235,7 +235,7 @@ const ManageLayout: FC = () => {
       <Link to="/">home</Link>
       <Link to="/demo">demo</Link>
       <div>
-        {/* 路由出口，配置二级路由渲染位置 */}
+        {/* 嵌套路由出口，配置二级路由渲染位置 */}
         <Outlet />
       </div>
       <h1>---ManageLayout footer---</h1>
@@ -374,6 +374,21 @@ import { useLocation } from "react-router-dom";
 function Page1() {
   console.log('data:', useLocation().state?.txt) // 777
   ...
+}
+```
+路由监听：
+```
+import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+
+function RouteListener() {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log('当前路径', location.pathname);
+  }, [location]);
+
+  return null;
 }
 ```
 
