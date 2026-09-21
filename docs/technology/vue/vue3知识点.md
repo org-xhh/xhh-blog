@@ -72,6 +72,59 @@ const updateList = () => {
   ]
 }
 ```
+<!--
+## Proxy
+Proxy 代理的是整个对象
+```
+function reactive(target) {
+  return new Proxy(target, {
+    get(target, key, receiver) {
+      track(target, key)
+      const res = Reflect.get(target, key, receiver)
+      return isObject(res) ? reactive(res) : res 
+    },
+    set(target, key, value, receiver) {
+      const oldValue = target[key]
+      const result = Reflect.set(target, key, value, receiver)
+      if (oldValue !== value) trigger(target, key) 
+      return result
+    },
+    deleteProperty(target, key) {
+      const hadKey = Object.prototype.hasOwnProperty.call(target, key)
+      const result = Reflect.deleteProperty(target, key)
+      if (hadKey) trigger(target, key)
+      return result
+    }
+  })
+}
+```
+
+Vue2 通过 Object.defineProperty 把 data 上的每个属性转成 getter/setter，defineProperty 只能拦截已有 key，读取时收集依赖，赋值时触发更新。
+```
+function defineReactive(obj, key, val) {
+  const dep = new Dep()
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get() {
+      dep.depend()   
+      return val
+    },
+    set(newVal) {
+      if (newVal === val) return
+      val = newVal
+      dep.notify()  
+    }
+  })
+}
+```
+
+问题1：数组下标赋值监听不到：arr[0] = 'x' 不会触发 setter，因为 Vue2 压根没给数组下标做 defineProperty
+
+问题2：数组长度修改监听不到：arr.length = 0
+
+问题3：对象新增、删除属性监听不到：所以才有 Vue.set、this.$set 和 Vue.delete
+-->
 
 ## toRefs, toRef, unref
 

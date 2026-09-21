@@ -1,4 +1,4 @@
-import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const b=JSON.parse('{"title":"miniprogram knowledge","description":"","frontmatter":{},"headers":[],"relativePath":"technology/miniprogram/微信小程序知识.md","filePath":"technology/miniprogram/微信小程序知识.md"}'),e={name:"technology/miniprogram/微信小程序知识.md"},t=p(`<h1 id="miniprogram-knowledge" tabindex="-1">miniprogram knowledge <a class="header-anchor" href="#miniprogram-knowledge" aria-label="Permalink to &quot;miniprogram knowledge&quot;">​</a></h1><h2 id="状态管理" tabindex="-1">状态管理 <a class="header-anchor" href="#状态管理" aria-label="Permalink to &quot;状态管理&quot;">​</a></h2><p>mobx-miniprogram-bindings</p><p>文档：</p><p><a href="https://github.com/wechat-miniprogram/mobx-miniprogram-bindings" target="_blank" rel="noreferrer">https://github.com/wechat-miniprogram/mobx-miniprogram-bindings</a></p><h2 id="动态主题设置" tabindex="-1">动态主题设置 <a class="header-anchor" href="#动态主题设置" aria-label="Permalink to &quot;动态主题设置&quot;">​</a></h2><h3 id="设置全局样式" tabindex="-1">设置全局样式 <a class="header-anchor" href="#设置全局样式" aria-label="Permalink to &quot;设置全局样式&quot;">​</a></h3><p>app.wxss:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>page {</span></span>
+import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const m=JSON.parse('{"title":"miniprogram knowledge","description":"","frontmatter":{},"headers":[],"relativePath":"technology/miniprogram/微信小程序知识.md","filePath":"technology/miniprogram/微信小程序知识.md"}'),e={name:"technology/miniprogram/微信小程序知识.md"},l=p(`<h1 id="miniprogram-knowledge" tabindex="-1">miniprogram knowledge <a class="header-anchor" href="#miniprogram-knowledge" aria-label="Permalink to &quot;miniprogram knowledge&quot;">​</a></h1><h2 id="状态管理" tabindex="-1">状态管理 <a class="header-anchor" href="#状态管理" aria-label="Permalink to &quot;状态管理&quot;">​</a></h2><p>mobx-miniprogram-bindings</p><p>文档：</p><p><a href="https://github.com/wechat-miniprogram/mobx-miniprogram-bindings" target="_blank" rel="noreferrer">https://github.com/wechat-miniprogram/mobx-miniprogram-bindings</a></p><h2 id="动态主题设置" tabindex="-1">动态主题设置 <a class="header-anchor" href="#动态主题设置" aria-label="Permalink to &quot;动态主题设置&quot;">​</a></h2><h3 id="设置全局样式" tabindex="-1">设置全局样式 <a class="header-anchor" href="#设置全局样式" aria-label="Permalink to &quot;设置全局样式&quot;">​</a></h3><p>app.wxss:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>page {</span></span>
 <span class="line"><span>  --theme-color: #910893;</span></span>
 <span class="line"><span>}</span></span></code></pre></div><p>页面样式使用(**.wxss)：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>.order-detail {</span></span>
 <span class="line"><span>  color: var(--theme-color);</span></span>
@@ -44,7 +44,47 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const b
 <span class="line"><span></span></span>
 <span class="line"><span>.my-custom-style {</span></span>
 <span class="line"><span>  color: red;</span></span>
-<span class="line"><span>}</span></span></code></pre></div><h2 id="转发给好友" tabindex="-1">转发给好友 <a class="header-anchor" href="#转发给好友" aria-label="Permalink to &quot;转发给好友&quot;">​</a></h2><p>前提：需要添加 onShareAppMessage 方法</p><p>分享方式一：</p><p>通过按钮分享</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;button open-type=&quot;share&quot; /&gt;</span></span></code></pre></div><p>分享方式二：</p><p>页面右上角菜单的转发</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>onShareAppMessage(res) {</span></span>
+<span class="line"><span>}</span></span></code></pre></div><h2 id="组件生命周期" tabindex="-1">组件生命周期 <a class="header-anchor" href="#组件生命周期" aria-label="Permalink to &quot;组件生命周期&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Component({</span></span>
+<span class="line"><span>  properties: {},</span></span>
+<span class="line"><span>  lifetimes: {</span></span>
+<span class="line"><span>    created() {</span></span>
+<span class="line"><span>      console.log(&quot;实例创建&quot;)</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    attached() {</span></span>
+<span class="line"><span>      console.log(&quot;挂载DOM&quot;)</span></span>
+<span class="line"><span>      this.fnn()</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    ready() {</span></span>
+<span class="line"><span>      console.log(&quot;DOM渲染完成&quot;)</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    detached() {</span></span>
+<span class="line"><span>      console.log(&quot;销毁&quot;)</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  pageLifetimes: {</span></span>
+<span class="line"><span>    show() {</span></span>
+<span class="line"><span>      console.log(&quot;组件所在的页面 show 时执行&quot;)</span></span>
+<span class="line"><span>      this.fnn()</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>    hide() {</span></span>
+<span class="line"><span>      console.log(&quot;组件所在的页面 hide 时执行&quot;)</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  },</span></span>
+<span class="line"><span>  methods: {</span></span>
+<span class="line"><span>    fnn() {</span></span>
+<span class="line"><span>      console.log(&#39;每次打开页面 组件都会进入此方法&#39;)</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>})</span></span></code></pre></div><p>页面：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>data: {</span></span>
+<span class="line"><span>  userInfo: {}</span></span>
+<span class="line"><span>},</span></span>
+<span class="line"><span>onShow() {</span></span>
+<span class="line"><span>  this.setData({</span></span>
+<span class="line"><span>    userInfo: wx.getStorageSync(&#39;userInfo&#39;) &amp;&amp; JSON.parse(wx.getStorageSync(&#39;userInfo&#39;)) || {}</span></span>
+<span class="line"><span>  })</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&lt;my-component wx:if=&quot;{{ userInfo.isAdmin }}&quot;&gt;&lt;/my-component&gt;</span></span></code></pre></div><p>首次进入页面：会进入子组件 attached（父页面已经 show 过了，不会进入子组件 pageLifetimes.show 了）；</p><p>再次进入页面：不会进入子组件 attached，会进入子组件 pageLifetimes.show（可以在这更新组件数据）。</p><h2 id="转发给好友" tabindex="-1">转发给好友 <a class="header-anchor" href="#转发给好友" aria-label="Permalink to &quot;转发给好友&quot;">​</a></h2><p>前提：需要添加 onShareAppMessage 方法</p><p>分享方式一：</p><p>通过按钮分享</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&lt;button open-type=&quot;share&quot; /&gt;</span></span></code></pre></div><p>分享方式二：</p><p>页面右上角菜单的转发</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>onShareAppMessage(res) {</span></span>
 <span class="line"><span>  // 通过按钮分享 res.from === &#39;button&#39;</span></span>
 <span class="line"><span>  return {</span></span>
 <span class="line"><span>    title: &#39;看，这是我分享给你的&#39;,</span></span>
@@ -64,4 +104,4 @@ import{_ as a,c as s,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const b
 <span class="line"><span>      })</span></span>
 <span class="line"><span>    ]))</span></span>
 <span class="line"><span>    .pipe(gulp.dest(&#39;miniprogram_npm/@vant/weapp/&#39;));</span></span>
-<span class="line"><span>});</span></span></code></pre></div><p>在 package.json 的 scripts 中添加脚本:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;build&quot;: &quot;gulp css&quot;</span></span></code></pre></div><p>执行：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm run build</span></span></code></pre></div><p>可以看到 miniprogram_npm/@vant/weapp/ 目录下 .wxss 文件里的 px 已转为 rpx。</p><h2 id="webview" tabindex="-1">webview <a class="header-anchor" href="#webview" aria-label="Permalink to &quot;webview&quot;">​</a></h2><p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html" target="_blank" rel="noreferrer">webview</a>中的h5页⾯如何跳回⼩程序？</p><ul><li>开发管理 -&gt; 开发设置 -&gt; 业务域名 配置</li><li>h5引入<a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html" target="_blank" rel="noreferrer">http://res.wx.qq.com/open/js/jweixin-1.6.0.js</a></li><li>h5跳转 wx.miniProgram.navigateTo()</li></ul>`,76),l=[t];function i(o,c,r,d,h,g){return n(),s("div",null,l)}const m=a(e,[["render",i]]);export{b as __pageData,m as default};
+<span class="line"><span>});</span></span></code></pre></div><p>在 package.json 的 scripts 中添加脚本:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>&quot;build&quot;: &quot;gulp css&quot;</span></span></code></pre></div><p>执行：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>npm run build</span></span></code></pre></div><p>可以看到 miniprogram_npm/@vant/weapp/ 目录下 .wxss 文件里的 px 已转为 rpx。</p><h2 id="webview" tabindex="-1">webview <a class="header-anchor" href="#webview" aria-label="Permalink to &quot;webview&quot;">​</a></h2><p><a href="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html" target="_blank" rel="noreferrer">webview</a>中的h5页⾯如何跳回⼩程序？</p><ul><li>开发管理 -&gt; 开发设置 -&gt; 业务域名 配置</li><li>h5引入<a href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html" target="_blank" rel="noreferrer">http://res.wx.qq.com/open/js/jweixin-1.6.0.js</a></li><li>h5跳转 wx.miniProgram.navigateTo()</li></ul>`,82),t=[l];function i(o,c,d,r,h,g){return n(),s("div",null,t)}const b=a(e,[["render",i]]);export{m as __pageData,b as default};

@@ -21,21 +21,47 @@ https://docs.langchain.com/oss/javascript/langchain/models
 
 ## Skills
 
-- 官方技能市场：https://skills.sh/
+- https://skills.sh/： Vercel 发布的可视化的 AI Skills 平台
 
-- 搜索社区技能（关键词匹配）
+- agent-skills： Agent 技能库（vercel‑labs/agent‑skills，github 仓库，一堆 SKILL.md 技能文件）
+```
+npx skills add vercel-labs/agent-skills --skill react-best-practices -g
 
+GitHub真实源码页：
+https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices
+
+skills.sh预览页：
+https://skills.sh/vercel-labs/agent-skills/react-best-practices
+```
+
+- 区分2个仓库
+```
+vercel‑labs/agent‑skills → 前端规范类
+
+vercel‑labs/skills → 底层基础技能 fs/shell/find‑skills等
+```
+
+- 终端搜索社区技能
+```
 npx skills find "关键词"
-
-- 安装技能
-```
-npx skills add <owner/repo> --skill <skill-name> -y -g
-```
-```
-npx skills add <owner/repo@skill> -y -g
 ```
 
-- find-skills 技能发现神器
+- 安装整套agent‑skills
+```
+npx skills add vercel‑labs/agent‑skills -g
+```
+默认目录： `.agents/skills`，Cursor、Windsurf、Cline、OpenAI Codex **原生自动扫描读取**；
+claude code 原生不会扫描，如需给 claude code 使用可加 `-a "*"`分发副本。
+
+- 安装技能两种等价语法
+```
+npx skills add <owner/repo> --skill <skill> -g
+```
+```
+npx skills add <owner/repo@skill> -g
+```
+
+- find-skills 技能发现神器(元技能，AI 对话内自动调用搜索市场)
 ```
 Source: https://github.com/vercel-labs/skills.git
 
@@ -59,24 +85,31 @@ npx skills add anthropics/skills --skill frontend-design -g
 
 - 查看已安装的全部技能
 ```
-npx skills list -g
+npx skills list
 ```
-![alt text](image.png)
+不带 ‑g：列出项目本地 + 全局；
+带 -g：仅过滤输出全局已安装技能。
 
 ### 使用 openskills 管理技能
-安装到当前项目 .claude/skills 目录下：
+
 ```
-npx openskills install anthropics/skills
+openskills install anthropics/skills -g
+```
+默认目录： `.claude/skills`，Claude Code 原生会**直接扫描此文件夹自动加载技能**。
+
+
+如果携带 `--universal` 目录则为 `.agent/skills`；
+该目录不会被 AI 原生扫描；每次增删技能都必须执行 sync；
+扫描本机装好的技能，更新项目根目录的 `AGENTS.md` 文件：
+```
+openskills sync -y
 ```
 
-安装到用户 ~/.claude/skills/ 目录下：
-```
-npx openskills install anthropics/skills -g
-```
 列出已安装的技能：
 ```
 openskills list
 ```
+
 
 ## MCP
 

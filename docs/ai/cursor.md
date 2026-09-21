@@ -23,6 +23,8 @@ AI 聊天；
 
 ## Skills
 
+- 会自动扫描读取：.agents/skills 和 .cursor/skills 和 .claude/skills
+
 - 内置 skill 所在目录： ~/.cursor/skills-cursor/，不要动
 
 - 个人技能：~/.cursor/skills/技能名/SKILL.md
