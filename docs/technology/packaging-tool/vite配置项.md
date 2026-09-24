@@ -88,9 +88,11 @@ export default defineConfig({
     },
 
     // lodash是CommonJS，module.exports=...浏览器不认识，Vite预构建转成ESM
+    // 只作用于开发环境
     optimizeDeps: {
-        // 提前预构建这些包
-        include: ['vue', 'vue-router', 'lodash-es']
+        // 预构建这些包
+        include: ['vue', 'vue-router', 'lodash-es'],
+        exclude: [] // 强制排除，不要预构建
     },
 })
 ```

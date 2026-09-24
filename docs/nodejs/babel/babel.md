@@ -135,7 +135,7 @@ Babel 默认只转换新的JavaScript 语法，而不转换新的API，比如Ite
 
 在Babel 7.4.0以上版本，提供了一个新的插件，叫@babel/plugin-transform-runtime，它可以帮助我们按需引入polyfill。
 
-## webpack中使用babel
+## vue-cli 项目中使用babel
 ```
 module: {
   rules: [
@@ -167,6 +167,7 @@ module: {
 因为我们用了 exclude: /node_modules/，可能会造成某个第三方依赖出现兼容性问题，解决办法就是在
 vue.config.js 设置：
 ```
+// 用来指定哪些 node_modules 里面的依赖，强制交给 babel 转译。
 transpileDependencies: [
   'module-name'
 ]

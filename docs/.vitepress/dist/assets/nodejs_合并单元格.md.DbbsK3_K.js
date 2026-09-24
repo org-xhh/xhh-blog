@@ -21,7 +21,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span></span></span>
 <span class="line"><span>objectSpanMethod({ row, column, rowIndex, columnIndex }) {</span></span>
 <span class="line"><span>  let columnMergeList = [0, 1, 3]</span></span>
-<span class="line"><span>  if (columnMergeList.indexOf(columnIndex) !== -1) {</span></span>
+<span class="line"><span>  if (~columnMergeList.indexOf(columnIndex)) { // 存在</span></span>
 <span class="line"><span>    for (let i = 0; i &lt; this.tableSpanList.length; i++) {</span></span>
 <span class="line"><span>      let spanItemList = this.tableSpanList[i] || {}</span></span>
 <span class="line"><span>      if (rowIndex === spanItemList[0]) {</span></span>

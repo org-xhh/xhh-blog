@@ -86,9 +86,11 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const f
 <span class="line"><span>    },</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // lodash是CommonJS，module.exports=...浏览器不认识，Vite预构建转成ESM</span></span>
+<span class="line"><span>    // 只作用于开发环境</span></span>
 <span class="line"><span>    optimizeDeps: {</span></span>
-<span class="line"><span>        // 提前预构建这些包</span></span>
-<span class="line"><span>        include: [&#39;vue&#39;, &#39;vue-router&#39;, &#39;lodash-es&#39;]</span></span>
+<span class="line"><span>        // 预构建这些包</span></span>
+<span class="line"><span>        include: [&#39;vue&#39;, &#39;vue-router&#39;, &#39;lodash-es&#39;],</span></span>
+<span class="line"><span>        exclude: [] // 强制排除，不要预构建</span></span>
 <span class="line"><span>    },</span></span>
 <span class="line"><span>})</span></span></code></pre></div><p>vite.dev.ts:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// defineConfig用于定义Vite配置，mergeConfig用于合并配置</span></span>
 <span class="line"><span>import { defineConfig, mergeConfig } from &#39;vite&#39;;</span></span>

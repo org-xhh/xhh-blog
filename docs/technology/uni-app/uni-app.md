@@ -53,8 +53,20 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 2.插件市场
 
 ![alt text](image-11.png)
+会导入到 uni_modules 中。
 
-会导入到 uni_modules 中
+---
+
+|项目|node_modules(npm)|uni_modules (uni插件规范)|
+|---|---|---|
+|安装方式|npm install|HBuilderX 插件市场一键安装|
+|组件自动扫描 easycom(autoscan)|❌ 默认不支持 autoscan 自动扫描；可手动写custom正则实现easycom自动引入|✅ 支持 autoscan自动扫描；目录符合规范无需手写custom规则|
+|是否需要手动配置 easycom|Vue组件库一般需要手动在pages.json编写custom正则；纯JS工具库不需要|不需要手写custom easycom配置，autoscan=true开箱生效|
+|原生插件 (aar/framework/UTS)|❌ 不支持，放这里打包无效|✅ 支持；manifest识别、编译进基座|
+|git提交|一般.gitignore忽略，协作要重新 install|✅ 目录提交进 git，直接可用|
+|导入写法|`import xx from 'pkgname'`|组件直接写标签；js用 `@/uni_modules/xxx/...`|
+|兼容性风险|⚠️ web npm库容易带window/document，App / 小程序报错|插件市场一般经过跨端适配；但也要看插件说明|
+
 
 ## 运行
 
@@ -83,6 +95,8 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 
 制作自定义调试基座 => 运行到Android App基座，选择刚才打的自定义基座
+
+备注：引入原生(市场)插件必须使用自定义基座。
 
 ### 运行到iOS模拟器
 
