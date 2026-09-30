@@ -67,6 +67,47 @@ App 端：**UVue 原生渲染**，无 JS 引擎，逻辑用**UTS 强类型语言
 |导入写法|`import xx from 'pkgname'`|组件直接写标签；js用 `@/uni_modules/xxx/...`|
 |兼容性风险|⚠️ web npm库容易带window/document，App / 小程序报错|插件市场一般经过跨端适配；但也要看插件说明|
 
+## 云函数
+1.在HBuilder X，右键项目根目录，创建uniCloud云开发环境-阿里云，项目根目录会自动生成 uniCloud -> cloudfunctions 目录
+
+2.右键 uniCloud -> 关联云服务空间
+
+3.右键 cloudfunctions 新建云函数，函数名例如 hello，HBuilderX 自动生成模板 `index.js`
+```
+'use strict';
+/**
+ * 云函数 hello
+ * @param {Object} event 前端传过来的参数
+ * @param {Object} context 运行上下文
+ */
+exports.main = async (event, context) => {
+	console.log('云函数收到前端参数：', event);
+
+	let { name } = event;
+
+	// 返回数据给客户端
+	return {
+		code: 200,
+		msg: '云函数调用成功',
+		data: {
+			helloWord: `你好 ${name}！这是来自云函数的返回`
+		}
+	}
+}
+```
+
+4.右键云函数文件夹`hello` → 上传部署
+
+5.前端调用云函数
+```
+let res = await uniCloud.callFunction({
+    name: 'hello',
+    data: {
+        name: 'xx'
+    }
+})
+console.log("云函数返回结果", res.result);
+```
 
 ## 运行
 
