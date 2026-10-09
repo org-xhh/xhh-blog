@@ -20,7 +20,10 @@ git remote add origin [仓库地址]
 ### 查看当前配置的远程仓库
 git remote -v
 
-### 拉取远程master分支代码并合并到本地分支
+### 修改本地仓库绑定的远程仓库地址
+git remote set-url origin <新的仓库地址>
+
+### 拉取远程master分支并合并到本地分支
 git pull origin master
 
 ### 拉取代码

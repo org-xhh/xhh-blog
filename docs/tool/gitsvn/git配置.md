@@ -37,13 +37,18 @@ Could not open a connection to your authentication agent，
 ```
 ssh-agent bash
 ```
+or
+```
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/xx_id‑rsa
+```
 
 
 ### 四、查看SSH Key
 
 Windows:
 ```
-cat /Users/xhh/.ssh
+cat ~/.ssh/id_rsa.pub
 ```
 Mac:
 ```
@@ -67,24 +72,24 @@ ssh -T git@github.com
 
 
 ### 六、用户名，邮箱配置
-创建一个全局用户名、全局邮箱作为配置信息
+创建一个全局用户名、全局邮箱作为配置信息：
 ```
 git config --global user.name "xhh"
 
 git config --global user.email "184243xxxx@qq.com"
 ```
 
-本地仓库
+本地仓库单独设置：
 ```
-git config --local 
+git config --local user.name "仓库专属名字"
+git config --local user.email "仓库专属@xxx"
 ```
-
 
 不同邮箱：必须删除该设置
 ```
-git config --global --unset user.name "你的名字"
+git config --global --unset user.name
 
-git config --global --unset user.email "你的邮箱"
+git config --global --unset user.email
 ```
 
 
@@ -95,7 +100,7 @@ ssh-keygen -t rsa -C "184243xxxx@qq.com" -f ~/.ssh/github_id-rsa
 
 
 
-### 七、.ssh目录下配置config文件
+### 七、.ssh 目录下配置 config
 
 gitlab
 ```
@@ -124,31 +129,32 @@ IdentityFile ~/.ssh/gitee_id-rsa
 
 ### 八、远程仓库url地址变更
 
-更新 ~/.ssh/known_hosts
+1.项目.git的config文件：[remote "origin"] 修改 url
 
-1.项目.git 的config文件：remote "origin" 修改 url
+或 
+
+git remote set-url origin <新的仓库地址>
 
 2.拉取代码时发出警告，Host key verification failed，输入yes
 
 
-
 ### 九、Mac sourcetree使用https方式拉取代码时，一直提示密码输入解决办法
-进入项目目录：
+
 ```
 git config --global credential.helper osxkeychain
 ```
 
-### 十、https方式拉取代码存储账号密码
+### 十、Windows https方式拉取代码存储账号密码
 全局设置：
 ```
-git config --global credential.helper store
+git config --global credential.helper wincred
 or
 git config --global credential.helper manager
+(前提是安装 Git 时勾选了 Git Credential Manager 组件)
 ```
-进入项目目录设置：
+进入项目目录设置(当前仓库生效)：
 ```
-git config --global --unset credential.helper store
-git config --global credential.helper store
+git config credential.helper manager
 ```
 
 
@@ -160,6 +166,7 @@ git config --global credential.helper store
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+去掉`--global`的话，只清理 local 仓库代理
 
 ### 十二、windows更改git push时用到的用户信息
 
