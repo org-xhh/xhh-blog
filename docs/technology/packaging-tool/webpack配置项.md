@@ -19,7 +19,7 @@ module.exports = {
 
     output: {
         // 输出目录，使用绝对路径
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist')
     },
 
     // 解析配置
@@ -155,8 +155,8 @@ module.exports = merge(baseConfig, {
 
     // 输出配置
     output: {
-        // 输出文件名，开发环境使用简单的 bundle.js
-        filename: 'bundle.js',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].js'
     },
 
     // 开发工具配置，用于生成 source map
@@ -227,10 +227,11 @@ module.exports = merge(baseConfig, {
     mode: 'production',
 
     output: {
-        // 输出文件名，使用 contenthash 确保文件内容变化时文件名变化
-        filename: 'bundle.[contenthash].js',
         // 构建前清理输出目录
         clean: true,
+        // 使用 contenthash 确保单个文件内容变化时文件名变化
+        filename: 'js/[name].[contenthash:8].js',
+        chunkFilename: 'js/[name].[contenthash:8].js'
     },
     devtool: 'hidden-source-map',
     // 优化配置

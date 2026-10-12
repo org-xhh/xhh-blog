@@ -55,7 +55,7 @@ server {
     # 入口 index.html 文件不缓存
     location = /index.html {
         expires -1; 
-        add_header Cache-Control "no-cache, must-revalidate";
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
         add_header Pragma "no-cache";
         add_header Expires "0";
     }
@@ -68,6 +68,7 @@ server {
     }
 
     # 带8位hash的JS和CSS文件缓存1年（代码修改时hash自然会变）
+    // location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot)$ {
     location ~* \.[a-f0-9]{8}\.(css|js)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";

@@ -87,3 +87,14 @@ const observer = new PerformanceObserver((list) => {
 
 observer.observe({ entryTypes: ["resource"] })
 ```
+
+用 PerformanceObserver 监听 longtask 类型，duration ≥ 50ms 的任务就是长任务，上报到监控系统：
+```
+new PerformanceObserver((list) => {
+  list.getEntries().forEach(entry => {
+    const tier = entry.duration >= 5000 ? 'unresponsive'
+               : entry.duration >= 2000 ? 'jank' : 'long_task'
+    monitor.report({ type: 'long_task', tier, duration: entry.duration })
+  })
+}).observe({ type: 'longtask', buffered: true })
+```

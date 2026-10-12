@@ -13,25 +13,23 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 
 ## 使用
 
-Ctrl+Alt+I‌ 打开聊天界面；
+1.Ctrl+Alt+I‌ 打开聊天界面；
 
-选中行 => Add Selection to Chat;
+2.选中行 => Add Selection to Chat;
 
-在输入代码或注释时，Copilot 会以灰色“ghost text”形式给出建议；
-
-按 Tab 接受建议；按 ‌Esc‌ 忽略；
+3.在输入代码或注释时，Copilot 会以灰色 "ghost text" 形式给出建议，按 Tab 接受建议，按 ‌Esc‌ 忽略；
 
 ## Skills
 
 项目级：
 - .github/skills/
-- .claude/skills/ 
 - .agents/skills/
+- .claude/skills/ 
 
-个人级：在用户主目录
+个人全局skills(所有项目生效)
 - ~/.copilot/skills/
-- ~/.claude/skills/
 - ~/.agents/skills/
+- ~/.claude/skills/
 
 ## MCP
 连接 Figma MCP

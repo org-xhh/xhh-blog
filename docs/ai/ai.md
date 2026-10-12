@@ -51,7 +51,8 @@ npx skills find "关键词"
 npx skills add vercel‑labs/agent‑skills -g
 ```
 默认目录： `.agents/skills`，Cursor、Windsurf、Cline、OpenAI Codex **原生自动扫描读取**；
-claude code 原生不会扫描，如需给 claude code 使用可加 `-a "*"`分发副本。
+
+claude code 原生不会扫描，如需给 claude code 使用可加 `-a "*"`分发副本： **npx skills add xxx-skill -a claude-code**
 
 - 安装技能两种等价语法
 ```
