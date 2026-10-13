@@ -12,7 +12,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    # 入口 index.html 文件不缓存</span></span>
 <span class="line"><span>    location = /index.html {</span></span>
 <span class="line"><span>        expires -1; </span></span>
-<span class="line"><span>        add_header Cache-Control &quot;no-cache, must-revalidate&quot;;</span></span>
+<span class="line"><span>        add_header Cache-Control &quot;no-cache, no-store, must-revalidate&quot;;</span></span>
 <span class="line"><span>        add_header Pragma &quot;no-cache&quot;;</span></span>
 <span class="line"><span>        add_header Expires &quot;0&quot;;</span></span>
 <span class="line"><span>    }</span></span>
@@ -25,6 +25,7 @@ import{_ as s,c as a,o as n,a3 as p}from"./chunks/framework.C5U8cnJv.js";const e
 <span class="line"><span>    }</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    # 带8位hash的JS和CSS文件缓存1年（代码修改时hash自然会变）</span></span>
+<span class="line"><span>    // location ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg|woff2?|ttf|eot)$ {</span></span>
 <span class="line"><span>    location ~* \\.[a-f0-9]{8}\\.(css|js)$ {</span></span>
 <span class="line"><span>        expires 1y;</span></span>
 <span class="line"><span>        add_header Cache-Control &quot;public, immutable&quot;;</span></span>

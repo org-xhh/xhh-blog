@@ -34,19 +34,22 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 ## MCP
 连接 Figma MCP
 
-### 第一种：使用本地运行的 MCP
+### 第一种
 项目根目录 .vscode 文件夹下 新建 mcp.json:
 ```
 {
-  "mcpServers": {
-    "Framelink MCP for Figma": {
-      "command": "cmd",
-      "args": ["/c", "npx", "-y", "figma-developer-mcp", "--figma-api-key=YOUR-KEY", "--stdio"]
+  "inputs": [],
+  "servers": {
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
     }
   }
 }
 ```
-### 第二种：使用官方远程 MCP
+保存后，在 mcp.json 文件中点击 figma 上方的 Start，连接 Figma MCP
+
+### 第二种
 Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 ![alt text](image-12.png)
 
