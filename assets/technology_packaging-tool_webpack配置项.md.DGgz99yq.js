@@ -1,4 +1,4 @@
-import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"technology/packaging-tool/webpack配置项.md","filePath":"technology/packaging-tool/webpack配置项.md"}'),l={name:"technology/packaging-tool/webpack配置项.md"},e=p(`<p>webpack.base.cjs:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 导入 Node.js 内置的 path 模块，用于处理文件路径</span></span>
+import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"technology/packaging-tool/webpack配置项.md","filePath":"technology/packaging-tool/webpack配置项.md"}'),l={name:"technology/packaging-tool/webpack配置项.md"},e=p(`<p>webpack.base.cjs:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 导入 Node.js 内置的 path 模块，用于处理文件路径</span></span>
 <span class="line"><span>const path = require(&#39;path&#39;);</span></span>
 <span class="line"><span>// 导入 vue-loader 插件，用于处理 .vue 文件</span></span>
 <span class="line"><span>const { VueLoaderPlugin } = require(&#39;vue-loader&#39;);</span></span>
@@ -17,7 +17,7 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>    output: {</span></span>
 <span class="line"><span>        // 输出目录，使用绝对路径</span></span>
-<span class="line"><span>        path: path.resolve(__dirname, &#39;dist&#39;),</span></span>
+<span class="line"><span>        path: path.resolve(__dirname, &#39;dist&#39;)</span></span>
 <span class="line"><span>    },</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // 解析配置</span></span>
@@ -149,8 +149,8 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span></span></span>
 <span class="line"><span>    // 输出配置</span></span>
 <span class="line"><span>    output: {</span></span>
-<span class="line"><span>        // 输出文件名，开发环境使用简单的 bundle.js</span></span>
-<span class="line"><span>        filename: &#39;bundle.js&#39;,</span></span>
+<span class="line"><span>        filename: &#39;js/[name].js&#39;,</span></span>
+<span class="line"><span>        chunkFilename: &#39;js/[name].js&#39;</span></span>
 <span class="line"><span>    },</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    // 开发工具配置，用于生成 source map</span></span>
@@ -217,10 +217,11 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>    mode: &#39;production&#39;,</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>    output: {</span></span>
-<span class="line"><span>        // 输出文件名，使用 contenthash 确保文件内容变化时文件名变化</span></span>
-<span class="line"><span>        filename: &#39;bundle.[contenthash].js&#39;,</span></span>
 <span class="line"><span>        // 构建前清理输出目录</span></span>
 <span class="line"><span>        clean: true,</span></span>
+<span class="line"><span>        // 使用 contenthash 确保单个文件内容变化时文件名变化</span></span>
+<span class="line"><span>        filename: &#39;js/[name].[contenthash:8].js&#39;,</span></span>
+<span class="line"><span>        chunkFilename: &#39;js/[name].[contenthash:8].js&#39;</span></span>
 <span class="line"><span>    },</span></span>
 <span class="line"><span>    devtool: &#39;hidden-source-map&#39;,</span></span>
 <span class="line"><span>    // 优化配置</span></span>
@@ -348,4 +349,4 @@ import{_ as s,c as n,o as a,a3 as p}from"./chunks/framework.C5U8cnJv.js";const h
 <span class="line"><span>            name: &#39;runtime&#39;,</span></span>
 <span class="line"><span>        },</span></span>
 <span class="line"><span>    }</span></span>
-<span class="line"><span>})</span></span></code></pre></div>`,6),i=[e];function c(t,o,r,u,d,m){return a(),n("div",null,i)}const b=s(l,[["render",c]]);export{h as __pageData,b as default};
+<span class="line"><span>})</span></span></code></pre></div>`,6),i=[e];function c(t,o,r,u,d,m){return a(),n("div",null,i)}const b=s(l,[["render",c]]);export{g as __pageData,b as default};
