@@ -15,11 +15,13 @@ claude --version
 ```
 
 ### 安装 CC Switch
+CC‑Switch 为社区第三方工具，非 Anthropic 官方，用于切换第三方模型供应商
 ```
 brew tap farion1231/ccswitch
 
 brew install --cask cc-switch
 ```
+
 ## 接入国产大模型
 
 ### 接入 DeepSeek 大模型
@@ -40,9 +42,9 @@ https://platform.deepseek.com/api_keys
 
 注意：免费额度用完会自动扣费，先在后台设置用完即停。
 
-### 启动 claude code
+## claude code 使用
 
-在终端输入 /claude，回车，就可以正常启动 claude code了；
+在终端输入 claude，回车启动；
 
 第一次使用，会有一些初始化设置，比如颜色模式等，选中回车。后续可以输入 /theme 修改。
 
@@ -52,23 +54,15 @@ https://platform.deepseek.com/api_keys
 ```
 /model
 ```
+重要区分：原生 `/model` 和 cc-switch `/model`
 
-## 安装 skill
-注册插件市场源
-```
-/plugin marketplace add anthropics/skills
-```
-安装插件：
+1.**未安装 cc-switch**：`/model` 是 Claude Code **官方原生内置命令**，仅用于切换 Anthropic 官方 Claude 系列模型（Opus / Sonnet / Haiku）。
 
-/plugin => Marketplaces =>  选中 anthropic-agent-skills => Browse plugins => Discover => example skills
+2.**安装 cc-switch 之后**：cc-switch 会**劫持覆盖 `/model` 命令**，此时 `/model` 变成 cc-switch 的模型选择器，可以切换 DeepSeek、通义千问等第三方 OpenAI 兼容模型。
 
-或
+> 如果需要原生 `/model` 能力，需要移除 cc-switch。
 
-/plugin install example-skills@anthropic-agent-skills
-
-查看插件： /skills
-
-![alt text](claude-skills.png)
+https://code.claude.com/docs/zh-CN/model-config#setting-your-model
 
 ### 退出 claude code
 ```
@@ -84,6 +78,45 @@ brew upgrade claude-code
 ```
 brew uninstall --cask claude-code
 ```
+
+## plugin 和 skills
+1.注册插件市场源，把 [github.com/anthropics/skills](https://github.com/anthropics/skills) 仓库添加到插件市场列表：
+```
+/plugin marketplace add anthropics/skills
+```
+2.然后安装插件包(example-skills包含12个skill)：
+
+/plugin => Marketplaces => 选中 anthropic-agent-skills => Browse plugins => Discover => example skills
+
+或
+```
+/plugin install example-skills@anthropic-agent-skills
+```
+
+3.查看插件（包括 plugins 包内 skill 和 `~/.claude/skills` 内的 skill）： 
+
+```/skills```
+
+---
+Anthropic Skills 文档：https://anthropics-skills.mintlify.app/installation?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiI5NDU1OWJkMDM4Mzc1NGU1LTVhMDEzODdjNzU1NTQwYjAifQ%3D%3D
+
+---
+
+skills 使用示例：
+![alt text](claude-skills.png)
+
+---
+
+| 对比 | Marketplace 插件包 /plugin install | 手动部署 Skill 放入 skills 目录 |
+|---|---|---|
+| 存储目录 | `~/.claude/plugins/` | `~/.claude/skills/` |
+| 最小安装单元 | 整个插件包，一次性安装包内全部技能 | 单个 Skill，按需单独放置 |
+| 管理器 | `/plugin` 面板管理 | 无插件管理器，手动管理文件夹 |
+| 自动更新 | 支持 marketplace 更新 | ❌ 不支持，手动替换文件 |
+| 卸载方式 | `/plugin uninstall` | 直接删除对应文件夹 |
+| 刷新技能列表 | `/reload-plugins [--force]` | `/reload-skills` |
+
+
 
 ## 连接 Figma MCP
 
