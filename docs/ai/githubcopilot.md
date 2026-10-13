@@ -31,6 +31,19 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 - ~/.agents/skills/
 - ~/.claude/skills/
 
+## Plugins
+| 项目 | Skills | Plugins（Agent Plugin） |
+| ---- | ---- | ---- |
+| 层级定位 | 最小**能力单元**，是给Agent阅读的任务规则文档 | 打包**分发包/容器**，用于批量分发整套Agent自定义资源 |
+| 包含内容 | 仅任务指令 `SKILL.md`（单个子文件夹内） | 可包含 Skills、MCP Servers、Agents、Hooks、Prompts、Commands |
+| 加载来源 | 自动扫描固定目录：<br>✅ 项目：`.github/skills` / `.agents/skills` / `.claude/skills`<br>✅ 全局用户目录：`~/.copilot/skills` / `~/.agents/skills` / `~/.claude/skills`<br>✅ 已安装Plugin内部自带技能 | 通过Plugins面板 `Install` 导入（本地路径/远程URL），导入后内部资源自动注册 |
+| 面板归类 | 加载后在 `Skills` 面板展示，分 Workspace / User 分组 | 在 `Plugins` 面板管理；打包内的Skills会自动出现在Skills列表 |
+| 加载触发 | Agent根据任务上下文，**按需自动加载匹配的skill** | 插件一旦安装，包内所有资源一次性注册就绪，Agent可直接调用 |
+| 主要用途 | 项目本地编写、维护独立小能力，跟随代码仓库提交共享 | 团队/社区打包一整套Agent方案分发 |
+| 鉴权相关 | Skill本身不携带凭证 | Plugin仅定义MCP服务配置，**不会携带个人账号token**，首次调用MCP仍需手动授权 |
+| 生效前提 | 仅Agent模式(Copilot/Local载体)生效，普通聊天/代码补全无效 | 安装完成后，内部所有资源同样仅Agent模式可用 |
+
+
 ## MCP
 连接 Figma MCP
 
