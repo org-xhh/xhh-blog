@@ -13,7 +13,7 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 
 ## 使用
 
-1.Ctrl+Alt+I‌ 打开聊天界面；
+1.Ctrl+Alt+I‌ (Control+Command+I) 打开聊天界面；
 
 2.选中行 => Add Selection to Chat;
 
@@ -34,7 +34,7 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 ## MCP
 连接 Figma MCP
 
-### 第一种
+### 第一种：项目工作区配置
 项目根目录 .vscode 文件夹下 新建 mcp.json:
 ```
 {
@@ -49,7 +49,7 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 ```
 保存后，在 mcp.json 文件中点击 figma 上方的 Start，连接 Figma MCP
 
-### 第二种
+### 第二种：Copilot 设置里配置
 Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 ![alt text](image-12.png)
 
@@ -60,6 +60,14 @@ Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 同意授权即可。
 
 <!-- 此方式对免费账号有调用次数限制（如每月仅 6 次）-->
+
+### 第三种：用户全局配置（本机所有项目生效）
+
+1.打开命令面板，执行 `MCP: Add Server`
+
+2.选择`http`类型，填入 Figma MCP 地址 `https://mcp.figma.com/mcp`
+
+3.选择保存为**User 设置（全局）**，启动并完成授权。
 
 
 ## 参考文档

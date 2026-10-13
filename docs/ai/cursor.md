@@ -1,5 +1,15 @@
 # [Cursor](https://cursor.com/cn/docs/agent/overview)
 
+## Ctrl + K (Cmd+K)
+
+选中部分代码后按 Ctrl + K，内联 AI 编辑；
+
+## Ctrl + L (Cmd+L)
+
+AI 聊天；
+
+选中代码 => Add to Chat；
+
 ## rules
 
 编写规则
@@ -7,15 +17,18 @@
 - 项目根目录下创建 .cursor/rules 文件夹
 - 新建规则文件，使用 .mdc（Markdown with Metadata）格式
 
-## Ctrl + K
-
-选中部分代码后按 Ctrl + K，调用 AI 功能‌生成或修改代码‌。
-
-## Ctrl + L
-
-AI 聊天；
-
-选中代码 => Add to Chat
+最小可用 mdc 模板：
+```
+---
+name: ts‑coding‑style
+description: TS/TSX代码规范，何时触发该规则
+alwaysApply: true
+# globs: ["**/*.ts","**/*.tsx"] # 指定文件匹配时打开
+---
+## 编码规则
+1. xxx
+2. xxx
+```
 
 ## @ 符号
 
@@ -77,9 +90,11 @@ Cursor Settings => Tools & MCPs => New MCP Server
 
 ![alt text](image-1.png)
 
-出现绿灯就代表连接好了。
+出现绿灯就代表MCP服务进程连通。
 
-> 备注：Node22+ 才支持 MCP，请自行升级 Node。
+> 备注：Figma‑Context‑MCP 服务要求 Node ≥ 22
+
+> 其他配置方法：```https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#cursor```
 
 ### 4. 调用 MCP 生成 html 页面
 
@@ -89,8 +104,10 @@ Cursor Settings => Tools & MCPs => New MCP Server
 <!-- https://www.figma.com/design/oQsidlMJnlnIlYfMT4lboB/newfile1?node-id=1-1103&t=GUz1bbxKkzBN34J9-4 -->
 
 将链接或代码粘贴到 Cursor 对话框中
+
 ![alt text](cursor-mcp.png)
 生成的 html 页面如下
+
 ![alt text](mcp-html.png)
 
 ## .cursorignore

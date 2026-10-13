@@ -9,12 +9,12 @@ npm install -g @openai/codex
 codex --version
 ```
 
+> 要求 Node >= 22
+
 或 桌面应用
 
 ## 配置文件
 ```
-C:\Users\Administrator\.codex\config.toml
-
 ~/.codex/config.toml
 ```
 
@@ -34,6 +34,8 @@ auth.json:
   "XXX_API_KEY": "sk-xxx"
 }
 ```
+
+>备注：优先用`codex login`写入
 
 ### codex 使用中转站 api
 <!-- 
@@ -55,42 +57,33 @@ https://quickrouter.ai/
 
 
 ## codex 命令
-查看完整命令：
-```
+
+### 系统终端命令（直接在 cmd / bash 执行）
+```bash
+# 查看全部cli帮助
 codex --help
-```
-登录：
-```
+
+# 交互式登录填写api key
 codex login
-```
-诊断环境：
-```
+
+# 环境诊断，排错首选
 codex doctor
-```
-启动交互式 CLI：
-```
+
+# 启动codex交互式对话shell
 codex
 ```
-切换模型：
-```
-/model
-```
-新开一个对话，并且清除之前的对话记录：
-```
-/new
-```
-调整 Codex 的运行权限：
-```
-/approvals
-```
-通读当前文件夹把关于项目的信息保存到 AGENTS.md 文件中：
-```
-/init
-```
-列出所有安装过的 MCP 工具：
-```
-/mcp
-```
+
+### codex 交互shell内命令
+> ⚠️ 必须先输入 `codex` 进入会话
+
+| 交互命令 | 作用 |
+| ---- | ---- |
+| `/model` | 切换模型 |
+| `/new` | 新建对话，清空上下文 |
+| `/approvals` | 管理文件读写、shell执行权限 |
+| `/init` | 扫描当前目录项目，生成 AGENTS.md |
+| `/mcp` | 列出所有MCP服务 |
+
 
 ## 添加 Figma MCP 服务器
 ```
@@ -100,6 +93,9 @@ codex mcp add figma --url https://mcp.figma.com/mcp
 ```
 codex mcp list
 ```
+
+> 备注：如果授权失败，可以执行 `codex mcp remove figma` 删除后重新添加。
+
 ![alt text](image-4.png)
 ![alt text](image-5.png)
 
@@ -113,13 +109,8 @@ model_provider = "Model_Studio"
 model = "qwen-plus"
 ```
 
-终端：
-
 ![alt text](image-6.png)
 
-桌面应用：
-
-![alt text](image-7.png)
 
 <!--
 ## 上下文记忆
