@@ -77,6 +77,7 @@ export default {
         text: 'AI',
         items: [
           { text: "AI 知识", link: "/ai/ai" },
+          { text: "Qoder", link: "/ai/qoder" },
           { text: "Cursor", link: "/ai/cursor" },
           { text: "Codex", link: "/ai/codex" },
           { text: "GitHub Copilot", link: "/ai/githubcopilot" },

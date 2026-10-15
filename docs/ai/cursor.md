@@ -1,4 +1,17 @@
-# [Cursor](https://cursor.com/cn/docs/agent/overview)
+# [Cursor](https://cursor.com/cn/docs/models-and-pricing)
+
+Cursor 是由 Anysphere（现已被 xAI 收购）推出的 AI 优先代码编辑器，基于 VS Code 二次开发，内置 AI 编程智能体。支持全局代码理解、多文件批量编辑、Agent 任务执行，可接入 Claude、Grok 等大模型；支持 rules、skills、MCP 扩展能力，大幅提升开发效率。
+
+## 模型
+
+<!-- https://cursor.com/cn/pricing -->
+
+Cursor 付费套餐分为两套独立月度用量池：
+
+- Cursor 模型池（Grok 4.7/4.6/4.5、Composer 2.5）：套餐自带充足额度。额度耗尽会触发限制，**可以手动开启按需后付费继续调用，默认不会自动扣费**。
+- Other Models 第三方模型池（Claude、GPT、Gemini）：Plus(Pro) / 高级版(Pro Plus) / Super(Ultra) 每月自带一定免费额度。额度内调用 Claude 不额外付费；额度耗尽后继续使用，将按 Token 按量后付费。
+
+注意：Auto 自动路由模式，有可能自动选用 Claude 等第三方模型，同样消耗第三方额度，超额会产生额外费用。
 
 ## Ctrl + K (Cmd+K)
 
@@ -15,7 +28,7 @@ AI 聊天；
 编写规则
 
 - 项目根目录下创建 .cursor/rules 文件夹
-- 新建规则文件，使用 .mdc（Markdown with Metadata）格式
+- 在rules文件夹新建 .mdc（Markdown with Metadata）后缀文件
 
 最小可用 mdc 模板：
 ```

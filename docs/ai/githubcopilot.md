@@ -2,7 +2,7 @@
 
 ## 简介
 
-GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基于大规模语言模型，为你在编辑器中提供自动补全、代码片段建议、整段实现和注释生成等能力，帮助你更快地编写代码、探索实现思路和生成文档示例。
+GitHub Copilot 是 GitHub（微软旗下）推出的编程辅助工具；产品早期与 OpenAI 合作，最初基于 OpenAI Codex 模型。现在 Copilot 是多模型平台，支持 GPT、Claude、Gemini 等多家厂商大模型，在编辑器内提供自动补全、代码片段建议、整段实现和注释生成等能力。
 
 ## 安装
 以 VS Code 为例
@@ -18,6 +18,18 @@ GitHub Copilot 是 GitHub 与 OpenAI 合作推出的编程辅助工具。它基�
 2.选中行 => Add Selection to Chat;
 
 3.在输入代码或注释时，Copilot 会以灰色 "ghost text" 形式给出建议，按 Tab 接受建议，按 ‌Esc‌ 忽略；
+
+## 模型
+
+> 官方文档：https://docs.github.com/zh/copilot/reference/ai-models/supported-models
+
+GitHub Copilot 是多模型平台，接入 OpenAI GPT、Anthropic Claude、Google Gemini 等多家厂商的代码大模型。
+模型分为两类：**可手动选择对话模型**（Agent/聊天面板下拉切换，Auto模式可自动择优）、**后台Utility模型**（专供行内幽灵代码补全，无法手动选择）。
+
+额度规则：灰色行内代码补全不限量，不消耗AI Credits；Agent对话、MCP工具调用会消耗月度AI Credits。免费版仅支持Auto自动调度，Pro订阅可手动切换模型；不同订阅套餐开放的模型范围不同。
+
+> ⚠️ 说明：Copilot是GitHub后端代理调用模型，不等同直接使用OpenAI原生API，模型使用权仅限Copilot IDE内。
+
 
 ## Skills
 
@@ -72,7 +84,6 @@ Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 
 同意授权即可。
 
-<!-- 此方式对免费账号有调用次数限制（如每月仅 6 次）-->
 
 ### 第三种：用户全局配置（本机所有项目生效）
 
