@@ -2,28 +2,31 @@
 
 Qoder CN（原通义灵码）是阿里云 IDE AI 编程助手，原生适配 VSCode。支持仓库级代码理解、Agent 自动多文件修改、行间代码补全、代码审查，内置通义 Qwen 系列模型。
 
+VSCode Qoder CN 插件：
+
 ![alt text](image.png)
 
 ## Skills
 
-1.桌面客户端-扩展-配置skills
-
-2.目录
-```
-全局 ~/.qoder-cn/skills/
-
-项目/.qoder/skills/
-```
-
-3.Qoder 聊天框输入 `/`，下拉列表会列出**已经加载成功的 skills**，直接点选就能启用这个技能执行任务。
-
-4.新增/修改SKILL.md后，聊天框执行：`/skills reload`
-
-5.查看已加载技能：`/skills`
+目录 ```.lingma/skills/```，输入 `/技能名称` 调用
 
 ## MCP
 
-第一种：桌面客户端-扩展-连接器-Figma-登录授权
+Qoder CN 聊天面板 => 右上角用户 => Settings => MCP Servers => Add by JSON:
+
+![alt text](image-17.png)
+
+这里使用的是 MCP 协议的通用 STDIO 配置。
+
+| 对比 | stdio | SSE/HTTP |
+| ---- | ---- | ---- |
+| 通信含义 | 本地进程管道通信，Qoder 拉起 Node 子进程，通过控制台输入输出传递MCP消息 | HTTP SSE长流网络通信，先GET建立长连接，后续指令POST交互 |
+| Figma官方支持 | ❌ 官方无stdio版本，可使用第三方社区包`figma-mcp`、 [figma-developer-mcp](https://github.com/GLips/Figma-Context-MCP) | ✅ Figma官方MCP原生基于SSE |
+| 配置写法 | `command` + `args` + `env` | `type:http` + `url` |
+
+
+<!-- 未求证，先注释
+第一种：桌面客户端-【MCP 管理面板】-Figma-登录授权
 
 第二种：Figma 桌面本地 MCP
 
@@ -49,6 +52,7 @@ Qoder MCP 面板 → 我的服务 → + 添加 → 粘贴 JSON：
 直接在 Qoder 聊天开启 Agent，发送提示词 + Figma 链接，调用 Figma 公开 REST API 解析设计稿
 示例提示词：
 
-> 
+
 > 使用 Figma 公开 API 读取这个 Figma 链接，提取图层、色值、字体、尺寸、组件结构，输出 React TSX 代码。
 > 优点：不用配置 MCP；缺点：没有 MCP 完整工具能力，适合临时快速转稿
+-->

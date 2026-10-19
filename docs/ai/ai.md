@@ -118,6 +118,8 @@ openskills list
 
 统一接入外部工具
 
+[qoder配置Figma MCP](./qoder.md)
+
 [cursor配置Figma MCP](./cursor.md)
 
 [codex配置Figma MCP](./codex.md)
