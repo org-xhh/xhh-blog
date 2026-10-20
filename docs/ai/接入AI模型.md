@@ -240,14 +240,14 @@ https://bailian.console.aliyun.com/cn-beijing?spm=5176.support-home.nav-v2-dropd
 
 ### DashScope 原生与 OpenAI 兼容模式对比
 
-| 项目 | DashScope 原生 | OpenAI 兼容模式 |
-| ---- | -------------- | --------------- |
+| 对比 | DashScope 原生 | OpenAI 兼容模式 |
+| ------------ | -------------- | --------------- |
 | BaseURL 前缀 | `https://dashscope.aliyuncs.com/api/v1` | `https://dashscope.aliyuncs.com/compatible-mode/v1` |
 | 完整对话 POST 地址 | `/api/v1/services/aigc/text-generation/generation` | `/compatible-mode/v1/chat/completions` |
-| 请求规范 | 阿里云自定义 | OpenAI 标准协议 |
-| 推荐 SDK | dashscope 官方 SDK | openai SDK、各类 AI 框架 |
+| 请求规范 | 阿里云自定义 JSON 结构 | OpenAI Chat Completion 标准协议 |
+| 推荐 SDK | dashscope 官方 SDK | openai SDK、LangChain、各类 AI 框架 |
 | 能否调用 qwen-plus | 可以 | 可以 |
-| 能否调用百炼内 DeepSeek、GLM 等 | 可以 | 可以 |
+| 能否调用百炼平台内第三方模型(DeepSeek、GLM等) | 可以 | 可以 |
 
 三方模型调用教程：
 
