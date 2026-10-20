@@ -79,6 +79,8 @@ Clear, step-by-step guidance for the agent.
 
 ### 1. 获取 Figma 的 API Key
 
+<!-- https://www.figma.com/files/team/1634847543948087953/recents-and-sharing/recently-viewed?fuid=1634847540959498009 -->
+
 Figma => Settings => Security => Generate new token，勾选各类读取权限，将生成的 token 复制保存好。
 
 ### 2. 建立 Figma 与 Cursor 的 “数据通信桥梁”

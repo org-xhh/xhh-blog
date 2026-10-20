@@ -14,7 +14,7 @@ VSCode Qoder CN 插件：
 
 Qoder CN 聊天面板 => 右上角用户 => Settings => MCP Servers => Add by JSON:
 
-![alt text](image-17.png)
+![alt text](image-18.png)
 
 这里使用的是 MCP 协议的通用 STDIO 配置。
 
