@@ -7,8 +7,12 @@ VSCode Qoder CN 插件：
 ![alt text](image.png)
 
 ## Skills
+|类型	|路径	|作用域|
+| ---- | ---- | ---- |
+|项目级 Skills|	项目根目录/.lingma/skills|	仅对当前项目生效|
+|全局 Skills|	用户主目录/.lingma/skills|	对所有项目生效|
 
-目录 ```.lingma/skills/```，输入 `/技能名称` 调用
+输入 `/技能名称` 调用
 
 ## MCP
 
@@ -56,3 +60,21 @@ Qoder MCP 面板 → 我的服务 → + 添加 → 粘贴 JSON：
 > 使用 Figma 公开 API 读取这个 Figma 链接，提取图层、色值、字体、尺寸、组件结构，输出 React TSX 代码。
 > 优点：不用配置 MCP；缺点：没有 MCP 完整工具能力，适合临时快速转稿
 -->
+
+## Rules
+
+方案1：界面创建
+
+![alt text](image-19.png)
+ 
+- 规则类型（3 种）
+  - Manual（手动引入）：聊天框输入 `@vue-standard` 才启用
+  - Model Decision：AI 自动判断场景触发（比如写代码时自动生效）
+  - Specific Files：指定文件后缀自动生效，例如`*.vue,*.js`
+  - Always：**当前项目下，所有对话/提问，强制永久加载这条规则**，无需手动 @，慎用
+
+![alt text](image-20.png)
+
+方案2：手动新建文件
+
+项目根目录新建文件夹 .lingma/rules/，在 rules 文件夹新建 `vue-standard.md` 文件

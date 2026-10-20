@@ -91,6 +91,16 @@ npx skills list
 不带 ‑g：列出项目本地 + 全局；
 带 -g：仅过滤输出全局已安装技能。
 
+- 检查更新
+```
+npx skills check 
+```
+
+- 更新所有技能
+```
+npx skills update
+```
+
 ### 使用 openskills 管理技能
 
 ```
