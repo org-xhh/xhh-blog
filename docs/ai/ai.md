@@ -33,7 +33,8 @@ LangChain 是面向 LLM 的应用开发框架，统一封装调用各类大模�
 | 底层实例 | 直接创建 `ChatOpenAI` | 根据`modelProvider`自动实例化对应模型类<br>• `modelProvider:"openai"` → `new ChatOpenAI()`（依赖包`@langchain/openai`，OpenAI兼容协议）<br>• `modelProvider:"alibaba_tongyi"` → `new ChatAlibabaTongyi()`（依赖包`@langchain/community`，DashScope原生协议） |
 | 对接协议 | DashScope OpenAI兼容模式：<br>`/compatible-mode/v1/chat/completions` | ✅`openai`：兼容模式<br>✅`alibaba_tongyi`：DashScope原生协议`/api/v1/services/aigc/text-generation/generation` |
 | 密钥字段 | `apiKey`，需要配置`baseURL` | `openai`：`apiKey`+`baseUrl`<br>`alibaba_tongyi`：`alibabaApiKey`，**不需要baseUrl** |
-| 切换模型厂商 | 换厂商需要修改import和new代码，改动量大 | 仅修改`modelProvider`、模型名、密钥字段，上层`.invoke()`/`.stream()`代码完全不变 |
+| modelProvider 参数| 无这个参数，直接 new 对应类 | 可选；模型 (gpt/claude) 可省略；qwen 等模型必须显式填写，或使用`provider:model`格式|
+| 切换模型厂商 | 换厂商需要修改import和new代码，改动量大 | 修改`modelProvider`，上层`.invoke()`/`.stream()`代码不变 |
 | 参数能力 | 支持ChatOpenAI适配器全部参数 | 通用参数统一；各适配器独有参数受限制 |
 
 

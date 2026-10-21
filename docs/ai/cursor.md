@@ -107,7 +107,7 @@ Cursor Settings => Tools & MCPs => New MCP Server
 
 出现绿灯就代表MCP服务进程连通。
 
-> 备注：Figma‑Context‑MCP 服务要求 Node ≥ 22
+> 备注：使用 Figma‑Context‑MCP 服务建议 Node ≥ 22
 
 > 其他配置方法：```https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#cursor```
 
