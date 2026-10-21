@@ -125,6 +125,34 @@ Cursor Settings => Tools & MCPs => New MCP Server
 
 ![alt text](mcp-html.png)
 
+## 接入 deepseek 和 qwen
+
+1.deepseek
+
+Add Custom Model 添加 deepseek-v4-pro
+![alt text](image-22.png)
+
+<!--
+deepseek 文档：
+
+https://api-docs.deepseek.com/zh-cn/api/create-chat-completion
+
+https://deepseek.apifox.cn/?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiI1NGRlNzFkZDU4YzE1MGM4LTdkMGZmMTI5YzhmZGY2OGEifQ%3D%3D
+ -->
+
+2.qwen
+
+Add Custom Model 添加 qwen3.7-flash-2026-07-15；
+
+API Key 填入 阿里云百炼 DashScope 的 sk-xxxx；
+
+Override OpenAI Base URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+
+---
+**Use OpenAI API Key 开关**：打开这个开关，Cursor 才会读取手动填入的 API Key + Override OpenAI Base URL，走配置的 DeepSeek/qwen 接口；关闭的话，Cursor 会忽略下面这堆配置，继续用 Cursor 官方自带的模型账号。
+
+> 自定义模型共用一套 BaseURL 和 API Key，切换 deepseek 或 qwen 模型时需要修改 BaseURL 和 API Key
+
 ## .cursorignore
 
 设置不让 AI 访问的文件或目录，和 .gitignore 语法一样。
