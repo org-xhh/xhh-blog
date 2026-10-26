@@ -16,6 +16,8 @@ VSCode Qoder CN 插件：
 
 ## MCP
 
+### [Figma MCP](https://www.figma.com/files/team/1634847543948087953/recents-and-sharing/recently-viewed?fuid=1634847540959498009)
+
 Qoder CN 聊天面板 => 右上角用户 => Settings => MCP Servers => Add by JSON:
 
 ![alt text](image-18.png)
@@ -26,7 +28,18 @@ Qoder CN 聊天面板 => 右上角用户 => Settings => MCP Servers => Add by JS
 | ---- | ---- | ---- |
 | 通信含义 | 本地进程管道通信，Qoder 拉起 Node 子进程，通过控制台输入输出传递MCP消息 | HTTP SSE长流网络通信，先GET建立长连接，后续指令POST交互 |
 | Figma官方支持 | ❌ 官方无stdio版本，可使用第三方社区包`figma-mcp`、 [figma-developer-mcp](https://github.com/GLips/Figma-Context-MCP) | ✅ Figma官方MCP原生基于SSE |
-| 配置写法 | `command` + `args` + `env` | `type:http` + `url` |
+| 配置写法 | `command` + `args` + `env` | `type:http` + `url` 授权登录 |
+
+
+### [Pixso MCP](https://pixso.cn/)
+
+远程 MCP(Streamable HTTP) 方式：
+
+![alt text](image-23.png)
+
+STDIO 模式：
+
+![alt text](image-24.png)
 
 
 <!-- 未求证，先注释
