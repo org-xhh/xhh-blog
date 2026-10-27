@@ -85,14 +85,15 @@ Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 同意授权即可。
 
 
-### 第三种：用户全局配置（本机所有项目生效）
+### 第三种：用户全局配置
 
 1.打开命令面板，执行 `MCP: Add Server`
 
-2.选择`http`类型，填入 Figma MCP 地址 `https://mcp.figma.com/mcp`
+2.选择`http`类型，填入 Figma MCP 服务地址 `https://mcp.figma.com/mcp`
 
-3.选择保存为**User 设置（全局）**，启动并完成授权。
+3.选择配置文件位置(全局)，点击 Sign In 登录授权。
 
+![alt text](image-25.png)
 
 ## 参考文档
 
