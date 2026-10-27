@@ -1,4 +1,4 @@
-# Github Copilot
+# [Github Copilot](https://docs.github.com/zh/copilot)
 
 ## 简介
 
@@ -94,8 +94,3 @@ Copilot 设置里找到 MCP Servers，安装 Figma MCP Server
 3.选择配置文件位置(全局)，点击 Sign In 登录授权。
 
 ![alt text](image-25.png)
-
-## 参考文档
-
-https://docs.github.com/zh/copilot
-
