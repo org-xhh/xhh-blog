@@ -1220,6 +1220,15 @@ function setDraftFn() {
   )
 }
 ```
+```
+import { useImmer } from 'use-immer'
+
+const [person, updatePerson] = useImmer({ name: 'xhh', artwork: { city: 'xz' } })
+
+updatePerson(draft => {
+  draft.artwork.city = 'sz'
+});
+```
 
 ### useEffect
 
@@ -1304,14 +1313,28 @@ return <div ref={divRef} onClick={clickFn}</div>
 
 ### useContext
 
-跨层级组件通信。Context的变动会引起所有消费者组件重新渲染，避免过度使用Context。
+跨层级组件通信。Context的变动会引起所有消费者组件重新渲染，避免过度使用Context；
 
-ThemeContext.js
+适合稳定、低频更新的数据：主题、语言、用户权限、全局配置；不适合高频更新。
+
+<!--
+最大的坑：value 引用变化
+
+Provider 的 value 引用变了，所有消费该 Context 的组件全部重渲染！
+```每次渲染App都新建对象，引用永远变，所有消费者无脑重渲染
+<ThemeContext.Provider value={{ theme, toggleTheme }} />
+```
+每次 App 渲染，{} 是新对象，引用地址变化 → 不管 theme 有没有变，所有 useContext(ThemeContext) 的组件都会重渲染。优化方案：useMemo + useCallback。
+-->
+
+ThemeContext.js:
 ```
 import { createContext } from 'react'
 
-// 默认值 'light'
-export const ThemeContext = createContext('light')
+export const ThemeContext = createContext({
+  theme: 'light',
+  toggleTheme: () => {}
+})
 ```
 在顶层用 Provider 提供状态:
 ```
@@ -1320,7 +1343,10 @@ import { ThemeContext } from './ThemeContext'
 
 function App() {
   const [theme, setTheme] = useState('light')
-  const value = useMemo(() => ({ theme, setTheme }), [theme])
+  const toggleTheme = useCallback(() => {
+    setTheme(p => p === 'light' ? 'dark' : 'light');
+  }, [])
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
 
   return (
       <ThemeContext.Provider value={value}>
@@ -1340,7 +1366,7 @@ import { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 
 const Child = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme, toggleTheme } = useContext(ThemeContext)
   return (
     <div>
       当前主题: {theme}

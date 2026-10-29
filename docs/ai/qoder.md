@@ -42,6 +42,19 @@ STDIO 模式：
 ![alt text](image-24.png)
 
 
+### [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
+把浏览器调试能力开放给 AI。配置完之后，AI 可以：
+
+1.读取页面加载性能数据；
+
+2.分析 LCP（最大内容绘制）、INP（交互到下一次绘制）、CLS（累积布局偏移）等核心指标；
+
+3.定位资源体积过大、重复请求、布局抖动、脚本阻塞主线程等问题。
+
+![alt text](image-26.png)
+
+
 <!-- 未求证，先注释
 第一种：桌面客户端-【MCP 管理面板】-Figma-登录授权
 
