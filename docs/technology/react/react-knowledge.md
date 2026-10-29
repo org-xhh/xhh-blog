@@ -1212,22 +1212,89 @@ const [draft, setDraft] = useState({
     }
   }
 })
+<!-- 原生写法：
+setDraft(prev => ({
+  ...prev,
+  obj1: { 
+    ...prev.obj1, 
+    obj2: { 
+      ...prev.obj1.obj2, 
+      isOk: true 
+    } 
+  }
+}))
+-->
 function setDraftFn() {
-  setDraft(prev =>
-    produce(prev, (draft) => {
-      draft.obj1.obj2.isOk = true
-    })
-  )
+  setDraft(produce(draft => {
+    draft.obj1.obj2.isOk = true
+  }))
 }
 ```
+<!--
+setDraft(prev =>
+  produce(prev, (draft) => {
+    draft.obj1.obj2.isOk = true
+  })
+)
+-->
+`useImmer` 是 `use-immer` 包提供的 hook，**本质就是封装好了 `useState + produce`**，专门用来简化嵌套对象 / 数组 state 的更新，不用每次手动包 `produce`。
 ```
 import { useImmer } from 'use-immer'
 
-const [person, updatePerson] = useImmer({ name: 'xhh', artwork: { city: 'xz' } })
+const [draft, updateDraft] = useImmer({
+  obj1: {
+    obj2: {
+      isOk: false
+    }
+  }
+})
 
-updatePerson(draft => {
-  draft.artwork.city = 'sz'
-});
+const setDraftFn = () => {
+  updateDraft(draft => {
+    draft.obj1.obj2.isOk = true
+  })
+}
+```
+---
+配套：useImmerReducer
+
+如果状态逻辑很复杂、一堆 action，相当于 `useReducer + immer`，reducer 里面也可以直接改 draft：
+```
+import { useImmerReducer } from 'use-immer'
+
+const initialState = {
+  obj1: {
+    obj2: { 
+      isOk: false 
+    }
+  }
+}
+
+function reducer(draft, action) {
+  switch (action.type) {
+    case 'toggleOk':
+      draft.obj1.obj2.isOk = !draft.obj1.obj2.isOk
+      break
+    case 'setOk':
+      draft.obj1.obj2.isOk = action.payload
+      break
+    // 不需要 return，直接改 draft 就行
+    default:
+      break
+  }
+}
+
+function Demo() {
+  const [state, dispatch] = useImmerReducer(reducer, initialState)
+
+  return (
+    <>
+      <div>{state.obj1.obj2.isOk ? '开' : '关'}</div>
+      <button onClick={() => dispatch({ type: 'toggleOk' })}>切换</button>
+      <button onClick={() => dispatch({ type: 'setOk', payload: true })}>设为true</button>
+    </>
+  )
+}
 ```
 
 ### useEffect
