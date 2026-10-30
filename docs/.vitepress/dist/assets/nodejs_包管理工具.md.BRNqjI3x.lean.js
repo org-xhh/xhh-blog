@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as t,a3 as p}from"./chunks/framework.C5U8cnJv.js";const b=JSON.parse('{"title":"包管理工具","description":"","frontmatter":{},"headers":[],"relativePath":"nodejs/包管理工具.md","filePath":"nodejs/包管理工具.md"}'),s={name:"nodejs/包管理工具.md"},e=p("",29),o=[e];function d(l,r,c,i,m,h){return t(),a("div",null,o)}const g=n(s,[["render",d]]);export{b as __pageData,g as default};

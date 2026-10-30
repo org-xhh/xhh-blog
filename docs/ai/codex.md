@@ -111,6 +111,9 @@ model = "qwen-plus"
 
 ![alt text](image-6.png)
 
+## 汉化启动器
+https://github.com/shibaweidu/codex-desktop-zh/releases
+
 
 <!--
 ## 上下文记忆

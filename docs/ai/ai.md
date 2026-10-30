@@ -176,6 +176,8 @@ openskills list
 优先级：IDE原生rules > AGENTS.md；子目录可就近放置AGENTS.md。
 ```
 # AGENTS.md
+- 回答或注释优先使用中文
+- 思考过程也用中文
 
 ## 项目基础信息
 - 技术栈：Vue3 + TypeScript + Vite
