@@ -91,7 +91,7 @@ export default {
         text: "html知识",
         items: [
           { text: "html", link: "/web/html/html" },
-          { text: "图片预加载和懒加载", link: "/web/html/图片预加载和懒加载" },
+          { text: "图片", link: "/web/html/图片" },
           { text: "MutationObserver", link: "/web/html/mutationObserver" },
           { text: "DOM对象宽高属性", link: "/web/html/DOM对象宽高属性" }
         ],
