@@ -161,13 +161,13 @@ openskills list
 
 统一接入外部工具
 
-[qoder配置Figma MCP](./qoder.md)
+[Qoder CN 配置 Figma MCP](./qoder.md)
 
-[cursor配置Figma MCP](./cursor.md)
+[Cursor 配置 Figma MCP](./cursor.md)
 
-[codex配置Figma MCP](./codex.md)
+[Codex 配置 Figma MCP](./codex.md)
 
-[copilot配置Figma MCP](./githubcopilot.md)
+[GitHub Copilot 配置 Figma MCP](./githubcopilot.md)
 
 
 ## AGENTS.md

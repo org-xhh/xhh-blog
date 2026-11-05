@@ -1,4 +1,4 @@
-# [codex](https://openai.com/zh-Hans-CN/codex/?utm_source=Ai138.com)
+# [Codex](https://openai.com/zh-Hans-CN/codex/?utm_source=Ai138.com)
 
 Codex 是 OpenAI 推出的编码智能体，底层使用专门优化的代码模型，擅长理解完整代码库、自主执行开发任务，并支持 MCP 协议对接各类工具。
 
