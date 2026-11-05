@@ -1,5 +1,7 @@
 # [Claude Code](https://www.runoob.com/claude-code/claude-code-tutorial.html)
 
+Claude Code 是 Anthropic 推出的**智能编码 Agent**，支持终端、IDE 等多环境运行，可读取整个代码库、跨文件修改代码、执行命令与测试；自带斜杠命令、技能插件体系，支持扩展 MCP/skills 工具，用来开发功能、修复 Bug、重构项目，适合自动化完成各类开发任务。
+
 ## 安装 claude code
 
 ### Mac Homebrew 安装 claude code
@@ -14,7 +16,7 @@ brew install --cask claude-code
 claude --version
 ```
 
-### 安装 CC Switch
+## 安装 CC Switch
 CC‑Switch 为社区第三方工具，非 Anthropic 官方，用于切换第三方模型供应商
 ```
 brew tap farion1231/ccswitch
