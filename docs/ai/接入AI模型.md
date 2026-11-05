@@ -249,6 +249,8 @@ https://bailian.console.aliyun.com/cn-beijing?spm=5176.support-home.nav-v2-dropd
 | 能否调用 qwen-plus | 可以 | 可以 |
 | 能否调用百炼平台内第三方模型(DeepSeek、GLM等) | 可以 | 可以 |
 
-三方模型调用教程：
+---
 
-https://help.aliyun.com/zh/model-studio/deepseek-api#ds-bu-cn-ds-h
+Base URL 总览：
+
+https://help.aliyun.com/zh/model-studio/base-url?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiI1ZDNlOTUzOTM0MTlhMDA5LTZlZjQ1OWE0NDhlMzRlNTYifQ%3D%3D&accounttraceid=bac20ff401f9486489d608321885d7b5stje
