@@ -1,6 +1,6 @@
 # [Cursor](https://cursor.com/cn/docs/models-and-pricing)
 
-Cursor 是由 Anysphere（现已被 SpaceX 收购）推出的 AI 优先代码编辑器，基于 VS Code 二次开发，内置 AI 编程智能体。支持全局代码理解、多文件批量编辑、Agent 任务执行，可接入 Claude、Grok（SpaceXAI，原 xAI）等大模型；支持 rules、skills、MCP 扩展能力，大幅提升开发效率。
+Cursor 是由 Anysphere（现已被 SpaceX 收购）推出的 AI 优先代码编辑器，基于 VS Code 二次开发，内置 AI 编程智能体。支持全局代码理解、多文件批量编辑、Agent 任务执行，可接入 Claude、Grok（[SpaceXAI，原 xAI](https://baike.baidu.com/item/SpaceXSI/69274747)）等大模型；支持 rules、skills、MCP 扩展能力，大幅提升开发效率。
 
 ## 模型
 
