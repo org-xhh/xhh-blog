@@ -2,9 +2,9 @@
 
 ## ref, reactive
 
-ref：把原始值包裹成一个对象，通过访问器属性（get/set）拦截 .value 的读写，从而实现响应式。
+ref：把原始值包裹成一个对象，通过访问器属性（get/set）拦截 .value 的读写，从而实现响应式。支持基本类型和引用类型。
 
-reactive：核心是通过 Proxy 拦截对象操作。
+reactive：核心是通过 Proxy 拦截对象操作。仅在传入引用类型时具备响应式。
 
 ### reactive定义的对象直接赋值会失去响应式
 

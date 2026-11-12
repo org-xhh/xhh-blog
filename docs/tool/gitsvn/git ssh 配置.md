@@ -1,6 +1,5 @@
 
-
-# git配置
+# Git SSH 配置
 
 ### 一、查看SSH_Key
 git bash 命令行

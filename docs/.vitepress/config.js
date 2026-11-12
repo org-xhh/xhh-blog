@@ -39,8 +39,8 @@ export default {
           { text: "Nuxt", link: "/technology/nuxt/nuxt" },
           { text: "React", link: "/technology/react/react-document" },
           { text: "React Native", link: "/technology/react-native/react-native使用" },
-          { text: "server", link: "/technology/server/项目打包上传" },
           { text: "electron", link: "/technology/electron/electron" },
+          { text: "server", link: "/technology/server/项目打包上传" },
           { text: "python", link: "/technology/python/python" }
         ]
       },
@@ -215,8 +215,8 @@ export default {
         text: "git知识",
         items: [
           { text: "git常用命令", link: "/tool/gitsvn/git常用命令" },
+          { text: "git ssh 配置", link: "/tool/gitsvn/git ssh 配置" },
           { text: "precommit设置", link: "/tool/gitsvn/precommit设置" },
-          { text: "git配置", link: "/tool/gitsvn/git配置" },
           { text: "git客户端工具", link: "/tool/gitsvn/git客户端工具" },
           { text: "svn", link: "/tool/gitsvn/svn" }
         ],
@@ -235,7 +235,7 @@ export default {
         items: [
           { text: "vscode插件", link: "/tool/vscode/vscode插件" },
           { text: "vscode使用", link: "/tool/vscode/vscode使用" },
-          { text: "代码格式化", link: "/tool/vscode/代码格式化" }
+          { text: "ESLint+Prettier代码规范配置", link: "/tool/vscode/ESLint+Prettier代码规范配置" }
           // { text: "导出搜索内容", link: "/tool/vscode/导出搜索内容" },
         ],
       }, 

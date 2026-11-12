@@ -38,7 +38,7 @@ BFC(Block Formatting Context)，块级格式化上下文。拥有BFC属性的元
 }
 ```
 除此之外，可以看到：
-![alt text](image-4.png)
+![alt text](image-4.jpg)
 
 p元素占满了整个容器宽度，那如何让p元素只占除了图片之外的宽度呢？
 
