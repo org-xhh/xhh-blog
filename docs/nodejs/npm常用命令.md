@@ -101,7 +101,13 @@ npm config get proxy
 ### 获取 npm 的 https 代理设置
 npm config get https-proxy
 
-### 查看 模块 需要的 Node.js 版本
+### 查看完整包信息
+npm view vue@2.6.10 --json
+
+### 查看模块需要的 Node.js 版本
+
+前提：package.json 里写了 `engines` 字段。
+
 npm view @nodelib/fs.walk@2.0.0 engines
 
 ![alt text](image-13.png)
