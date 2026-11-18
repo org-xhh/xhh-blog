@@ -1,9 +1,8 @@
 
 # VSCode 插件
 
-![alt text](image.png)
-
 ## i18n Ally 使用
+![alt text](image.png)
 
 1. 安装插件 i18n Ally
 
@@ -13,9 +12,10 @@
     "i18n-ally.localesPaths": [
         "src/language"
     ],
-    "i18n-ally.keystyle": "nested",
-    "i18n-ally.enabledParsers": ["json", "js"],
-    "i18n-ally.displayLanguage": "zh" // 展示语言
+    // 以zh的key清单为标准，去检查en缺哪些key；机翻时从中文出发
+    "i18n-ally.sourceLanguage": "zh",
+    // 展示语言
+    "i18n-ally.displayLanguage": "zh"
 }
 
 ```
@@ -64,7 +64,7 @@ root = true
 
 [*] # 表示所有文件适用
 charset = utf-8 # 设置文件字符集为 utf-8
-indent_style = tab # 缩进风格（tab | space）
+indent_style = space # 缩进风格（tab | space）
 indent_size = 2 # 缩进大小
 end_of_line = lf # 控制换行类型(lf | cr | crlf)
 trim_trailing_whitespace = true # 去除行首的任意空白字符
@@ -74,7 +74,13 @@ insert_final_newline = false # 始终在文件末尾插入一个新行
 max_line_length = off
 trim_trailing_whitespace = false
 ```
+仓库里可以在 `.vscode/extensions.json` 加上推荐：
 
-## 已安装插件
+```
+{
+  "recommendations": ["EditorConfig.EditorConfig"]
+}
+```
+<!-- ## 已安装插件
 ![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](image-7.png) -->

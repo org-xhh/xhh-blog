@@ -79,9 +79,6 @@ git config core.ignorecase true(false)
 ### 删除文件
 git rm -r --cached [file]
 
-### commit之后撤销
-git reset --soft HEAD^
-
 ### 检查当前 git 全局设置
 git config --global -l
 
@@ -102,6 +99,19 @@ git checkout v1.0.0
 
 ### 基于某个tag创建分支
 git checkout -b tag-branch v1.0.0
+
+### 配置 Git 换行符处理方式
+git config --global core.autocrlf input
+
+- `true`：提交 CRLF→LF；拉取 LF→CRLF（本地工作区变成 Windows 换行）
+- `input`：提交 CRLF→LF；拉取**不变**（仓库 LF，本地就是 LF，前端推荐）
+- `false`：完全不转换，原样进出，容易仓库换行混乱
+
+或在项目根目录新建 `.gitattributes`（优先级高于 autocrlf），强制仓库内文本文件统一 LF：
+```
+* text=auto eol=lf
+```
+
 
 ### 启用 Git 长路径支持
 
@@ -124,5 +134,4 @@ git config core.longpaths true
 HBuilderX文档 - Git常用命令
 
 https://hx.dcloud.net.cn/Tutorial/SourceControl/Git/README?id=git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4
-
 

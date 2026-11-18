@@ -7,12 +7,15 @@
 3. 项目根目录新建 .prettierrc.js
 ```
 module.exports = {
-    endOfLine: "lf", // 行结束符使用 Unix 格式
-    semi: false,
-    singleQuote: true,
-    tabWidth: 2,
-    useTabs: false,
-    trailingComma: "none"
+  "endOfLine": "lf",
+  "semi": false,
+  "useTabs": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "quoteProps": "preserve",
+  "singleAttributePerLine": false,
+  "printWidth": 140
 }
 ```
 4. package.json 添加 script:
@@ -28,7 +31,11 @@ module.exports = {
 // 格式化交给 prettier
 "editor.formatOnSave": true,
 // 优先使用项目内的 prettier 包版本，保证编辑器和命令行格式化结果一致
-"prettier.useLocalVersion": true
+"prettier.useLocalVersion": true,
+// vue 强制走 prettier，覆盖 Volar 自带格式化
+"[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 ```
 
 ## ESLint（Lint 校验工具）
@@ -84,6 +91,7 @@ module.exports = {
 5. 根目录.vscode/settings:
 ```
 {
+  "eslint.format.enable": false, // 默认null，等同false
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   }
@@ -91,7 +99,7 @@ module.exports = {
 ```
 eslint.format.enable：让 eslint 插件**提供格式化能力**；（这里不要开启，格式化由 prettier 处理）
 
-editor.codeActionsOnSave：保存时执行eslint自动修复代码质量问题
+source.fixAll.eslint：保存时自动修复代码质量问题，遵循项目`.eslintrc` 规则
 
 ### 如果项目是Vue项目，额外要改
 1. 安装：`npm i -D eslint-plugin-vue`

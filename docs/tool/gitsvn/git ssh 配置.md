@@ -109,7 +109,7 @@ PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa
 ```
 
-GitHub
+github
 ```
 Host github.com
 HostName github.com
