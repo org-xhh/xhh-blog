@@ -101,6 +101,7 @@ export default {
         text: "css知识",
         items: [
           { text: "css单位和dpr", link: "/web/css/css单位和dpr" },
+          { text: "移动端单位转换", link: "/web/css/移动端单位转换" },
           { text: "css中width的小九九", link: "/web/css/css中width的小九九" },
           { text: "使用css3的var()函数", link: "/web/css/使用css3的var()函数" },
           { text: "应用深浅主题", link: "/web/css/应用深浅主题" },
