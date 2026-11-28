@@ -151,6 +151,21 @@ https://uniapp.dcloud.net.cn/tutorial/run/run-app.html
 
 https://uniapp.dcloud.net.cn/tutorial/run/installSimulator.html#ios
 
+1.Command Line Tools 绑定 Xcode
+
+```
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
+2.列出模拟器列表
+
+```
+xcrun simctl list devices
+```
+3.运行
+
+uni-app => 运行 => 运行到手机或模拟器 => 运行到iOS 模拟器 App 基座
+![alt text](iOS1.png)
+
 ### 运行到iOS真机
 
 1. 安装itunes连接真机
